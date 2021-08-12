@@ -127,30 +127,31 @@ Signed: Sam Nolan<br />
 Date: 08/08/2020<br />
 </p>
 <h1 class="unnumbered" id="acknowledgments">Acknowledgments</h1>
-<p>I would like to acknowledge my supervisor <a href="https://www.spichkova.com/">Maria Spichkova</a> for her guidance and high expectations for this project. I would also like to thank <a href="https://fsalim.github.io/">Flora Salim</a> for inspiring me to further invest myself into research and never stopping in opening doors for me<br />
-</p>
+<p>I would like to acknowledge my supervisor <a href="https://www.spichkova.com/">Maria Spichkova</a> for her guidance and high expectations for this project. I would also like to thank <a href="https://fsalim.github.io/">Flora Salim</a> for inspiring me to further invest myself into research and never stopping in opening doors for me.</p>
 <h1 class="unnumbered" id="abstract">Abstract</h1>
 <h1 id="introduction">Introduction</h1>
-<p>When building software systems, one important aspect is determining the correctness of the software built. Software is correct if, given some specification, the software implements that specification.</p>
+<p>When building software systems, one of, if not the most important aspect is determining the correctness of the software built. Software is correct if, given some specification, the software implements that specification.</p>
 <p>For some systems, being correct is more important than others. Being correct may not be as important in an application managing tasks in comparison to the software running in safety-critical systems such as pacemakers, the internal components of cars or software that runs on space equipment. If these systems fail, it could mean the loss of a substantial amount of money or serious injury or death. As of such, more effort should be put into ensuring that safety-critical systems are correct.</p>
-<p>However, there are many fields of computer science who justify their existence from software that doesn’t work, there’s very little computer science research out there that doesn’t have the goal of making systems work better.</p>
-<p>Formal Methods is distinguished from other methods by its guarantee to have software meet its specification</p>
-<p>on a even for non safety-critical systems, ensuring that the software that you are writing is correct is one of the most important considerations.</p>
-<p>Although it’s impossible to completely garauntee the absense of software errors, <em>Formal Methods</em> are way of ensuring software correctness of a much higher degree. Formal methods includes the two tasks of giving a mathematically rigorous specification of your software system and then giving a mathematically rigorous proof that your software meets this specification. These two tasks are called <em>specification</em> and <em>verification</em> respectively. There are a range of formal methods that can help with either or both tasks.</p>
-<p>Formal methods cannot make perfect software. There are some things that cannot be proven, and specifications of software may be invalid. For instance, performance, reliability and availability are difficult to prove. However, the use of formal methods can reduce errors, at least in the way that the program will meet it’s formal specification in a much more complete way than through other methods.</p>
-<p><em>Formal Methods</em> can be split up into several distinct subfields: <em>Model Checkers</em> (MCs), <em>Automated Theorem Provers</em> (ATPs) and <em>Interactive Theorem Provers</em> (ITPs).</p>
-<p>MCs allow specifying your system as a state machine, and can automatically prove that your code matches this specification. Model Checkers are therefore limited in scope, as a state machine is often not complicated enough to represent arbitrary computer programs. MCs are however used in industry to verify properties of software systems, such an ensuring that an asynchronous system will never deadlock. Examples of model checkers include SPIN and Alloy. MCs often vary in their scope.</p>
-<p>Theorem provers can be, as the name suggests, help prove mathematical theorems. Because computer programs can be represented as logic, (such as Logic of Computable Functions or Calculus of Constructions), Theorem provers can also be used to verify properties about computer programs.</p>
-<p>ATPs, sometimes called SAT or SMT solvers, can prove arbitrary code and specifications by searching for a proof. ATPs usually work by taking a proposition that needs to be proven, representing this proposition in propositional logic, and prove that this proposition is correct. ATPs vary by how quickly they can find a proof for a given proposition, and competitions are held to compare ATPs by speed for different types of proofs [citation needed]. The main flaw of ATPs is that, due to the undecidability of proving verifying software, ATPs can run for long periods of time without terminating with a proof or disproof of the proposition. This limits the scope of problems that ATPs can be applied to.</p>
-<p>Examples of ATPs include Vampire and E.</p>
-<p>ITPs can prove arbitrary code and specifications, but require the user to guide the proof process. ITPs usually differ in the methods used to prove these theorems. Some ITPs allow the user to write a script that shows that the given proposition is true. These scripts are often called "proof scripts" and this paradigm is refered to as "prooof by programming". This is one of the most common ways of proving theorems with ITPs, and makes proving theorems similar programming. Having the user prove propositions therefore makes the user the bottleneck, and proving that code meets specification is often a very difficult task. As of such, improving the usability of ITPs would make it easier to create verified software, and ensure safety critical software meets its specification.</p>
-<p>Examples of ITPs include: Isabelle, HOL Light and Coq.</p>
-<p>Although there has been a rise of the use of ITPs in industry, use of ITPs is far from commonplace [citation needed]. This lack of adoption is likely due to be from the difficulty in using ITPs. However, research on the usability of ITPs is few and far between, with very little empirical research done to investigate usability issues and improvements on how to fix them. This thesis therefore attempts to consolidate research on this topic and investigate the presence of usability problems and applicability of usability solutions for ITPs. This has the aim of improving adoption of ITPs and therefore the quality of software.</p>
+<p>There is a variety of methods that are valuable in ensuring software correctness, and one the most powerful methods of doing so is through the use of <a href="https://en.wikipedia.org/wiki/Formal_methods"><strong>Formal Methods</strong></a>. Formal Methods is using methods from mathematics to prove properties of correctness of software and hardware systems.</p>
+<p>Formal Methods can include writing down a specification for your software, and proving by hand that the software that you built (or a section of the software) correctly implements that specification. This type of work is invaluable not only to check the correctness of software, but also help the developer to understand the software that they just built.</p>
+<p>Computers have also been used to prove correctness properties of systems. Two main types of formal methods exist in this category. <strong>Model Checkers</strong> and <strong>Theorem Provers</strong>. A model checker proves that properties exist</p>
+<p><strong>Model Checkers</strong> allow specifying your system as a state machine, and can automatically prove that your code matches this specification. Model Checkers are therefore limited in scope, as a state machine is often not complicated enough to represent arbitrary computer programs. Model checkers are however used in industry to verify properties of software systems, such an ensuring that an asynchronous system will never deadlock. Examples of model checkers include SPIN and Alloy. Model checkers often vary in their scope.</p>
+<p>Theorem provers can be, as the name suggests, help prove theorems about your code in the same way that someone with a pen and paper would. Because computer programs can be represented as logic, (such as Logic of Computable Functions or Calculus of Constructions). There is actually a duality with mathematics and programming that allows theorem provers to not only verify the correctness of computer systems but prove real math theorems, and they have been used with success in both categories.</p>
+<p>Although the distinction is not completely clear cut, theorem provers fall into two large main categories. Those categories are <strong>Automated Theorem Provers</strong>, and <strong>Interactive Theorem Provers</strong>.</p>
+<p>Automatic Theorem Provers attempt to take a specification and a computer program and prove that the program meets the specification without user input. This is fantastic if it works, but sadly verifying software is an undecidable problem, and Automatic Theorem Provers do not always succeed in finding a proof or disproof for whether the code meets its specification.</p>
+<p>Interactive Theorem Provers allow the user to interactively prove that a specification is satisfied by a computer program. This is akin to the user writing a proof for correctness on pen and paper, except that the program only allows the user to input a correct proof. With the guidance of humans, Interactive Theorem Provers allow the verification of very large scale projects. Developments in mathematics have been done in theorem provers as well.</p>
+<p>Interactive Theorem Provers (ITPs) provide a unique challenge as they require interacting with the user. The user and the ITP have to work together to attempt to verify the software. When a user is involved, usability must be considered.</p>
+<p>ITPs offer an opportunity to verify large scale software and hardware systems for correctness, and as software systems only get larger, ITPs could be a solution to ensuring quality and correctness of software that’s produced.</p>
+<p>ITPs have already been used to verify crytographic libraries, compilers and microkernels.</p>
+<p>However, although ITPs have been used in several large scale projects, use of ITPs is far from commonplace. This thesis is a diagnostic attempt at discovering reasons for the lack of uptake, in order to decipher how we can encourage the usage of ITPs and ensure more correct software in industry.</p>
+<p>In this thesis, we investigate the usability of ITPs. Usability is often quite a vague concept, but in this thesis we define it widely. We define usability as: “The ease for which a program can be used for it’s intended purpose,” which therefore can include things like the scope of features currently supported by the theorem prover.</p>
+<p>We attempt to answer this question by in a sense “cross polinating” ITP ideas, comparing theroem provers up against each other across many different dimensions in order to decipher promising directions for the improvements of ITPS.</p>
 <p>The research questions for this thesis are:</p>
 <p>RQ1 <em>What usability issues and solutions have been mentioned in literature regarding ITPs?</em></p>
 <p>RQ2 <em>Do these usability issues and solutions still exist in the ITPs?</em></p>
 <p>RQ3 <em>Can problems/solutions that have been found in some ITPs be relevant for others?</em></p>
 <h2 id="use-of-itps">Use of ITPs</h2>
+<p>ITPs are very interesting pieces of software</p>
 <p>A full review of ITPs in Formal Methods was conducted by Nawaz <span class="citation" data-cites="nawaz_survey_2019">(Nawaz et al. 2019)</span>.</p>
 <p>It should be noted that although ITPs can verify the correctness of software, they also can prove more mainstream mathematical theorems. As of such, there are two communities of users of ITPs. Those interested in using ITPs to study mathematics, and those interested in using ITPs to formally verify software.</p>
 <p>ITPs have been used to achieve many ends within mathematics, giving a proof for the Four Colour Theorem with Coq. Flyspeck project,</p>
@@ -211,28 +212,28 @@ Date: 08/08/2020<br />
 <p>The justification for using quotes around prover, provers and proving is that some search engines will return papers with the text "prove" when looking for "prover". "prove" therefore comes up with many more records that are unrelated to our topic. "Usability" is also quoted to prevent searching for "use", which clearly would bring in papers that are unrelated.</p>
 <p>We searched the following databases using this query string:</p>
 <ul>
-<li><p>Scopus</p></li>
-<li><p>DBLP</p></li>
-<li><p>Springer Link</p></li>
-<li><p>Science Direct</p></li>
-<li><p>ACM</p></li>
-<li><p>IEEE Xplore</p></li>
+<li>Scopus</li>
+<li>DBLP</li>
+<li>Springer Link</li>
+<li>Science Direct</li>
+<li>ACM</li>
+<li>IEEE Xplore</li>
 </ul>
 <p>From the papers discovered in this way, we went through the abstracts and discerned whether the paper was relevant to the research question.</p>
 <p>Our inclusion criteria for the papers included in the systematic literature review was the following:</p>
 <ul>
-<li><p>A peer review published paper AND</p></li>
-<li><p>Notes particular usability issues with theorem provers OR</p></li>
-<li><p>Offers direct recommendations to the improvement of the usability of interactive theorem provers</p></li>
+<li>A peer review published paper AND</li>
+<li>Notes particular usability issues with theorem provers OR</li>
+<li>Offers direct recommendations to the improvement of the usability of interactive theorem provers</li>
 </ul>
 <p>We particularly excluded papers written in languages other than English, workshops, tutorials, extended abstracts, unpublished and non peer reviewed papers.</p>
 <p>From the papers that were deemed relevant to the research question, we found papers that cited the papers discovered. That is, we applied forward snowballing. Semantic scholar was used to perform the forward snowballing.</p>
 <p>We then tried to discover whether these papers were relevant to the research question, and repeated the process of forward snowballing until there were no more papers discovered.</p>
 <p>We then read the paper to discover:</p>
 <ul>
-<li><p>A problem and/or solution to usability of interactive theorem provers</p></li>
-<li><p>Which theorem prover the issue is relevant to</p></li>
-<li><p>Evidence behind issues and proposed solutions</p></li>
+<li>A problem and/or solution to usability of interactive theorem provers</li>
+<li>Which theorem prover the issue is relevant to</li>
+<li>Evidence behind issues and proposed solutions</li>
 </ul>
 <p>The issues were then categorized by Green’s cognitive dimensions of notations <span class="citation" data-cites="green_usability_1996">(Green and Petre 1996)</span>.</p>
 <h1 id="literature-review-results">Literature review results</h1>
@@ -1035,13 +1036,134 @@ rightarrow to render math notation, whereas Agda allows unicode in source files.
 <p>Textual ITP come equipped with libraries that allow using concepts from these libraries. To investigate how much of an issue this was in each of the ITPs, scopes of libraries were compared. Library modules were sorted into different fields according to broad areas of mathematics. To the best of our knowledge, the comparison of scopes of ITPs libraries in this way has not been done.</p>
 <p>Before diving in to the current scope of ITP libraries, we should noted that there are some different approaches to managing standard libraries that mean that the analysis could be skewed. Standard libraries of ITPs can be compared to standard libraries of programming languages, and serve similar functions. The libraries contain elements that are likely to be re-used over several programs, and as of such are compiled together for reuse. If the concept of a standard library is extended into the realm of interactive theorem provers, then a question has to be made of how many proofs and mathematical theories should be present within the library.</p>
 <p>Coq takes an approach that minimizes the amount of pure mathematical theory inside the standard library. The library contains mostly common concepts such as rationals, integers, naturals, sets, structures, Peano’s axioms etc. If you are interested in a particular part of mathematics, such as probability or analysis, then Coq also offers a collection of community maintained packages that can form as a basis for your work or theory.</p>
-<p>HOL Light, on the other hand, do not have a package management system. Isabelle in particular therefore has a lot of resources in it’s standard library that cover large sweeps of mathematics of many varieties. Because of this, if comparing standard libraries directly, it could be said that Isabelle has features in analysis, but Coq does not. This however is not a particularly fair comparison, because even if Coq had the opportunity to include analysis within it’s standard library, it would probably prefer not to and include it as a package. As of such, this comparison also includes the current state of the art in terms of packages covering the different fields of mathematics for Coq, as well as it’s standard library.</p>
+<p>Isabelle and HOL Light, on the other hand, do not have a package management system. Isabelle in particular therefore has a lot of resources in it’s standard library that cover large sweeps of mathematics of many varieties. Because of this, if comparing standard libraries directly, it could be said that Isabelle has features in analysis, but Coq does not. This however is not a particularly fair comparison, because even if Coq had the opportunity to include analysis within it’s standard library, it would probably prefer not to and include it as a package. As of such, this comparison also includes the current state of the art in terms of packages covering the different fields of mathematics for Coq, as well as it’s standard library.</p>
 <p>One particular package of note is Coq-CoRN ("Constructive Coq Repository at Nijmegen"). This package contains many formalisms not present in the standard library, including analysis, and is commonly used in the Coq community.</p>
+<p>It should be noted that although Isabelle doesn’t have a convential package management system, it does have an archive of formal proofs. The archive of formal proofs allows community members to submit Isabelle theories covering a particular topic. Isabelle’s archive of formal proofs is slightly different to a package ecosystem because it includes “finished products,” that is proofs that are interesting but not likely to be used in further development of proofs.</p>
 <p>HOL Light also doesn’t have a package manager, however HOL Light, like Isabelle, has parts of mathematics within its standard library. HOL Light is not as popular a theorem prover as the other two, and as of such does not have as large a scope.</p>
 <p>It was found that although Isabelle was claimed to be missing mathematical foundations, in comparison to other theorem provers, it seemed to have the standard library with the largest scope. Coq does not have foundations in many of the areas of mathematics, but usually offers support for the areas through its package ecosystem. HOL Light on the other hand, sometimes contains support for some areas of math but not others.</p>
 <p>In the end, the scope of the standard library and package ecosystems for both Coq and Isabelle should be strong enough for most mathematical purposes. We were unable to identify any foundations that were explicitly missing in either system. HOL Light on the other hand, does not contain some mathematical foundations, and is probably not the state of the art for proving mathematical theorems and mathematical libraries.</p>
 <p>It should also be noted that KeY does not have a standard library, and as a direct manipulation theorem prover, is an extremely bad choice for proving mathematical theorems.</p>
 <p>In figure <a href="#fig:library_scope" data-reference-type="ref" data-reference="fig:library_scope">1</a>, a summary of which topics are covered by each prover is shown. We will detail each of these categories in the following sections.</p>
+<div id="tab:litresults">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Area</th>
+<th style="text-align: left;">Sub-Field</th>
+<th style="text-align: left;">Provers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Algebra</td>
+<td style="text-align: left;">Groups</td>
+<td style="text-align: left;">Coq, Isabelle</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Algebra</td>
+<td style="text-align: left;">Rings</td>
+<td style="text-align: left;">Coq, Isabelle, HOL Light</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Algebra</td>
+<td style="text-align: left;">Fields</td>
+<td style="text-align: left;">Coq, Isabelele, HOL Light</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Algebra</td>
+<td style="text-align: left;">Lattices</td>
+<td style="text-align: left;">Coq, Isabelle</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Algebra</td>
+<td style="text-align: left;">Modules</td>
+<td style="text-align: left;">Coq, Isabelle</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Foundations</td>
+<td style="text-align: left;">Categories</td>
+<td style="text-align: left;">Coq, Isabelle</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Foundations</td>
+<td style="text-align: left;">Sets</td>
+<td style="text-align: left;">Coq, Isabelle</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Foundations</td>
+<td style="text-align: left;">Proof</td>
+<td style="text-align: left;">Coq, Isabelle, HOL Light</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number Theory</td>
+<td style="text-align: left;">Fundemental Theorem of Arithmetic</td>
+<td style="text-align: left;">Coq, Isabelle</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number Theory</td>
+<td style="text-align: left;">Chinese Remainder Theorem</td>
+<td style="text-align: left;">Coq, Isabelle</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number Theory</td>
+<td style="text-align: left;">Fermat/Euler’s Theorem</td>
+<td style="text-align: left;">Coq, Isabelle</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analysis</td>
+<td style="text-align: left;">Multivariate Analysis</td>
+<td style="text-align: left;">Coq, Isabelle, HOL Light</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Analysis</td>
+<td style="text-align: left;">Functional Analysis</td>
+<td style="text-align: left;">Isabelle</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analysis</td>
+<td style="text-align: left;">Complex Analysis</td>
+<td style="text-align: left;">Isabelle</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Analysis</td>
+<td style="text-align: left;">Nonstandard Analysis</td>
+<td style="text-align: left;">Isabelle</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Topology</td>
+<td style="text-align: left;">Metric Spaces</td>
+<td style="text-align: left;">Isabelle, Coq, HOL Light</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Topology</td>
+<td style="text-align: left;">Filters &amp; Nets</td>
+<td style="text-align: left;">Isabelle, Coq</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Combinatorics</td>
+<td style="text-align: left;">Enumerative</td>
+<td style="text-align: left;">Coq, Isabelle*, HOL Light</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Combinatorics</td>
+<td style="text-align: left;">Extremal</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Combinatorics</td>
+<td style="text-align: left;">Graph Theory</td>
+<td style="text-align: left;">Coq, Isabelle*, HOL Light</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Geometry</td>
+<td style="text-align: left;">Geometry</td>
+<td style="text-align: left;">Coq, Isabelle, HOL Light</td>
+</tr>
+</tbody>
+</table>
+<p>Computer Science Floats Coq, Isabelle, HOL Light Computer Science Complexity Coq, Isabelle Probability Probability Theory Coq, Isabelle</p>
+<p>: Literature review papers</p>
+</div>
 <figure>
 <img src="Images/Problems/Quality%20of%20Library/out.png" id="fig:library_scope" alt="Caterogies of Mathematics covered by ITP" /><figcaption aria-hidden="true">Caterogies of Mathematics covered by ITP</figcaption>
 </figure>
@@ -1075,6 +1197,15 @@ rightarrow to render math notation, whereas Agda allows unicode in source files.
 <p>Isabelle has formalizations for Topology within its standard library. Including formalizations for Hausforff spaces and separation properties and topological filters.</p>
 <p>HOL Light does contain some formalizations for topology, mainly for the purpose of it’s real analysis library.</p>
 <p>All provers therefore contain formalizations for topology. We could not identify any missing library components.</p>
+<h3 id="combinatorics">Combinatorics</h3>
+<p>Combinatorics is the study of methods used for counting. It’s subfields include Enumerative, Extremal and Graph Theory.</p>
+<p>Coq also has formalizations for enumerative combinatorics, graph theory in its package ecosytem, but doesn’t have any formalizations for extremal combinatorics.</p>
+<p>Isabelle has proofs from enumerative combinatorics and graph theory in its archive of formal proofs. However, there does not seem to be any proofs from extremal combinatorics.</p>
+<p>HOL Light has formalizations for enumaritev combinatorics and graph theory, but again, not extremal combinatorics.</p>
+<p>All theorem prover provers are lacking extremal combinarics, but have enumaritive combinatorics and graph theory.</p>
+<h2 id="geometry">Geometry</h2>
+<p>Geometry is the study of the properties of space to do with distance.</p>
+<p>Coq, Isabelle and HOL Light all have formalizations for geometry.</p>
 <h3 id="probability">Probability</h3>
 <p>Probability is the study of the likelihood that certain events will occur, or the likelihood that a proposition is true, depending on your interpretation.</p>
 <p>Coq does not contain any formalizations for probability in it’s standard library. It however has several formalizations of probability in its package ecosystem, such as coq-alea.</p>

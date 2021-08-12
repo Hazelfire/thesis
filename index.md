@@ -143,7 +143,6 @@ relevant for others?*
 ## Use of ITPs
 ITPs are very interesting pieces of software
 
-
 A full review of ITPs in Formal Methods was conducted by
 Nawaz [@nawaz_survey_2019].
 
@@ -1179,7 +1178,7 @@ mathematics, such as probability or analysis, then Coq also offers a
 collection of community maintained packages that can form as a basis for
 your work or theory.
 
-HOL Light, on the other hand, do not have a package management system.
+Isabelle and HOL Light, on the other hand, do not have a package management system.
 Isabelle in particular therefore has a lot of resources in it's standard
 library that cover large sweeps of mathematics of many varieties.
 Because of this, if comparing standard libraries directly, it could be
@@ -1195,6 +1194,13 @@ One particular package of note is Coq-CoRN (\"Constructive Coq
 Repository at Nijmegen\"). This package contains many formalisms not
 present in the standard library, including analysis, and is commonly
 used in the Coq community.
+
+It should be noted that although Isabelle doesn't have a convential package management
+system, it does have an archive of formal proofs. The archive of formal proofs
+allows community members to submit Isabelle theories covering a particular topic.
+Isabelle's archive of formal proofs is slightly different to a package ecosystem
+because it includes "finished products", that is proofs that are interesting but
+not likely to be used in further development of proofs.
 
 HOL Light also doesn't have a package manager, however HOL Light, like
 Isabelle, has parts of mathematics within its standard library. HOL
@@ -1224,6 +1230,38 @@ In figure [1](#fig:library_scope){reference-type="ref"
 reference="fig:library_scope"}, a summary of which topics are covered by
 each prover is shown. We will detail each of these categories in the
 following sections.
+
+::: {#tab:litresults}
+  Area             Sub-Field                            Provers
+  ---------------- ------------------------------------ ------------------------
+  Algebra          Groups                               Coq, Isabelle
+  Algebra          Rings                                Coq, Isabelle, HOL Light
+  Algebra          Fields                               Coq, Isabelele, HOL Light
+  Algebra          Lattices                             Coq, Isabelle
+  Algebra          Modules                              Coq, Isabelle
+  Foundations      Categories                           Coq, Isabelle
+  Foundations      Sets                                 Coq, Isabelle
+  Foundations      Proof                                Coq, Isabelle, HOL Light
+  Number Theory    Fundemental Theorem of Arithmetic    Coq, Isabelle
+  Number Theory    Chinese Remainder Theorem            Coq, Isabelle
+  Number Theory    Fermat/Euler's Theorem               Coq, Isabelle
+  Analysis         Multivariate Analysis                Coq, Isabelle, HOL Light
+  Analysis         Functional Analysis                  Isabelle
+  Analysis         Complex Analysis                     Isabelle
+  Analysis         Nonstandard Analysis                 Isabelle
+  Topology         Metric Spaces                        Isabelle, Coq, HOL Light
+  Topology         Filters & Nets                       Isabelle, Coq
+  Combinatorics    Enumerative                          Coq, Isabelle\*, HOL Light
+  Combinatorics    Extremal                             
+  Combinatorics    Graph Theory                         Coq, Isabelle\*, HOL Light
+  Geometry         Geometry                             Coq, Isabelle, HOL Light
+
+  Computer Science Floats                               Coq, Isabelle, HOL Light
+  Computer Science Complexity                           Coq, Isabelle
+  Probability      Probability Theory                   Coq, Isabelle
+
+  : Literature review papers
+:::
 
 ![Caterogies of Mathematics covered by
 ITP](Images/Problems/Quality of Library/out.png){#fig:library_scope
@@ -1335,6 +1373,22 @@ purpose of it's real analysis library.
 
 All provers therefore contain formalizations for topology. We could not
 identify any missing library components.
+
+### Combinatorics
+Combinatorics is the study of methods used for counting. It's subfields include Enumerative, Extremal and Graph Theory.
+
+Coq also has formalizations for enumerative combinatorics, graph theory in its package ecosytem, but doesn't have any formalizations for extremal combinatorics.
+
+Isabelle has proofs from enumerative combinatorics and graph theory in its archive of formal proofs. However, there does not seem to be any proofs from extremal combinatorics.
+
+HOL Light has formalizations for enumaritev combinatorics and graph theory, but again, not extremal combinatorics.
+
+All theorem prover provers are lacking extremal combinarics, but have enumaritive combinatorics and graph theory.
+
+## Geometry
+Geometry is the study of the properties of space to do with distance.
+
+Coq, Isabelle and HOL Light all have formalizations for geometry.
 
 ### Probability
 
