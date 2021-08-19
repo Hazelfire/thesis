@@ -1245,41 +1245,34 @@ following sections.
   Algebra          Abstract                             Coq, Isabelle, HOL Light
   Algebra          Linear                               Coq, Isabelle, HOL Light
   Algebra          Universal                            Coq, Isabelle
-
   Foundations      Model Theory                         
   Foundations      Sets                                 Coq, Isabelle
   Foundations      Proof                                Coq, Isabelle, HOL Light
-
   Number Theory    Analytic
   Number Theory    Algebraic
   Number Theory    Diophantine
-
   Analysis         Real Analysis
   Analysis         Functional Analysis                  Isabelle
   Analysis         Complex Analysis                     Isabelle
-  Analysis         Harmonic Analysis                     Isabelle
-  Analysis         Measure Theory                     Isabelle
-
-  Topology         General                        Isabelle, Coq, HOL Light
-  Topology         Algebraic                       Isabelle, Coq
+  Analysis         Harmonic Analysis                    Isabelle
+  Analysis         Measure Theory                       Isabelle
+  Topology         General                              Isabelle, Coq, HOL Light
+  Topology         Algebraic                            Isabelle, Coq
   Topology         Differential
-
   Combinatorics    Enumerative                          Coq, Isabelle\*, HOL Light
   Combinatorics    Extremal                             
   Combinatorics    Graph Theory                         Coq, Isabelle\*, HOL Light
-
-  Geometry         Convex                             Coq, Isabelle, HOL Light
+  Geometry         Convex                               Coq, Isabelle, HOL Light
   Geometry         Discrete                             Coq, Isabelle, HOL Light
-  Geometry         Differential                             Coq, Isabelle, HOL Light
-  Geometry         Algebraic                             Coq, Isabelle, HOL Light
-  Geometry         Arithmetic                             Coq, Isabelle, HOL Light
-  Geometry         Diophantine                             Coq, Isabelle, HOL Light
-
-  Computer Science Numerical Analysis                               Coq, Isabelle, HOL Light
-  Computer Science Computer Algebra                               Coq, Isabelle, HOL Light
-  Computer Science Complexity Theory                           Coq, Isabelle
+  Geometry         Differential                         Coq, Isabelle, HOL Light
+  Geometry         Algebraic                            Coq, Isabelle, HOL Light
+  Geometry         Arithmetic                           Coq, Isabelle, HOL Light
+  Geometry         Diophantine                          Coq, Isabelle, HOL Light
+  Computer Science Numerical Analysis                   Coq, Isabelle, HOL Light
+  Computer Science Computer Algebra                     Coq, Isabelle, HOL Light
+  Computer Science Complexity Theory                    Coq, Isabelle
   Probability      Probability Theory                   Coq, Isabelle
-  Probability      Statistics                   Coq, Isabelle
+  Probability      Statistics                           Coq, Isabelle
 
   : Literature review papers
 :::
