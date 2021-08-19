@@ -132,17 +132,18 @@ Date: 08/08/2020<br />
 <h1 id="introduction">Introduction</h1>
 <p>When building software systems, one of, if not the most important aspect is determining the correctness of the software built. Software is correct if, given some specification, the software implements that specification.</p>
 <p>For some systems, being correct is more important than others. Being correct may not be as important in an application managing tasks in comparison to the software running in safety-critical systems such as pacemakers, the internal components of cars or software that runs on space equipment. If these systems fail, it could mean the loss of a substantial amount of money or serious injury or death. As of such, more effort should be put into ensuring that safety-critical systems are correct.</p>
-<p>There is a variety of methods that are valuable in ensuring software correctness, and one the most powerful methods of doing so is through the use of <a href="https://en.wikipedia.org/wiki/Formal_methods"><strong>Formal Methods</strong></a>. Formal Methods is using methods from mathematics to prove properties of correctness of software and hardware systems.</p>
-<p>Formal Methods can include writing down a specification for your software, and proving by hand that the software that you built (or a section of the software) correctly implements that specification. This type of work is invaluable not only to check the correctness of software, but also help the developer to understand the software that they just built.</p>
-<p>Computers have also been used to prove correctness properties of systems. Two main types of formal methods exist in this category. <strong>Model Checkers</strong> and <strong>Theorem Provers</strong>. A model checker proves that properties exist</p>
-<p><strong>Model Checkers</strong> allow specifying your system as a state machine, and can automatically prove that your code matches this specification. Model Checkers are therefore limited in scope, as a state machine is often not complicated enough to represent arbitrary computer programs. Model checkers are however used in industry to verify properties of software systems, such an ensuring that an asynchronous system will never deadlock. Examples of model checkers include SPIN and Alloy. Model checkers often vary in their scope.</p>
-<p>Theorem provers can be, as the name suggests, help prove theorems about your code in the same way that someone with a pen and paper would. Because computer programs can be represented as logic, (such as Logic of Computable Functions or Calculus of Constructions). There is actually a duality with mathematics and programming that allows theorem provers to not only verify the correctness of computer systems but prove real math theorems, and they have been used with success in both categories.</p>
-<p>Although the distinction is not completely clear cut, theorem provers fall into two large main categories. Those categories are <strong>Automated Theorem Provers</strong>, and <strong>Interactive Theorem Provers</strong>.</p>
+<!-- I would love to add a discussion here about non-safety critical systems. -->
+<p>There is a variety of methods that are valuable in ensuring software correctness, and one the most powerful methods of doing so is through the use of <a href="https://en.wikipedia.org/wiki/Formal_methods"><strong>Formal Methods</strong></a>. Formal Methods is using methods from mathematics to prove properties of correctness of software and hardware systems. <!-- Needs discussion of other methods --></p>
+<p>Formal Methods can include writing down a specification for your software, and proving by hand that the software that you built (or a section of the software) correctly implements that specification. This type of work is invaluable not only to check the correctness of software, but also help the developer to understand the software that they just built. <!-- I would love an example of this given to the reader as an exercice --></p>
+<p>Computers have also been used to prove correctness properties of systems. Two main types of formal methods exist in this category. <strong>Model Checkers</strong> and <strong>Theorem Provers</strong>.</p>
+<p><strong>Model Checkers</strong> allow specifying your system as a state machine, and can automatically prove that your code matches this specification. Model Checkers are therefore limited in scope, as a state machine is often not complicated enough to represent arbitrary computer programs. Model checkers are however used in industry to verify properties of software systems, such an ensuring that an asynchronous system will never deadlock. Examples of model checkers include SPIN and Alloy. Model checkers often vary in their scope. <!-- I need more examples of SPIN and Alloy, what they are used for etc --></p>
+<p>Theorem provers can be, as the name suggests, help prove theorems about your code in the same way that someone with a pen and paper would. Because computer programs can be represented as logic, (such as Logic of Computable Functions or Calculus of Constructions). There is actually a duality with mathematics and programming that allows theorem provers to not only verify the correctness of computer systems but prove real math theorems, and they have been used with success in both categories. <!-- Examples needed --></p>
+<p>Although the distinction is not completely clear cut, theorem provers fall into two large main categories. Those categories are <strong>Automated Theorem Provers</strong>, and <strong>Interactive Theorem Provers</strong>. <!-- Diagram? --></p>
 <p>Automatic Theorem Provers attempt to take a specification and a computer program and prove that the program meets the specification without user input. This is fantastic if it works, but sadly verifying software is an undecidable problem, and Automatic Theorem Provers do not always succeed in finding a proof or disproof for whether the code meets its specification.</p>
 <p>Interactive Theorem Provers allow the user to interactively prove that a specification is satisfied by a computer program. This is akin to the user writing a proof for correctness on pen and paper, except that the program only allows the user to input a correct proof. With the guidance of humans, Interactive Theorem Provers allow the verification of very large scale projects. Developments in mathematics have been done in theorem provers as well.</p>
 <p>Interactive Theorem Provers (ITPs) provide a unique challenge as they require interacting with the user. The user and the ITP have to work together to attempt to verify the software. When a user is involved, usability must be considered.</p>
 <p>ITPs offer an opportunity to verify large scale software and hardware systems for correctness, and as software systems only get larger, ITPs could be a solution to ensuring quality and correctness of software that’s produced.</p>
-<p>ITPs have already been used to verify crytographic libraries, compilers and microkernels.</p>
+<p>ITPs have already been used to verify crytographic libraries, compilers and microkernels. <!-- Examples? --></p>
 <p>However, although ITPs have been used in several large scale projects, use of ITPs is far from commonplace. This thesis is a diagnostic attempt at discovering reasons for the lack of uptake, in order to decipher how we can encourage the usage of ITPs and ensure more correct software in industry.</p>
 <p>In this thesis, we investigate the usability of ITPs. Usability is often quite a vague concept, but in this thesis we define it widely. We define usability as: “The ease for which a program can be used for it’s intended purpose,” which therefore can include things like the scope of features currently supported by the theorem prover.</p>
 <p>We attempt to answer this question by in a sense “cross polinating” ITP ideas, comparing theroem provers up against each other across many different dimensions in order to decipher promising directions for the improvements of ITPS.</p>
@@ -1056,138 +1057,96 @@ rightarrow to render math notation, whereas Agda allows unicode in source files.
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Algebra</td>
-<td style="text-align: left;">Groups</td>
-<td style="text-align: left;">Coq, Isabelle</td>
+<td style="text-align: left;">Abstract</td>
+<td style="text-align: left;">Coq, Isabelle, HOL Light</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Algebra</td>
-<td style="text-align: left;">Rings</td>
+<td style="text-align: left;">Linear</td>
 <td style="text-align: left;">Coq, Isabelle, HOL Light</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Algebra</td>
-<td style="text-align: left;">Fields</td>
-<td style="text-align: left;">Coq, Isabelele, HOL Light</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Algebra</td>
-<td style="text-align: left;">Lattices</td>
+<td style="text-align: left;">Universal</td>
 <td style="text-align: left;">Coq, Isabelle</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Algebra</td>
-<td style="text-align: left;">Modules</td>
-<td style="text-align: left;">Coq, Isabelle</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Foundations</td>
-<td style="text-align: left;">Categories</td>
-<td style="text-align: left;">Coq, Isabelle</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Foundations</td>
-<td style="text-align: left;">Sets</td>
-<td style="text-align: left;">Coq, Isabelle</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Foundations</td>
-<td style="text-align: left;">Proof</td>
-<td style="text-align: left;">Coq, Isabelle, HOL Light</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Number Theory</td>
-<td style="text-align: left;">Fundemental Theorem of Arithmetic</td>
-<td style="text-align: left;">Coq, Isabelle</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Number Theory</td>
-<td style="text-align: left;">Chinese Remainder Theorem</td>
-<td style="text-align: left;">Coq, Isabelle</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Number Theory</td>
-<td style="text-align: left;">Fermat/Euler’s Theorem</td>
-<td style="text-align: left;">Coq, Isabelle</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Analysis</td>
-<td style="text-align: left;">Multivariate Analysis</td>
-<td style="text-align: left;">Coq, Isabelle, HOL Light</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Analysis</td>
-<td style="text-align: left;">Functional Analysis</td>
-<td style="text-align: left;">Isabelle</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Analysis</td>
-<td style="text-align: left;">Complex Analysis</td>
-<td style="text-align: left;">Isabelle</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Analysis</td>
-<td style="text-align: left;">Nonstandard Analysis</td>
-<td style="text-align: left;">Isabelle</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Topology</td>
-<td style="text-align: left;">Metric Spaces</td>
-<td style="text-align: left;">Isabelle, Coq, HOL Light</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Topology</td>
-<td style="text-align: left;">Filters &amp; Nets</td>
-<td style="text-align: left;">Isabelle, Coq</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Combinatorics</td>
-<td style="text-align: left;">Enumerative</td>
-<td style="text-align: left;">Coq, Isabelle*, HOL Light</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Combinatorics</td>
-<td style="text-align: left;">Extremal</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Combinatorics</td>
-<td style="text-align: left;">Graph Theory</td>
-<td style="text-align: left;">Coq, Isabelle*, HOL Light</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Geometry</td>
-<td style="text-align: left;">Geometry</td>
-<td style="text-align: left;">Coq, Isabelle, HOL Light</td>
 </tr>
 </tbody>
 </table>
-<p>Computer Science Floats Coq, Isabelle, HOL Light Computer Science Complexity Coq, Isabelle Probability Probability Theory Coq, Isabelle</p>
+<p>Foundations Model Theory<br />
+Foundations Sets Coq, Isabelle Foundations Proof Coq, Isabelle, HOL Light</p>
+<p>Number Theory Analytic Number Theory Algebraic Number Theory Diophantine</p>
+<p>Analysis Real Analysis Analysis Functional Analysis Isabelle Analysis Complex Analysis Isabelle Analysis Harmonic Analysis Isabelle Analysis Measure Theory Isabelle</p>
+<p>Topology General Isabelle, Coq, HOL Light Topology Algebraic Isabelle, Coq Topology Differential</p>
+<p>Combinatorics Enumerative Coq, Isabelle*, HOL Light Combinatorics Extremal<br />
+Combinatorics Graph Theory Coq, Isabelle*, HOL Light</p>
+<p>Geometry Convex Coq, Isabelle, HOL Light Geometry Discrete Coq, Isabelle, HOL Light Geometry Differential Coq, Isabelle, HOL Light Geometry Algebraic Coq, Isabelle, HOL Light Geometry Arithmetic Coq, Isabelle, HOL Light Geometry Diophantine Coq, Isabelle, HOL Light</p>
+<p>Computer Science Numerical Analysis Coq, Isabelle, HOL Light Computer Science Computer Algebra Coq, Isabelle, HOL Light Computer Science Complexity Theory Coq, Isabelle Probability Probability Theory Coq, Isabelle Probability Statistics Coq, Isabelle</p>
 <p>: Literature review papers</p>
 </div>
 <figure>
 <img src="Images/Problems/Quality%20of%20Library/out.png" id="fig:library_scope" alt="Caterogies of Mathematics covered by ITP" /><figcaption aria-hidden="true">Caterogies of Mathematics covered by ITP</figcaption>
 </figure>
 <h3 id="algebra">Algebra</h3>
-<p>Algebra includes the study of algebraic structures, starting with numbers, then including the study of groups, rings, fields and modules. It also extends to Order Theory and Lattices.</p>
-<p>In terms of algebraic structures, Coq includes the concept of a ring and a field. It however does not include groups within its library, nor lattices in order theory. Order theory, lattices and groups are however found in coq-CoRN. Coq therefore, with the help of its packages, covers the fundamentals of abstract algebra.</p>
+<p>Algebra is a broad area of math dedicated to the study of mathematical objects, and how to manipulate these mathematical objects. We split this into three sub-areas, abstract algebra, linear algebra and universal algebra.</p>
+<p>Abstract Algebra is the study of mathematical objects such as groups, rings, fields, modules and lattices. These objects are defined as sets which have operations defined over them that confine to cerain axioms.</p>
+<p>In terms of abstract structures, Coq includes the concept of a ring and a field. It however does not include groups within its library, nor lattices in order theory. Order theory, lattices and groups are however found in coq-CoRN. Coq therefore, with the help of its packages, covers the fundamentals of abstract algebra.</p>
 <p>Isabelle contains packages for fields, modules, groups, rings, order theory and lattices. It furthermore has definitions for conditionally complete lattices, semirings and Archemidian fields. Foundations of abstract algebra are relatively complete in the standard library.</p>
 <p>HOL Light has groups and rings, but no lattices or order theory. It has less support for abstract algebra than Coq and Isabelle.</p>
-<p>In terms of Algebra, HOL Light is the only theorem prover that is missing foundations. CoRN and Isabelle’s standard library cover the basic concepts required to prove theorems.</p>
+<p>Linear Algebra is the study of linear equations, and their applications through vector spaces and matrices.</p>
+<p>Coq does not have support for linear algebra in its main library, but contains support within its package system (coq-lin-alg).</p>
+<p>Isabelle contains formalizations required for linear algebra within its standard library, including matrices (HOL-Matrix_LP.Matrix), vector spaces (HOL.Vector_Spaces) and linear programming (HOL-Matrix_LP).</p>
+<p>HOL Light has some basics for Linear Algebra as required by its Multivariate Calculus library, including Matrices (Multivariate/determinants).</p>
+<p>Finally, Universal Algebra is the study of Algebraic structures themselves, rather than the study of particular examples of Algebras as in Abstract Algebra.</p>
+<p>Coq has some libraries tagged with universal algebra on its package management system, such as coq-math-classes.</p>
+<p>Isabelle has fundemental theorems from universal algebra inside, HOL-Algebra such as the first and second isomorphism theorems.</p>
+<p>HOL Light does not have support for Universal Algebra.</p>
+<p>So in terms of Algebra, Coq and Isabelle contain foundations for most of algebra within its library and packages. However, HOL Light’s support could be improved, particularly in universal and abstract algebra.</p>
 <h3 id="foundations">Foundations</h3>
-<p>Foundations include proof theory, set theory and category theory. These are often included in theorem prover libraries as they are required as a foundation for proofs.</p>
-<p>Coq includes Classical and Constructive Logic in proof theory. Although they are not included in the standard library, Coq includes packages for ZFC and category theory. Coq contains other systems such as hoare logic through it’s package manager.</p>
-<p>Isabelle has a wide array of logics for different purposes. It contains support for Hoare logic, ZFC. It does not have support for Category Theory within it’s library, except for a formalization of Bounded Natural Functors for the purpose of formalizing variable assignments. Formalizations of Category theory have however been formalized by the community <span class="citation" data-cites="Category3-AFP">(Stark 2016)</span>.</p>
-<p>HOL Light contains first order and higher order logic. It however does not include category theory or ZFC.</p>
-<p>Coq and Isabelle again both have foundations in different logics. Neither have missing foundations within this field. HOL Light however, is missing category theory.</p>
+<p>Foundations include proof theory, set theory and model theory. These are often included in theorem prover libraries as they are required as a foundation for proofs.</p>
+<p>ITPs themselves are implementations of different logics within proof theory, so its a bit unusual to ask whether an ITP supports proof theory. This investigation attempts to look into the support for different foundational ideas within proof theory.</p>
+<p>In Coq’s package management system, Coq contains support for proof theory (coc-propcal). Including Natural deduction calculus, hilbert calculus and sequent calculus.</p>
+<p>Isabelle contains support for different logics, such as natural deduction (FOL) and sequent calculus (Sequent)</p>
+<p>HOL Light also includes natural deduction and sequent calculus. <!-- Not sureabout this one --></p>
+<p>Set Theory is the study of sets, often in terms of foundations of mathematics.</p>
+<p>Coq includes Classical and Constructive Logic in proof theory. The most common being Zermelo–Fraenkel set theory.</p>
+<p>Coq has packages for Zermelo-Fraenkel Set theory (coq-zf)</p>
+<p>Isabelle has a section of its library for Zermelo-Fraenkel (ZF).</p>
+<p>HOL Light does not have formalizations for Zermelo-Fraenkel.</p>
+<p>Finally, Model Theory is the study of the semantic relationships between different formal theories.</p>
+<!-- Not sure how to do Model theory -->
+<p>Therefore, Coq and Isabelle have strong support for Foundational Mathematics, but it is missing from within HOL Light</p>
 <h3 id="number-theory">Number Theory</h3>
-<p>Number Theory includes the study of numbers (usually integers) and how they relate to each other.</p>
-<p>Coq does not have any findings within number theory in the standard library, other than basic definitions of numbers. It however covers some findings within the standard library. Coq contains formalizations and theorems for number theory within its package system.</p>
-<p>Isabelle has definitions and theorems within number theory, such as the fundamental theorem of arithmetic, Chinese remainder theorem and Fermat/Euler theorem.</p>
-<p>HOL Light does not contain formalizations for number theory.</p>
-<p>Coq and Isabelle again have definitions within Number Theory. Neither are missing foundations, and HOL Light’s support could be improved.</p>
+<p>Number Theory includes the study of numbers (usually integers) and how they relate to each other. We split it up into three sections, Analytic Number Theory, Algebraic Number Theory and Diophantine Number Theory.</p>
+<p>Analytic Number Theory is the use of methods from mathematical analysis to solve problems related to integers. Results we looked for to determine whether a library supported this were things like Dirichlet L-functions and an analytic proof to the prime number theorem.</p>
+<p>Coq does not have findings or tools from Analytic Number theory within its package ecosystem or standard library.</p>
+<p>Isabelle does not have tools from Analytic Number theory within its library, but does have results in its archive of formal proofs. Particularly, <a href="https://www.isa-afp.org/entries/Dirichlet_L.html">Drichlet L Functions</a>.</p>
+<p>HOL Light does not have any findings.</p>
+<p>Algebraic Number Theory uses the study of abstract algebra to study integers and rationals and their generalizations. To determine whether this was covered, we looked for formalizations talking about unique prime factorizations over different algebraic structures and prime ideals.</p>
+<p>Coq does not have any findings from Algebraic Number Theory.</p>
+<p>Isabelle has findings from Algebraic Number Theory in (HOL-Algebra). <!-- Not sure about this one --></p>
+<p>HOL Light does not have findings from algebraic number theory.</p>
+<p>Finally, Diophantine Geometry is the study of the amount of solutions Diophantine equation have. To determine whether a library has basics covered for this areas, we looked into definitions for Diophantine Geometry.</p>
+<p>Coq does not have findings for Diophantine Geometry in its library or package management system. It however has a formalization for Hilbert’s 10th problem which is to do with diophantine Geometry. <!-- Needs to be cited --></p>
+<p>Isabelle also contains a formalization for Hilbert’s 10th problem.</p>
+<p>HOL Light does not have findings in this area of mathematics.</p>
+<p>Therefore, Isabelle seems to lead the other provers in terms of findings from number theory, with Coq coming next and HOL Light not containing any proofs.</p>
 <h3 id="analysis">Analysis</h3>
-<p>Analysis is the study of limits, differentiation, integration infinite series, and other related topics.</p>
-<p>Coq does not contain any formalisms for the study of analysis in the standard library, but does include definitions within Coq-CoRN.</p>
+<p>Analysis is the study of limits, differentiation, integration, infinite series, and other related topics. We split it into four different subfields, Real Analysis, Complex Analysis, Functional Analysis and Measure Theory.</p>
+<p>Real Analysis is the study of differention and rates of change over over the real numbers.</p>
+<p>Coq contains packages for real analysis such as coq-coqtail and coq-coquelicot.</p>
+<p>Isabelle has support for Real Analysis in HOL-Analysis.</p>
+<p>HOL Light has support for analysis in its multivariate library.</p>
+<p>Complex Analysis is the study of rates of change and integrals over a the complex numbers.</p>
+<p>Coq contains formalizms for complex analysis within coq-coqtail.</p>
+<p>Isabelle contains formalizms for Complex Analysis in HOL-ComplexAnalysis.</p>
+<p>HOL Light has support for complex analysis in its multivariate library.</p>
+<p>Functional Analysis in analysis as applied to functions, often looking into integration and differentiation as it applies to infinite dimensional spaces.</p>
+<p>Coq does not contain formalizations for functional analysis. Although it has been formalized by some researchers. <!-- Please cite --></p>
+<p>Isabelle contains some formalizations for functional analysis in its library, particularly The Hahn-Banach theorem, which is one of the fundemental theorems of functional analysis.</p>
+<p>HOL Light does not contain formalizations of functional analysis.</p>
+<p>Measure theory is the study of measures. That is, ways of assigning cardinality to subsets of a set.</p>
+<p>Coq contains a formalization of measure theory for its use in the formalization of probability within coq-random. But other than that, does not contain any other formalizations.</p>
+<p>standard library, but does include definitions within Coq-CoRN.</p>
 <p>Isabelle has the most tools for analysis, including modules for Complex Analysis, Nonstandard Analysis, Asymptopic analysis, Multivariate Analysis and Functional Analysis.</p>
 <p>HOL Light has definitions for differentiation and multivariate analysis.</p>
 <p>All three theorem provers in this case have definitions for analysis. However, Isabelle has a clear margin with support for different areas of analysis.</p>
@@ -1218,8 +1177,12 @@ rightarrow to render math notation, whereas Agda allows unicode in source files.
 <p>Isabelle contains formalizations for floating point numbers and complexity theory within it’s standard library. Including formalizations for IEEE floats and Big-O notation</p>
 <p>HOL Light has a formalization for IEEE floats but not complexity theory.</p>
 <p>Therefore, Coq and Isabelle again contain formalizations for basic computer science, however HOL Light could be improved in its support</p>
-<h2 id="poor-abstraction-mechanisms">Poor abstraction mechanisms</h2>
-<p>In Focus Groups, KeY was mentioned to have bad abstraction mechanisms, often forcing the user to work at low levels of abstraction <span class="citation" data-cites="beckert_usability_2015">(Beckert, Grebing, and Böhl 2015)</span>.</p>
+<h2 id="repetitive-trivial-interactions">Repetitive Trivial Interactions</h2>
+<p>In Focus Groups, KeY was mentioned to require that the user to do many trivial interactions.</p>
+<p>Because KeY is a Direct Manipulation Prover, proving propositions manually requires pointing and clicking at the parts of the proof that you want to edit. Other provers on the other hand, have a textual interface for proving theorems, and therefore allow for finer detailed interactions with the prover.</p>
+<p>The classic way of preventing trivial interactions is to improve the level of abstraction that the user works on. In this case, there are very little ways to improve the abstraction level that KeY works on. The main hope is that KeY can solve the goal automatically, or with the help of strategy macros. So this issue still exists.</p>
+<p>Improving this would be difficult without turning KeY into a textual prover.</p>
+<p><span class="citation" data-cites="beckert_usability_2015">(Beckert, Grebing, and Böhl 2015)</span>.</p>
 <p>It’s claimed that KeY often requires tedious interaction with low level logic formulas. interacting</p>
 <p>Issues with abstraction is difficult to determine without looking at experimental evidence. As different levels of abstraction simplicity offer tradeoffs that are non trivial. The mechanisms discussed here include ability to use typeclasses, modules and type theory.</p>
 <p>Isabelle, Coq and HOL Light all have these features. However, KeY is a direct manipulation therom</p>
@@ -1437,9 +1400,6 @@ Shams, Zohreh, Yuri Sato, Mateja Jamnik, and Gem Stapleton. 2018. <span>“Acces
 </div>
 <div id="ref-spichkova_human-centred_2017" class="csl-entry" role="doc-biblioentry">
 Spichkova, Maria, and Milan Simic. 2017. <span>“Human-Centred Analysis of the Dependencies Within Sets of Proofs.”</span> <em>Knowledge-Based and Intelligent Information &amp; Engineering Systems: Proceedings of the 21st International Conference, KES-20176-8 September 2017, Marseille, France</em> 112 (January): 2290–98. <a href="https://doi.org/10.1016/j.procs.2017.08.256">https://doi.org/10.1016/j.procs.2017.08.256</a>.
-</div>
-<div id="ref-Category3-AFP" class="csl-entry" role="doc-biblioentry">
-Stark, Eugene W. 2016. <span>“Category Theory with Adjunctions and Limits.”</span> <em>Archive of Formal Proofs</em>, June.
 </div>
 <div id="ref-tassi_interactive_2008" class="csl-entry" role="doc-biblioentry">
 Tassi, Enrico. 2008. <span>“Interactive Theorem Provers: Issues Faced as a User and Tackled as a Developer.”</span> {PhD} {Thesis}, alma. <a href="http://amsdottorato.unibo.it/917/">http://amsdottorato.unibo.it/917/</a>.

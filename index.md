@@ -2,6 +2,7 @@
 title: A definitive reference on the usability of Interactive Theorem Provers
 author: Sam Nolan
 bibliography: References.bib
+strip-comments: true
 ---
 ::: titlepage
 ::: center
@@ -55,20 +56,23 @@ substantial amount of money or serious injury or death. As of such, more
 effort should be put into ensuring that safety-critical systems are
 correct.
 
+<!-- I would love to add a discussion here about non-safety critical systems. -->
+
 There is a variety of methods that are valuable in ensuring software correctness,
 and one the most powerful methods of doing so is through the use of [**Formal Methods**](https://en.wikipedia.org/wiki/Formal_methods).
 Formal Methods is using methods from mathematics to prove properties of correctness
 of software and hardware systems.
+<!-- Needs discussion of other methods -->
 
 Formal Methods can include writing down a specification for your software, and
 proving by hand that the software that you built (or a section of the software)
 correctly implements that specification. This type of work is invaluable not
 only to check the correctness of software, but also help the developer to understand
 the software that they just built.
+<!-- I would love an example of this given to the reader as an exercice -->
 
 Computers have also been used to prove correctness properties of systems. Two
 main types of formal methods exist in this category. **Model Checkers** and **Theorem Provers**.
-A model checker proves that properties exist 
 
 **Model Checkers** allow specifying your system as a state machine, and can
 automatically prove that your code matches this specification. Model
@@ -77,6 +81,7 @@ complicated enough to represent arbitrary computer programs. Model checkers are
 however used in industry to verify properties of software systems, such
 an ensuring that an asynchronous system will never deadlock. Examples of
 model checkers include SPIN and Alloy. Model checkers often vary in their scope.
+<!-- I need more examples of SPIN and Alloy, what they are used for etc -->
 
 Theorem provers can be, as the name suggests, help prove theorems about your
 code in the same way that someone with a pen and paper would. Because computer
@@ -85,10 +90,12 @@ Calculus of Constructions). There is actually a duality with mathematics and
 programming that allows theorem provers to not only verify the correctness of
 computer systems but prove real math theorems, and they have been used with
 success in both categories.
+<!-- Examples needed -->
 
 Although the distinction is not completely clear cut, theorem provers fall into 
 two large main categories. Those categories are **Automated Theorem Provers**, and
 **Interactive Theorem Provers**.
+<!-- Diagram? -->
 
 Automatic Theorem Provers attempt to take a specification and a computer program
 and prove that the program meets the specification without user input. This is
@@ -114,6 +121,7 @@ to ensuring quality and correctness of software that's produced.
 
 ITPs have already been used to verify crytographic libraries, compilers and
 microkernels.
+<!-- Examples? -->
 
 However, although ITPs have been used in several large scale projects, use of
 ITPs is far from commonplace. This thesis is a diagnostic attempt at discovering
@@ -1234,31 +1242,44 @@ following sections.
 ::: {#tab:litresults}
   Area             Sub-Field                            Provers
   ---------------- ------------------------------------ ------------------------
-  Algebra          Groups                               Coq, Isabelle
-  Algebra          Rings                                Coq, Isabelle, HOL Light
-  Algebra          Fields                               Coq, Isabelele, HOL Light
-  Algebra          Lattices                             Coq, Isabelle
-  Algebra          Modules                              Coq, Isabelle
-  Foundations      Categories                           Coq, Isabelle
+  Algebra          Abstract                             Coq, Isabelle, HOL Light
+  Algebra          Linear                               Coq, Isabelle, HOL Light
+  Algebra          Universal                            Coq, Isabelle
+
+  Foundations      Model Theory                         
   Foundations      Sets                                 Coq, Isabelle
   Foundations      Proof                                Coq, Isabelle, HOL Light
-  Number Theory    Fundemental Theorem of Arithmetic    Coq, Isabelle
-  Number Theory    Chinese Remainder Theorem            Coq, Isabelle
-  Number Theory    Fermat/Euler's Theorem               Coq, Isabelle
-  Analysis         Multivariate Analysis                Coq, Isabelle, HOL Light
+
+  Number Theory    Analytic
+  Number Theory    Algebraic
+  Number Theory    Diophantine
+
+  Analysis         Real Analysis
   Analysis         Functional Analysis                  Isabelle
   Analysis         Complex Analysis                     Isabelle
-  Analysis         Nonstandard Analysis                 Isabelle
-  Topology         Metric Spaces                        Isabelle, Coq, HOL Light
-  Topology         Filters & Nets                       Isabelle, Coq
+  Analysis         Harmonic Analysis                     Isabelle
+  Analysis         Measure Theory                     Isabelle
+
+  Topology         General                        Isabelle, Coq, HOL Light
+  Topology         Algebraic                       Isabelle, Coq
+  Topology         Differential
+
   Combinatorics    Enumerative                          Coq, Isabelle\*, HOL Light
   Combinatorics    Extremal                             
   Combinatorics    Graph Theory                         Coq, Isabelle\*, HOL Light
-  Geometry         Geometry                             Coq, Isabelle, HOL Light
 
-  Computer Science Floats                               Coq, Isabelle, HOL Light
-  Computer Science Complexity                           Coq, Isabelle
+  Geometry         Convex                             Coq, Isabelle, HOL Light
+  Geometry         Discrete                             Coq, Isabelle, HOL Light
+  Geometry         Differential                             Coq, Isabelle, HOL Light
+  Geometry         Algebraic                             Coq, Isabelle, HOL Light
+  Geometry         Arithmetic                             Coq, Isabelle, HOL Light
+  Geometry         Diophantine                             Coq, Isabelle, HOL Light
+
+  Computer Science Numerical Analysis                               Coq, Isabelle, HOL Light
+  Computer Science Computer Algebra                               Coq, Isabelle, HOL Light
+  Computer Science Complexity Theory                           Coq, Isabelle
   Probability      Probability Theory                   Coq, Isabelle
+  Probability      Statistics                   Coq, Isabelle
 
   : Literature review papers
 :::
@@ -1268,12 +1289,15 @@ ITP](Images/Problems/Quality of Library/out.png){#fig:library_scope
 width="\\linewidth"}
 
 ### Algebra
+Algebra is a broad area of math dedicated to the study of mathematical objects, 
+and how to manipulate these mathematical objects. We split this into three sub-areas,
+abstract algebra, linear algebra and universal algebra.
 
-Algebra includes the study of algebraic structures, starting with
-numbers, then including the study of groups, rings, fields and modules.
-It also extends to Order Theory and Lattices.
+Abstract Algebra is the study of mathematical objects such as groups, rings, 
+fields, modules and lattices. These objects are defined as sets which have operations
+defined over them that confine to cerain axioms.
 
-In terms of algebraic structures, Coq includes the concept of a ring and
+In terms of abstract structures, Coq includes the concept of a ring and
 a field. It however does not include groups within its library, nor
 lattices in order theory. Order theory, lattices and groups are however
 found in coq-CoRN. Coq therefore, with the help of its packages, covers
@@ -1287,60 +1311,167 @@ abstract algebra are relatively complete in the standard library.
 HOL Light has groups and rings, but no lattices or order theory. It has
 less support for abstract algebra than Coq and Isabelle.
 
-In terms of Algebra, HOL Light is the only theorem prover that is
-missing foundations. CoRN and Isabelle's standard library cover the
-basic concepts required to prove theorems.
+Linear Algebra is the study of linear equations, and their applications through
+vector spaces and matrices.
+
+Coq does not have support for linear algebra in its main library, but contains
+support within its package system (coq-lin-alg).
+
+Isabelle contains formalizations required for linear algebra within its standard
+library, including matrices (HOL-Matrix\_LP.Matrix), vector spaces 
+(HOL.Vector\_Spaces) and linear programming (HOL-Matrix\_LP).
+
+HOL Light has some basics for Linear Algebra as required by its Multivariate
+Calculus library, including Matrices (Multivariate/determinants).
+
+Finally, Universal Algebra is the study of Algebraic structures themselves, rather
+than the study of particular examples of Algebras as in Abstract Algebra.
+
+Coq has some libraries tagged with universal algebra on its package management
+system, such as coq-math-classes.
+
+Isabelle has fundemental theorems from universal algebra inside, HOL-Algebra
+such as the first and second isomorphism theorems.
+
+HOL Light does not have support for Universal Algebra.
+
+So in terms of Algebra, Coq and Isabelle contain foundations for most of algebra 
+within its library and packages. However, HOL Light's support could be improved,
+particularly in universal and abstract algebra.
 
 ### Foundations
 
-Foundations include proof theory, set theory and category theory. These
+Foundations include proof theory, set theory and model theory. These
 are often included in theorem prover libraries as they are required as a
 foundation for proofs.
 
-Coq includes Classical and Constructive Logic in proof theory. Although
-they are not included in the standard library, Coq includes packages for
-ZFC and category theory. Coq contains other systems such as hoare logic
-through it's package manager.
+ITPs themselves are implementations of different logics within proof theory,
+so its a bit unusual to ask whether an ITP supports proof theory. This investigation
+attempts to look into the support for different foundational ideas within proof
+theory.
 
-Isabelle has a wide array of logics for different purposes. It contains
-support for Hoare logic, ZFC. It does not have support for Category
-Theory within it's library, except for a formalization of Bounded
-Natural Functors for the purpose of formalizing variable assignments.
-Formalizations of Category theory have however been formalized by the
-community [@Category3-AFP].
+In Coq's package management system, Coq contains support for proof theory 
+(coc-propcal). Including Natural deduction calculus, hilbert calculus and sequent
+calculus.
 
-HOL Light contains first order and higher order logic. It however does
-not include category theory or ZFC.
+Isabelle contains support for different logics, such as natural deduction (FOL)
+and sequent calculus (Sequent)
 
-Coq and Isabelle again both have foundations in different logics.
-Neither have missing foundations within this field. HOL Light however,
-is missing category theory.
+HOL Light also includes natural deduction and sequent calculus.
+<!-- Not sureabout this one -->
+
+Set Theory is the study of sets, often in terms of foundations of mathematics.
+ 
+Coq includes Classical and Constructive Logic in proof theory. The most common
+being Zermelo–Fraenkel set theory.
+
+Coq has packages for Zermelo-Fraenkel Set theory (coq-zf)
+
+Isabelle has a section of its library for Zermelo-Fraenkel (ZF).
+
+HOL Light does not have formalizations for Zermelo-Fraenkel.
+
+Finally, Model Theory is the study of the semantic relationships between different
+formal theories. 
+
+<!-- Not sure how to do Model theory -->
+
+Therefore, Coq and Isabelle have strong support for Foundational Mathematics,
+but it is missing from within HOL Light
 
 ### Number Theory
 
 Number Theory includes the study of numbers (usually integers) and how
-they relate to each other.
+they relate to each other. We split it up into three sections, Analytic Number
+Theory, Algebraic Number Theory and Diophantine Number Theory.
 
-Coq does not have any findings within number theory in the standard
-library, other than basic definitions of numbers. It however covers some
-findings within the standard library. Coq contains formalizations and
-theorems for number theory within its package system.
+Analytic Number Theory is the use of methods from mathematical analysis to solve
+problems related to integers. Results we looked for to determine whether a library
+supported this were things like Dirichlet L-functions and an analytic proof to the
+prime number theorem.
 
-Isabelle has definitions and theorems within number theory, such as the
-fundamental theorem of arithmetic, Chinese remainder theorem and
-Fermat/Euler theorem.
+Coq does not have findings or tools from Analytic Number theory within its package
+ecosystem or standard library.
 
-HOL Light does not contain formalizations for number theory.
+Isabelle does not have tools from Analytic Number theory within its library, but
+does have results in its archive of formal proofs. Particularly, [Drichlet L Functions](https://www.isa-afp.org/entries/Dirichlet_L.html).
 
-Coq and Isabelle again have definitions within Number Theory. Neither
-are missing foundations, and HOL Light's support could be improved.
+HOL Light does not have any findings.
+
+Algebraic Number Theory uses the study of abstract algebra to study integers and
+rationals and their generalizations. To determine whether this was covered,
+we looked for formalizations talking about unique prime factorizations over different
+algebraic structures and prime ideals.
+
+Coq does not have any findings from Algebraic Number Theory.
+
+Isabelle has findings from Algebraic Number Theory in (HOL-Algebra).
+<!-- Not sure about this one -->
+
+HOL Light does not have findings from algebraic number theory.
+
+Finally, Diophantine Geometry is the study of the amount of solutions
+Diophantine equation have. To determine whether a library has basics covered
+for this areas, we looked into definitions for Diophantine Geometry.
+
+Coq does not have findings for Diophantine Geometry in its library or package
+management system. It however has a formalization for Hilbert's 10th problem
+which is to do with diophantine Geometry.
+<!-- Needs to be cited -->
+
+Isabelle also contains a formalization for Hilbert's 10th problem.
+
+HOL Light does not have findings in this area of mathematics.
+
+Therefore, Isabelle seems to lead the other provers in terms of findings from
+number theory, with Coq coming next and HOL Light not containing any proofs.
 
 ### Analysis
+Analysis is the study of limits, differentiation, integration, infinite series,
+and other related topics. We split it into four different subfields, Real
+Analysis, Complex Analysis, Functional Analysis and Measure Theory.
 
-Analysis is the study of limits, differentiation, integration infinite
-series, and other related topics.
+Real Analysis is the study of differention and rates of change over over the
+real numbers. 
 
-Coq does not contain any formalisms for the study of analysis in the
+Coq contains packages for real analysis such as coq-coqtail and coq-coquelicot.
+
+Isabelle has support for Real Analysis in HOL-Analysis.
+
+HOL Light has support for analysis in its multivariate library.
+
+Complex Analysis is the study of rates of change and integrals over a the complex
+numbers.
+
+Coq contains formalizms for complex analysis within coq-coqtail.
+
+Isabelle contains formalizms for Complex Analysis in HOL-ComplexAnalysis.
+
+HOL Light has support for complex analysis in its multivariate library.
+
+Functional Analysis in analysis as applied to functions, often looking into integration
+and differentiation as it applies to infinite dimensional spaces.
+
+Coq does not contain formalizations for functional analysis. Although it has been
+formalized by some researchers.
+<!-- Please cite -->
+
+Isabelle contains some formalizations for functional analysis in its library,
+particularly The Hahn-Banach theorem, which is one of the fundemental theorems
+of functional analysis.
+
+HOL Light does not contain formalizations of functional analysis.
+
+Measure theory is the study of measures. That is, ways of assigning cardinality
+to subsets of a set. 
+
+Coq contains a formalization of measure theory for its use in the formalization
+of probability within coq-random. But other than that, does not contain any
+other formalizations.
+
+
+
+
 standard library, but does include definitions within Coq-CoRN.
 
 Isabelle has the most tools for analysis, including modules for Complex
@@ -1428,11 +1559,24 @@ HOL Light has a formalization for IEEE floats but not complexity theory.
 Therefore, Coq and Isabelle again contain formalizations for basic
 computer science, however HOL Light could be improved in its support
 
-## Poor abstraction mechanisms
+## Repetitive Trivial Interactions
+In Focus Groups, KeY was mentioned to require that the user to do many
+trivial interactions.
 
-In Focus Groups, KeY was mentioned to have bad abstraction mechanisms,
-often forcing the user to work at low levels of
-abstraction [@beckert_usability_2015].
+Because KeY is a Direct Manipulation Prover, proving propositions manually
+requires pointing and clicking at the parts of the proof that you want to
+edit. Other provers on the other hand, have a textual interface for proving theorems, and therefore allow for finer detailed interactions with the prover.
+
+The classic way of preventing trivial interactions is to improve the level
+of abstraction that the user works on. In this case, there are very little
+ways to improve the abstraction level that KeY works on. The main hope is
+that KeY can solve the goal automatically, or with the help of strategy
+macros. So this issue still exists.
+
+Improving this would be difficult without turning KeY into a textual prover.
+
+
+[@beckert_usability_2015].
 
 It's claimed that KeY often requires tedious interaction with low level
 logic formulas. interacting
