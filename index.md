@@ -1,8 +1,10 @@
 ---
 title: A definitive reference on the usability of Interactive Theorem Provers
 author: Sam Nolan
+css: pandoc.css
 bibliography: References.bib
 strip-comments: true
+header-includes: <script defer src="src/bundle.js"></script>
 ---
 ::: titlepage
 ::: center
@@ -1143,6 +1145,7 @@ light and focus on the big issues in an otherwise very dimly lit field.
 
 ## Scope of Library
 
+<div id='classification'> </div>
 In a focus group, it was identified that Isabelle was missing important
 mathematical foundations from its library [@beckert_usability_2015].
 
@@ -1250,7 +1253,6 @@ following sections.
   Foundations      Proof                                Coq, Isabelle, HOL Light
   Number Theory    Analytic
   Number Theory    Algebraic
-  Number Theory    Diophantine
   Analysis         Real Analysis
   Analysis         Functional Analysis                  Isabelle
   Analysis         Complex Analysis                     Isabelle
@@ -1462,55 +1464,95 @@ Coq contains a formalization of measure theory for its use in the formalization
 of probability within coq-random. But other than that, does not contain any
 other formalizations.
 
+Isabelle contains a formalization of measure theory for probability inside HOL-Probability.
 
-
-
-standard library, but does include definitions within Coq-CoRN.
-
-Isabelle has the most tools for analysis, including modules for Complex
-Analysis, Nonstandard Analysis, Asymptopic analysis, Multivariate
-Analysis and Functional Analysis.
-
-HOL Light has definitions for differentiation and multivariate analysis.
-
-All three theorem provers in this case have definitions for analysis.
-However, Isabelle has a clear margin with support for different areas of
-analysis.
+HOL Light does not contain any formalizations for measure theory.
 
 ### Topology
 
 Topology is the study of properties that are preserved through the
 deformation of objects. This is used to study properties of spaces
 required for other fields of mathematics. For instance, analysis is
-often founded on metric spaces from topology.
+often founded on metric spaces from topology. We split topology into three sections,
+general topology, differential topology and algebraic topology.
 
-Coq's standard library does not contain any formalizations for topology,
-however there are libraries for general topology in the coq-topology
-package. It includes metric spaces, topological filters and nets.
+General topology is the study of the basic set-theoretic definitions of topology.
+This is relevant to all other forms of topology.
 
-Isabelle has formalizations for Topology within its standard library.
-Including formalizations for Hausforff spaces and separation properties
-and topological filters.
+Coq does not cover general topology inside its standard library but does within
+coq-topology, a community package.
 
-HOL Light does contain some formalizations for topology, mainly for the
-purpose of it's real analysis library.
+Isabelle covers topological spaces in its HOL.Topological\_Spaces.
 
-All provers therefore contain formalizations for topology. We could not
-identify any missing library components.
+HOL Light has definitions for topological spaces as part of its Multivariate library.
+
+Differential Topology is the study of the topological proporties of smooth
+manifolds.
+
+Coq and Isabelle both have theorems such as the classification of closed surfaces.
+<!-- Can't find anything on Isabelle... This is tough. Moving on -->
+
+HOL Light does not have any findings from Differential topology.
+
+Algebraic Topology attempts to use methods from abtract algebra to study
+topological spaces
+<!-- I currently don't know where to start -->
 
 ### Combinatorics
 Combinatorics is the study of methods used for counting. It's subfields include Enumerative, Extremal and Graph Theory.
 
-Coq also has formalizations for enumerative combinatorics, graph theory in its package ecosytem, but doesn't have any formalizations for extremal combinatorics.
+Enumerative combinatorics is the study of counting. Permutations and combinations
+are examples of this field.
+<!-- I can't find examples of combinatorics. Should look through what Coq proves -->
 
-Isabelle has proofs from enumerative combinatorics and graph theory in its archive of formal proofs. However, there does not seem to be any proofs from extremal combinatorics.
+Coq doesn't have any findings from enumerative combinatorics in its library or
+package ecosystem. It however has work done indipendently
+<!-- https://hal.archives-ouvertes.fr/hal-01670709/document -->
 
-HOL Light has formalizations for enumaritev combinatorics and graph theory, but again, not extremal combinatorics.
+Isabelle does have findings in enumerative combinatorics in its archive of formal
+proofs, such as counting equivalence relations (Card\_Equiv\_Relation) and the
+Twelve Fold Way.
 
-All theorem prover provers are lacking extremal combinarics, but have enumaritive combinatorics and graph theory.
+HOL Light does not have any findings from enumerative combinatorics.
+
+Extremal combinatorics is the study of the smallest number of elements in a problem
+that satisfy some restriction.
+
+Coq does not have any findings in its library, but contains findings such as Ramsey's
+theorem in its package ecosystem (coq-ramsey).
+
+Isabelle also has Ramsey's theorem proven in it's Archive of Formal Proofs but
+not its library.
+
+HOL Light does not have any findings from Extremal Combinatorics.
+
+Graph Theory is the study of graphs, connected structures made of edges and nodes.
+
+Coq has findings from Graph Theory in its package ecosystem (coq-graph-basics).
+
+Isabelle also has graph theory findings in its Archive of Formal Proofs (Coq
+Graph)
+
+HOL Light does not have findings from Graph Theory
 
 ## Geometry
 Geometry is the study of the properties of space to do with distance.
+
+Geometry will be split up into 6 categories. Convex Geometry, Discrete Geometry
+Differential Geometry, Algebraic Geometry, Arithmetic Geometry and Diophantine
+Geometry.
+
+Convex Geometry is the study of Convex Sets.
+<!-- Really difficult to work out what fields are part of this. Because
+it's everywhere -->
+
+Discrete Geometry is the study of combinatorial properties of discrete geometric
+objects.
+
+Coq does not have any findings.
+<!-- Coq doesn't seem to have any findings -->
+
+
 
 Coq, Isabelle and HOL Light all have formalizations for geometry.
 
