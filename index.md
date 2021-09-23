@@ -2,6 +2,7 @@
 title: A definitive reference on the usability of Interactive Theorem Provers
 author: Sam Nolan
 css: pandoc.css
+citeproc: true
 bibliography: References.bib
 strip-comments: true
 header-includes: <script defer src="src/bundle.js"></script>
@@ -58,10 +59,14 @@ substantial amount of money or serious injury or death. As of such, more
 effort should be put into ensuring that safety-critical systems are
 correct.
 
-<!-- I would love to add a discussion here about non-safety critical systems. -->
+However, getting software right the first time around and catching errors early
+has benefits outside of just safety critical systems. It offers more reliable
+software that we use in our day to day lives.
 
-There is a variety of methods that are valuable in ensuring software correctness,
-and one the most powerful methods of doing so is through the use of [**Formal Methods**](https://en.wikipedia.org/wiki/Formal_methods).
+If you are looking for ways to ensure that the software you build is correct,
+you have a lot of tools and methods at your disposal. Some such tools include
+all different types of testing, Static Analysis and Code Review. Formal Methods
+is a category of tools that offer very high garauntees with software. One such 
 Formal Methods is using methods from mathematics to prove properties of correctness
 of software and hardware systems.
 <!-- Needs discussion of other methods -->
@@ -70,47 +75,40 @@ Formal Methods can include writing down a specification for your software, and
 proving by hand that the software that you built (or a section of the software)
 correctly implements that specification. This type of work is invaluable not
 only to check the correctness of software, but also help the developer to understand
-the software that they just built.
+the software that they just built. Such formal methods have been used for years
+to understand and prove properties about computer algorithms.
 <!-- I would love an example of this given to the reader as an exercice -->
 
-Computers have also been used to prove correctness properties of systems. Two
-main types of formal methods exist in this category. **Model Checkers** and **Theorem Provers**.
+Proving software by hand can be tedious, and considering computer scientists do
+love automating tedious tasks, you can be assured that people have written software
+that proves correctness of other computer systems.
 
-**Model Checkers** allow specifying your system as a state machine, and can
-automatically prove that your code matches this specification. Model
-Checkers are therefore limited in scope, as a state machine is often not
-complicated enough to represent arbitrary computer programs. Model checkers are
-however used in industry to verify properties of software systems, such
-an ensuring that an asynchronous system will never deadlock. Examples of
-model checkers include SPIN and Alloy. Model checkers often vary in their scope.
-<!-- I need more examples of SPIN and Alloy, what they are used for etc -->
+However, it turns out that proving software is hard. It was found to undecidable.
+So all software in this space makes a tradeoff. This tradeoff is between three
+things: Whether it can prove arbitrary things, whether it's been fully automated, and whether
+it terminates in reasonable time. Choose two.
+<!-- Citation --> 
 
-Theorem provers can be, as the name suggests, help prove theorems about your
-code in the same way that someone with a pen and paper would. Because computer
-programs can be represented as logic, (such as Logic of Computable Functions or
-Calculus of Constructions). There is actually a duality with mathematics and
-programming that allows theorem provers to not only verify the correctness of
-computer systems but prove real math theorems, and they have been used with
-success in both categories.
-<!-- Examples needed -->
+**Model Checkers** Choose to be fully automated and terminate in reasonable time.
+A model checker allows for properties of a computer system to be expressed as
+an (ofen finite) state machine, then the model checkers determines whether 
+properties hold about this state machine. It automatically attempts to determine
+whether properties hold. Its downside is that it can not prove arbitrary properties
+about computer systems, only properties that can be expressed about state machines.
 
-Although the distinction is not completely clear cut, theorem provers fall into 
-two large main categories. Those categories are **Automated Theorem Provers**, and
-**Interactive Theorem Provers**.
-<!-- Diagram? -->
+**Automated Theorem Provers** Choose to be able to prove arbitrary things, and be
+fully automated. They work by getting a statement given to them in some form of
+logic, such as SAT or SMT. The prover then spends time attempting to prove or 
+refute the SAT or SMT statement. The downside of Automated Theorem Proving is
+that for large systems or complicated theorems, they often take too long to terminate.
+Competitions are held between the provers to determine which ones run faster.
+<!-- Citation for SMT, SAT and Competitions -->
 
-Automatic Theorem Provers attempt to take a specification and a computer program
-and prove that the program meets the specification without user input. This is
-fantastic if it works, but sadly verifying software is an undecidable problem,
-and Automatic Theorem Provers do not always succeed in finding a proof or disproof
-for whether the code meets its specification.
-
-Interactive Theorem Provers allow the user to interactively prove that a specification
-is satisfied by a computer program. This is akin to the user writing a proof for
-correctness on pen and paper, except that the program only allows the user to
-input a correct proof. With the guidance of humans, Interactive Theorem 
-Provers allow the verification of very large scale projects. Developments in mathematics
-have been done in theorem provers as well.
+**Interactive Theorem Provers** Choose to be able to prove arbitrary things,
+and terminate in reasonable time. They work by allowing the user to write in
+their own proof for a proposition, and then a computer systems checks whether
+the proof given is correct and does prove the proposition. The downside is that
+they require human interaction to prove theorems. 
 
 Interactive Theorem Provers (ITPs) provide a unique challenge as they require
 interacting with the user. The user and the ITP have to work together
@@ -1143,9 +1141,95 @@ light and focus on the big issues in an otherwise very dimly lit field.
 
 ![image](Images/MyProblem.png){width="0.9\\linewidth"}
 
+This analysis answers Research Question 1.
+
+## Do these issues still exist?
+There are a lot of different usability issues uncovered in RQ1. Doing a proper
+usability analysis of every issue on this list would be ideal, but has a few
+problems. 
+
+The first is that the amount and variety of usability issues discovered. ITPs
+are difficult enough to study as it is, with the requirement of a large amount
+of expert knowledge. In past studies, N=13 has been considered a large sample.
+So we attempt to analyse a subset of these problems.
+
+The second problem would be that considering that this is a growingn field,
+and any study that highlights usability issues are only valid until those usability
+issues are fixed. To be useful in the future, the analysis should update to the 
+current findings in the field.
+
+Therefore, to answer RQ2 and RQ3, we look to create a **living review**. A living
+review is a review of a field that updates periodically to reflect the current
+state of the field. Living reviews often do this by publishing to a website.
+
+In developing this living review, we found that it had a byproduct of being
+a tool that one could use to determine whether they should use an ITP for a
+project and if so, which ITP they should consider using. So we focused on elements
+that would likely inform decisions on this matter. The scope of the living review
+is:
+
+- Comparing general properties about ITPs
+- Comparing library support between ITPs
+- Comparing past projects that have been completed by ITPs
+- Comparing past usability research about ITPs
+
+The specification of the review has been split up into these four sections
+
+#### General features of about ITPs
+Systematic Literature Reviews of ITPs have already been completed, so to prevent
+re-inventing the wheel, we decided to convert the review into a dataset.
+
+This dataset contained several properties about ITPs, and we compare each property
+in a table. Further, by selecting on a property, you can get an explanation of
+what that property means, what alternative values that property can have, and
+what provers are similar in terms of that property.
+
+<!-- Include properties -->
+
+Newer ITPs are added manually to the dataset.
+
+The systematic literature review we source our data from however, is already
+out of date for the latest release of its provers. As of such, we have a python
+script that automatically retrieves whether any newer versions of a prover have
+been released by checking Github Tags. It gets the latest tag to be published
+and adds that as the latest release on the living review, ensuring that the
+review doesn't go out of date by having newer releases.
+
+#### Comparing Library support between ITPs
+
+To compare library support between ITPs, for every ITP with a library, we
+manually scraped the different modules in the library and added them to a dataset.
+Further, some provers have community submitted modules, such as Coq's package
+ecosystem and Isabelle's Archive of Formal Proofs. These were also scraped and
+added to the dataset of modules supported in a prover. 
+
+These modules are then sorted into the Mathematical Subject Classification 2020
+(MSC2020), a classification of math topics used often to classify publications.
+Sometimes, such as in Isabelle's Archive of Formal Proofs or Coq's package
+ecosystem, categories were provided by the website hosting the packages. We
+used these categories to automatically sort packages into MSC classifications.
+We label such packages as unverified as the categories that are on the hosting
+websites are not MSC categories, but are nevertheless included for display.
+
+Then, manual work is done to look through every package and classify it under
+MSC2020. If the package was manually classified it is considered "verified".
+
+In the interface, unverified packages show up red and verified ones show up green.
+
+The process of collecting packages from these sources is automated through a
+collection of python scripts.
+
+#### Comparing projects between ITPs
+
+<!-- Serious TODO -->
+
+### Comparing usability issues between ITPs
+
+<!-- Serious TODO -->
+
 ## Scope of Library
 
-<div id='classification'> </div>
+<div id='itps'> </div>
 In a focus group, it was identified that Isabelle was missing important
 mathematical foundations from its library [@beckert_usability_2015].
 

@@ -1,0 +1,9 @@
+Prover,Name,Description,Citation
+Coq,CompCert,A certified C compiler,
+Isabelle,Sel4,A certified Kernel,
+ACL2,Motorola CAP digital signal processor,Verification of several microcode programs,Formal analysis of the Motorola CAP DSP
+ACL2,AMD Athlon,IEEE floating point verification,
+ACL2,IBM Power 4,Verifying floating point square root operation,
+ACL2,Centaur Technology’s,Verifying floating point addition and subtraction,Centaur Technology Media Unit Verification
+ACL2,Advanced Architecture MicroProcessor 7 Government Version (AAMP7G),Proving information flow properties,Formal Verification of Partition Management for the AAMP7G Microprocessor
+ACL2,bytecode verifier in Java,Verifying bytecode properties,Formal Specification and Verification of a JVM and its Bytecode Verifier

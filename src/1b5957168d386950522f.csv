@@ -1,0 +1,10 @@
+name,latest_release_date,latest_release_name,url
+ACL2,2021-08-08 15:46:37,8.4,https://github.com/acl2/acl2/
+Isabelle,2021-02-20 12:42:37,Isabelle2021,https://github.com/seL4/isabelle/
+Metamath,2021-08-07 22:34:01,v0.198,https://github.com/metamath/metamath-exe/
+Twelf,2011-10-31 19:19:55,v1.7.1,https://github.com/standardml/twelf/
+Agda,2021-06-19 05:25:56,v2.6.2,https://github.com/agda/agda/
+HOL,2021-02-02 23:28:16,kananaskis-14,https://github.com/HOL-Theorem-Prover/HOL/
+RedPRL,2017-01-04 20:31:24,v0.1.0,https://github.com/redprl/sml-redprl/
+Coq,2021-06-07 09:02:06,V8.15+alpha,https://github.com/coq/coq/
+PVS,2020-11-13 15:18:28,pvs7.1,https://github.com/SRI-CSL/PVS/

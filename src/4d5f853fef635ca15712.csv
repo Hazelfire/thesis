@@ -1,0 +1,17 @@
+Name,System Type,Theorem Prover Category,System Based on,Logic Used,System's Truth Value,Calculus,Set Theoretic Support,Programming Paradigm,System Architecture,Programming Language,User Interface,Platform Support,Scalability,Multi-threaded,IDE,Library Support,Programmability,Tactic Language Support,Logo,Homepage,Contributors,1stRelease
+ACL2,TP,ITP,Syllogism,FOL,Binary,Inductive,No,Func,Modular,ACL2,CLI,Cross,Yes,Yes,Yes,Yes,Yes,Yes,ACL2.png,https://www.cs.utexas.edu/users/moore/acl2/,Matt Kaufman,1994
+E,TP,ATP,Syllogism,FOL,Binary,Deductive,Yes,Impe,Mod+Mono,C,CLI,Cross,Yes,No,Yes,Yes,No,No,,,
+Isabelle,TP,ATP+ITP,Syllogism,HOL,Binary,Ded+Indu,Yes,Func,Modular,ML+Scala,GUI,Cross,Yes,Yes,Yes,Yes,Yes,Yes,Isabelle.svg,https://isabelle.in.tum.de/,Makarius Wenzel,1986
+Atelier B,TP,ITP,Syllogism,FOL,Binary,Deductive,Yes,Impe,Monolithic,Prolog,GUI,Cross,Yes,No,Yes,No,No,Yes,Alterier B.png,https://www.atelierb.eu/en/atelier-b-tools/,Thierry Lecomte,1994
+Escher,TP,ATP,Syllogism,FOL+HOL,Bin+Tri,Deductive,No,Func+Imp,Monolithic,C++,CLI+GUI,Win+Linux,No,No,No,No,No,No,,,,
+Metamath,TP,ITP,Syllogism,FOL+HOL,Binary,Deductive,Yes,Func,Mod+Mono,MM,CLI+GUI,Cross,Yes,Yes,Yes,Yes,Yes,Yes,Metamath.png,http://us.metamath.org/,Norman Megill,1993
+Twelf,TP,ITP,LF,TT,Intuition,Deductive,Yes,LP,Monolithic,SML,CLI,Cross,Yes,No,Yes,Yes,Yes,No,Twelf.png,http://twelf.org/wiki/Main_Page,Frank Pfenning,1999
+Agda,TP,ITP,FP,HOL,Binary,Inductive,Yes,Func,Modular,Haskell,GUI,Cross,Yes,No,Yes,Yes,Yes,Yes,Agda.png,https://wiki.portal.chalmers.se/agda/Main/HomePage,Ulf Norell,
+Mizar,TP,ITP,Syllogism,FOL,Binary,Deductive,Yes,Decl,Modular,Pascal,CLI,Cross,Yes,No,Yes,Yes,No,No,Mizar.gif,http://www.mizar.org/,Adam Naumowicz,1973
+HOL,TP,ITP,Syllogism,HOL,Binary,Deductive,No,Func,Modular,SML,CLI,Cross,Yes,No,No,Yes,Yes,Yes,HOL.gif,https://hol-theorem-prover.org/,Michael Norrish,
+RedPRL,TP,ITP,Syllogism,TT,Intuition,Deductive,No,Func,Modular,SML,GUI,Cross,No,No,Yes,Yes,Yes,Yes,RedPRL.png,https://redprl.org/,Jonathan Sterling,
+Class & Int,TP,ATP,Syllogism,FOL,Binary,Deductive,Yes,Decl,Modular,C++,CLI,Windows,Yes,Yes,Yes,Yes,No,Yes,,,,
+Geo,TP,ATP,GT,PCL,3-value,Deductive,No,Decl,Monolithic,C++,CLI,Mac,Yes,No,No,No,No,No,,,,
+Coq,TP,ITP,DP,HOTT,Binary,Ded+Indu,Yes,Func,Modular,OCaml,CLI+GUI,Cross,Yes,No,Yes,Yes,No,Yes,Coq.png,https://coq.inria.fr/,Hugo Herbelin,1989
+PVS,TP,ITP,Syllogism,HOL,Binary,Deductive,Yes,Func+OO,Modular,C Lisp,GUI,Mac+Linux,Yes,Yes,Yes,Yes,Yes,Yes,PVS.gif,http://pvs.csl.sri.com/,M. Saqib Nawaz,
+CVC4,TP4SMT,ATP,DPLL,FOL,Binary,Deductive,Yes,Logical,Modular,C++,CLI,Mac+Win,No,Yes,No,Yes,No,No,,,,

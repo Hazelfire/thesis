@@ -1,0 +1,5 @@
+name,section,file,url
+Coq,Library,coq_library.csv,https://coq.inria.fr/library/index.html
+Coq,Packages,coq_packages.csv,https://coq.inria.fr/opam/www/
+Isabelle,Library,isabelle_library.csv,https://isabelle.in.tum.de/dist/library/
+Isabelle,Archive of Formal Proofs,afp_packages.csv,https://www.isa-afp.org/
