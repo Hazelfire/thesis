@@ -1,238 +1,161 @@
 ---
-title: A definitive reference on the usability of Interactive Theorem Provers
 author: Sam Nolan
+title: A living review of Interactive Theorem Provers
 css: pandoc.css
 citeproc: true
 bibliography: References.bib
+toc: true
+toc-title: Table of Contents
+date: 29th of September 2021
 strip-comments: true
+abstract: |
+  Interactive Theorem Provers allow you to prove that software is correct. However,
+  the adoption of ITPs is far from widespread. This thesis creates a living review
+  about usability issues that may prohibit ITPs from being used, and further
+  creates a tool to help aid decision in choosing what ITP should be used for
+  a given project.
+declaration: "I certify that except where due acknowledgment has been made, the work is that of the author alone; the work has not been submitted previously, in whole or in part, to qualify for any other academic award; the content of the thesis is the result of work which has been carried out since the official commencement date of the approved research program; any editorial work, paid or unpaid, carried out by a third party is acknowledged; and, ethics procedures and guidelines have been followed."
 header-includes: <script defer src="src/bundle.js"></script>
+link-citations: true
+linkReferences: true
+header-logo: Images/rmit-logo.png
 ---
-::: titlepage
-::: center
-![](Images/rmit-logo.png){width="5cm"}
-
-A thesis submitted in fulfilment of the requirements for the degree of
-Bachelor of Science.\
-School of Science.\
-College of Science, Engineering and Health.\
-RMIT University.\
-July 2021\
-:::
-:::
-
-<div>
-This thesis is also in [PDF form](index.pdf)
-</div>
-# Declaration {#declaration .unnumbered}
-
-I certify that except where due acknowledgement has been made, the work
-is that of the author alone; the work has not been submitted previously,
-in whole or in part, to qualify for any other academic award; the
-content of the thesis is the result of work which has been carried out
-since the official commencement date of the approved research program;
-any editorial work, paid or unpaid, carried out by a third party is
-acknowledged; and, ethics procedures and guidelines have been followed.\
-Signed: Sam Nolan\
-Date: 08/08/2020\
-
-# Acknowledgments {#acknowledgments .unnumbered}
-
-I would like to acknowledge my supervisor [Maria Spichkova](https://www.spichkova.com/) 
-for her guidance and high expectations for this project. I would also like 
-to thank [Flora Salim](https://fsalim.github.io/) for inspiring me to further 
-invest myself into research and never stopping in opening doors for me.
-
-# Abstract {#abstract .unnumbered}
-
 # Introduction
+This is a thesis about **Interactive Theorem Provers**, what they are, how
+they've been used in the past and whether you should explore using them in your
+next project.
 
-When building software systems, one of, if not the most important aspect is
-determining the correctness of the software built. Software is correct if,
-given some specification, the software implements that specification.
+An **Interactive Theorem Prover** (henceforth ITPs) is a program that interactively guides the user
+in proving mathematical theorems. They are also synonymous called **Proof Assistants**.
+ITPs are often called upon in mathematics, and have been used to create original
+proofs of theorems such as the four colour theorem [@four_colour_2008].
 
-For some systems, being correct is more important than others. Being
-correct may not be as important in an application managing tasks in
-comparison to the software running in safety-critical systems such as
-pacemakers, the internal components of cars or software that runs on
-space equipment. If these systems fail, it could mean the loss of a
-substantial amount of money or serious injury or death. As of such, more
-effort should be put into ensuring that safety-critical systems are
-correct.
+ITPs also have another use. As computer programs can be computer programs can
+often be expressed through a type of mathematical logic, and have a lot of similarities,
+ITPs can be used to prove the correctness of software systems.
 
-However, getting software right the first time around and catching errors early
-has benefits outside of just safety critical systems. It offers more reliable
-software that we use in our day to day lives.
 
-If you are looking for ways to ensure that the software you build is correct,
-you have a lot of tools and methods at your disposal. Some such tools include
-all different types of testing, Static Analysis and Code Review. Formal Methods
-is a category of tools that offer very high garauntees with software. One such 
-Formal Methods is using methods from mathematics to prove properties of correctness
-of software and hardware systems.
-<!-- Needs discussion of other methods -->
+Projects that use ITPs include the certified C compiler CompCert [@leroy_formal_2009], which is a C compiler that allows for a fully correct compilation of C. Or the fully verified microkernel SeL4 [@klein_sel4_2009].
+<!-- Might need better description -->
 
-Formal Methods can include writing down a specification for your software, and
-proving by hand that the software that you built (or a section of the software)
-correctly implements that specification. This type of work is invaluable not
-only to check the correctness of software, but also help the developer to understand
-the software that they just built. Such formal methods have been used for years
-to understand and prove properties about computer algorithms.
-<!-- I would love an example of this given to the reader as an exercice -->
+However, ITPs are far from commonplace for verifying software. This is likely
+due to verifying software being very difficult, requiring a lot of knowledge about proof theory.
 
-Proving software by hand can be tedious, and considering computer scientists do
-love automating tedious tasks, you can be assured that people have written software
-that proves correctness of other computer systems.
-
-However, it turns out that proving software is hard. It was found to undecidable.
-So all software in this space makes a tradeoff. This tradeoff is between three
-things: Whether it can prove arbitrary things, whether it's been fully automated, and whether
-it terminates in reasonable time. Choose two.
-<!-- Citation --> 
-
-**Model Checkers** Choose to be fully automated and terminate in reasonable time.
-A model checker allows for properties of a computer system to be expressed as
-an (ofen finite) state machine, then the model checkers determines whether 
-properties hold about this state machine. It automatically attempts to determine
-whether properties hold. Its downside is that it can not prove arbitrary properties
-about computer systems, only properties that can be expressed about state machines.
-
-**Automated Theorem Provers** Choose to be able to prove arbitrary things, and be
-fully automated. They work by getting a statement given to them in some form of
-logic, such as SAT or SMT. The prover then spends time attempting to prove or 
-refute the SAT or SMT statement. The downside of Automated Theorem Proving is
-that for large systems or complicated theorems, they often take too long to terminate.
-Competitions are held between the provers to determine which ones run faster.
-<!-- Citation for SMT, SAT and Competitions -->
-
-**Interactive Theorem Provers** Choose to be able to prove arbitrary things,
-and terminate in reasonable time. They work by allowing the user to write in
-their own proof for a proposition, and then a computer systems checks whether
-the proof given is correct and does prove the proposition. The downside is that
-they require human interaction to prove theorems. 
-
-Interactive Theorem Provers (ITPs) provide a unique challenge as they require
-interacting with the user. The user and the ITP have to work together
-to attempt to verify the software. When a user is involved, usability must be
-considered.
-
-ITPs offer an opportunity to verify large scale software and hardware systems
-for correctness, and as software systems only get larger, ITPs could be a solution
-to ensuring quality and correctness of software that's produced.
-
-ITPs have already been used to verify crytographic libraries, compilers and
-microkernels.
-<!-- Examples? -->
-
-However, although ITPs have been used in several large scale projects, use of
-ITPs is far from commonplace. This thesis is a diagnostic attempt at discovering
-reasons for the lack of uptake, in order to decipher how we can encourage the
-usage of ITPs and ensure more correct software in industry.
-
-In this thesis, we investigate the usability of ITPs. Usability is often quite
-a vague concept, but in this thesis we define it widely. We define usability as:
-"The ease for which a program can be used for it's intended purpose", which therefore
-can include things like the scope of features currently supported by the theorem
-prover.
-
-We attempt to answer this question by in a sense "cross polinating" ITP ideas,
-comparing theroem provers up against each other across many different dimensions
-in order to decipher promising directions for the improvements of ITPS.
+Ensuring that software operates correctly is very important, especially as systems
+get more and more complicated. The goal of this thesis is to identify the roadblocks in adaption, and help users decide between what technology they should use in their next project.
 
 The research questions for this thesis are:
 
-RQ1 *What usability issues and solutions have been mentioned in
-literature regarding ITPs?*
+RQ1 *What usability issues and solutions have been mentioned in literature regarding ITPs?* 
 
 RQ2 *Do these usability issues and solutions still exist in the ITPs?*
 
-RQ3 *Can problems/solutions that have been found in some ITPs be
-relevant for others?*
-
-## Use of ITPs
-ITPs are very interesting pieces of software
-
-A full review of ITPs in Formal Methods was conducted by
-Nawaz [@nawaz_survey_2019].
-
-It should be noted that although ITPs can verify the correctness of
-software, they also can prove more mainstream mathematical theorems. As
-of such, there are two communities of users of ITPs. Those interested in
-using ITPs to study mathematics, and those interested in using ITPs to
-formally verify software.
-
-ITPs have been used to achieve many ends within mathematics, giving a
-proof for the Four Colour Theorem with Coq. Flyspeck project,
-
-In terms of computing, a fully verified microkernel was developed in
-Isabelle/HOL named SeL4, a formalization of the Java Programming
-Language. A list of Isabelle projects can be found here:
-https://isabelle.in.tum.de/community/Projects. Coq has also been used to
-make Compcert, a fully verified C compier.
-
-For hardware, HP used Isabelle/HOL on the HP 9000 line of of server's
-Runway Bus.
+RQ3 *What, if any, ITP should be used for a specific project?*
 
 # Background
+## Interactive Theorem Provers {#sec:background_itp}
+An **Interactive Theorem Prover** or **Proof Assistant** is a piece of software
+that helps prove mathematical theorems, or equivalently, prove correctness
+properties about software. Some of the more well known examples of provers 
+include [Coq](https://coq.inria.fr/) and [Isabelle](https://isabelle.in.tum.de/).
+
+In computer science, often correctness proofs of algorithms (like Dijkstra in
+an undergraduate context) are described and proved on pen and paper. The use of an
+ITP in analogous to this type of activity. 
+
+You first specify what it is that you would like to prove, for example, that
+Dijkstra's algorithm always finds the shortest path between two nodes in a
+weighted graph. In this step, you would specify what Dijkstra's algorithm, graphs
+, and shortest paths are, then state that Dijkstra's algorithm finds the shortest
+path.
+
+This leaves you with a **proof obligation**. It is then up to the user to provide
+to the ITP the reasoning as to why this theorem is correct. This can be done
+in several ways, sometimes through the use of automated software, or manipulating
+with the proof by pointing and clicking, or writing down a **proof script** that
+describes the steps made to prove the theorem.
+
+The ITP then checks whether the proof of the theorem is valid, assisting you
+along the way in any errors that you make, until you have specified a proof
+of the statement you wish to claim. Once that proof is made, you can be assured
+that the system works correctly.
+
+Proving software is correct is far from a trivial task, and proving correctness
+of different types of systems requires a strong understanding of formal proof
+theory and the ITP at hand. The inspiration for this thesis was due to nature
+of ITPs producing proofs that are readable for a computer but not for a user.
+A full description of usability issues with ITPs are discussed in the literature
+review.
+
+Another way of approaching ITPs is through programming languages. Often a goal
+in programming language design is to create languages where you cannot make a
+certain class of errors. For instance, Rust is designed to allow systems level
+programming that's protected from memory errors, and Elm is designed to create
+web programs that do not have runtime errors. Languages often accomplish this
+through Type Systems and Functional Programming. ITPs are languages that have
+design features that allow you to go as far as proving the correctness of your
+software. Almost all ITPs use Type Systems and Functional Programming to assist
+in proving software.
 
 ## Formal Methods
+ITPs are not the only way to verify software. They belong to a class of techniques
+named **Formal Methods**.
 
-There are several ways one can formally specify and verify the
-properties of a software system. These methods are called **Formal
-Methods**. An overview of the hierarchy of formal methods is shown in
-figure [\[fig:formal_methods\]](#fig:formal_methods){reference-type="ref"
-reference="fig:formal_methods"}.
+In essence, formal methods attempts to improve the process that users can prove
+the correctness of their software systems. Use of formal methods can be done
+without any tools at all, by simply proving properties by hand.
 
-First of all, Formal methods can be concerned with specification or
-verification. Specification is putting requirements of a software system
-into a formal representation. Specification Languages include
-Z [@potter_introduction_1992] or VDM [@jones_systematic_1990].
-Specification is an important process and is required for verification.
-A specification is considered \"valid\" if it correctly describes the
-required behaviour of the system. If the specification is not valid,
-then proving that the code follows that specification will not produce
-correct software.
+However, computers and tools have aided people in providing large proofs for
+software systems. The tools used in Formal Methods can be roughly divided into
+three categories, Model Checkers, Automated Theorem Provers and Interactive
+Theorem Provers. 
 
-Verification is ensuring that the implementation correctly follows the
-specification. Verification can be done with Model Checkers, Automated
-Theorem Provers and Interactive Theorem Provers. These three techniques
-are a trade off in two dimensions: user interaction and scope.
+These three techniques are a trade off in three dimensions. You can pick two
+but not all three:
 
-Model Checkers and Automated Theorem Provers generally do not require
-user interaction and attempt to verify that a specification holds for a
-system automatically. These two techniques however cannot be used to
-solve all problems. ITPs can be used to prove that a specification is
-correctly implemented, but requires user interaction to guide the proof
-process.
+**Automation**: Whether finding a proof is fully automated. That is, the user
+does not need to specify a proof manually for the proposition, the system simply
+attempts to find one automatically.
+
+**Termination**: Whether the tool terminates in a reasonable amount of time 
+when attempting to find a proof.
+
+**Scope**: Whether the system can prove arbitrarily theorems.
+
+**Model Checkers** are fully automated and terminate in reasonable time. However,
+Model checkers can do this by restricting the scope of the systems that they can
+prove. They allow for a specification for a system in a (usually finite) state
+machine, and can prove properties about this state machine.
+
+**Automated Theorem Provers** (ATPs) are fully automated and can prove arbitrary theorems,
+however may not terminate in reasonable time. For larger systems or more complicated
+theorems, they may run forever and never identify a proof or disproof for the
+proposition.
+
+**Interactive Theorem Provers** terminate in reasonable time and can prove
+arbitrary theorems. However, they are not fully automated, and require the user's
+input to guide the proof of the theorem.
 
 The distinction between ATPs and ITPs is however not clear cut. ATPs can
 often include minor user interaction in order to correct it's path and
-find a proof. ITPs often have automatic features and can even call
+find a proof. And ITPs often have automatic features and can even call
 external ATPs to discharge proof obligations.
 
-::: center
-:::
+ITPs were chosen for this thesis due to their application in fully certified
+software. A Model Checker cannot be used to create fully certified software,
+and ATPs can be used as a component of ITPs. 
 
-## Interactive Theorem Provers
-
-ITPs all have the goal of helping the user prove mathematical theorems.
-
-There are several types of ITPs [@aitken_interactive_1998], which
-correspond to different paradigms for proving propositions. \"Proof as
-Programming\" refers to writing a script, not unlike a computer program,
-that when run completes the proof. \"Proof as Structure Editing\" refers
-to directly editing proof obligations until you can discharge them, like
-interacting with a tree.
-
-Although there are many ITPs that acheive proof in different ways, there
-are general themes among these ITPs that are important to understand
-before moving forward.
+## Living Reviews {#sec:living_review}
+A living review is a review of a field that updates periodically to reflect the
+current state of the research. These reviews are often published
+electronically, such as to a website. The goal of a living review is to ensure
+that the review never goes stale, and can be used as a reference years to come.
 
 ## Cognitive Dimensions of Notation
-
 Cognitive Dimensions of Notation is a framework used to evaluate the
 effectiveness of notations [@green_usability_1996], that is, ways of
 writing down information. The notation was originally proposed by Green
-as a way of discussing the design tradeoffs of visual programming
+as a way of discussing the design trade-offs of visual programming
 languages, but has been applied elsewhere for a variety of notations.
 These dimensions are not an evaluation framework for notations, as often
 increasing one dimension will also change other dimensions, and
@@ -267,7 +190,7 @@ as either being abstraction-hating, abstraction-tolerant or
 abstraction-hungry. An abstraction-hating ITP would be one that forces
 you to work with low level constructs often. An abstraction-tolerant ITP
 would be one that gives some methods for abstraction, but still
-nevetheless requires constant low level interaction. An
+nevertheless requires constant low level interaction. An
 abstraction-hungry ITP would offer many methods of abstraction, that
 could even in the end obscure what is actually happening behind the
 scenes.
@@ -311,7 +234,6 @@ the inherit difficulty vs difficulty created by the notation. Hard
 Mental Operations may arise out of particularly complicated tactics,
 especially since tactics can be composed together. An ITP with a
 consistent set of tactics would reduce Hard Mental Operations.
-
 #### Hidden Dependencies
 
 Are there dependencies in the notation that are not presented? In ITPs
@@ -390,12 +312,30 @@ Juxtaposability is showing two parts of the system side by side. This is
 important as often a proof might only be a refinement of a previous
 proof, and might need to be understood in context.
 
-# ITP Literature Review Methodology
+# Methodology
+To recall our research questions:
 
-To answer RQ1, a Systematic Literature review was performed.
+RQ1 *What usability issues and solutions have been mentioned in literature regarding ITPs?* 
 
+RQ2 *Do these usability issues and solutions still exist in the ITPs?*
+
+RQ3 *What, if any, ITP should be used for a specific project?*
+
+The natural method for answering RQ1 is to perform a systematic literature review.
+This literature review intends to identify and categorize usability issues related
+to different theorem provers.
+
+Answering RQ2 requires going through the theorem provers and identifying the
+issues.  However, ITPs are continually in development, and any issue that
+arises could be solved at a future date. As of such, we created a **living
+review** (See [@sec:living_review] for definition) to answer this question.
+
+The creation of this living review will answer RQ3, and provide descriptions of
+the current state of the field for ITPs.
+
+## Systematic Literature Review Methodology {#sec:review_methodology}
 A preliminary literature review was done in order to survey what
-usability problems occured about theorem provers. This preliminary
+usability problems occurred about theorem provers. This preliminary
 review came from a search for "usability interactive theorem provers\"
 on the ACM digital library and Google Scholar. The review found several
 papers on the topic. We then attempted to construct a query that would
@@ -454,8 +394,61 @@ We then read the paper to discover:
 The issues were then categorized by Green's cognitive dimensions of
 notations [@green_usability_1996].
 
-# Literature review results
+## Living Review Methodology
+The living review has the end goal of determining whether usability issues still
+exist, and then further offering a tool to help decision about ITPs (RQ3).
 
+To do this, the living review is scoped as follows:
+
+- Comparing general properties about ITPs (RQ3)
+- Comparing past projects that have been completed by ITPs (RQ3)
+- Comparing progress on usability issues about ITPs (RQ2)
+
+### General features of about ITPs
+To compare between different ITPs, general features about them need to be collected.
+
+We decided to use a Systematic Literature Reviews on Theorem Provers as our starting dataset [@nawaz_survey_2019]. 
+
+This dataset contained several properties about ITPs, and properties to compare between them.
+
+The full set of properties are:
+
+- What the ITP is based on
+- The logic of the ITP
+- The Truth value of the ITP
+- Whether it supports Set theory
+- Whether it has a library
+- What it's calculus is
+- What's it's architecture
+- The programming language it's based on
+- The User interface
+- The Platforms its supported on
+- Whether it's scalable
+- Multithreaded support
+- Whether it has an IDE
+- When it was first released.
+- It's latest release
+
+Newer ITPs are added manually to the dataset.
+
+The systematic literature review we source our data from however, is already
+out of date for the latest release of its provers. As of such, we have a python
+script that automatically retrieves whether any newer versions of a prover have
+been released by checking GitHub Tags. It gets the latest tag to be published
+and adds that as the latest release on the living review, ensuring that the
+review doesn't go out of date by having newer releases.
+
+### Comparing projects between ITPs
+One important thing to consider when making decisions about ITPs to choose is
+what past projects have been completed within the ITP. As of such, we contain
+a literature review of different notable projects within the ITP.
+<!-- Need to be more specific --> 
+
+### Comparing progress on usability issues for ITPs
+Finally, depending on the results of the literature review, progress on different
+usability issues will be reported in this living review.
+
+# Literature Review
 The amount of papers found in each section of the review are shown in
 table [1](#tab:litresults){reference-type="ref"
 reference="tab:litresults"}. This totals to 45 papers found on the
@@ -504,7 +497,7 @@ the same problem is mentioned in two papers, it is given two rows.
 The theorem prover column refers to the theorem prover the usability
 issue was found in. If the problem is a general comment "General\" is
 written. "Textual\" means a theorem prover that uses proof script to
-solve theorems, such as Isabelle/HOL, Coq, Agda. "Direct Maniuplation\"
+solve theorems, such as Isabelle/HOL, Coq, Agda. "Direct Manipulation\"
 means a theorem prover that uses direct manipulation to solve theorems,
 such as KeY.
 
@@ -552,7 +545,7 @@ Functions.
 Coq is another popular ITP that also supports a dependent type system.
 It's based on the Calculus of (Co)Inductive Constructions, which was
 designed specifically for Coq. Coq has been used to prove the four
-colour theorem, and create the Compcert certified C compiler.
+colour theorem, and create the CompCert certified C compiler.
 
 #### Matita
 
@@ -637,7 +630,7 @@ We now move into the usability problems and solutions found in ITPs.
   KeY              Interaction with low level logic   Focus Groups   [@beckert_usability_2015]
   Isabelle         Missing Library                    Focus Groups   [@beckert_usability_2015]
 
-  : Abstraction Gradient Problems
+  : Abstraction Gradient Problems {#tbl:abstraction_gradient}
 
 The abstraction gradient dimension concerns itself with the highest and
 lowest levels of abstraction that are presented. Are they at the
@@ -663,11 +656,11 @@ this problem.
   Theorem prover   Problems                                          Discovered     citation
   ---------------- ------------------------------------------------- -------------- ---------------------------------------------
   KeY              Unintuitive mapping between formula and program   Focus Groups   [@beckert_usability_2015]
-  CardiZ           Cannot sketch out proofs                          Questionaire   [@kadoda_cognitive_2000]
+  CardiZ           Cannot sketch out proofs                          Questionnaire   [@kadoda_cognitive_2000]
   Coq              Cannot use mathematical notation                  Survey         [@berman_development_2014]
   Coq              Cannot use mathematical notation                  Suggested      [@asperti_user_2007; @zacchiroli_user_2007]
 
-  : Closeness of Mapping Problems
+  : Closeness of Mapping Problems {#tbl:closeness_of_mapping}
 
 The dimension of closeness of mapping is whether the interface maps well
 to the problem world. For interactive theorem provers, it has to do with
@@ -686,13 +679,13 @@ the only paper on CardiZ, as CardiZ is not a popular prover. No
 solutions have been suggested for this.
 
 A common issue that came up with Coq was the inability to use
-mathematical notation. Notational issues are problematic in ITPs. One
-one hand, thereom provers such as Isabelle and Agda allow using
+mathematical notation. Notation issues are problematic in ITPs. One
+one hand, theorem provers such as Isabelle and Agda allow using
 mathematical notation in their theorems. This helps the user understand
 the theorem in a terse syntax. On the other hand, mathematical notation
 can often be ambiguous and difficult to type. Isabelle allows using
 LaTeX style commands such as\
-rightarrow to render math notation, whereas Agda allows unicode in
+rightarrow to render math notation, whereas Agda allows Unicode in
 source files. In order to avoid ambiguity, Coq has no support for math
 notation, and in response to this, Matita has LaTeX style mathematical
 notation [@asperti_user_2007; @zacchiroli_user_2007]. This issue came up
@@ -711,7 +704,7 @@ in three different sources.
   Coq              Difficult to find arguments for tactics            Observational   [@ringer_replica_2020]
   Coq              Bad Library, inconsistent naming                   Survey          [@berman_development_2014]
 
-  : Consistency Problems
+  : Consistency Problems {#tbl:consistency}
 
 Consistency is the cognitive dimension of whether, once learning part of
 the notation, you are able to infer the rest of the notation.
@@ -742,7 +735,7 @@ area for improving the usability of ITPs
   Isabelle         Bloated Formulas                          Focus Groups    [@beckert_usability_2015]
   Isabelle         Large proofs correspond to large effort   Observational   [@bourke_challenges_2012]
 
-  : Diffuseness / terseness Problems
+  : Diffuseness / Terseness Problems {#tbl:diffuseness}
 
 Diffuseness is the cognitive dimension of the tersity/verbosity of the
 syntax. Bloated formulas were mentioned in Isabelle in Focus Groups, and
@@ -758,7 +751,7 @@ bases or formulas.
   Isabelle,HOL     Incorrect predictions made about tactics           Observational   [@aitken_analysis_2000]
   Isabelle         Difficult to manage namespace                      Suggested       [@bourke_challenges_2012]
 
-  : Error Proneness Problems
+  : Error Proneness Problems {#tbl:error_proneness}
 
 Error proneness is the cognitive dimension of whether a system allows
 its users to make errors.
@@ -795,7 +788,7 @@ verification of this problem nor solution has been suggested.
   General          Difficult to understand tacticals             Suggested    [@grov_tinker_2018; @lin_understanding_2016]
   General          Proof scripts can become complicated          Suggested    [@aspinall_towards_2016]
 
-  : Hard Mental Operations Problems
+  : Hard Mental Operations Problems {#tbl:hard_mental_operations}
 
 The dimension of Hard Mental operations refer to the difficulty in
 understanding and using the interface on a syntax level. This type of
@@ -834,7 +827,7 @@ metrics [@aspinall_towards_2016].
   Isabelle         Difficult to patch proofs when dependencies change     Suggested    [@bourke_challenges_2012]
   Isabelle         Hard to see dependencies between proofs                Suggested    [@aspinall_towards_2016]
 
-  : Hidden Dependencies Problems
+  : Hidden Dependencies Problems {#tbl:hidden_dependencies}
 
 Hidden dependencies represent dependencies between components that are
 not shown explicitly. Hidden dependencies are everywhere in theorem
@@ -871,7 +864,7 @@ None of these issues have been tested empirically.
   KeY              Difficult to understand proof state   Suggested    [@hentschel_integrating_2016]
   General          Difficult to understand proof state   Suggested    [@eastaughffe_support_1998]
 
-  : Perceptual Cues Problems
+  : Perceptual Cues Problems {#tbl:perceptual_cues}
 
 Perceptual cues is how easy it is to understand what is being
 represented. Understanding proof state is an enormous part of theorem
@@ -886,15 +879,15 @@ such, solutions are found in the visibility section.
   HOL              Need to redesign model if proof attempt fails             Suggested    [@beckert_usability_2015]
   Coq              Have to apply tactics before understanding what they do   Suggested    [@berman_development_2014]
 
-  : Premature Commitment Problems
+  : Premature Commitment Problems {#tbl:premature_commitment
 
 When an attempt to prove a theorem fails, either one of two things has
 happened. First, the proof you are attempting to perform is incorrect,
 or the model itself is in error. The model is often in error, and as of
 such there is a premature commitment to a model before having a full
-understanding. Counterexample generators such as Quickcheck and
+understanding. Counterexample generators such as Quick Check and
 nitpick [@beckert_usability_2015; @beckert_interaction_2017] for
-Isabelle help prevent the user from trying to prove unprovable lemmas by
+Isabelle help prevent the user from trying to prove improvable lemmas by
 providing the user with a counterexamples to show why their lemmas can't
 be true.
 
@@ -926,7 +919,7 @@ helpful with users.
   Isabelle         Performance of automatic strategy                           Suggested    [@beckert_usability_2015]
   Isabelle,KeY     Difficult to understand automated strategy                  Suggested    [@beckert_usability_2015]
 
-  : Progressive Evaluation Problems
+  : Progressive Evaluation Problems {#tbl:progressive_evaluation}
 
 Progressive evaluation is the dimension of getting appropriate feedback
 from the system.
@@ -976,7 +969,7 @@ therefore more naturally discussed as solutions.
   KeY              Poor documentation                         Suggested    [@beckert_evaluating_2012]
   Isabelle         Better libraries and documentation         Suggested    [@berman_development_2014]
 
-  : Secondary Notation Solutions
+  : Secondary Notation Solutions {#tbl:secondary_notation}
 
 One improvement on secondary notations is the ability to note and label
 parts of proof context. Usually, proof context is boxed off and cannot
@@ -1023,7 +1016,7 @@ remarkably important, regardless of what the prover is.
   KeY                   Bad Automated proof performance                     Suggested      [@beckert_evaluating_2012]
   KeY                   Hard to decompose proof                             Suggested      [@beckert_interactive_2015]
 
-  : Viscosity Problems
+  : Viscosity Problems {#tbl:viscosity}
 
 Viscosity is the cognitive dimension of the ease of changing the state
 of the programs.
@@ -1077,7 +1070,7 @@ point.
   Coq              Cannot quickly see type or simplification of term   Survey         [@berman_development_2014]
   KeY              Bad presentation of incomplete proofs               Suggested      [@beckert_evaluating_2012]
 
-  : Visibility Problems
+  : Visibility Problems {#tbl:visibility}
 
 Visibility was a commonly cited issue with interactive theorem provers.
 
@@ -1108,7 +1101,7 @@ fact, it is not even possible to investigate the inside of tacticals
 making it even more difficult to understand intuitively a proof. The
 tactical problem has been resolved by only using a subset of tacticals
 with Matita's Tinycals [@asperti_user_2007; @zacchiroli_user_2007].
-KeYmaera X also offers tracability with automatic tactics, allowing
+KeYmaera X also offers traceability with automatic tactics, allowing
 insight to the operations they performed [@mitsch_keymaera_2017].
 
 In one of the only empirical tests of two different user interfaces, an
@@ -1123,896 +1116,24 @@ Offering different ways of viewing and interacting with proof state has
 been suggested as a way forward in the usability of
 ITPs [@eastaughffe_support_1998; @grebing_seamless_2020].
 
-Diagramic representations of proof is an alternative way of proving
+Diagrammatic representations of proof is an alternative way of proving
 theorems, as demonstrated with iCon [@shams_accessible_2018] and Proof
 Transitions in CoqEdit [@berman_development_2014]. This has not been
 tested empirically against other ITPs
 
 ## Final Analysis
 
-There are surprisingly little papers offering empirical evidence for
-problems and solutions in ITPs.
-Table [\[tab:evidence\]](#tab:evidence){reference-type="ref"
-reference="tab:evidence"} shows all the main problems identified, and
-the evidence that they exist in different ITPs. This shows an enormous
-gap in empirical usability research. The aim of this thesis is to at
-least fill this table up with a simple observational study. Offering
-light and focus on the big issues in an otherwise very dimly lit field.
+Many problems were identified. A summary of the problem is tabulated in [@fig:usability_issues].
 
-![image](Images/MyProblem.png){width="0.9\\linewidth"}
+![Identified Usability Issues](Images/MyProblem.png){#fig:usability_issues}
 
 This analysis answers Research Question 1.
 
-## Do these issues still exist?
-There are a lot of different usability issues uncovered in RQ1. Doing a proper
-usability analysis of every issue on this list would be ideal, but has a few
-problems. 
+# Results
+The result of the living review was the following tool:
 
-The first is that the amount and variety of usability issues discovered. ITPs
-are difficult enough to study as it is, with the requirement of a large amount
-of expert knowledge. In past studies, N=13 has been considered a large sample.
-So we attempt to analyse a subset of these problems.
+<div id='itps'></div>
 
-The second problem would be that considering that this is a growingn field,
-and any study that highlights usability issues are only valid until those usability
-issues are fixed. To be useful in the future, the analysis should update to the 
-current findings in the field.
-
-Therefore, to answer RQ2 and RQ3, we look to create a **living review**. A living
-review is a review of a field that updates periodically to reflect the current
-state of the field. Living reviews often do this by publishing to a website.
-
-In developing this living review, we found that it had a byproduct of being
-a tool that one could use to determine whether they should use an ITP for a
-project and if so, which ITP they should consider using. So we focused on elements
-that would likely inform decisions on this matter. The scope of the living review
-is:
-
-- Comparing general properties about ITPs
-- Comparing library support between ITPs
-- Comparing past projects that have been completed by ITPs
-- Comparing past usability research about ITPs
-
-The specification of the review has been split up into these four sections
-
-#### General features of about ITPs
-Systematic Literature Reviews of ITPs have already been completed, so to prevent
-re-inventing the wheel, we decided to convert the review into a dataset.
-
-This dataset contained several properties about ITPs, and we compare each property
-in a table. Further, by selecting on a property, you can get an explanation of
-what that property means, what alternative values that property can have, and
-what provers are similar in terms of that property.
-
-<!-- Include properties -->
-
-Newer ITPs are added manually to the dataset.
-
-The systematic literature review we source our data from however, is already
-out of date for the latest release of its provers. As of such, we have a python
-script that automatically retrieves whether any newer versions of a prover have
-been released by checking Github Tags. It gets the latest tag to be published
-and adds that as the latest release on the living review, ensuring that the
-review doesn't go out of date by having newer releases.
-
-#### Comparing Library support between ITPs
-
-To compare library support between ITPs, for every ITP with a library, we
-manually scraped the different modules in the library and added them to a dataset.
-Further, some provers have community submitted modules, such as Coq's package
-ecosystem and Isabelle's Archive of Formal Proofs. These were also scraped and
-added to the dataset of modules supported in a prover. 
-
-These modules are then sorted into the Mathematical Subject Classification 2020
-(MSC2020), a classification of math topics used often to classify publications.
-Sometimes, such as in Isabelle's Archive of Formal Proofs or Coq's package
-ecosystem, categories were provided by the website hosting the packages. We
-used these categories to automatically sort packages into MSC classifications.
-We label such packages as unverified as the categories that are on the hosting
-websites are not MSC categories, but are nevertheless included for display.
-
-Then, manual work is done to look through every package and classify it under
-MSC2020. If the package was manually classified it is considered "verified".
-
-In the interface, unverified packages show up red and verified ones show up green.
-
-The process of collecting packages from these sources is automated through a
-collection of python scripts.
-
-#### Comparing projects between ITPs
-
-<!-- Serious TODO -->
-
-### Comparing usability issues between ITPs
-
-<!-- Serious TODO -->
-
-## Scope of Library
-
-<div id='itps'> </div>
-In a focus group, it was identified that Isabelle was missing important
-mathematical foundations from its library [@beckert_usability_2015].
-
-ITPs, being very close to the language of mathematics, often make use of
-mathematical theory in order to prove propositions. This is especially
-the case when it's use is within the field of mathematics itself in
-contrast to proving the correctness of software systems.
-
-When using an ITP to prove theorems from mathematics, the scope of the
-library to work with is important. For instance, if you wished to prove
-a property within topology, then having topological foundations in your
-library available would be beneficial. However, it becomes less
-necessary when proving that code meets its specification. Some theorem
-provers such as KeY, due to it being a direct manipulation theorem
-prover, does not have a standard library, but still can be used to prove
-that software meets its specification.
-
-Textual ITP come equipped with libraries that allow using concepts from
-these libraries. To investigate how much of an issue this was in each of
-the ITPs, scopes of libraries were compared. Library modules were sorted
-into different fields according to broad areas of mathematics. To the
-best of our knowledge, the comparison of scopes of ITPs libraries in
-this way has not been done.
-
-Before diving in to the current scope of ITP libraries, we should noted
-that there are some different approaches to managing standard libraries
-that mean that the analysis could be skewed. Standard libraries of ITPs
-can be compared to standard libraries of programming languages, and
-serve similar functions. The libraries contain elements that are likely
-to be re-used over several programs, and as of such are compiled
-together for reuse. If the concept of a standard library is extended
-into the realm of interactive theorem provers, then a question has to be
-made of how many proofs and mathematical theories should be present
-within the library.
-
-Coq takes an approach that minimizes the amount of pure mathematical
-theory inside the standard library. The library contains mostly common
-concepts such as rationals, integers, naturals, sets, structures,
-Peano's axioms etc. If you are interested in a particular part of
-mathematics, such as probability or analysis, then Coq also offers a
-collection of community maintained packages that can form as a basis for
-your work or theory.
-
-Isabelle and HOL Light, on the other hand, do not have a package management system.
-Isabelle in particular therefore has a lot of resources in it's standard
-library that cover large sweeps of mathematics of many varieties.
-Because of this, if comparing standard libraries directly, it could be
-said that Isabelle has features in analysis, but Coq does not. This
-however is not a particularly fair comparison, because even if Coq had
-the opportunity to include analysis within it's standard library, it
-would probably prefer not to and include it as a package. As of such,
-this comparison also includes the current state of the art in terms of
-packages covering the different fields of mathematics for Coq, as well
-as it's standard library.
-
-One particular package of note is Coq-CoRN (\"Constructive Coq
-Repository at Nijmegen\"). This package contains many formalisms not
-present in the standard library, including analysis, and is commonly
-used in the Coq community.
-
-It should be noted that although Isabelle doesn't have a convential package management
-system, it does have an archive of formal proofs. The archive of formal proofs
-allows community members to submit Isabelle theories covering a particular topic.
-Isabelle's archive of formal proofs is slightly different to a package ecosystem
-because it includes "finished products", that is proofs that are interesting but
-not likely to be used in further development of proofs.
-
-HOL Light also doesn't have a package manager, however HOL Light, like
-Isabelle, has parts of mathematics within its standard library. HOL
-Light is not as popular a theorem prover as the other two, and as of
-such does not have as large a scope.
-
-It was found that although Isabelle was claimed to be missing
-mathematical foundations, in comparison to other theorem provers, it
-seemed to have the standard library with the largest scope. Coq does not
-have foundations in many of the areas of mathematics, but usually offers
-support for the areas through its package ecosystem. HOL Light on the
-other hand, sometimes contains support for some areas of math but not
-others.
-
-In the end, the scope of the standard library and package ecosystems for
-both Coq and Isabelle should be strong enough for most mathematical
-purposes. We were unable to identify any foundations that were
-explicitly missing in either system. HOL Light on the other hand, does
-not contain some mathematical foundations, and is probably not the state
-of the art for proving mathematical theorems and mathematical libraries.
-
-It should also be noted that KeY does not have a standard library, and
-as a direct manipulation theorem prover, is an extremely bad choice for
-proving mathematical theorems.
-
-In figure [1](#fig:library_scope){reference-type="ref"
-reference="fig:library_scope"}, a summary of which topics are covered by
-each prover is shown. We will detail each of these categories in the
-following sections.
-
-::: {#tab:litresults}
-  Area             Sub-Field                            Provers
-  ---------------- ------------------------------------ ------------------------
-  Algebra          Abstract                             Coq, Isabelle, HOL Light
-  Algebra          Linear                               Coq, Isabelle, HOL Light
-  Algebra          Universal                            Coq, Isabelle
-  Foundations      Model Theory                         
-  Foundations      Sets                                 Coq, Isabelle
-  Foundations      Proof                                Coq, Isabelle, HOL Light
-  Number Theory    Analytic
-  Number Theory    Algebraic
-  Analysis         Real Analysis
-  Analysis         Functional Analysis                  Isabelle
-  Analysis         Complex Analysis                     Isabelle
-  Analysis         Harmonic Analysis                    Isabelle
-  Analysis         Measure Theory                       Isabelle
-  Topology         General                              Isabelle, Coq, HOL Light
-  Topology         Algebraic                            Isabelle, Coq
-  Topology         Differential
-  Combinatorics    Enumerative                          Coq, Isabelle\*, HOL Light
-  Combinatorics    Extremal                             
-  Combinatorics    Graph Theory                         Coq, Isabelle\*, HOL Light
-  Geometry         Convex                               Coq, Isabelle, HOL Light
-  Geometry         Discrete                             Coq, Isabelle, HOL Light
-  Geometry         Differential                         Coq, Isabelle, HOL Light
-  Geometry         Algebraic                            Coq, Isabelle, HOL Light
-  Geometry         Arithmetic                           Coq, Isabelle, HOL Light
-  Geometry         Diophantine                          Coq, Isabelle, HOL Light
-  Computer Science Numerical Analysis                   Coq, Isabelle, HOL Light
-  Computer Science Computer Algebra                     Coq, Isabelle, HOL Light
-  Computer Science Complexity Theory                    Coq, Isabelle
-  Probability      Probability Theory                   Coq, Isabelle
-  Probability      Statistics                           Coq, Isabelle
-
-  : Literature review papers
-:::
-
-![Caterogies of Mathematics covered by
-ITP](Images/Problems/Quality of Library/out.png){#fig:library_scope
-width="\\linewidth"}
-
-### Algebra
-Algebra is a broad area of math dedicated to the study of mathematical objects, 
-and how to manipulate these mathematical objects. We split this into three sub-areas,
-abstract algebra, linear algebra and universal algebra.
-
-Abstract Algebra is the study of mathematical objects such as groups, rings, 
-fields, modules and lattices. These objects are defined as sets which have operations
-defined over them that confine to cerain axioms.
-
-In terms of abstract structures, Coq includes the concept of a ring and
-a field. It however does not include groups within its library, nor
-lattices in order theory. Order theory, lattices and groups are however
-found in coq-CoRN. Coq therefore, with the help of its packages, covers
-the fundamentals of abstract algebra.
-
-Isabelle contains packages for fields, modules, groups, rings, order
-theory and lattices. It furthermore has definitions for conditionally
-complete lattices, semirings and Archemidian fields. Foundations of
-abstract algebra are relatively complete in the standard library.
-
-HOL Light has groups and rings, but no lattices or order theory. It has
-less support for abstract algebra than Coq and Isabelle.
-
-Linear Algebra is the study of linear equations, and their applications through
-vector spaces and matrices.
-
-Coq does not have support for linear algebra in its main library, but contains
-support within its package system (coq-lin-alg).
-
-Isabelle contains formalizations required for linear algebra within its standard
-library, including matrices (HOL-Matrix\_LP.Matrix), vector spaces 
-(HOL.Vector\_Spaces) and linear programming (HOL-Matrix\_LP).
-
-HOL Light has some basics for Linear Algebra as required by its Multivariate
-Calculus library, including Matrices (Multivariate/determinants).
-
-Finally, Universal Algebra is the study of Algebraic structures themselves, rather
-than the study of particular examples of Algebras as in Abstract Algebra.
-
-Coq has some libraries tagged with universal algebra on its package management
-system, such as coq-math-classes.
-
-Isabelle has fundemental theorems from universal algebra inside, HOL-Algebra
-such as the first and second isomorphism theorems.
-
-HOL Light does not have support for Universal Algebra.
-
-So in terms of Algebra, Coq and Isabelle contain foundations for most of algebra 
-within its library and packages. However, HOL Light's support could be improved,
-particularly in universal and abstract algebra.
-
-### Foundations
-
-Foundations include proof theory, set theory and model theory. These
-are often included in theorem prover libraries as they are required as a
-foundation for proofs.
-
-ITPs themselves are implementations of different logics within proof theory,
-so its a bit unusual to ask whether an ITP supports proof theory. This investigation
-attempts to look into the support for different foundational ideas within proof
-theory.
-
-In Coq's package management system, Coq contains support for proof theory 
-(coc-propcal). Including Natural deduction calculus, hilbert calculus and sequent
-calculus.
-
-Isabelle contains support for different logics, such as natural deduction (FOL)
-and sequent calculus (Sequent)
-
-HOL Light also includes natural deduction and sequent calculus.
-<!-- Not sureabout this one -->
-
-Set Theory is the study of sets, often in terms of foundations of mathematics.
- 
-Coq includes Classical and Constructive Logic in proof theory. The most common
-being Zermelo–Fraenkel set theory.
-
-Coq has packages for Zermelo-Fraenkel Set theory (coq-zf)
-
-Isabelle has a section of its library for Zermelo-Fraenkel (ZF).
-
-HOL Light does not have formalizations for Zermelo-Fraenkel.
-
-Finally, Model Theory is the study of the semantic relationships between different
-formal theories. 
-
-<!-- Not sure how to do Model theory -->
-
-Therefore, Coq and Isabelle have strong support for Foundational Mathematics,
-but it is missing from within HOL Light
-
-### Number Theory
-
-Number Theory includes the study of numbers (usually integers) and how
-they relate to each other. We split it up into three sections, Analytic Number
-Theory, Algebraic Number Theory and Diophantine Number Theory.
-
-Analytic Number Theory is the use of methods from mathematical analysis to solve
-problems related to integers. Results we looked for to determine whether a library
-supported this were things like Dirichlet L-functions and an analytic proof to the
-prime number theorem.
-
-Coq does not have findings or tools from Analytic Number theory within its package
-ecosystem or standard library.
-
-Isabelle does not have tools from Analytic Number theory within its library, but
-does have results in its archive of formal proofs. Particularly, [Drichlet L Functions](https://www.isa-afp.org/entries/Dirichlet_L.html).
-
-HOL Light does not have any findings.
-
-Algebraic Number Theory uses the study of abstract algebra to study integers and
-rationals and their generalizations. To determine whether this was covered,
-we looked for formalizations talking about unique prime factorizations over different
-algebraic structures and prime ideals.
-
-Coq does not have any findings from Algebraic Number Theory.
-
-Isabelle has findings from Algebraic Number Theory in (HOL-Algebra).
-<!-- Not sure about this one -->
-
-HOL Light does not have findings from algebraic number theory.
-
-Finally, Diophantine Geometry is the study of the amount of solutions
-Diophantine equation have. To determine whether a library has basics covered
-for this areas, we looked into definitions for Diophantine Geometry.
-
-Coq does not have findings for Diophantine Geometry in its library or package
-management system. It however has a formalization for Hilbert's 10th problem
-which is to do with diophantine Geometry.
-<!-- Needs to be cited -->
-
-Isabelle also contains a formalization for Hilbert's 10th problem.
-
-HOL Light does not have findings in this area of mathematics.
-
-Therefore, Isabelle seems to lead the other provers in terms of findings from
-number theory, with Coq coming next and HOL Light not containing any proofs.
-
-### Analysis
-Analysis is the study of limits, differentiation, integration, infinite series,
-and other related topics. We split it into four different subfields, Real
-Analysis, Complex Analysis, Functional Analysis and Measure Theory.
-
-Real Analysis is the study of differention and rates of change over over the
-real numbers. 
-
-Coq contains packages for real analysis such as coq-coqtail and coq-coquelicot.
-
-Isabelle has support for Real Analysis in HOL-Analysis.
-
-HOL Light has support for analysis in its multivariate library.
-
-Complex Analysis is the study of rates of change and integrals over a the complex
-numbers.
-
-Coq contains formalizms for complex analysis within coq-coqtail.
-
-Isabelle contains formalizms for Complex Analysis in HOL-ComplexAnalysis.
-
-HOL Light has support for complex analysis in its multivariate library.
-
-Functional Analysis in analysis as applied to functions, often looking into integration
-and differentiation as it applies to infinite dimensional spaces.
-
-Coq does not contain formalizations for functional analysis. Although it has been
-formalized by some researchers.
-<!-- Please cite -->
-
-Isabelle contains some formalizations for functional analysis in its library,
-particularly The Hahn-Banach theorem, which is one of the fundemental theorems
-of functional analysis.
-
-HOL Light does not contain formalizations of functional analysis.
-
-Measure theory is the study of measures. That is, ways of assigning cardinality
-to subsets of a set. 
-
-Coq contains a formalization of measure theory for its use in the formalization
-of probability within coq-random. But other than that, does not contain any
-other formalizations.
-
-Isabelle contains a formalization of measure theory for probability inside HOL-Probability.
-
-HOL Light does not contain any formalizations for measure theory.
-
-### Topology
-
-Topology is the study of properties that are preserved through the
-deformation of objects. This is used to study properties of spaces
-required for other fields of mathematics. For instance, analysis is
-often founded on metric spaces from topology. We split topology into three sections,
-general topology, differential topology and algebraic topology.
-
-General topology is the study of the basic set-theoretic definitions of topology.
-This is relevant to all other forms of topology.
-
-Coq does not cover general topology inside its standard library but does within
-coq-topology, a community package.
-
-Isabelle covers topological spaces in its HOL.Topological\_Spaces.
-
-HOL Light has definitions for topological spaces as part of its Multivariate library.
-
-Differential Topology is the study of the topological proporties of smooth
-manifolds.
-
-Coq and Isabelle both have theorems such as the classification of closed surfaces.
-<!-- Can't find anything on Isabelle... This is tough. Moving on -->
-
-HOL Light does not have any findings from Differential topology.
-
-Algebraic Topology attempts to use methods from abtract algebra to study
-topological spaces
-<!-- I currently don't know where to start -->
-
-### Combinatorics
-Combinatorics is the study of methods used for counting. It's subfields include Enumerative, Extremal and Graph Theory.
-
-Enumerative combinatorics is the study of counting. Permutations and combinations
-are examples of this field.
-<!-- I can't find examples of combinatorics. Should look through what Coq proves -->
-
-Coq doesn't have any findings from enumerative combinatorics in its library or
-package ecosystem. It however has work done indipendently
-<!-- https://hal.archives-ouvertes.fr/hal-01670709/document -->
-
-Isabelle does have findings in enumerative combinatorics in its archive of formal
-proofs, such as counting equivalence relations (Card\_Equiv\_Relation) and the
-Twelve Fold Way.
-
-HOL Light does not have any findings from enumerative combinatorics.
-
-Extremal combinatorics is the study of the smallest number of elements in a problem
-that satisfy some restriction.
-
-Coq does not have any findings in its library, but contains findings such as Ramsey's
-theorem in its package ecosystem (coq-ramsey).
-
-Isabelle also has Ramsey's theorem proven in it's Archive of Formal Proofs but
-not its library.
-
-HOL Light does not have any findings from Extremal Combinatorics.
-
-Graph Theory is the study of graphs, connected structures made of edges and nodes.
-
-Coq has findings from Graph Theory in its package ecosystem (coq-graph-basics).
-
-Isabelle also has graph theory findings in its Archive of Formal Proofs (Coq
-Graph)
-
-HOL Light does not have findings from Graph Theory
-
-## Geometry
-Geometry is the study of the properties of space to do with distance.
-
-Geometry will be split up into 6 categories. Convex Geometry, Discrete Geometry
-Differential Geometry, Algebraic Geometry, Arithmetic Geometry and Diophantine
-Geometry.
-
-Convex Geometry is the study of Convex Sets.
-<!-- Really difficult to work out what fields are part of this. Because
-it's everywhere -->
-
-Discrete Geometry is the study of combinatorial properties of discrete geometric
-objects.
-
-Coq does not have any findings.
-<!-- Coq doesn't seem to have any findings -->
-
-
-
-Coq, Isabelle and HOL Light all have formalizations for geometry.
-
-### Probability
-
-Probability is the study of the likelihood that certain events will
-occur, or the likelihood that a proposition is true, depending on your
-interpretation.
-
-Coq does not contain any formalizations for probability in it's standard
-library. It however has several formalizations of probability in its
-package ecosystem, such as coq-alea.
-
-Isabelle has a rather complete formalization of probability within it's
-standard library. This formalization includes the defintion of
-distributions, expected value and conditional expectation.
-
-HOL Light does not have a formalization for probability in it's library.
-
-Isabelle currently therefore has the widest coverage of probability in
-it's library. HOL Light could be improved by including a probability
-module.
-
-### Computer Science
-
-Computer Science is the study of topics related to computers including
-binary arithmetic and runtime complexity.
-
-Coq contains formalizations for binary integers and floating point
-arithmetic. It also has formalizations for complexity in its package
-ecosystem, such as coq-cecoa.
-
-Isabelle contains formalizations for floating point numbers and
-complexity theory within it's standard library. Including formalizations
-for IEEE floats and Big-O notation
-
-HOL Light has a formalization for IEEE floats but not complexity theory.
-
-Therefore, Coq and Isabelle again contain formalizations for basic
-computer science, however HOL Light could be improved in its support
-
-## Repetitive Trivial Interactions
-In Focus Groups, KeY was mentioned to require that the user to do many
-trivial interactions.
-
-Because KeY is a Direct Manipulation Prover, proving propositions manually
-requires pointing and clicking at the parts of the proof that you want to
-edit. Other provers on the other hand, have a textual interface for proving theorems, and therefore allow for finer detailed interactions with the prover.
-
-The classic way of preventing trivial interactions is to improve the level
-of abstraction that the user works on. In this case, there are very little
-ways to improve the abstraction level that KeY works on. The main hope is
-that KeY can solve the goal automatically, or with the help of strategy
-macros. So this issue still exists.
-
-Improving this would be difficult without turning KeY into a textual prover.
-
-
-[@beckert_usability_2015].
-
-It's claimed that KeY often requires tedious interaction with low level
-logic formulas. interacting
-
-Issues with abstraction is difficult to determine without looking at
-experimental evidence. As different levels of abstraction simplicity
-offer tradeoffs that are non trivial. The mechanisms discussed here
-include ability to use typeclasses, modules and type theory.
-
-Isabelle, Coq and HOL Light all have these features. However, KeY is a
-direct manipulation therom
-
-``` coq
-Class Show A: Type :=
-  {
-    show : A -> string
-  }.
-```
-
-``` coq
-Module Mod.
-    Definition T:=nat.
-    Check T.
-End Mod.
-```
-
-``` ocaml
-class Show =
-  fixes show::a => string
-```
-
-Coq, Isabelle and are all based off ML style languages, and as of such
-all contain abstraction mechanisms common in such ML/Functional
-programming languages, such as modules (and typeclasses for Coq and
-Isabelle).
-
-In Isabelle, theories, locales and classes are available. A theory
-represents the largest level of abstraction, and is represented by the
-file which contains Isabelle source code. Locale's are like modules,
-except these modules can be extended and paramaterized. This is in a
-sense similar to C++ templates, except they can occur over any scope and
-can accept arbitrary inputs, such as other functions. Finally, classes
-are similar to Haskell's type classes.
-
-An example of an Isabelle locale, borrowed from the locales tutorial in
-isabelle is below
-
-``` isabelle
-locale partial_order = 
-  fixes le :: "’a => ’a => bool" (infixl "v" 50)
-  assumes refl [intro, simp]: "x v x" 
-    and anti_sym [intro]: "[[x v y; y v x]] => x = y"
-    and trans [trans]: "[[x v y; y v z]] => x v z"
-```
-
-This declares a locale named \"partial_order\". It requires a function
-le (less than or equal to) and that certain properties are true about
-le. That is, reflexivity, anti symmetry and transitivity.
-
-Locales are often used to represent abstract properties around types.
-For instance, partial order is a property that could exist to different
-types of numbers, such as naturals, integers and rationals. But could
-also apply to different things for different operations, such as sets if
-you define le in terms of size or some other property.
-
-Using locales for these properties allows users to prove generic
-properties around sets with partial order. This allows for proof re use
-and forms a very strong form of abstraction.
-
-An implementation (called an interpretation in isabelle) of partial\_
-order for the int type looks like the following:
-
-``` isabelle
-interpretation int: partial_order "(<=) :: int => int => bool"
- by unfold_locales auto
-```
-
-In this case, the int type's partial order was realized for the \<=
-operator. The fact that reflexivity, anti symmetry and transitivity
-holds was automatically dispatched by Isabelle's automatic prover
-without additional user interaction.
-
-Isabelle also supports Haskell style type classes. These are in the end
-implemented through the use of locales, as locales are the more general
-concept.
-
-Coq supports a similar system with modules and module types
-
-``` coq
-Module Type HasLe (Import T:Typ).
-  Parameter Inline(40) le : t -> t -> Prop.
-End HasLe.
-```
-
-This is similar to a locale. This requires the module that instantiates
-this module type to have a less than or equal property.
-
-These can be extended and combined with different properties, and
-eventually implemented for a certain type. For instance, the PaenoNat
-module is defined as implementing a type with total order, being a full
-ordered type, being a decidable type and other axioms in NAxiomsSig.
-Each of these represent
-
-``` coq
-Module Nat
- <: NAxiomsSig
- <: UsualDecidableTypeFull
- <: OrderedTypeFull
- <: TotalOrder.
- 
- .... (implementations) ....
-End Nat.
-```
-
-This serves a similar purpose to locale's in Isabelle. Haskell style
-type classes are also availabe for Coq.
-
-HOL Light has its interface in OCaml, and because Coq's module type
-system is inspired by OCaml's module type system, it has a very similar
-abstraction mechanism. To take an example from the OCaml tutorials
-
-``` ocaml
-module type Hello_type = sig
- val hello : unit -> unit
-end
-  
-module Hello : Hello_type = struct
-  ... (implementations) ...
-end
-```
-
-These can be used to organize programs within the ITPs. In my experience
-and opinion, these abstraction mechanisms are often more than enough to
-organize large systems.
-
-KeY is a direct manipulation prover, and currently does have minor
-abstraction mechanisms through the use of macros. These however are not
-at the level of sophistication of other theorem provers. This was
-identified as an issue in focus groups, but would be difficult to solve
-without implementing some form of textual interface to KeY.
-
-## Math Notation
-
-One of the pain points that Matita addresses is Coq's lack of
-mathematical notation. Matita represent statements using LaTeX. However,
-Coq can use mathematical notation through the use of Unicode.
-
-Coq has support for Unicode, and therefore technically allows writing
-math notation. CoqIDE allows you to input math characters with
-Shift+Space. Unicode is however, little used within libraries and
-everyday Coq code. This could be improved by improving the Unicode
-section of the standard library to include common mathematical notation.
-
-Coq's entire library of Unicode support (as of 14th of July 2021) is
-shown in figure [3](#fig:coqunicode){reference-type="ref"
-reference="fig:coqunicode"}.
-
-![Coq's entire support of Unicode math
-notation](Images/Problems/Notation/Utf8Coq.png "fig:"){#fig:coqunicode
-width="0.4\\linewidth"} ![Coq's entire support of Unicode math
-notation](Images/Problems/Notation/Utf8Coq2.png "fig:"){#fig:coqunicode
-width="0.4\\linewidth"}
-
-This could be improved by increasing the amount of unicode support in
-libraries. However, the difference in interpretability and usability due
-to this support of notation has yet to have been observed.
-
-Isabelle has support for mathematical notation through LaTeX. It
-encourages use of this mathematical notation. It is often used as an
-example as to why other languages should use math notation.
-
-It has a window at the bottom of it's interface to allows for the easy
-input of these symbols. This window is shown in
-figure [4](#fig:isabellenotation){reference-type="ref"
-reference="fig:isabellenotation"}.
-
-![Isabelle Notation
-window](Images/Problems/Notation/IsabelleNotation.png){#fig:isabellenotation
-width="0.4\\linewidth"}
-
-This type of interface could be implemented in Coq to improve notational
-support, but only after it has support within the library.
-
-KeY does not have support for mathematical notation. Neither does HOL
-Light.
-
-## Mapping to Program
-
-KeY was mentioned to have a bad mapping to programs during focus groups.
-This is particular to the KeY prover, because all other provers don't
-have a mapping between programs in other languages to properties that
-need to be proven. Although it's been mentioned in a Focus Group, the
-empirical verification of this problem would be difficult to do without
-a study.
-
-One such study could time how long people think about the mapping to
-program in a session of KeY. Or measure the amount of misunderstandings
-made of the mapping to program within KeY. This could be compared with
-Aitken's study [@aitken_analysis_2000] and determined whether it is more
-important.
-
-## Selecting Tactics
-
-Both Isabelle and HOL have been found to be difficult to find
-appropriate lemmas and tactics for situations in observational studies.
-
-CoqIDE provides a drop down menu for selecting tactics at the top bar.
-This drop down menu however does not refine itself to only tactics that
-can be applied. This therefore makes the menu of questionable utility.
-The feature of refining what tactics are available in menus was created
-in CoqEdit. This could be implemented in other IDEs such as CoqIDE to
-improve usability
-
-Isabelle is known to be difficult to find tactics and theorems that are
-relevant. Pamper [@nagashima_pamper_2018] is a tool that creates
-recommendations in a more intelligent fashion, and could be implemented
-in other theorem provers as well as Isabelle
-
-Key is easy to find tactics (or taclets, as they call them), as it is a
-direct manipulation prover. To find a tactic, you right click on the
-part of the proof that you want to manipulate and click on the tactic
-that you want to apply. This type of solution could be (and has been)
-implemented in other theorem provers.
-
-Finding tactics in HOL requires looking through the source code. This is
-again because it doesn't really have an interface.
-
-## Bloated Representation
-
-Isabelle has been suggested to have bloated representations of formulas
-in Focus Groups. As well as large proofs being found to correspond with
-a larger amount of effort. This has not been suggested in any other
-theorem prover and would be difficult to comment on without a study in
-this area.
-
-## Difficult Namespaces
-
-The Difficulty an managing namespaces was suggested to be an issue with
-managing large scale Isabelle projects. Solutions have not been proposed
-nor has the problem been properly studied. This type of issue is
-difficult to discuss without a proper study
-
-## Difficult Syntax
-
-Difficult syntax, particularly object level syntax, was observed by
-Aitken for Isabelle/HOL.
-
-Coq's syntax is difficult to learn due to the large amounts of concepts
-it borrows from a very large amount of languages, and it's support for
-dependent type theory. Novel feature such as typeclasses, Module types
-and Module Functors are in few other languages, and may have to be
-learnt. The existence of these issues in Coq has not been shown by
-study. It would be difficult to investigate these issues in Coq or KeY
-without a proper study.
-
-Isabelle has a simpler syntax based of ML and simple type theory. The
-syntax is not as much of an issue unless you are entering complicated
-object level formulas.
-
-HOL's syntax is about as complicated as OCaml, which is complicated but
-not terrible for those who know ML style languages.
-
-## Unexpected results from tactics
-
-Incorrect predictions made about tactics was observed by Aitken for
-Isabelle/HOL.
-
-## Hard to understand proof scripts
-
-## Cannot see dependencies
-
-## Difficult to patch proofs
-
-## Difficult to move lemmas
-
-## Difficult to understand proof state
-
-## Counterexamples
-
-Counterexample generation is not supported in Coq, due to issues with
-dependent type theory. There are packages that support this feature in
-Coq such as nanchaku, but counterexample generation is still an open
-problem when it come to dependent types.
-
-Isabelle does have counter examples like quickpick and nitpick. They are
-particularly useful in development.
-
-KeY does not have counter example generators, and it has been recorded
-that it would be nice if it did
-
-HOL does not have support for counterexample generators. Again, due to
-pretty much not having an interface.
-
-## Constant Redesign
-
-## Error Messages
-
-## Difficult reason as for proof failure
-
-## Proof Refactoring
-
-## Performance
-
-Coq's performance is ok until you come to larger proof documents. The
-same can be said for Isabelle. These issues can be fixed with
-asynchronous proof loading, which is above. Automated strategies and
-sledgehammers take a while to execute.
-
-KeY's performance on the automated strategies takes a while to complete
-and could be improved.
-
-HOL's performance is just really good, due to it's simplicity.
-
-## Too much detail
-
-## Missing required information
-
-## Insight into automated tactics
+# Discussion
 
 # Bibliography

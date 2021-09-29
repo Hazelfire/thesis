@@ -224,6 +224,8 @@ figcaption {
 }
 
 table {
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2em;
   border-bottom: 1px solid #ddd;
   border-right: 1px solid #ddd;
@@ -244,8 +246,20 @@ table td {
   border-left: 1px solid #ddd;
   vertical-align: top;
 }
+.title {
+  text-align: center;
+}
+
+.header-logo {
+  text-align: center;
+}
 
 .author {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.date {
   font-size: 1.2em;
   text-align: center;
 }
