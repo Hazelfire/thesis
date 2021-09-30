@@ -412,7 +412,9 @@ To do this, the living review is scoped as follows:
 ### General features of about ITPs
 To compare between different ITPs, general features about them need to be collected.
 
-We decided to use a Systematic Literature Reviews on Theorem Provers as our starting dataset [@nawaz_survey_2019]. 
+We decided to use a 2019 Systematic Literature Reviews on Theorem Provers as our starting dataset [@nawaz_survey_2019]. 
+This review went through 27 theorem provers and described the features that each
+prover had. This was converted into a dataset and used to compare general features.
 
 This dataset contained several properties about ITPs, and properties to compare between them.
 
@@ -423,8 +425,8 @@ The full set of properties are:
 - The Truth value of the ITP
 - Whether it supports Set theory
 - Whether it has a library
-- What it's calculus is
-- What's it's architecture
+- What its calculus is
+- What's its architecture
 - The programming language it's based on
 - The User interface
 - The Platforms its supported on
@@ -432,9 +434,15 @@ The full set of properties are:
 - Multithreaded support
 - Whether it has an IDE
 - When it was first released.
-- It's latest release
+- Its latest release
 
-Newer ITPs are added manually to the dataset.
+A lot of these features (such as the logic, truth value etc) require explanations
+as to what they refer to. These explanations will be included within the tool.
+This allows people unfamiliar to the field to learn what the components of ITPs
+are and why they are important.
+
+Some Newer ITPs were not included in the dataset, such as Lean, F* and Idris.
+These were added manually to the dataset.
 
 The systematic literature review we source our data from however, is already
 out of date for the latest release of its provers. As of such, we have a python
@@ -447,6 +455,7 @@ review doesn't go out of date by having newer releases.
 One important thing to consider when making decisions about ITPs to choose is
 what past projects have been completed within the ITP. As of such, we contain
 a literature review of different notable projects within the ITP.
+
 <!-- Need to be more specific --> 
 
 ### Comparing progress on usability issues for ITPs
@@ -455,8 +464,7 @@ usability issues will be reported in this living review.
 
 # Literature Review
 The amount of papers found in each section of the review are shown in
-table [1](#tab:litresults){reference-type="ref"
-reference="tab:litresults"}. This totals to 45 papers found on the
+[@tbl:litresults]. This totals to 45 papers found on the
 topic. However, 1 paper had to be remove due to not being able to access
 it, making 44.
 
@@ -470,7 +478,6 @@ for ITPs. However, comparatively little research has been done
 identifying the issues with ITP interfaces and empirically comparing
 these user interface modifications for merit (10/38 of the papers).
 
-::: {#tab:litresults}
   Round        Found   Relevant
   ------------ ------- ----------
   Query        45      14
@@ -480,10 +487,8 @@ these user interface modifications for merit (10/38 of the papers).
   Snowball 4   44      1
   Snowball 5   4       0
 
-  : Literature review papers
-:::
+  : Literature review papers {#tbl:litresults}
 
-[\[tab:litresults\]]{#tab:litresults label="tab:litresults"}
 
 When going through papers, it was interesting to find a large amount of
 papers proposing user interface models, but not actually identifying the
@@ -591,7 +596,7 @@ textual ITPs often involves a very simple read-evaluate-print-loop
 (REPL) for their interfaces. One very stark example of this is
 HOL-Light, which you interact with by opening up the OCaml REPL (a
 general purpose ML based functional programming language) and loading
-the HOL library. All Ocaml is available to you alongside the HOL
+the HOL library. All OCaml is available to you alongside the HOL
 library. Although this is rather primitive, modern ITP interfaces such
 as Isabelle/jEdit and CoqIDE usually offer only a small layer of
 abstraction over a REPL for their own languages.
@@ -689,8 +694,7 @@ one hand, theorem provers such as Isabelle and Agda allow using
 mathematical notation in their theorems. This helps the user understand
 the theorem in a terse syntax. On the other hand, mathematical notation
 can often be ambiguous and difficult to type. Isabelle allows using
-LaTeX style commands such as\
-rightarrow to render math notation, whereas Agda allows Unicode in
+LaTeX style commands such as rightarrow to render math notation, whereas Agda allows Unicode in
 source files. In order to avoid ambiguity, Coq has no support for math
 notation, and in response to this, Matita has LaTeX style mathematical
 notation [@asperti_user_2007; @zacchiroli_user_2007]. This issue came up
@@ -1130,7 +1134,7 @@ tested empirically against other ITPs
 
 Many problems were identified. A summary of the problem is tabulated in [@fig:usability_issues].
 
-![Identified Usability Issues](./Images/MyProblem.png) {#fig:usability_issues}
+![Identified Usability Issues](./Images/MyProblem.png){#fig:usability_issues}
 
 This analysis answers Research Question 1.
 
@@ -1145,6 +1149,17 @@ https://samnolan.me/thesis
 
 # Discussion
 
-This project currently finds that the development of ITPs are very much ongoing.
+This living literature review offers a lot to the field of ITPs.
+
+It tracks progress on different ITPs, allowing people new to the field to get
+familiar with different ITPs and the differences between them. This lowers the
+bar for entry into ITP research and usage, hopefully encouraging more usage
+
+It further helps those who want to contribute, either in projects or packages,
+to the theorem provers. It helps them identify whether their task has already
+been completed, or what gaps exist that they could fill in ITP support.
+
+It also offers an honest summary of the field for people interested in starting
+using ITPs in their own projects and verify their own software.
 
 # Bibliography
