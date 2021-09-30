@@ -2,6 +2,7 @@
 author: Sam Nolan
 title: A living review of Interactive Theorem Provers
 css: pandoc.css
+csl: acm.csl
 citeproc: true
 bibliography: References.bib
 toc: true
@@ -15,9 +16,12 @@ abstract: |
   creates a tool to help aid decision in choosing what ITP should be used for
   a given project.
 declaration: "I certify that except where due acknowledgment has been made, the work is that of the author alone; the work has not been submitted previously, in whole or in part, to qualify for any other academic award; the content of the thesis is the result of work which has been carried out since the official commencement date of the approved research program; any editorial work, paid or unpaid, carried out by a third party is acknowledged; and, ethics procedures and guidelines have been followed."
+acknowledgment: |
+  I would like to acknowledge my supervisor Maria Spichkova for her guidance and high expectations for this project. I would also like to thank Flora Salim for inspiring me to further invest myself into research and never stopping in opening doors for me.
 header-includes: <script defer src="src/bundle.js"></script>
 link-citations: true
 linkReferences: true
+biblio-style: unsrt
 header-logo: Images/rmit-logo.png
 ---
 # Introduction
@@ -234,6 +238,7 @@ the inherit difficulty vs difficulty created by the notation. Hard
 Mental Operations may arise out of particularly complicated tactics,
 especially since tactics can be composed together. An ITP with a
 consistent set of tactics would reduce Hard Mental Operations.
+
 #### Hidden Dependencies
 
 Are there dependencies in the notation that are not presented? In ITPs
@@ -1125,15 +1130,21 @@ tested empirically against other ITPs
 
 Many problems were identified. A summary of the problem is tabulated in [@fig:usability_issues].
 
-![Identified Usability Issues](Images/MyProblem.png){#fig:usability_issues}
+![Identified Usability Issues](./Images/MyProblem.png) {#fig:usability_issues}
 
 This analysis answers Research Question 1.
 
 # Results
 The result of the living review was the following tool:
 
+```{=latex}
+https://samnolan.me/thesis
+```
+
 <div id='itps'></div>
 
 # Discussion
+
+This project currently finds that the development of ITPs are very much ongoing.
 
 # Bibliography

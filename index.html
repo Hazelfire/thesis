@@ -91,7 +91,7 @@ Date: 29th of September 2021<br />
 <li><a href="#diffuseness-terseness">Diffuseness / terseness</a></li>
 <li><a href="#error-proneness-1">Error Proneness</a></li>
 <li><a href="#hard-mental-operations-1">Hard mental operations</a></li>
-<li><a href="#hidden-dependencies">Hidden dependencies</a></li>
+<li><a href="#hidden-dependencies-1">Hidden dependencies</a></li>
 <li><a href="#perceptual-cues-1">Perceptual cues</a></li>
 <li><a href="#premature-commitment-1">Premature Commitment</a></li>
 <li><a href="#progressive-evaluation-1">Progressive Evaluation</a></li>
@@ -107,9 +107,9 @@ Date: 29th of September 2021<br />
 </nav>
 <h1 id="introduction">Introduction</h1>
 <p>This is a thesis about <strong>Interactive Theorem Provers</strong>, what they are, how they’ve been used in the past and whether you should explore using them in your next project.</p>
-<p>An <strong>Interactive Theorem Prover</strong> (henceforth ITPs) is a program that interactively guides the user in proving mathematical theorems. They are also synonymous called <strong>Proof Assistants</strong>. ITPs are often called upon in mathematics, and have been used to create original proofs of theorems such as the four colour theorem <span class="citation" data-cites="four_colour_2008">(<a href="#ref-four_colour_2008" role="doc-biblioref">Gonthier 2008</a>)</span>.</p>
+<p>An <strong>Interactive Theorem Prover</strong> (henceforth ITPs) is a program that interactively guides the user in proving mathematical theorems. They are also synonymous called <strong>Proof Assistants</strong>. ITPs are often called upon in mathematics, and have been used to create original proofs of theorems such as the four colour theorem <span class="citation" data-cites="four_colour_2008">[<a href="#ref-four_colour_2008" role="doc-biblioref">15</a>]</span>.</p>
 <p>ITPs also have another use. As computer programs can be computer programs can often be expressed through a type of mathematical logic, and have a lot of similarities, ITPs can be used to prove the correctness of software systems.</p>
-<p>Projects that use ITPs include the certified C compiler CompCert <span class="citation" data-cites="leroy_formal_2009">(<a href="#ref-leroy_formal_2009" role="doc-biblioref">Leroy 2009</a>)</span>, which is a C compiler that allows for a fully correct compilation of C. Or the fully verified microkernel SeL4 <span class="citation" data-cites="klein_sel4_2009">(<a href="#ref-klein_sel4_2009" role="doc-biblioref">Klein et al. 2009</a>)</span>. <!-- Might need better description --></p>
+<p>Projects that use ITPs include the certified C compiler CompCert <span class="citation" data-cites="leroy_formal_2009">[<a href="#ref-leroy_formal_2009" role="doc-biblioref">29</a>]</span>, which is a C compiler that allows for a fully correct compilation of C. Or the fully verified microkernel SeL4 <span class="citation" data-cites="klein_sel4_2009">[<a href="#ref-klein_sel4_2009" role="doc-biblioref">28</a>]</span>. <!-- Might need better description --></p>
 <p>However, ITPs are far from commonplace for verifying software. This is likely due to verifying software being very difficult, requiring a lot of knowledge about proof theory.</p>
 <p>Ensuring that software operates correctly is very important, especially as systems get more and more complicated. The goal of this thesis is to identify the roadblocks in adaption, and help users decide between what technology they should use in their next project.</p>
 <p>The research questions for this thesis are:</p>
@@ -141,9 +141,9 @@ Date: 29th of September 2021<br />
 <h2 id="sec:living_review">Living Reviews</h2>
 <p>A living review is a review of a field that updates periodically to reflect the current state of the research. These reviews are often published electronically, such as to a website. The goal of a living review is to ensure that the review never goes stale, and can be used as a reference years to come.</p>
 <h2 id="cognitive-dimensions-of-notation">Cognitive Dimensions of Notation</h2>
-<p>Cognitive Dimensions of Notation is a framework used to evaluate the effectiveness of notations <span class="citation" data-cites="green_usability_1996">(<a href="#ref-green_usability_1996" role="doc-biblioref">Green and Petre 1996</a>)</span>, that is, ways of writing down information. The notation was originally proposed by Green as a way of discussing the design trade-offs of visual programming languages, but has been applied elsewhere for a variety of notations. These dimensions are not an evaluation framework for notations, as often increasing one dimension will also change other dimensions, and different tasks may require different dimensions. For instance, in textual ITPs, dependencies are not shown between theorems, and doing so would increase the Diffuseness of the notation, allowing less to be shown and understood on a single screen. However, debugging why some theorem might fail given a change in other theorems would aid from a more diffuse representation showing the hidden dependencies.</p>
+<p>Cognitive Dimensions of Notation is a framework used to evaluate the effectiveness of notations <span class="citation" data-cites="green_usability_1996">[<a href="#ref-green_usability_1996" role="doc-biblioref">18</a>]</span>, that is, ways of writing down information. The notation was originally proposed by Green as a way of discussing the design trade-offs of visual programming languages, but has been applied elsewhere for a variety of notations. These dimensions are not an evaluation framework for notations, as often increasing one dimension will also change other dimensions, and different tasks may require different dimensions. For instance, in textual ITPs, dependencies are not shown between theorems, and doing so would increase the Diffuseness of the notation, allowing less to be shown and understood on a single screen. However, debugging why some theorem might fail given a change in other theorems would aid from a more diffuse representation showing the hidden dependencies.</p>
 <p>Cognitive Dimensions focus mainly on the way that users understand and work with the meaning of the program. Cognitive Dimensions make an important distinction between difficulties of understanding and working with the notation vs difficulties with the actual problem itself. Because proving theorems is a very cognitively demanding task, that no matter how perfect the notation will always have an inherit difficulties. We can only try and improve the notations rather than making the actual problems easier.</p>
-<p>The notation has been adopted as a way of evaluating the usability of ITPs in Kadoda PhD Thesis <span class="citation" data-cites="kadoda_desirable_1999">(<a href="#ref-kadoda_desirable_1999" role="doc-biblioref">G. F. Kadoda, Stone, and Diaper 1999</a>)</span>. The interpretation of Cognitive Dimensions in regards to ITPs has been inspired by their work, but has some notable differences.</p>
+<p>The notation has been adopted as a way of evaluating the usability of ITPs in Kadoda PhD Thesis <span class="citation" data-cites="kadoda_desirable_1999">[<a href="#ref-kadoda_desirable_1999" role="doc-biblioref">26</a>]</span>. The interpretation of Cognitive Dimensions in regards to ITPs has been inspired by their work, but has some notable differences.</p>
 <p>The Cognitive Dimensions of Notation are:</p>
 <h4 id="abstraction-gradient">Abstraction Gradient</h4>
 <p>Does the ITP offer ways of abstracting components? Abstraction here refers to methods, classes and encapsulation. Green classifies notations as either being abstraction-hating, abstraction-tolerant or abstraction-hungry. An abstraction-hating ITP would be one that forces you to work with low level constructs often. An abstraction-tolerant ITP would be one that gives some methods for abstraction, but still nevertheless requires constant low level interaction. An abstraction-hungry ITP would offer many methods of abstraction, that could even in the end obscure what is actually happening behind the scenes.</p>
@@ -156,7 +156,8 @@ Date: 29th of September 2021<br />
 <h4 id="diffuseness">Diffuseness</h4>
 <p>How much does it represent a proof relative to the complexity of the proposition proven? This is an easier cognitive dimension to measure, and represents the verbosity of the notation. ITPs with high diffuseness often have lower abstractions and are easier to understand, but more difficult to change.</p>
 <h4 id="hard-mental-operations">Hard Mental Operations</h4>
-<p>Are there parts of the notation that require getting out a pencil and paper to understand what it means? The domain of ITPs by it’s very nature requires Hard Mental Operations, so it’s important to separate the inherit difficulty vs difficulty created by the notation. Hard Mental Operations may arise out of particularly complicated tactics, especially since tactics can be composed together. An ITP with a consistent set of tactics would reduce Hard Mental Operations. #### Hidden Dependencies</p>
+<p>Are there parts of the notation that require getting out a pencil and paper to understand what it means? The domain of ITPs by it’s very nature requires Hard Mental Operations, so it’s important to separate the inherit difficulty vs difficulty created by the notation. Hard Mental Operations may arise out of particularly complicated tactics, especially since tactics can be composed together. An ITP with a consistent set of tactics would reduce Hard Mental Operations.</p>
+<h4 id="hidden-dependencies">Hidden Dependencies</h4>
 <p>Are there dependencies in the notation that are not presented? In ITPs and programming languages, it’s usually possible to find what a function/lemma references, but is difficult to find what lemmas/functions reference the one we are working in. Furthermore, automation often uses lemmas in the context without indicating at all that it is using them. This makes the issue of hidden dependencies even more difficult. An ITP with low hidden dependencies makes these dependencies between parts of the program explicit</p>
 <h4 id="perceptual-cues">Perceptual cues</h4>
 <p>Does the notation force the user to make decisions before they have the information they need to make it? Especially for novice users, ITPs need to allow the user to explore different paths for proving a statement. This often represents a premature commitment as the user has to commit to a strategy before evaluating whether that strategy would work. ITPs that offer undo features and allow postponing making decisions require less premature commitment.</p>
@@ -210,7 +211,7 @@ Date: 29th of September 2021<br />
 <li>Which theorem prover the issue is relevant to</li>
 <li>Evidence behind issues and proposed solutions</li>
 </ul>
-<p>The issues were then categorized by Green’s cognitive dimensions of notations <span class="citation" data-cites="green_usability_1996">(<a href="#ref-green_usability_1996" role="doc-biblioref">Green and Petre 1996</a>)</span>.</p>
+<p>The issues were then categorized by Green’s cognitive dimensions of notations <span class="citation" data-cites="green_usability_1996">[<a href="#ref-green_usability_1996" role="doc-biblioref">18</a>]</span>.</p>
 <h2 id="living-review-methodology">Living Review Methodology</h2>
 <p>The living review has the end goal of determining whether usability issues still exist, and then further offering a tool to help decision about ITPs (RQ3).</p>
 <p>To do this, the living review is scoped as follows:</p>
@@ -221,7 +222,7 @@ Date: 29th of September 2021<br />
 </ul>
 <h3 id="general-features-of-about-itps">General features of about ITPs</h3>
 <p>To compare between different ITPs, general features about them need to be collected.</p>
-<p>We decided to use a Systematic Literature Reviews on Theorem Provers as our starting dataset <span class="citation" data-cites="nawaz_survey_2019">(<a href="#ref-nawaz_survey_2019" role="doc-biblioref">Nawaz et al. 2019</a>)</span>.</p>
+<p>We decided to use a Systematic Literature Reviews on Theorem Provers as our starting dataset <span class="citation" data-cites="nawaz_survey_2019">[<a href="#ref-nawaz_survey_2019" role="doc-biblioref">33</a>]</span>.</p>
 <p>This dataset contained several properties about ITPs, and properties to compare between them.</p>
 <p>The full set of properties are:</p>
 <ul>
@@ -295,7 +296,7 @@ Date: 29th of September 2021<br />
 </table>
 </div>
 <p><span id="tab:litresults" label="tab:litresults">[tab:litresults]</span></p>
-<p>When going through papers, it was interesting to find a large amount of papers proposing user interface models, but not actually identifying the problems that they solve, nor evaluating their effectiveness. In fact, out of the 28 papers that showcased user interface improvements, only 2 papers evaluated the their interface improvement to without the improvement <span class="citation" data-cites="hentschel_empirical_2016 berman_development_2014">(<a href="#ref-hentschel_empirical_2016" role="doc-biblioref">Hentschel, Hähnle, and Bubel 2016a</a>; <a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span>. That there is not enough empirical studies verifying usability issues has been cited as an issue that needs to addressed in the past <span class="citation" data-cites="hahnle_deductive_2019">(<a href="#ref-hahnle_deductive_2019" role="doc-biblioref">Hähnle and Huisman 2019</a>)</span>.</p>
+<p>When going through papers, it was interesting to find a large amount of papers proposing user interface models, but not actually identifying the problems that they solve, nor evaluating their effectiveness. In fact, out of the 28 papers that showcased user interface improvements, only 2 papers evaluated the their interface improvement to without the improvement <span class="citation" data-cites="hentschel_empirical_2016 berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>, <a href="#ref-hentschel_empirical_2016" role="doc-biblioref">21</a>]</span>. That there is not enough empirical studies verifying usability issues has been cited as an issue that needs to addressed in the past <span class="citation" data-cites="hahnle_deductive_2019">[<a href="#ref-hahnle_deductive_2019" role="doc-biblioref">20</a>]</span>.</p>
 <p>The following sections outline usability issues and solutions to those issues. Tables are included outlining the usability issues mentioned. If the same problem is mentioned in two papers, it is given two rows.</p>
 <p>The theorem prover column refers to the theorem prover the usability issue was found in. If the problem is a general comment “General" is written.”Textual" means a theorem prover that uses proof script to solve theorems, such as Isabelle/HOL, Coq, Agda. “Direct Manipulation" means a theorem prover that uses direct manipulation to solve theorems, such as KeY.</p>
 <p>The discovered column indicates the evidence that that problem exists. "Suggested" simply means that problem or solution was simply inferred or has not actually been evaluated as effective. Other values indicate the type of study that the paper used to observe or evaluate this problem or solution.</p>
@@ -312,14 +313,14 @@ Date: 29th of September 2021<br />
 <h4 id="matita">Matita</h4>
 <p>Matita is a theorem prover based on Coq’s Calculus of (Co)Inductive Constructions, and was designed to address many of the pain points in working with Coq. Matita is a much simpler prover that aims to present the theorem prover as editing a mathematical library. As of such, Matita’s solutions to problems are often pain points in Coq (mathematical notation, Tinycals etc).</p>
 <p>There are a few other provers also in this review, such as iCon, CardiZ and Dafny. These ITPs are often either coded as proofs of concepts (such as iCon), or are no longer maintained (in the case of CardiZ or Dafny). The problems raised by them however, are often relevant for current day ITPs.</p>
-<p>This is by no means a complete list of modern ITPs. Such compilations have been done <span class="citation" data-cites="nawaz_survey_2019">(<a href="#ref-nawaz_survey_2019" role="doc-biblioref">Nawaz et al. 2019</a>)</span>. These are only the ITPs discussed in the papers found in the review. There are notable ITPs that are missing from this list that caught us by surprise, including Agda, Lean and Mizar.</p>
+<p>This is by no means a complete list of modern ITPs. Such compilations have been done <span class="citation" data-cites="nawaz_survey_2019">[<a href="#ref-nawaz_survey_2019" role="doc-biblioref">33</a>]</span>. These are only the ITPs discussed in the papers found in the review. There are notable ITPs that are missing from this list that caught us by surprise, including Agda, Lean and Mizar.</p>
 <h2 id="interaction-paradigms">Interaction Paradigms</h2>
 <p>Before moving into the actual problems and solutions found in ITPs, it’s worth giving a short history of the interaction paradigms of ITPs, and possible developments.</p>
-<p>Direct Manipulation ITPs such as KeY work by editing proof objects until the obligations have been resolved. These provers often have issues with tedious interactions, and work has even been done add textual elements to KeY <span class="citation" data-cites="beckert_interaction_2017">(<a href="#ref-beckert_interaction_2017" role="doc-biblioref">Beckert, Grebing, and Ulbrich 2017</a>)</span>. The development of interfaces to Direct Manipulation provers often differs from textual ones.</p>
+<p>Direct Manipulation ITPs such as KeY work by editing proof objects until the obligations have been resolved. These provers often have issues with tedious interactions, and work has even been done add textual elements to KeY <span class="citation" data-cites="beckert_interaction_2017">[<a href="#ref-beckert_interaction_2017" role="doc-biblioref">9</a>]</span>. The development of interfaces to Direct Manipulation provers often differs from textual ones.</p>
 <p>Textual ITPs such as HOL, Isabelle, Coq and Matita work by writing a proof script that attempts to prove a proposition. Interacting with textual ITPs often involves a very simple read-evaluate-print-loop (REPL) for their interfaces. One very stark example of this is HOL-Light, which you interact with by opening up the OCaml REPL (a general purpose ML based functional programming language) and loading the HOL library. All Ocaml is available to you alongside the HOL library. Although this is rather primitive, modern ITP interfaces such as Isabelle/jEdit and CoqIDE usually offer only a small layer of abstraction over a REPL for their own languages.</p>
 <p>These interfaces have two main windows, the first has code and the second has proof state. The code can be evaluated up to a certain point, and the output from the REPL in terms of proof state are printed in the second window. The only major difference between this and a standard REPL is that you can rewind to evaluate up to a previous line. This simple style of interface has consequences for usability. In particular, if any error is found either in proof or in syntax, execution stops until that error is resolved. Further, for larger projects, it can take a very long time for systems to recompile. It also means that you can only identify things that have already been identified (it has to be a single pass). This is particularly an issue when automated tactics attempt to use lemmas above them to find solutions to theorems (such as Isabelle). This means that simply changing the order of lemmas in an Isabelle document, even if they never reference lemmas that are below them, could cause a lemma that was proven before to become unproven.</p>
-<p>Developments in IDEs to allow asynchronous interfaces, reloading only parts needed and loading proofs out of order have been introduces to fix this problem. They are called "Prover IDEs", with two examples being Isabelle/PIDE <span class="citation" data-cites="wenzel_asynchronous_2014">(<a href="#ref-wenzel_asynchronous_2014" role="doc-biblioref">Wenzel 2014</a>)</span> and Coq/PIDE <span class="citation" data-cites="barras_asynchronous_2015">(<a href="#ref-barras_asynchronous_2015" role="doc-biblioref">Barras, Tankink, and Tassi 2015</a>)</span>. These hopefully will resolve some of the issues cited above.</p>
-<p>Although we have examples of large projects undertaken with ITPs, optimal interaction paradigms are still up for debate, and several novel interaction paradigms have surfaced. Including proving theorems and writing tactics with diagrams <span class="citation" data-cites="grov_tinker_2018 lin_understanding_2016 shams_accessible_2018">(<a href="#ref-grov_tinker_2018" role="doc-biblioref">Grov and Lin 2018</a>; <a href="#ref-lin_understanding_2016" role="doc-biblioref">Lin, Grov, and Arthan 2016</a>; <a href="#ref-shams_accessible_2018" role="doc-biblioref">Shams et al. 2018</a>)</span>, or providing agent based interfaces <span class="citation" data-cites="hunter_agent-based_2005">(<a href="#ref-hunter_agent-based_2005" role="doc-biblioref">Hunter, Robinson, and Strooper 2005</a>)</span>.</p>
+<p>Developments in IDEs to allow asynchronous interfaces, reloading only parts needed and loading proofs out of order have been introduces to fix this problem. They are called "Prover IDEs", with two examples being Isabelle/PIDE <span class="citation" data-cites="wenzel_asynchronous_2014">[<a href="#ref-wenzel_asynchronous_2014" role="doc-biblioref">39</a>]</span> and Coq/PIDE <span class="citation" data-cites="barras_asynchronous_2015">[<a href="#ref-barras_asynchronous_2015" role="doc-biblioref">6</a>]</span>. These hopefully will resolve some of the issues cited above.</p>
+<p>Although we have examples of large projects undertaken with ITPs, optimal interaction paradigms are still up for debate, and several novel interaction paradigms have surfaced. Including proving theorems and writing tactics with diagrams <span class="citation" data-cites="grov_tinker_2018 lin_understanding_2016 shams_accessible_2018">[<a href="#ref-grov_tinker_2018" role="doc-biblioref">19</a>, <a href="#ref-lin_understanding_2016" role="doc-biblioref">30</a>, <a href="#ref-shams_accessible_2018" role="doc-biblioref">36</a>]</span>, or providing agent based interfaces <span class="citation" data-cites="hunter_agent-based_2005">[<a href="#ref-hunter_agent-based_2005" role="doc-biblioref">24</a>]</span>.</p>
 <p>We now move into the usability problems and solutions found in ITPs.</p>
 <h2 id="abstraction-gradient-1">Abstraction Gradient</h2>
 <div id="tbl:abstraction_gradient">
@@ -338,13 +339,13 @@ Date: 29th of September 2021<br />
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Interaction with low level logic</td>
 <td style="text-align: left;">Focus Groups</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Missing Library</td>
 <td style="text-align: left;">Focus Groups</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span></td>
 </tr>
 </tbody>
 </table>
@@ -369,34 +370,34 @@ Date: 29th of September 2021<br />
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Unintuitive mapping between formula and program</td>
 <td style="text-align: left;">Focus Groups</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">CardiZ</td>
 <td style="text-align: left;">Cannot sketch out proofs</td>
 <td style="text-align: left;">Questionnaire</td>
-<td style="text-align: left;"><span class="citation" data-cites="kadoda_cognitive_2000">(<a href="#ref-kadoda_cognitive_2000" role="doc-biblioref">G. Kadoda 2000</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="kadoda_cognitive_2000">[<a href="#ref-kadoda_cognitive_2000" role="doc-biblioref">25</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Cannot use mathematical notation</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Cannot use mathematical notation</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="asperti_user_2007 zacchiroli_user_2007">(<a href="#ref-asperti_user_2007" role="doc-biblioref">Asperti et al. 2007</a>; <a href="#ref-zacchiroli_user_2007" role="doc-biblioref">Zacchiroli 2007</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="asperti_user_2007 zacchiroli_user_2007">[<a href="#ref-asperti_user_2007" role="doc-biblioref">3</a>, <a href="#ref-zacchiroli_user_2007" role="doc-biblioref">42</a>]</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>The dimension of closeness of mapping is whether the interface maps well to the problem world. For interactive theorem provers, it has to do with how well the proof state is understood in comparison to the actual problem.</p>
-<p>Focus groups found that because KeY attempts to prove properties through annotations and java source code, it can sometimes be difficult to see how this proof state maps to the program <span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span>. This issue is not mentioned in any other source and not tested empirically. No solutions have been suggested for this.</p>
+<p>Focus groups found that because KeY attempts to prove properties through annotations and java source code, it can sometimes be difficult to see how this proof state maps to the program <span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span>. This issue is not mentioned in any other source and not tested empirically. No solutions have been suggested for this.</p>
 <p>CardiZ, an ITP that can be used to prove properties of Z specifications, found that you could not sketch out proofs before an attempt. This is the only paper on CardiZ, as CardiZ is not a popular prover. No solutions have been suggested for this.</p>
 <p>A common issue that came up with Coq was the inability to use mathematical notation. Notation issues are problematic in ITPs. One one hand, theorem provers such as Isabelle and Agda allow using mathematical notation in their theorems. This helps the user understand the theorem in a terse syntax. On the other hand, mathematical notation can often be ambiguous and difficult to type. Isabelle allows using LaTeX style commands such as<br />
-rightarrow to render math notation, whereas Agda allows Unicode in source files. In order to avoid ambiguity, Coq has no support for math notation, and in response to this, Matita has LaTeX style mathematical notation <span class="citation" data-cites="asperti_user_2007 zacchiroli_user_2007">(<a href="#ref-asperti_user_2007" role="doc-biblioref">Asperti et al. 2007</a>; <a href="#ref-zacchiroli_user_2007" role="doc-biblioref">Zacchiroli 2007</a>)</span>. This issue came up in three different sources.</p>
+rightarrow to render math notation, whereas Agda allows Unicode in source files. In order to avoid ambiguity, Coq has no support for math notation, and in response to this, Matita has LaTeX style mathematical notation <span class="citation" data-cites="asperti_user_2007 zacchiroli_user_2007">[<a href="#ref-asperti_user_2007" role="doc-biblioref">3</a>, <a href="#ref-zacchiroli_user_2007" role="doc-biblioref">42</a>]</span>. This issue came up in three different sources.</p>
 <h2 id="consistency-1">Consistency</h2>
 <div id="tbl:consistency">
 <table>
@@ -414,56 +415,56 @@ rightarrow to render math notation, whereas Agda allows Unicode in source files.
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Difficult to know what tactics and lemmas to use</td>
 <td style="text-align: left;">Focus Groups</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015 beckert_interaction_2017">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>; <a href="#ref-beckert_interaction_2017" role="doc-biblioref">Beckert, Grebing, and Ulbrich 2017</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015 beckert_interaction_2017">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>, <a href="#ref-beckert_interaction_2017" role="doc-biblioref">9</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">HOL</td>
 <td style="text-align: left;">Difficult to know what tactic to apply next</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="aitken_interactive_1998">(<a href="#ref-aitken_interactive_1998" role="doc-biblioref">J. S. Aitken et al. 1998</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="aitken_interactive_1998">[<a href="#ref-aitken_interactive_1998" role="doc-biblioref">1</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Hard to remember prover specific details</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="nagashima_pamper_2018">(<a href="#ref-nagashima_pamper_2018" role="doc-biblioref">Nagashima and He 2018</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="nagashima_pamper_2018">[<a href="#ref-nagashima_pamper_2018" role="doc-biblioref">32</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Difficult to know what tactic to apply next</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="mitsch_keymaera_2017">(<a href="#ref-mitsch_keymaera_2017" role="doc-biblioref">Mitsch and Platzer 2017</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="mitsch_keymaera_2017">[<a href="#ref-mitsch_keymaera_2017" role="doc-biblioref">31</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Isabelle,HOL</td>
 <td style="text-align: left;">Difficult to remember names of theorems</td>
 <td style="text-align: left;">Observational</td>
-<td style="text-align: left;"><span class="citation" data-cites="aitken_analysis_2000">(<a href="#ref-aitken_analysis_2000" role="doc-biblioref">S. Aitken and Melham 2000</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="aitken_analysis_2000">[<a href="#ref-aitken_analysis_2000" role="doc-biblioref">2</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Difficult to find relevant lemmas</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Difficult to find arguments for tactics</td>
 <td style="text-align: left;">Observational</td>
-<td style="text-align: left;"><span class="citation" data-cites="ringer_replica_2020">(<a href="#ref-ringer_replica_2020" role="doc-biblioref">Ringer et al. 2020</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="ringer_replica_2020">[<a href="#ref-ringer_replica_2020" role="doc-biblioref">34</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Bad Library, inconsistent naming</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>Consistency is the cognitive dimension of whether, once learning part of the notation, you are able to infer the rest of the notation.</p>
-<p>In textual theorem provers, it is often difficult to remember the name of the next tactic, theorems or lemmas should be applied in any situation. This has been bought up in focus groups <span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span>, observational studies <span class="citation" data-cites="aitken_analysis_2000">(<a href="#ref-aitken_analysis_2000" role="doc-biblioref">S. Aitken and Melham 2000</a>)</span>, surveys <span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span> and suggested as a problem from various other sources.</p>
-<p>Solutions to this problem often include choosing applicable tactics by menu <span class="citation" data-cites="aitken_analysis_2000 aitken_interactive_1998">(<a href="#ref-aitken_analysis_2000" role="doc-biblioref">S. Aitken and Melham 2000</a>; <a href="#ref-aitken_interactive_1998" role="doc-biblioref">J. S. Aitken et al. 1998</a>)</span> Which has been implemented in Coq through Proof Previews <span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span> and in KeYmaera X <span class="citation" data-cites="mitsch_keymaera_2017">(<a href="#ref-mitsch_keymaera_2017" role="doc-biblioref">Mitsch and Platzer 2017</a>)</span>. Machine learning for choosing appropriate recommendations has been suggested for this problem <span class="citation" data-cites="ringer_replica_2020">(<a href="#ref-ringer_replica_2020" role="doc-biblioref">Ringer et al. 2020</a>)</span>, and has also been implemented through the PaMpeR tool in Isabelle <span class="citation" data-cites="nagashima_pamper_2018">(<a href="#ref-nagashima_pamper_2018" role="doc-biblioref">Nagashima and He 2018</a>)</span>. A second way of tackling this problem is to improve library searching, which was suggested <span class="citation" data-cites="aitken_analysis_2000">(<a href="#ref-aitken_analysis_2000" role="doc-biblioref">S. Aitken and Melham 2000</a>)</span> and is a focus in Matita <span class="citation" data-cites="tassi_interactive_2008">(<a href="#ref-tassi_interactive_2008" role="doc-biblioref">Tassi 2008</a>)</span>. Improving these tools is a promising area for improving the usability of ITPs</p>
+<p>In textual theorem provers, it is often difficult to remember the name of the next tactic, theorems or lemmas should be applied in any situation. This has been bought up in focus groups <span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span>, observational studies <span class="citation" data-cites="aitken_analysis_2000">[<a href="#ref-aitken_analysis_2000" role="doc-biblioref">2</a>]</span>, surveys <span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span> and suggested as a problem from various other sources.</p>
+<p>Solutions to this problem often include choosing applicable tactics by menu <span class="citation" data-cites="aitken_analysis_2000 aitken_interactive_1998">[<a href="#ref-aitken_interactive_1998" role="doc-biblioref">1</a>, <a href="#ref-aitken_analysis_2000" role="doc-biblioref">2</a>]</span> Which has been implemented in Coq through Proof Previews <span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span> and in KeYmaera X <span class="citation" data-cites="mitsch_keymaera_2017">[<a href="#ref-mitsch_keymaera_2017" role="doc-biblioref">31</a>]</span>. Machine learning for choosing appropriate recommendations has been suggested for this problem <span class="citation" data-cites="ringer_replica_2020">[<a href="#ref-ringer_replica_2020" role="doc-biblioref">34</a>]</span>, and has also been implemented through the PaMpeR tool in Isabelle <span class="citation" data-cites="nagashima_pamper_2018">[<a href="#ref-nagashima_pamper_2018" role="doc-biblioref">32</a>]</span>. A second way of tackling this problem is to improve library searching, which was suggested <span class="citation" data-cites="aitken_analysis_2000">[<a href="#ref-aitken_analysis_2000" role="doc-biblioref">2</a>]</span> and is a focus in Matita <span class="citation" data-cites="tassi_interactive_2008">[<a href="#ref-tassi_interactive_2008" role="doc-biblioref">38</a>]</span>. Improving these tools is a promising area for improving the usability of ITPs</p>
 <h2 id="diffuseness-terseness">Diffuseness / terseness</h2>
 <div id="tbl:diffuseness">
 <table>
@@ -481,13 +482,13 @@ rightarrow to render math notation, whereas Agda allows Unicode in source files.
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Bloated Formulas</td>
 <td style="text-align: left;">Focus Groups</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Large proofs correspond to large effort</td>
 <td style="text-align: left;">Observational</td>
-<td style="text-align: left;"><span class="citation" data-cites="bourke_challenges_2012">(<a href="#ref-bourke_challenges_2012" role="doc-biblioref">Bourke et al. 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="bourke_challenges_2012">[<a href="#ref-bourke_challenges_2012" role="doc-biblioref">13</a>]</span></td>
 </tr>
 </tbody>
 </table>
@@ -510,26 +511,26 @@ rightarrow to render math notation, whereas Agda allows Unicode in source files.
 <td style="text-align: left;">Isabelle,HOL</td>
 <td style="text-align: left;">Easy to get errors in Object Level Constructions</td>
 <td style="text-align: left;">Observational</td>
-<td style="text-align: left;"><span class="citation" data-cites="aitken_analysis_2000">(<a href="#ref-aitken_analysis_2000" role="doc-biblioref">S. Aitken and Melham 2000</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="aitken_analysis_2000">[<a href="#ref-aitken_analysis_2000" role="doc-biblioref">2</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Isabelle,HOL</td>
 <td style="text-align: left;">Incorrect predictions made about tactics</td>
 <td style="text-align: left;">Observational</td>
-<td style="text-align: left;"><span class="citation" data-cites="aitken_analysis_2000">(<a href="#ref-aitken_analysis_2000" role="doc-biblioref">S. Aitken and Melham 2000</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="aitken_analysis_2000">[<a href="#ref-aitken_analysis_2000" role="doc-biblioref">2</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Difficult to manage namespace</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="bourke_challenges_2012">(<a href="#ref-bourke_challenges_2012" role="doc-biblioref">Bourke et al. 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="bourke_challenges_2012">[<a href="#ref-bourke_challenges_2012" role="doc-biblioref">13</a>]</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>Error proneness is the cognitive dimension of whether a system allows its users to make errors.</p>
-<p>Observational studies have found that in Isabelle and HOL it is easy to make errors in syntax. Considering the frequency of syntax errors, this issue came up surprisingly little other sources. This could be because syntax errors are relatively easy to fix and also decrease with usage. It’s been suggested that this problem could be solved my improving feedback in Object Level syntax input <span class="citation" data-cites="aitken_analysis_2000">(<a href="#ref-aitken_analysis_2000" role="doc-biblioref">S. Aitken and Melham 2000</a>)</span>. A more interesting solution has been implemented for Coq is a structure editor based off keyboard cards <span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span>. This uses rolling chords (like <em>vi</em>) keyboard interfaces to interact with the theorem prover. This means that it is only possible to enter syntactically valid statements. This current solution only works on a subset of Coq’s syntax. It was found to be slightly quicker than using dropdown menus.</p>
-<p>Sometimes when applying a tactic, an unexpected result would occur, causing the user to back up and try to understand the current state. This issue could be solved by Proof Previews <span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span>, which allow you to see a proof state when selecting tactics from a menu without actually applying the tactic. That way the user can cheaply explore tactics to continue in the proof.</p>
+<p>Observational studies have found that in Isabelle and HOL it is easy to make errors in syntax. Considering the frequency of syntax errors, this issue came up surprisingly little other sources. This could be because syntax errors are relatively easy to fix and also decrease with usage. It’s been suggested that this problem could be solved my improving feedback in Object Level syntax input <span class="citation" data-cites="aitken_analysis_2000">[<a href="#ref-aitken_analysis_2000" role="doc-biblioref">2</a>]</span>. A more interesting solution has been implemented for Coq is a structure editor based off keyboard cards <span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span>. This uses rolling chords (like <em>vi</em>) keyboard interfaces to interact with the theorem prover. This means that it is only possible to enter syntactically valid statements. This current solution only works on a subset of Coq’s syntax. It was found to be slightly quicker than using dropdown menus.</p>
+<p>Sometimes when applying a tactic, an unexpected result would occur, causing the user to back up and try to understand the current state. This issue could be solved by Proof Previews <span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span>, which allow you to see a proof state when selecting tactics from a menu without actually applying the tactic. That way the user can cheaply explore tactics to continue in the proof.</p>
 <p>Finally, for large verification projects such as SeL4, there is an issue with managing the namespaces of large amounts of theorems and lemmas. No verification of this problem nor solution has been suggested.</p>
 <h2 id="hard-mental-operations-1">Hard mental operations</h2>
 <div id="tbl:hard_mental_operations">
@@ -548,28 +549,28 @@ rightarrow to render math notation, whereas Agda allows Unicode in source files.
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Hard to understand proof scripts statically</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="zacchiroli_user_2007">(<a href="#ref-zacchiroli_user_2007" role="doc-biblioref">Zacchiroli 2007</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="zacchiroli_user_2007">[<a href="#ref-zacchiroli_user_2007" role="doc-biblioref">42</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">General</td>
 <td style="text-align: left;">Difficult to understand tacticals</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="grov_tinker_2018 lin_understanding_2016">(<a href="#ref-grov_tinker_2018" role="doc-biblioref">Grov and Lin 2018</a>; <a href="#ref-lin_understanding_2016" role="doc-biblioref">Lin, Grov, and Arthan 2016</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="grov_tinker_2018 lin_understanding_2016">[<a href="#ref-grov_tinker_2018" role="doc-biblioref">19</a>, <a href="#ref-lin_understanding_2016" role="doc-biblioref">30</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">General</td>
 <td style="text-align: left;">Proof scripts can become complicated</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="aspinall_towards_2016">(<a href="#ref-aspinall_towards_2016" role="doc-biblioref">Aspinall and Kaliszyk 2016</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="aspinall_towards_2016">[<a href="#ref-aspinall_towards_2016" role="doc-biblioref">5</a>]</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>The dimension of Hard Mental operations refer to the difficulty in understanding and using the interface on a syntax level. This type of issue is common with ITPs, as the actual domain is complicated, so this is reflected with difficult syntax.</p>
-<p>Proofs are hard enough to understand while viewing the dynamic nature of the proof, investigating proof state bit by bit. They are often near impossible to understand statically <span class="citation" data-cites="zacchiroli_user_2007">(<a href="#ref-zacchiroli_user_2007" role="doc-biblioref">Zacchiroli 2007</a>)</span>. This issue has not been investigated empirically, but solutions often involve changing the syntax around proofs. One notable example of this is Isar for Isabelle <span class="citation" data-cites="wenzel_structured_2006">(<a href="#ref-wenzel_structured_2006" role="doc-biblioref">Wenzel 2006</a>)</span>, which attempts to mirror how a pen and paper proof is structured.</p>
-<p>It is often difficult to understand tacticals, and the problem is made even worse when it is not possible to view the state of a tactical mid way through interaction. This problem has been suggested in several sources <span class="citation" data-cites="grov_tinker_2018 lin_understanding_2016 zacchiroli_user_2007">(<a href="#ref-grov_tinker_2018" role="doc-biblioref">Grov and Lin 2018</a>; <a href="#ref-lin_understanding_2016" role="doc-biblioref">Lin, Grov, and Arthan 2016</a>; <a href="#ref-zacchiroli_user_2007" role="doc-biblioref">Zacchiroli 2007</a>)</span> but never empirically investigated. Solutions to this include representing tacticals as graphs <span class="citation" data-cites="grov_tinker_2018 lin_understanding_2016">(<a href="#ref-grov_tinker_2018" role="doc-biblioref">Grov and Lin 2018</a>; <a href="#ref-lin_understanding_2016" role="doc-biblioref">Lin, Grov, and Arthan 2016</a>)</span>. This solution has not been tested with users.</p>
-<p>Proof scripts can also get very complicated for larger propositions. Keeping track of this complexity has been suggested with proof metrics, which are similar to classic code complexity metrics <span class="citation" data-cites="aspinall_towards_2016">(<a href="#ref-aspinall_towards_2016" role="doc-biblioref">Aspinall and Kaliszyk 2016</a>)</span>.</p>
-<h2 id="hidden-dependencies">Hidden dependencies</h2>
+<p>Proofs are hard enough to understand while viewing the dynamic nature of the proof, investigating proof state bit by bit. They are often near impossible to understand statically <span class="citation" data-cites="zacchiroli_user_2007">[<a href="#ref-zacchiroli_user_2007" role="doc-biblioref">42</a>]</span>. This issue has not been investigated empirically, but solutions often involve changing the syntax around proofs. One notable example of this is Isar for Isabelle <span class="citation" data-cites="wenzel_structured_2006">[<a href="#ref-wenzel_structured_2006" role="doc-biblioref">41</a>]</span>, which attempts to mirror how a pen and paper proof is structured.</p>
+<p>It is often difficult to understand tacticals, and the problem is made even worse when it is not possible to view the state of a tactical mid way through interaction. This problem has been suggested in several sources <span class="citation" data-cites="grov_tinker_2018 lin_understanding_2016 zacchiroli_user_2007">[<a href="#ref-grov_tinker_2018" role="doc-biblioref">19</a>, <a href="#ref-lin_understanding_2016" role="doc-biblioref">30</a>, <a href="#ref-zacchiroli_user_2007" role="doc-biblioref">42</a>]</span> but never empirically investigated. Solutions to this include representing tacticals as graphs <span class="citation" data-cites="grov_tinker_2018 lin_understanding_2016">[<a href="#ref-grov_tinker_2018" role="doc-biblioref">19</a>, <a href="#ref-lin_understanding_2016" role="doc-biblioref">30</a>]</span>. This solution has not been tested with users.</p>
+<p>Proof scripts can also get very complicated for larger propositions. Keeping track of this complexity has been suggested with proof metrics, which are similar to classic code complexity metrics <span class="citation" data-cites="aspinall_towards_2016">[<a href="#ref-aspinall_towards_2016" role="doc-biblioref">5</a>]</span>.</p>
+<h2 id="hidden-dependencies-1">Hidden dependencies</h2>
 <div id="tbl:hidden_dependencies">
 <table>
 <caption>Table 7: Hidden Dependencies Problems</caption>
@@ -586,36 +587,36 @@ rightarrow to render math notation, whereas Agda allows Unicode in source files.
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Hard to see dependencies between proofs</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="spichkova_human-centred_2017">(<a href="#ref-spichkova_human-centred_2017" role="doc-biblioref">Spichkova and Simic 2017</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="spichkova_human-centred_2017">[<a href="#ref-spichkova_human-centred_2017" role="doc-biblioref">37</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Difficult to patch proofs that have slightly changed</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">(<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">Beckert and Grebing 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">[<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">10</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Hidden automation dependencies</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="bourke_challenges_2012">(<a href="#ref-bourke_challenges_2012" role="doc-biblioref">Bourke et al. 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="bourke_challenges_2012">[<a href="#ref-bourke_challenges_2012" role="doc-biblioref">13</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Difficult to patch proofs when dependencies change</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="bourke_challenges_2012">(<a href="#ref-bourke_challenges_2012" role="doc-biblioref">Bourke et al. 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="bourke_challenges_2012">[<a href="#ref-bourke_challenges_2012" role="doc-biblioref">13</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Hard to see dependencies between proofs</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="aspinall_towards_2016">(<a href="#ref-aspinall_towards_2016" role="doc-biblioref">Aspinall and Kaliszyk 2016</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="aspinall_towards_2016">[<a href="#ref-aspinall_towards_2016" role="doc-biblioref">5</a>]</span></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Hidden dependencies represent dependencies between components that are not shown explicitly. Hidden dependencies are everywhere in theorem provers. Like functions in many programming languages, lemmas can reference the lemmas that they use, but it is difficult to find where a particular lemma has been used. Automation makes this problem even worse, where in Isabelle, an automatic tactic will try lemmas that are above it in the theory. This makes moving lemmas around a theory document difficult. Moving a lemma around a document, even if all the other lemmas it is references are above it, may cause it to fail due to it using a lemma by automation. Monitoring dependencies has been suggested as part of formal proof metrics. It’s been suggested and implemented within CoqPIE to show these dependencies within the IDE <span class="citation" data-cites="roe_coqpie_2016">(<a href="#ref-roe_coqpie_2016" role="doc-biblioref">Roe and Smith 2016</a>)</span>. Tools have also been built to analyse dependencies between Isabelle proofs <span class="citation" data-cites="spichkova_human-centred_2017">(<a href="#ref-spichkova_human-centred_2017" role="doc-biblioref">Spichkova and Simic 2017</a>)</span>. For automated tactics, Isabelle’s sledgehammer offers a unique solution to showing dependencies. The automatic tactic, after execution, simply prints a set of manual tactics that were used to prove the theorem into the document. That way, all the lemmas that were used in the automated tactic are made explicit <span class="citation" data-cites="bourke_challenges_2012">(<a href="#ref-bourke_challenges_2012" role="doc-biblioref">Bourke et al. 2012</a>)</span>. None of these solutions have been empirically tested for validity.</p>
+<p>Hidden dependencies represent dependencies between components that are not shown explicitly. Hidden dependencies are everywhere in theorem provers. Like functions in many programming languages, lemmas can reference the lemmas that they use, but it is difficult to find where a particular lemma has been used. Automation makes this problem even worse, where in Isabelle, an automatic tactic will try lemmas that are above it in the theory. This makes moving lemmas around a theory document difficult. Moving a lemma around a document, even if all the other lemmas it is references are above it, may cause it to fail due to it using a lemma by automation. Monitoring dependencies has been suggested as part of formal proof metrics. It’s been suggested and implemented within CoqPIE to show these dependencies within the IDE <span class="citation" data-cites="roe_coqpie_2016">[<a href="#ref-roe_coqpie_2016" role="doc-biblioref">35</a>]</span>. Tools have also been built to analyse dependencies between Isabelle proofs <span class="citation" data-cites="spichkova_human-centred_2017">[<a href="#ref-spichkova_human-centred_2017" role="doc-biblioref">37</a>]</span>. For automated tactics, Isabelle’s sledgehammer offers a unique solution to showing dependencies. The automatic tactic, after execution, simply prints a set of manual tactics that were used to prove the theorem into the document. That way, all the lemmas that were used in the automated tactic are made explicit <span class="citation" data-cites="bourke_challenges_2012">[<a href="#ref-bourke_challenges_2012" role="doc-biblioref">13</a>]</span>. None of these solutions have been empirically tested for validity.</p>
 <p>Furthermore, often changing a definition or proof slightly requires changing the proof in order to match the new definitions. This is a tedious process.</p>
 <p>None of these issues have been tested empirically.</p>
 <h2 id="perceptual-cues-1">Perceptual cues</h2>
@@ -635,19 +636,19 @@ rightarrow to render math notation, whereas Agda allows Unicode in source files.
 <td style="text-align: left;">HOL</td>
 <td style="text-align: left;">Difficult to understand proof state</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="kadoda_cognitive_2000">(<a href="#ref-kadoda_cognitive_2000" role="doc-biblioref">G. Kadoda 2000</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="kadoda_cognitive_2000">[<a href="#ref-kadoda_cognitive_2000" role="doc-biblioref">25</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Difficult to understand proof state</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="hentschel_integrating_2016">(<a href="#ref-hentschel_integrating_2016" role="doc-biblioref">Hentschel 2016</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="hentschel_integrating_2016">[<a href="#ref-hentschel_integrating_2016" role="doc-biblioref">22</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">General</td>
 <td style="text-align: left;">Difficult to understand proof state</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="eastaughffe_support_1998">(<a href="#ref-eastaughffe_support_1998" role="doc-biblioref">Eastaughffe 1998</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="eastaughffe_support_1998">[<a href="#ref-eastaughffe_support_1998" role="doc-biblioref">14</a>]</span></td>
 </tr>
 </tbody>
 </table>
@@ -669,18 +670,18 @@ rightarrow to render math notation, whereas Agda allows Unicode in source files.
 <td style="text-align: left;">HOL</td>
 <td style="text-align: left;">Need to redesign model if proof attempt fails</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Have to apply tactics before understanding what they do</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 </tbody>
 </table>
-<p>When an attempt to prove a theorem fails, either one of two things has happened. First, the proof you are attempting to perform is incorrect, or the model itself is in error. The model is often in error, and as of such there is a premature commitment to a model before having a full understanding. Counterexample generators such as Quick Check and nitpick <span class="citation" data-cites="beckert_usability_2015 beckert_interaction_2017">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>; <a href="#ref-beckert_interaction_2017" role="doc-biblioref">Beckert, Grebing, and Ulbrich 2017</a>)</span> for Isabelle help prevent the user from trying to prove improvable lemmas by providing the user with a counterexamples to show why their lemmas can’t be true.</p>
-<p>Furthermore, tactics often need to be applied to discover what they do. Typing out this tactic is part of the exploration, and represents another premature commitment. A cheaper way to explore tactic applications were trialed with Proof previews in Coq <span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span>. These proof previews allowed the selection of the next tactic by menu, and hovering over a tactic previewed it’s application in a separate window. This was found to be helpful with users.</p>
+<p>When an attempt to prove a theorem fails, either one of two things has happened. First, the proof you are attempting to perform is incorrect, or the model itself is in error. The model is often in error, and as of such there is a premature commitment to a model before having a full understanding. Counterexample generators such as Quick Check and nitpick <span class="citation" data-cites="beckert_usability_2015 beckert_interaction_2017">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>, <a href="#ref-beckert_interaction_2017" role="doc-biblioref">9</a>]</span> for Isabelle help prevent the user from trying to prove improvable lemmas by providing the user with a counterexamples to show why their lemmas can’t be true.</p>
+<p>Furthermore, tactics often need to be applied to discover what they do. Typing out this tactic is part of the exploration, and represents another premature commitment. A cheaper way to explore tactic applications were trialed with Proof previews in Coq <span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span>. These proof previews allowed the selection of the next tactic by menu, and hovering over a tactic previewed it’s application in a separate window. This was found to be helpful with users.</p>
 <h2 id="progressive-evaluation-1">Progressive Evaluation</h2>
 <div id="tbl:progressive_evaluation">
 <table>
@@ -698,92 +699,92 @@ rightarrow to render math notation, whereas Agda allows Unicode in source files.
 <td style="text-align: left;">General</td>
 <td style="text-align: left;">Hard to understand why proof state fails</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="hentschel_interactive_2016">(<a href="#ref-hentschel_interactive_2016" role="doc-biblioref">Hentschel, Hähnle, and Bubel 2016b</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="hentschel_interactive_2016">[<a href="#ref-hentschel_interactive_2016" role="doc-biblioref">23</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Hard to understand why proof state fails</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_interaction_2017 beckert_interactive_2015 beckert_usability_2015">(<a href="#ref-beckert_interaction_2017" role="doc-biblioref">Beckert, Grebing, and Ulbrich 2017</a>; <a href="#ref-beckert_interactive_2015" role="doc-biblioref">Beckert and Grebing 2015</a>; <a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_interaction_2017 beckert_interactive_2015 beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>, <a href="#ref-beckert_interaction_2017" role="doc-biblioref">9</a>, <a href="#ref-beckert_interactive_2015" role="doc-biblioref">11</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Dafny</td>
 <td style="text-align: left;">Hard to understand why proof state fails</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="grebing_seamless_2020">(<a href="#ref-grebing_seamless_2020" role="doc-biblioref">Grebing, Klamroth, and Ulbrich 2020</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="grebing_seamless_2020">[<a href="#ref-grebing_seamless_2020" role="doc-biblioref">16</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Hard to understand why proof state fails</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="lin_understanding_2016">(<a href="#ref-lin_understanding_2016" role="doc-biblioref">Lin, Grov, and Arthan 2016</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="lin_understanding_2016">[<a href="#ref-lin_understanding_2016" role="doc-biblioref">30</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">General</td>
 <td style="text-align: left;">Hard to understand automated tactics</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="mitsch_keymaera_2017">(<a href="#ref-mitsch_keymaera_2017" role="doc-biblioref">Mitsch and Platzer 2017</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="mitsch_keymaera_2017">[<a href="#ref-mitsch_keymaera_2017" role="doc-biblioref">31</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">e General</td>
 <td style="text-align: left;">Not enough feedback hinders learning</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="mitsch_keymaera_2017">(<a href="#ref-mitsch_keymaera_2017" role="doc-biblioref">Mitsch and Platzer 2017</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="mitsch_keymaera_2017">[<a href="#ref-mitsch_keymaera_2017" role="doc-biblioref">31</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Lack of background automation</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">General</td>
 <td style="text-align: left;">Lack of background automation</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="hunter_agent-based_2005">(<a href="#ref-hunter_agent-based_2005" role="doc-biblioref">Hunter, Robinson, and Strooper 2005</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="hunter_agent-based_2005">[<a href="#ref-hunter_agent-based_2005" role="doc-biblioref">24</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Bad feedback hinders learning</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">(<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">Beckert and Grebing 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">[<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">10</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Don’t know whether an automated tactic would prove a goal</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Non reactive interfaces</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Hard to understand errors from bad inferences of types</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Performance of automatic strategy</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Isabelle,KeY</td>
 <td style="text-align: left;">Difficult to understand automated strategy</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>Progressive evaluation is the dimension of getting appropriate feedback from the system.</p>
-<p>Not understanding why proof attempts fails in a widely cited example of this. This becomes especially true when automation is added to the mix. Insight to the operation of automated tactics is missing in many ITPs. This has been suggested to be one of the largest issues with the usability of ITPs in Focus Groups <span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span>. Although there is little empirical evidence of this issue, the fact that it is so widely cited indicates importance. Solutions to this issue often resolve around providing better visibility, and are covered there.</p>
-<p>Other issues include that systems with low feedback make it difficult to teach using ITPs, and that ITPs do not effectively use background processing to provide the user with feedback. One way of improving feedback is using a cache of proof state <span class="citation" data-cites="berman_development_2014 bourke_challenges_2012">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>; <a href="#ref-bourke_challenges_2012" role="doc-biblioref">Bourke et al. 2012</a>)</span>. Another more novel way is to provide an agent based interaction model <span class="citation" data-cites="hunter_agent-based_2005">(<a href="#ref-hunter_agent-based_2005" role="doc-biblioref">Hunter, Robinson, and Strooper 2005</a>)</span>, where the user interfaces have a "Personal assistant", who then negotiates with proof agents to help solve a particular proof. This makes best use of background processing while the user is trying to solve a problem. Neither of these have been tested with users.</p>
+<p>Not understanding why proof attempts fails in a widely cited example of this. This becomes especially true when automation is added to the mix. Insight to the operation of automated tactics is missing in many ITPs. This has been suggested to be one of the largest issues with the usability of ITPs in Focus Groups <span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span>. Although there is little empirical evidence of this issue, the fact that it is so widely cited indicates importance. Solutions to this issue often resolve around providing better visibility, and are covered there.</p>
+<p>Other issues include that systems with low feedback make it difficult to teach using ITPs, and that ITPs do not effectively use background processing to provide the user with feedback. One way of improving feedback is using a cache of proof state <span class="citation" data-cites="berman_development_2014 bourke_challenges_2012">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>, <a href="#ref-bourke_challenges_2012" role="doc-biblioref">13</a>]</span>. Another more novel way is to provide an agent based interaction model <span class="citation" data-cites="hunter_agent-based_2005">[<a href="#ref-hunter_agent-based_2005" role="doc-biblioref">24</a>]</span>, where the user interfaces have a "Personal assistant", who then negotiates with proof agents to help solve a particular proof. This makes best use of background processing while the user is trying to solve a problem. Neither of these have been tested with users.</p>
 <p>Finally, it was mentioned in a survey of Coq users that it would be nice to know in advance whether an automated tactic could prove a goal. This would prevent further unnecessary work.</p>
 <h2 id="secondary-notation-1">Secondary Notation</h2>
 <p>Secondary notation is the realm of comments, documentation, and even use of visual placement to convey meaning. Problems due to lack of secondary notation are usually simply because of missing features, and are therefore more naturally discussed as solutions.</p>
@@ -803,61 +804,61 @@ rightarrow to render math notation, whereas Agda allows Unicode in source files.
 <td style="text-align: left;">HOL</td>
 <td style="text-align: left;">Allow notes in tree contexts</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="aitken_interactive_1998">(<a href="#ref-aitken_interactive_1998" role="doc-biblioref">J. S. Aitken et al. 1998</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="aitken_interactive_1998">[<a href="#ref-aitken_interactive_1998" role="doc-biblioref">1</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Isabelle,HOL</td>
 <td style="text-align: left;">Allow adding notes to proof context</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">(<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">Beckert and Grebing 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">[<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">10</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Add document orientated features</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="wenzel_isabelle_2011">(<a href="#ref-wenzel_isabelle_2011" role="doc-biblioref">Wenzel 2011</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="wenzel_isabelle_2011">[<a href="#ref-wenzel_isabelle_2011" role="doc-biblioref">40</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Gravity for automated lemma placement</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="bourke_challenges_2012">(<a href="#ref-bourke_challenges_2012" role="doc-biblioref">Bourke et al. 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="bourke_challenges_2012">[<a href="#ref-bourke_challenges_2012" role="doc-biblioref">13</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Deprecation tags</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="bourke_challenges_2012">(<a href="#ref-bourke_challenges_2012" role="doc-biblioref">Bourke et al. 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="bourke_challenges_2012">[<a href="#ref-bourke_challenges_2012" role="doc-biblioref">13</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Doc comments</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">HOL/CardiZ</td>
 <td style="text-align: left;">Colour and low secondary notation</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="kadoda_cognitive_2000">(<a href="#ref-kadoda_cognitive_2000" role="doc-biblioref">G. Kadoda 2000</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="kadoda_cognitive_2000">[<a href="#ref-kadoda_cognitive_2000" role="doc-biblioref">25</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Lack of good tutorials and documentation</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Poor documentation</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">(<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">Beckert and Grebing 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">[<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">10</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Better libraries and documentation</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 </tbody>
 </table>
@@ -883,106 +884,106 @@ rightarrow to render math notation, whereas Agda allows Unicode in source files.
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Messy Downwards compatibility</td>
 <td style="text-align: left;">Focus Groups</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">No support for proof refactoring</td>
 <td style="text-align: left;">Focus Groups</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Direct Manipulation</td>
 <td style="text-align: left;">Tedious Interactions</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="grebing_usability_2020 beckert_usability_2015">(<a href="#ref-grebing_usability_2020" role="doc-biblioref">Grebing and Ulbrich 2020</a>; <a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="grebing_usability_2020 beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>, <a href="#ref-grebing_usability_2020" role="doc-biblioref">17</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">General</td>
 <td style="text-align: left;">Hard to make effective use of large library</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="asperti_considerations_2010 tassi_interactive_2008">(<a href="#ref-asperti_considerations_2010" role="doc-biblioref">Asperti and Coen 2010</a>; <a href="#ref-tassi_interactive_2008" role="doc-biblioref">Tassi 2008</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="asperti_considerations_2010 tassi_interactive_2008">[<a href="#ref-asperti_considerations_2010" role="doc-biblioref">4</a>, <a href="#ref-tassi_interactive_2008" role="doc-biblioref">38</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Tacticals difficult to write</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="becker_lassie_2021">(<a href="#ref-becker_lassie_2021" role="doc-biblioref">Becker et al. 2021</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="becker_lassie_2021">[<a href="#ref-becker_lassie_2021" role="doc-biblioref">7</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Have to update proofs once definition changes</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="ringer_replica_2020">(<a href="#ref-ringer_replica_2020" role="doc-biblioref">Ringer et al. 2020</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="ringer_replica_2020">[<a href="#ref-ringer_replica_2020" role="doc-biblioref">34</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Proof renaming and refactoring is tedious</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="ringer_replica_2020">(<a href="#ref-ringer_replica_2020" role="doc-biblioref">Ringer et al. 2020</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="ringer_replica_2020">[<a href="#ref-ringer_replica_2020" role="doc-biblioref">34</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Large proof scripts require too long to recompile</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="barras_asynchronous_2015">(<a href="#ref-barras_asynchronous_2015" role="doc-biblioref">Barras, Tankink, and Tassi 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="barras_asynchronous_2015">[<a href="#ref-barras_asynchronous_2015" role="doc-biblioref">6</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Isabelle</td>
 <td style="text-align: left;">Large proof scripts require too long to recompile</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="wenzel_asynchronous_2014">(<a href="#ref-wenzel_asynchronous_2014" role="doc-biblioref">Wenzel 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="wenzel_asynchronous_2014">[<a href="#ref-wenzel_asynchronous_2014" role="doc-biblioref">39</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Difficult to select terms</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Unnecessary re-running of proofs</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Slow for large proofs</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="roe_coqpie_2016">(<a href="#ref-roe_coqpie_2016" role="doc-biblioref">Roe and Smith 2016</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="roe_coqpie_2016">[<a href="#ref-roe_coqpie_2016" role="doc-biblioref">35</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Change in lemma requires change in proof</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="roe_coqpie_2016">(<a href="#ref-roe_coqpie_2016" role="doc-biblioref">Roe and Smith 2016</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="roe_coqpie_2016">[<a href="#ref-roe_coqpie_2016" role="doc-biblioref">35</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Bad change management</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">(<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">Beckert and Grebing 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">[<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">10</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Bad Automated proof performance</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">(<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">Beckert and Grebing 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">[<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">10</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Hard to decompose proof</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_interactive_2015">(<a href="#ref-beckert_interactive_2015" role="doc-biblioref">Beckert and Grebing 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_interactive_2015">[<a href="#ref-beckert_interactive_2015" role="doc-biblioref">11</a>]</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>Viscosity is the cognitive dimension of the ease of changing the state of the programs.</p>
-<p>One source of viscosity is simply performance. As automatic strategies get more complicated, their performance becomes important for them to be useful to the user. This has been suggested by focus groups and in surveys. This becomes a particularly difficult problem especially for larger systems. Attempts to improve performance have been done by asynchronously loading only required parts of the proof in Coq <span class="citation" data-cites="barras_asynchronous_2015">(<a href="#ref-barras_asynchronous_2015" role="doc-biblioref">Barras, Tankink, and Tassi 2015</a>)</span> and Isabelle <span class="citation" data-cites="wenzel_asynchronous_2014">(<a href="#ref-wenzel_asynchronous_2014" role="doc-biblioref">Wenzel 2014</a>)</span>. Improvements to performance of automatic strategies will always be an improvement <span class="citation" data-cites="bourke_challenges_2012">(<a href="#ref-bourke_challenges_2012" role="doc-biblioref">Bourke et al. 2012</a>)</span>, including making better use of the library <span class="citation" data-cites="tassi_interactive_2008 asperti_considerations_2010">(<a href="#ref-tassi_interactive_2008" role="doc-biblioref">Tassi 2008</a>; <a href="#ref-asperti_considerations_2010" role="doc-biblioref">Asperti and Coen 2010</a>)</span>.</p>
-<p>A second source is the need to make trivial interactions when making small changes. For instance, the renaming of a lemma might mean you need to go through several files to find where to change the identifier. Messy downwards compatibility, changing definitions, and lack of refactoring are all examples of this. These are usually addressed by refactoring tools that have been suggested as necessary <span class="citation" data-cites="ringer_replica_2020 bourke_challenges_2012">(<a href="#ref-ringer_replica_2020" role="doc-biblioref">Ringer et al. 2020</a>; <a href="#ref-bourke_challenges_2012" role="doc-biblioref">Bourke et al. 2012</a>)</span> and implemented in some IDEs such as CoqPIE <span class="citation" data-cites="roe_coqpie_2016">(<a href="#ref-roe_coqpie_2016" role="doc-biblioref">Roe and Smith 2016</a>)</span>. These solutions have not been tested with users.</p>
+<p>One source of viscosity is simply performance. As automatic strategies get more complicated, their performance becomes important for them to be useful to the user. This has been suggested by focus groups and in surveys. This becomes a particularly difficult problem especially for larger systems. Attempts to improve performance have been done by asynchronously loading only required parts of the proof in Coq <span class="citation" data-cites="barras_asynchronous_2015">[<a href="#ref-barras_asynchronous_2015" role="doc-biblioref">6</a>]</span> and Isabelle <span class="citation" data-cites="wenzel_asynchronous_2014">[<a href="#ref-wenzel_asynchronous_2014" role="doc-biblioref">39</a>]</span>. Improvements to performance of automatic strategies will always be an improvement <span class="citation" data-cites="bourke_challenges_2012">[<a href="#ref-bourke_challenges_2012" role="doc-biblioref">13</a>]</span>, including making better use of the library <span class="citation" data-cites="tassi_interactive_2008 asperti_considerations_2010">[<a href="#ref-asperti_considerations_2010" role="doc-biblioref">4</a>, <a href="#ref-tassi_interactive_2008" role="doc-biblioref">38</a>]</span>.</p>
+<p>A second source is the need to make trivial interactions when making small changes. For instance, the renaming of a lemma might mean you need to go through several files to find where to change the identifier. Messy downwards compatibility, changing definitions, and lack of refactoring are all examples of this. These are usually addressed by refactoring tools that have been suggested as necessary <span class="citation" data-cites="ringer_replica_2020 bourke_challenges_2012">[<a href="#ref-bourke_challenges_2012" role="doc-biblioref">13</a>, <a href="#ref-ringer_replica_2020" role="doc-biblioref">34</a>]</span> and implemented in some IDEs such as CoqPIE <span class="citation" data-cites="roe_coqpie_2016">[<a href="#ref-roe_coqpie_2016" role="doc-biblioref">35</a>]</span>. These solutions have not been tested with users.</p>
 <p>The third is simply interactions that are tedious and error prone. This is more common in direct manipulation theorem provers such as KeY. No solutions have been suggested for this problem.</p>
-<p>Finally, the fourth source of viscosity is clunky syntax, such as the need to explain selections to the theorem prover. Selections are a common issue where you need to describe the part of the goal that you want to rewrite. This part might be complicated, but has to be represented textually. This has served as a challenge for ITP designers. Selections using patterns has been implemented in Matita <span class="citation" data-cites="zacchiroli_user_2007 asperti_user_2007">(<a href="#ref-zacchiroli_user_2007" role="doc-biblioref">Zacchiroli 2007</a>; <a href="#ref-asperti_user_2007" role="doc-biblioref">Asperti et al. 2007</a>)</span> to address this pain point.</p>
+<p>Finally, the fourth source of viscosity is clunky syntax, such as the need to explain selections to the theorem prover. Selections are a common issue where you need to describe the part of the goal that you want to rewrite. This part might be complicated, but has to be represented textually. This has served as a challenge for ITP designers. Selections using patterns has been implemented in Matita <span class="citation" data-cites="zacchiroli_user_2007 asperti_user_2007">[<a href="#ref-asperti_user_2007" role="doc-biblioref">3</a>, <a href="#ref-zacchiroli_user_2007" role="doc-biblioref">42</a>]</span> to address this pain point.</p>
 <h2 id="visibility">Visibility</h2>
 <div id="tbl:visibility">
 <table>
@@ -1000,70 +1001,68 @@ rightarrow to render math notation, whereas Agda allows Unicode in source files.
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Proof tree too detailed</td>
 <td style="text-align: left;">Focus Groups</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">(<a href="#ref-beckert_usability_2015" role="doc-biblioref">Beckert, Grebing, and Böhl 2015</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_usability_2015">[<a href="#ref-beckert_usability_2015" role="doc-biblioref">8</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Textual</td>
 <td style="text-align: left;">Limited insight to automated tactics</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="grebing_usability_2020">(<a href="#ref-grebing_usability_2020" role="doc-biblioref">Grebing and Ulbrich 2020</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="grebing_usability_2020">[<a href="#ref-grebing_usability_2020" role="doc-biblioref">17</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">HOL</td>
 <td style="text-align: left;">Hard to understand proof tree</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="aitken_interactive_1998">(<a href="#ref-aitken_interactive_1998" role="doc-biblioref">J. S. Aitken et al. 1998</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="aitken_interactive_1998">[<a href="#ref-aitken_interactive_1998" role="doc-biblioref">1</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">HOL</td>
 <td style="text-align: left;">Allow showing and hiding of proof contexts</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="aitken_interactive_1998">(<a href="#ref-aitken_interactive_1998" role="doc-biblioref">J. S. Aitken et al. 1998</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="aitken_interactive_1998">[<a href="#ref-aitken_interactive_1998" role="doc-biblioref">1</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Cannot see intermediate proof states</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="zacchiroli_user_2007">(<a href="#ref-zacchiroli_user_2007" role="doc-biblioref">Zacchiroli 2007</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="zacchiroli_user_2007">[<a href="#ref-zacchiroli_user_2007" role="doc-biblioref">42</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Difficult to see structure of proof tree</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Cannot see the relation between subgoals</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Coq</td>
 <td style="text-align: left;">Cannot quickly see type or simplification of term</td>
 <td style="text-align: left;">Survey</td>
-<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">KeY</td>
 <td style="text-align: left;">Bad presentation of incomplete proofs</td>
 <td style="text-align: left;">Suggested</td>
-<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">(<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">Beckert and Grebing 2012</a>)</span></td>
+<td style="text-align: left;"><span class="citation" data-cites="beckert_evaluating_2012">[<a href="#ref-beckert_evaluating_2012" role="doc-biblioref">10</a>]</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>Visibility was a commonly cited issue with interactive theorem provers.</p>
 <p>The cognitive dimension of visibility has to do with being able to how information can be identified and accessible to the user. For the case of interactive theorem provers, there were cases where theorem provers show too much or too little information.</p>
-<p>Direct manipulation theorem provers such as KeY were found to show too much information in the proof tree, which overwhelms the user trying to work out why a proof attempt has failed. The simplest solution to this is to only show information needed <span class="citation" data-cites="eastaughffe_support_1998">(<a href="#ref-eastaughffe_support_1998" role="doc-biblioref">Eastaughffe 1998</a>)</span> and allow the opening and closing of views <span class="citation" data-cites="aitken_interactive_1998">(<a href="#ref-aitken_interactive_1998" role="doc-biblioref">J. S. Aitken et al. 1998</a>)</span>. However, some IDEs (such as CoqIDE) come without a proof tree. These have been considered helpful <span class="citation" data-cites="berman_development_2014 aitken_interactive_1998">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>; <a href="#ref-aitken_interactive_1998" role="doc-biblioref">J. S. Aitken et al. 1998</a>)</span> and have been implemented with Traf <span class="citation" data-cites="kawabata_traf_2018">(<a href="#ref-kawabata_traf_2018" role="doc-biblioref">Kawabata et al. 2018</a>)</span></p>
-<p>In contrast, it’s also been claimed that there is a lack of visibility of the proof state, particularly intermediate proof states within textual theorem provers. The lack of visibility is often to do with intermediate proof states. An intermediate proof state is the state that a proof is in before the full completion of a tactic, and can be used to determine how a tactic got to a particular proof state. Understanding these intermediate proof states is important in understanding the process of automatic theorem provers and the current state. Viewing intermediate proof states is not possible with Isabelle/HOL or Coq. In fact, it is not even possible to investigate the inside of tacticals making it even more difficult to understand intuitively a proof. The tactical problem has been resolved by only using a subset of tacticals with Matita’s Tinycals <span class="citation" data-cites="asperti_user_2007 zacchiroli_user_2007">(<a href="#ref-asperti_user_2007" role="doc-biblioref">Asperti et al. 2007</a>; <a href="#ref-zacchiroli_user_2007" role="doc-biblioref">Zacchiroli 2007</a>)</span>. KeYmaera X also offers traceability with automatic tactics, allowing insight to the operations they performed <span class="citation" data-cites="mitsch_keymaera_2017">(<a href="#ref-mitsch_keymaera_2017" role="doc-biblioref">Mitsch and Platzer 2017</a>)</span>.</p>
-<p>In one of the only empirical tests of two different user interfaces, an interface akin to a symbolic debugger is compared against the standard interface of KeY <span class="citation" data-cites="hentschel_integrating_2016 hentschel_empirical_2016 hentschel_interactive_2016">(<a href="#ref-hentschel_integrating_2016" role="doc-biblioref">Hentschel 2016</a>; <a href="#ref-hentschel_empirical_2016" role="doc-biblioref">Hentschel, Hähnle, and Bubel 2016a</a>, <a href="#ref-hentschel_interactive_2016" role="doc-biblioref">2016b</a>)</span>. The symbol debugger was found to be easier to use. The interfaces are very different, and it could be for a variety of reasons. One such reason is that the interface of a symbolic debugger maps better onto the context of source code, and offers visibility of that connection. Offering different ways of viewing and interacting with proof state has been suggested as a way forward in the usability of ITPs <span class="citation" data-cites="eastaughffe_support_1998 grebing_seamless_2020">(<a href="#ref-eastaughffe_support_1998" role="doc-biblioref">Eastaughffe 1998</a>; <a href="#ref-grebing_seamless_2020" role="doc-biblioref">Grebing, Klamroth, and Ulbrich 2020</a>)</span>.</p>
-<p>Diagrammatic representations of proof is an alternative way of proving theorems, as demonstrated with iCon <span class="citation" data-cites="shams_accessible_2018">(<a href="#ref-shams_accessible_2018" role="doc-biblioref">Shams et al. 2018</a>)</span> and Proof Transitions in CoqEdit <span class="citation" data-cites="berman_development_2014">(<a href="#ref-berman_development_2014" role="doc-biblioref">Berman 2014</a>)</span>. This has not been tested empirically against other ITPs</p>
+<p>Direct manipulation theorem provers such as KeY were found to show too much information in the proof tree, which overwhelms the user trying to work out why a proof attempt has failed. The simplest solution to this is to only show information needed <span class="citation" data-cites="eastaughffe_support_1998">[<a href="#ref-eastaughffe_support_1998" role="doc-biblioref">14</a>]</span> and allow the opening and closing of views <span class="citation" data-cites="aitken_interactive_1998">[<a href="#ref-aitken_interactive_1998" role="doc-biblioref">1</a>]</span>. However, some IDEs (such as CoqIDE) come without a proof tree. These have been considered helpful <span class="citation" data-cites="berman_development_2014 aitken_interactive_1998">[<a href="#ref-aitken_interactive_1998" role="doc-biblioref">1</a>, <a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span> and have been implemented with Traf <span class="citation" data-cites="kawabata_traf_2018">[<a href="#ref-kawabata_traf_2018" role="doc-biblioref">27</a>]</span></p>
+<p>In contrast, it’s also been claimed that there is a lack of visibility of the proof state, particularly intermediate proof states within textual theorem provers. The lack of visibility is often to do with intermediate proof states. An intermediate proof state is the state that a proof is in before the full completion of a tactic, and can be used to determine how a tactic got to a particular proof state. Understanding these intermediate proof states is important in understanding the process of automatic theorem provers and the current state. Viewing intermediate proof states is not possible with Isabelle/HOL or Coq. In fact, it is not even possible to investigate the inside of tacticals making it even more difficult to understand intuitively a proof. The tactical problem has been resolved by only using a subset of tacticals with Matita’s Tinycals <span class="citation" data-cites="asperti_user_2007 zacchiroli_user_2007">[<a href="#ref-asperti_user_2007" role="doc-biblioref">3</a>, <a href="#ref-zacchiroli_user_2007" role="doc-biblioref">42</a>]</span>. KeYmaera X also offers traceability with automatic tactics, allowing insight to the operations they performed <span class="citation" data-cites="mitsch_keymaera_2017">[<a href="#ref-mitsch_keymaera_2017" role="doc-biblioref">31</a>]</span>.</p>
+<p>In one of the only empirical tests of two different user interfaces, an interface akin to a symbolic debugger is compared against the standard interface of KeY <span class="citation" data-cites="hentschel_integrating_2016 hentschel_empirical_2016 hentschel_interactive_2016">[<a href="#ref-hentschel_empirical_2016" role="doc-biblioref">21</a>–<a href="#ref-hentschel_interactive_2016" role="doc-biblioref">23</a>]</span>. The symbol debugger was found to be easier to use. The interfaces are very different, and it could be for a variety of reasons. One such reason is that the interface of a symbolic debugger maps better onto the context of source code, and offers visibility of that connection. Offering different ways of viewing and interacting with proof state has been suggested as a way forward in the usability of ITPs <span class="citation" data-cites="eastaughffe_support_1998 grebing_seamless_2020">[<a href="#ref-eastaughffe_support_1998" role="doc-biblioref">14</a>, <a href="#ref-grebing_seamless_2020" role="doc-biblioref">16</a>]</span>.</p>
+<p>Diagrammatic representations of proof is an alternative way of proving theorems, as demonstrated with iCon <span class="citation" data-cites="shams_accessible_2018">[<a href="#ref-shams_accessible_2018" role="doc-biblioref">36</a>]</span> and Proof Transitions in CoqEdit <span class="citation" data-cites="berman_development_2014">[<a href="#ref-berman_development_2014" role="doc-biblioref">12</a>]</span>. This has not been tested empirically against other ITPs</p>
 <h2 id="final-analysis">Final Analysis</h2>
-<p>Many problems were identified. A summary of the problem is tabulated in fig. <a href="#fig:usability_issues">1</a>.</p>
-<figure>
-<img src="Images/MyProblem.png" id="fig:usability_issues" alt="Figure 1: Identified Usability Issues" /><figcaption aria-hidden="true">Figure 1: Identified Usability Issues</figcaption>
-</figure>
+<p>Many problems were identified. A summary of the problem is tabulated in fig. <strong>¿fig:usability_issues?</strong>.</p>
+<p><img src="./Images/MyProblem.png" alt="Identified Usability Issues" /> {#fig:usability_issues}</p>
 <p>This analysis answers Research Question 1.</p>
 <h1 id="results">Results</h1>
 <p>The result of the living review was the following tool:</p>
@@ -1071,133 +1070,134 @@ rightarrow to render math notation, whereas Agda allows Unicode in source files.
 
 </div>
 <h1 id="discussion">Discussion</h1>
+<p>This project currently finds that the development of ITPs are very much ongoing.</p>
 <h1 class="unnumbered" id="bibliography">Bibliography</h1>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="refs" class="references csl-bib-body" role="doc-bibliography">
 <div id="ref-aitken_interactive_1998" class="csl-entry" role="doc-biblioentry">
-Aitken, J. S., P. Gray, T. Melham, and M. Thomas. 1998. <span>“Interactive <span>Theorem</span> <span>Proving</span>: <span>An</span> <span>Empirical</span> <span>Study</span> of <span>User</span> <span>Activity</span>.”</span> <em>Journal of Symbolic Computation</em> 25 (2): 263–84. https://doi.org/<a href="https://doi.org/10.1006/jsco.1997.0175">https://doi.org/10.1006/jsco.1997.0175</a>.
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Aitken, J.S. et al. 1998. Interactive <span>Theorem</span> <span>Proving</span>: <span>An</span> <span>Empirical</span> <span>Study</span> of <span>User</span> <span>Activity</span>. <em>Journal of Symbolic Computation</em>. 25, 2 (1998), 263–284. DOI:https://doi.org/<a href="https://doi.org/10.1006/jsco.1997.0175">https://doi.org/10.1006/jsco.1997.0175</a>.</div>
 </div>
 <div id="ref-aitken_analysis_2000" class="csl-entry" role="doc-biblioentry">
-Aitken, S., and T. Melham. 2000. <span>“An Analysis of Errors in Interactive Proof Attempts.”</span> <em>Interacting with Computers</em> 12 (6): 565–86. <a href="https://doi.org/10.1016/S0953-5438(99)00023-5">https://doi.org/10.1016/S0953-5438(99)00023-5</a>.
-</div>
-<div id="ref-asperti_considerations_2010" class="csl-entry" role="doc-biblioentry">
-Asperti, Andrea, and Claudio Sacerdoti Coen. 2010. <span>“Some <span>Considerations</span> on the <span>Usability</span> of <span>Interactive</span> <span>Provers</span>.”</span> In <em>Proceedings of the 10th <span>ASIC</span> and 9th <span>MKM</span> <span>International</span> <span>Conference</span>, and 17th <span>Calculemus</span> <span>Conference</span> on <span>Intelligent</span> <span>Computer</span> <span>Mathematics</span></em>, 147–56. <span>AISC</span>’10/<span>MKM</span>’10/<span>Calculemus</span>’10. Berlin, Heidelberg: Springer-Verlag.
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Aitken, S. and Melham, T. 2000. An analysis of errors in interactive proof attempts. <em>Interacting with Computers</em>. 12, 6 (2000), 565–586. DOI:https://doi.org/<a href="https://doi.org/10.1016/S0953-5438(99)00023-5">10.1016/S0953-5438(99)00023-5</a>.</div>
 </div>
 <div id="ref-asperti_user_2007" class="csl-entry" role="doc-biblioentry">
-Asperti, Andrea, Claudio Sacerdoti Coen, Enrico Tassi, and Stefano Zacchiroli. 2007. <span>“User <span>Interaction</span> with the <span>Matita</span> <span>Proof</span> <span>Assistant</span>.”</span> <em>Journal of Automated Reasoning</em> 39 (2): 109–39. <a href="https://doi.org/10.1007/s10817-007-9070-5">https://doi.org/10.1007/s10817-007-9070-5</a>.
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Asperti, A. et al. 2007. User <span>Interaction</span> with the <span>Matita</span> <span>Proof</span> <span>Assistant</span>. <em>Journal of Automated Reasoning</em>. 39, 2 (Aug. 2007), 109–139. DOI:https://doi.org/<a href="https://doi.org/10.1007/s10817-007-9070-5">10.1007/s10817-007-9070-5</a>.</div>
+</div>
+<div id="ref-asperti_considerations_2010" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Asperti, A. and Coen, C.S. 2010. Some <span>Considerations</span> on the <span>Usability</span> of <span>Interactive</span> <span>Provers</span>. <em>Proceedings of the 10th <span>ASIC</span> and 9th <span>MKM</span> <span>International</span> <span>Conference</span>, and 17th <span>Calculemus</span> <span>Conference</span> on <span>Intelligent</span> <span>Computer</span> <span>Mathematics</span></em> (Berlin, Heidelberg, 2010), 147–156.</div>
 </div>
 <div id="ref-aspinall_towards_2016" class="csl-entry" role="doc-biblioentry">
-Aspinall, David, and Cezary Kaliszyk. 2016. <span>“Towards <span>Formal</span> <span>Proof</span> <span>Metrics</span>.”</span> In <em>Fundamental <span>Approaches</span> to <span>Software</span> <span>Engineering</span></em>, edited by Perdita Stevens and Andrzej Wasowski, 325–41. Berlin, Heidelberg: Springer Berlin Heidelberg.
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Aspinall, D. and Kaliszyk, C. 2016. Towards <span>Formal</span> <span>Proof</span> <span>Metrics</span>. <em>Fundamental <span>Approaches</span> to <span>Software</span> <span>Engineering</span></em> (Berlin, Heidelberg, 2016), 325–341.</div>
 </div>
 <div id="ref-barras_asynchronous_2015" class="csl-entry" role="doc-biblioentry">
-Barras, Bruno, Carst Tankink, and Enrico Tassi. 2015. <span>“Asynchronous <span>Processing</span> of <span>Coq</span> <span>Documents</span>: <span>From</span> the <span>Kernel</span> up to the <span>User</span> <span>Interface</span>.”</span> In <em>Interactive <span>Theorem</span> <span>Proving</span></em>, edited by Christian Urban and Xingyuan Zhang, 51–66. Cham: Springer International Publishing.
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Barras, B. et al. 2015. Asynchronous <span>Processing</span> of <span>Coq</span> <span>Documents</span>: <span>From</span> the <span>Kernel</span> up to the <span>User</span> <span>Interface</span>. <em>Interactive <span>Theorem</span> <span>Proving</span></em> (Cham, 2015), 51–66.</div>
 </div>
 <div id="ref-becker_lassie_2021" class="csl-entry" role="doc-biblioentry">
-Becker, Heiko, Nathaniel Bos, Ivan Gavran, Eva Darulova, and Rupak Majumdar. 2021. <span>“Lassie: <span>Hol4</span> <span>Tactics</span> by <span>Example</span>.”</span> In <em>Proceedings of the 10th <span>ACM</span> <span>SIGPLAN</span> <span>International</span> <span>Conference</span> on <span>Certified</span> <span>Programs</span> and <span>Proofs</span></em>, 212–23. <span>CPP</span> 2021. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/3437992.3439925">https://doi.org/10.1145/3437992.3439925</a>.
-</div>
-<div id="ref-beckert_evaluating_2012" class="csl-entry" role="doc-biblioentry">
-Beckert, Bernhard, and S. Grebing. 2012. <span>“Evaluating the <span>Usability</span> of <span>Interactive</span> <span>Verification</span> <span>Systems</span>.”</span> In <em><span>COMPARE</span></em>.
-</div>
-<div id="ref-beckert_interactive_2015" class="csl-entry" role="doc-biblioentry">
-———. 2015. <span>“Interactive <span>Theorem</span> <span>Proving</span> - <span>Modelling</span> the <span>User</span> in the <span>Proof</span> <span>Process</span>.”</span> In <em>Bridging@<span>CADE</span></em>.
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Becker, H. et al. 2021. Lassie: <span>HOL4</span> <span>Tactics</span> by <span>Example</span>. <em>Proceedings of the 10th <span>ACM</span> <span>SIGPLAN</span> <span>International</span> <span>Conference</span> on <span>Certified</span> <span>Programs</span> and <span>Proofs</span></em> (New York, NY, USA, 2021), 212–223.</div>
 </div>
 <div id="ref-beckert_usability_2015" class="csl-entry" role="doc-biblioentry">
-Beckert, Bernhard, Sarah Grebing, and Florian Böhl. 2015. <span>“A <span>Usability</span> <span>Evaluation</span> of <span>Interactive</span> <span>Theorem</span> <span>Provers</span> <span>Using</span> <span>Focus</span> <span>Groups</span>.”</span> In <em>Software <span>Engineering</span> and <span>Formal</span> <span>Methods</span></em>, edited by Carlos Canal and Akram Idani, 3–19. Cham: Springer International Publishing.
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">Beckert, B. et al. 2015. A <span>Usability</span> <span>Evaluation</span> of <span>Interactive</span> <span>Theorem</span> <span>Provers</span> <span>Using</span> <span>Focus</span> <span>Groups</span>. <em>Software <span>Engineering</span> and <span>Formal</span> <span>Methods</span></em> (Cham, 2015), 3–19.</div>
 </div>
 <div id="ref-beckert_interaction_2017" class="csl-entry" role="doc-biblioentry">
-Beckert, Bernhard, Sarah Grebing, and Mattias Ulbrich. 2017. <span>“An <span>Interaction</span> <span>Concept</span> for <span>Program</span> <span>Verification</span> <span>Systems</span> with <span>Explicit</span> <span>Proof</span> <span>Object</span>.”</span> In <em>Hardware and <span>Software</span>: <span>Verification</span> and <span>Testing</span></em>, edited by Ofer Strichman and Rachel Tzoref-Brill, 163–78. Cham: Springer International Publishing.
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Beckert, B. et al. 2017. An <span>Interaction</span> <span>Concept</span> for <span>Program</span> <span>Verification</span> <span>Systems</span> with <span>Explicit</span> <span>Proof</span> <span>Object</span>. <em>Hardware and <span>Software</span>: <span>Verification</span> and <span>Testing</span></em> (Cham, 2017), 163–178.</div>
+</div>
+<div id="ref-beckert_evaluating_2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">Beckert, B. and Grebing, S. 2012. Evaluating the <span>Usability</span> of <span>Interactive</span> <span>Verification</span> <span>Systems</span>. <em><span>COMPARE</span></em> (2012).</div>
+</div>
+<div id="ref-beckert_interactive_2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">Beckert, B. and Grebing, S. 2015. Interactive <span>Theorem</span> <span>Proving</span> - <span>Modelling</span> the <span>User</span> in the <span>Proof</span> <span>Process</span>. <em>Bridging@<span>CADE</span></em> (2015).</div>
 </div>
 <div id="ref-berman_development_2014" class="csl-entry" role="doc-biblioentry">
-Berman, Benjamin Alexander. 2014. <em>Development and User Testing of New User Interfaces for Mathematics and Programming Tools</em>. University of Iowa.
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">Berman, B.A. 2014. <em>Development and user testing of new user interfaces for mathematics and programming tools</em>. University of Iowa.</div>
 </div>
 <div id="ref-bourke_challenges_2012" class="csl-entry" role="doc-biblioentry">
-Bourke, Timothy, Matthias Daum, Gerwin Klein, and Rafal Kolanski. 2012. <span>“Challenges and <span>Experiences</span> in <span>Managing</span> <span>Large</span>-<span>Scale</span> <span>Proofs</span>.”</span> In <em>Intelligent <span>Computer</span> <span>Mathematics</span></em>, edited by Johan Jeuring, John A. Campbell, Jacques Carette, Gabriel Dos Reis, Petr Sojka, Makarius Wenzel, and Volker Sorge, 32–48. Berlin, Heidelberg: Springer Berlin Heidelberg.
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">Bourke, T. et al. 2012. Challenges and <span>Experiences</span> in <span>Managing</span> <span>Large</span>-<span>Scale</span> <span>Proofs</span>. <em>Intelligent <span>Computer</span> <span>Mathematics</span></em> (Berlin, Heidelberg, 2012), 32–48.</div>
 </div>
 <div id="ref-eastaughffe_support_1998" class="csl-entry" role="doc-biblioentry">
-Eastaughffe, Katherine. 1998. <span>“Support for <span>Interactive</span> <span>Theorem</span> <span>Proving</span>: <span>Some</span> <span>Design</span> <span>Principles</span> and <span>Their</span> <span>Application</span>.”</span>
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">Eastaughffe, K. 1998. Support for <span>Interactive</span> <span>Theorem</span> <span>Proving</span>: <span>Some</span> <span>Design</span> <span>Principles</span> and <span>Their</span> <span>Application</span>. (1998).</div>
 </div>
 <div id="ref-four_colour_2008" class="csl-entry" role="doc-biblioentry">
-Gonthier, Geogres. 2008. <span>“Formal Proof — the Four-Color Theorem.”</span> <em>Notices American Mathematical Society</em>, 1382--1393.
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">Gonthier, G. 2008. Formal proof — the four-color theorem. <em>Notices American Mathematical Society</em>. (2008), 1382--1393.</div>
 </div>
 <div id="ref-grebing_seamless_2020" class="csl-entry" role="doc-biblioentry">
-Grebing, Sarah, Jonas Klamroth, and Mattias Ulbrich. 2020. <span>“Seamless <span>Interactive</span> <span>Program</span> <span>Verification</span>.”</span> In <em>Verified <span>Software</span>. <span>Theories</span>, <span>Tools</span>, and <span>Experiments</span></em>, edited by Supratik Chakraborty and Jorge A. Navas, 68–86. Cham: Springer International Publishing.
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">Grebing, S. et al. 2020. Seamless <span>Interactive</span> <span>Program</span> <span>Verification</span>. <em>Verified <span>Software</span>. <span>Theories</span>, <span>Tools</span>, and <span>Experiments</span></em> (Cham, 2020), 68–86.</div>
 </div>
 <div id="ref-grebing_usability_2020" class="csl-entry" role="doc-biblioentry">
-Grebing, Sarah, and Mattias Ulbrich. 2020. <span>“Usability <span>Recommendations</span> for <span>User</span> <span>Guidance</span> in <span>Deductive</span> <span>Program</span> <span>Verification</span>.”</span> In <em>Deductive <span>Software</span> <span>Verification</span>: <span>Future</span> <span>Perspectives</span>: <span>Reflections</span> on the <span>Occasion</span> of 20 <span>Years</span> of <span>KeY</span></em>, edited by Wolfgang Ahrendt, Bernhard Beckert, Richard Bubel, Reiner Hähnle, and Mattias Ulbrich, 261–84. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-64354-6_11">https://doi.org/10.1007/978-3-030-64354-6_11</a>.
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">Grebing, S. and Ulbrich, M. 2020. Usability <span>Recommendations</span> for <span>User</span> <span>Guidance</span> in <span>Deductive</span> <span>Program</span> <span>Verification</span>. <em>Deductive <span>Software</span> <span>Verification</span>: <span>Future</span> <span>Perspectives</span>: <span>Reflections</span> on the <span>Occasion</span> of 20 <span>Years</span> of <span>KeY</span></em>. W. Ahrendt et al., eds. Springer International Publishing. 261–284.</div>
 </div>
 <div id="ref-green_usability_1996" class="csl-entry" role="doc-biblioentry">
-Green, T. R. G., and M. Petre. 1996. <span>“Usability <span>Analysis</span> of <span>Visual</span> <span>Programming</span> <span>Environments</span>: <span>A</span> <span>‘<span>Cognitive</span> <span>Dimensions</span>’</span> <span>Framework</span>.”</span> <em>Journal of Visual Languages &amp; Computing</em> 7 (2): 131–74. https://doi.org/<a href="https://doi.org/10.1006/jvlc.1996.0009">https://doi.org/10.1006/jvlc.1996.0009</a>.
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">Green, T.R.G. and Petre, M. 1996. Usability <span>Analysis</span> of <span>Visual</span> <span>Programming</span> <span>Environments</span>: <span>A</span> <span>‘<span>Cognitive</span> <span>Dimensions</span>’</span> <span>Framework</span>. <em>Journal of Visual Languages &amp; Computing</em>. 7, 2 (1996), 131–174. DOI:https://doi.org/<a href="https://doi.org/10.1006/jvlc.1996.0009">https://doi.org/10.1006/jvlc.1996.0009</a>.</div>
 </div>
 <div id="ref-grov_tinker_2018" class="csl-entry" role="doc-biblioentry">
-Grov, Gudmund, and Yuhui Lin. 2018. <span>“The <span>Tinker</span> Tool for Graphical Tactic Development.”</span> <em>International Journal on Software Tools for Technology Transfer</em> 20 (2): 139–55. <a href="https://doi.org/10.1007/s10009-017-0452-7">https://doi.org/10.1007/s10009-017-0452-7</a>.
+<div class="csl-left-margin">[19] </div><div class="csl-right-inline">Grov, G. and Lin, Y. 2018. The <span>Tinker</span> tool for graphical tactic development. <em>International Journal on Software Tools for Technology Transfer</em>. 20, 2 (Apr. 2018), 139–155. DOI:https://doi.org/<a href="https://doi.org/10.1007/s10009-017-0452-7">10.1007/s10009-017-0452-7</a>.</div>
 </div>
 <div id="ref-hahnle_deductive_2019" class="csl-entry" role="doc-biblioentry">
-Hähnle, Reiner, and Marieke Huisman. 2019. <span>“Deductive <span>Software</span> <span>Verification</span>: <span>From</span> <span>Pen</span>-and-<span>Paper</span> <span>Proofs</span> to <span>Industrial</span> <span>Tools</span>.”</span> In <em>Computing and <span>Software</span> <span>Science</span>: <span>State</span> of the <span>Art</span> and <span>Perspectives</span></em>, edited by Bernhard Steffen and Gerhard Woeginger, 345–73. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-91908-9_18">https://doi.org/10.1007/978-3-319-91908-9_18</a>.
-</div>
-<div id="ref-hentschel_integrating_2016" class="csl-entry" role="doc-biblioentry">
-Hentschel, Martin. 2016. <span>“Integrating <span>Symbolic</span> <span>Execution</span>, <span>Debugging</span> and <span>Verification</span>.”</span> {PhD} {Thesis}, Technische Universität Darmstadt. <a href="http://tuprints.ulb.tu-darmstadt.de/5399/">http://tuprints.ulb.tu-darmstadt.de/5399/</a>.
+<div class="csl-left-margin">[20] </div><div class="csl-right-inline">Hähnle, R. and Huisman, M. 2019. Deductive <span>Software</span> <span>Verification</span>: <span>From</span> <span>Pen</span>-and-<span>Paper</span> <span>Proofs</span> to <span>Industrial</span> <span>Tools</span>. <em>Computing and <span>Software</span> <span>Science</span>: <span>State</span> of the <span>Art</span> and <span>Perspectives</span></em>. B. Steffen and G. Woeginger, eds. Springer International Publishing. 345–373.</div>
 </div>
 <div id="ref-hentschel_empirical_2016" class="csl-entry" role="doc-biblioentry">
-Hentschel, Martin, Reiner Hähnle, and Richard Bubel. 2016a. <span>“An <span>Empirical</span> <span>Evaluation</span> of <span>Two</span> <span>User</span> <span>Interfaces</span> of an <span>Interactive</span> <span>Program</span> <span>Verifier</span>.”</span> In <em>Proceedings of the 31st <span>IEEE</span>/<span>ACM</span> <span>International</span> <span>Conference</span> on <span>Automated</span> <span>Software</span> <span>Engineering</span></em>, 403–13. <span>ASE</span> 2016. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/2970276.2970303">https://doi.org/10.1145/2970276.2970303</a>.
+<div class="csl-left-margin">[21] </div><div class="csl-right-inline">Hentschel, M. et al. 2016. An <span>Empirical</span> <span>Evaluation</span> of <span>Two</span> <span>User</span> <span>Interfaces</span> of an <span>Interactive</span> <span>Program</span> <span>Verifier</span>. <em>Proceedings of the 31st <span>IEEE</span>/<span>ACM</span> <span>International</span> <span>Conference</span> on <span>Automated</span> <span>Software</span> <span>Engineering</span></em> (New York, NY, USA, 2016), 403–413.</div>
+</div>
+<div id="ref-hentschel_integrating_2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">Hentschel, M. 2016. <em>Integrating <span>Symbolic</span> <span>Execution</span>, <span>Debugging</span> and <span>Verification</span></em>. Technische Universität Darmstadt.</div>
 </div>
 <div id="ref-hentschel_interactive_2016" class="csl-entry" role="doc-biblioentry">
-———. 2016b. <span>“The <span>Interactive</span> <span>Verification</span> <span>Debugger</span>: <span>Effective</span> <span>Understanding</span> of <span>Interactive</span> <span>Proof</span> <span>Attempts</span>.”</span> In <em>Proceedings of the 31st <span>IEEE</span>/<span>ACM</span> <span>International</span> <span>Conference</span> on <span>Automated</span> <span>Software</span> <span>Engineering</span></em>, 846–51. <span>ASE</span> 2016. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/2970276.2970292">https://doi.org/10.1145/2970276.2970292</a>.
+<div class="csl-left-margin">[23] </div><div class="csl-right-inline">Hentschel, M. et al. 2016. The <span>Interactive</span> <span>Verification</span> <span>Debugger</span>: <span>Effective</span> <span>Understanding</span> of <span>Interactive</span> <span>Proof</span> <span>Attempts</span>. <em>Proceedings of the 31st <span>IEEE</span>/<span>ACM</span> <span>International</span> <span>Conference</span> on <span>Automated</span> <span>Software</span> <span>Engineering</span></em> (New York, NY, USA, 2016), 846–851.</div>
 </div>
 <div id="ref-hunter_agent-based_2005" class="csl-entry" role="doc-biblioentry">
-Hunter, Chris, Peter Robinson, and Paul Strooper. 2005. <span>“Agent-<span>Based</span> <span>Distributed</span> <span>Software</span> <span>Verification</span>.”</span> In <em>Proceedings of the <span>Twenty</span>-<span>Eighth</span> <span>Australasian</span> <span>Conference</span> on <span>Computer</span> <span>Science</span> - <span>Volume</span> 38</em>, 159–64. <span>ACSC</span> ’05. AUS: Australian Computer Society, Inc.
+<div class="csl-left-margin">[24] </div><div class="csl-right-inline">Hunter, C. et al. 2005. Agent-<span>Based</span> <span>Distributed</span> <span>Software</span> <span>Verification</span>. <em>Proceedings of the <span>Twenty</span>-<span>Eighth</span> <span>Australasian</span> <span>Conference</span> on <span>Computer</span> <span>Science</span> - <span>Volume</span> 38</em> (AUS, 2005), 159–164.</div>
 </div>
 <div id="ref-kadoda_cognitive_2000" class="csl-entry" role="doc-biblioentry">
-Kadoda, Gada. 2000. <em>A <span>Cognitive</span> <span>Dimensions</span> View of the Differences Between Designers and Users of Theorem Proving Assistants</em>.
+<div class="csl-left-margin">[25] </div><div class="csl-right-inline">Kadoda, G. 2000. <em>A <span>Cognitive</span> <span>Dimensions</span> view of the differences between designers and users of theorem proving assistants</em>.</div>
 </div>
 <div id="ref-kadoda_desirable_1999" class="csl-entry" role="doc-biblioentry">
-Kadoda, Gada F., R. Stone, and D. Diaper. 1999. <span>“Desirable Features of Educational Theorem Provers - a Cognitive Dimensions Viewpoint.”</span> In <em><span>PPIG</span></em>.
+<div class="csl-left-margin">[26] </div><div class="csl-right-inline">Kadoda, G.F. et al. 1999. Desirable features of educational theorem provers - a cognitive dimensions viewpoint. <em><span>PPIG</span></em> (1999).</div>
 </div>
 <div id="ref-kawabata_traf_2018" class="csl-entry" role="doc-biblioentry">
-Kawabata, Hideyuki, Yuta Tanaka, Mai Kimura, and Tetsuo Hironaka. 2018. <span>“Traf: <span>A</span> <span>Graphical</span> <span>Proof</span> <span>Tree</span> <span>Viewer</span> <span>Cooperating</span> with <span>Coq</span> <span>Through</span> <span>Proof</span> <span>General</span>.”</span> In <em>Programming <span>Languages</span> and <span>Systems</span></em>, edited by Sukyoung Ryu, 157–65. Cham: Springer International Publishing.
+<div class="csl-left-margin">[27] </div><div class="csl-right-inline">Kawabata, H. et al. 2018. Traf: <span>A</span> <span>Graphical</span> <span>Proof</span> <span>Tree</span> <span>Viewer</span> <span>Cooperating</span> with <span>Coq</span> <span>Through</span> <span>Proof</span> <span>General</span>. <em>Programming <span>Languages</span> and <span>Systems</span></em> (Cham, 2018), 157–165.</div>
 </div>
 <div id="ref-klein_sel4_2009" class="csl-entry" role="doc-biblioentry">
-Klein, Gerwin, Kevin Elphinstone, Gernot Heiser, June Andronick, David Cock, Philip Derrin, Dhammika Elkaduwe, et al. 2009. <span>“<span>SeL4</span>: <span>Formal</span> <span>Verification</span> of an <span>OS</span> <span>Kernel</span>.”</span> In <em>Proceedings of the <span>ACM</span> <span>SIGOPS</span> 22nd <span>Symposium</span> on <span>Operating</span> <span>Systems</span> <span>Principles</span></em>, 207–20. <span>SOSP</span> ’09. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/1629575.1629596">https://doi.org/10.1145/1629575.1629596</a>.
+<div class="csl-left-margin">[28] </div><div class="csl-right-inline">Klein, G. et al. 2009. <span>SeL4</span>: <span>Formal</span> <span>Verification</span> of an <span>OS</span> <span>Kernel</span>. <em>Proceedings of the <span>ACM</span> <span>SIGOPS</span> 22nd <span>Symposium</span> on <span>Operating</span> <span>Systems</span> <span>Principles</span></em> (New York, NY, USA, 2009), 207–220.</div>
 </div>
 <div id="ref-leroy_formal_2009" class="csl-entry" role="doc-biblioentry">
-Leroy, Xavier. 2009. <span>“Formal Verification of a Realistic Compiler.”</span> <em>Communications of the ACM</em> 52 (7): 107–15. <a href="http://xavierleroy.org/publi/compcert-CACM.pdf">http://xavierleroy.org/publi/compcert-CACM.pdf</a>.
+<div class="csl-left-margin">[29] </div><div class="csl-right-inline">Leroy, X. 2009. Formal verification of a realistic compiler. <em>Communications of the ACM</em>. 52, 7 (2009), 107–115.</div>
 </div>
 <div id="ref-lin_understanding_2016" class="csl-entry" role="doc-biblioentry">
-Lin, YuHui, Gudmund Grov, and Rob Arthan. 2016. <span>“Understanding and Maintaining Tactics Graphically <span>OR</span> How We Are Learning That a Diagram Can Be Worth More Than <span>10k</span> <span>LoC</span>.”</span> <em>Journal of Formalized Reasoning</em> 9 (2): 69–130. <a href="https://doi.org/10.6092/issn.1972-5787/6298">https://doi.org/10.6092/issn.1972-5787/6298</a>.
+<div class="csl-left-margin">[30] </div><div class="csl-right-inline">Lin, Y. et al. 2016. Understanding and maintaining tactics graphically <span>OR</span> how we are learning that a diagram can be worth more than <span>10K</span> <span>LoC</span>. <em>Journal of Formalized Reasoning</em>. 9, 2 (Dec. 2016), 69–130. DOI:https://doi.org/<a href="https://doi.org/10.6092/issn.1972-5787/6298">10.6092/issn.1972-5787/6298</a>.</div>
 </div>
 <div id="ref-mitsch_keymaera_2017" class="csl-entry" role="doc-biblioentry">
-Mitsch, Stefan, and André Platzer. 2017. <span>“The <span>KeYmaera</span> <span>X</span> <span>Proof</span> <span>IDE</span> - <span>Concepts</span> on <span>Usability</span> in <span>Hybrid</span> <span>Systems</span> <span>Theorem</span> <span>Proving</span>.”</span> <em>Electronic Proceedings in Theoretical Computer Science</em> 240 (January): 67–81. <a href="https://doi.org/10.4204/eptcs.240.5">https://doi.org/10.4204/eptcs.240.5</a>.
+<div class="csl-left-margin">[31] </div><div class="csl-right-inline">Mitsch, S. and Platzer, A. 2017. The <span>KeYmaera</span> <span>X</span> <span>Proof</span> <span>IDE</span> - <span>Concepts</span> on <span>Usability</span> in <span>Hybrid</span> <span>Systems</span> <span>Theorem</span> <span>Proving</span>. <em>Electronic Proceedings in Theoretical Computer Science</em>. 240, (Jan. 2017), 67–81. DOI:https://doi.org/<a href="https://doi.org/10.4204/eptcs.240.5">10.4204/eptcs.240.5</a>.</div>
 </div>
 <div id="ref-nagashima_pamper_2018" class="csl-entry" role="doc-biblioentry">
-Nagashima, Yutaka, and Yilun He. 2018. <span>“<span>PaMpeR</span>: <span>Proof</span> <span>Method</span> <span>Recommendation</span> <span>System</span> for <span>Isabelle</span>/<span>HOL</span>.”</span> In <em>Proceedings of the 33rd <span>ACM</span>/<span>IEEE</span> <span>International</span> <span>Conference</span> on <span>Automated</span> <span>Software</span> <span>Engineering</span></em>, 362–72. <span>ASE</span> 2018. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/3238147.3238210">https://doi.org/10.1145/3238147.3238210</a>.
+<div class="csl-left-margin">[32] </div><div class="csl-right-inline">Nagashima, Y. and He, Y. 2018. <span>PaMpeR</span>: <span>Proof</span> <span>Method</span> <span>Recommendation</span> <span>System</span> for <span>Isabelle</span>/<span>HOL</span>. <em>Proceedings of the 33rd <span>ACM</span>/<span>IEEE</span> <span>International</span> <span>Conference</span> on <span>Automated</span> <span>Software</span> <span>Engineering</span></em> (New York, NY, USA, 2018), 362–372.</div>
 </div>
 <div id="ref-nawaz_survey_2019" class="csl-entry" role="doc-biblioentry">
-Nawaz, M. Saqib, Moin Malik, Yi Li, Meng Sun, and M. Ikram Ullah Lali. 2019. <span>“A <span>Survey</span> on <span>Theorem</span> <span>Provers</span> in <span>Formal</span> <span>Methods</span>.”</span>
+<div class="csl-left-margin">[33] </div><div class="csl-right-inline">Nawaz, M.S. et al. 2019. A <span>Survey</span> on <span>Theorem</span> <span>Provers</span> in <span>Formal</span> <span>Methods</span>. (2019).</div>
 </div>
 <div id="ref-ringer_replica_2020" class="csl-entry" role="doc-biblioentry">
-Ringer, Talia, Alex Sanchez-Stern, Dan Grossman, and Sorin Lerner. 2020. <span>“<span>REPLica</span>: <span>REPL</span> <span>Instrumentation</span> for <span>Coq</span> <span>Analysis</span>.”</span> In <em>Proceedings of the 9th <span>ACM</span> <span>SIGPLAN</span> <span>International</span> <span>Conference</span> on <span>Certified</span> <span>Programs</span> and <span>Proofs</span></em>, 99–113. <span>CPP</span> 2020. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/3372885.3373823">https://doi.org/10.1145/3372885.3373823</a>.
+<div class="csl-left-margin">[34] </div><div class="csl-right-inline">Ringer, T. et al. 2020. <span>REPLica</span>: <span>REPL</span> <span>Instrumentation</span> for <span>Coq</span> <span>Analysis</span>. <em>Proceedings of the 9th <span>ACM</span> <span>SIGPLAN</span> <span>International</span> <span>Conference</span> on <span>Certified</span> <span>Programs</span> and <span>Proofs</span></em> (New York, NY, USA, 2020), 99–113.</div>
 </div>
 <div id="ref-roe_coqpie_2016" class="csl-entry" role="doc-biblioentry">
-Roe, Kenneth, and Scott Smith. 2016. <span>“<span>CoqPIE</span>: <span>An</span> <span>IDE</span> <span>Aimed</span> at <span>Improving</span> <span>Proof</span> <span>Development</span> <span>Productivity</span>.”</span> In <em>Interactive <span>Theorem</span> <span>Proving</span></em>, edited by Jasmin Christian Blanchette and Stephan Merz, 491–99. Cham: Springer International Publishing.
+<div class="csl-left-margin">[35] </div><div class="csl-right-inline">Roe, K. and Smith, S. 2016. <span>CoqPIE</span>: <span>An</span> <span>IDE</span> <span>Aimed</span> at <span>Improving</span> <span>Proof</span> <span>Development</span> <span>Productivity</span>. <em>Interactive <span>Theorem</span> <span>Proving</span></em> (Cham, 2016), 491–499.</div>
 </div>
 <div id="ref-shams_accessible_2018" class="csl-entry" role="doc-biblioentry">
-Shams, Zohreh, Yuri Sato, Mateja Jamnik, and Gem Stapleton. 2018. <span>“Accessible <span>Reasoning</span> with <span>Diagrams</span>: <span>From</span> <span>Cognition</span> to <span>Automation</span>.”</span> In <em>Diagrammatic <span>Representation</span> and <span>Inference</span></em>, edited by Peter Chapman, Gem Stapleton, Amirouche Moktefi, Sarah Perez-Kriz, and Francesco Bellucci, 247–63. Cham: Springer International Publishing.
+<div class="csl-left-margin">[36] </div><div class="csl-right-inline">Shams, Z. et al. 2018. Accessible <span>Reasoning</span> with <span>Diagrams</span>: <span>From</span> <span>Cognition</span> to <span>Automation</span>. <em>Diagrammatic <span>Representation</span> and <span>Inference</span></em> (Cham, 2018), 247–263.</div>
 </div>
 <div id="ref-spichkova_human-centred_2017" class="csl-entry" role="doc-biblioentry">
-Spichkova, Maria, and Milan Simic. 2017. <span>“Human-Centred Analysis of the Dependencies Within Sets of Proofs.”</span> <em>Knowledge-Based and Intelligent Information &amp; Engineering Systems: Proceedings of the 21st International Conference, KES-20176-8 September 2017, Marseille, France</em> 112 (January): 2290–98. <a href="https://doi.org/10.1016/j.procs.2017.08.256">https://doi.org/10.1016/j.procs.2017.08.256</a>.
+<div class="csl-left-margin">[37] </div><div class="csl-right-inline">Spichkova, M. and Simic, M. 2017. Human-centred analysis of the dependencies within sets of proofs. <em>Knowledge-Based and Intelligent Information &amp; Engineering Systems: Proceedings of the 21st International Conference, KES-20176-8 September 2017, Marseille, France</em>. 112, (Jan. 2017), 2290–2298. DOI:https://doi.org/<a href="https://doi.org/10.1016/j.procs.2017.08.256">10.1016/j.procs.2017.08.256</a>.</div>
 </div>
 <div id="ref-tassi_interactive_2008" class="csl-entry" role="doc-biblioentry">
-Tassi, Enrico. 2008. <span>“Interactive Theorem Provers: Issues Faced as a User and Tackled as a Developer.”</span> {PhD} {Thesis}, alma. <a href="http://amsdottorato.unibo.it/917/">http://amsdottorato.unibo.it/917/</a>.
-</div>
-<div id="ref-wenzel_structured_2006" class="csl-entry" role="doc-biblioentry">
-Wenzel, Makarius. 2006. <span>“Structured <span>Induction</span> <span>Proofs</span> in <span>Isabelle</span>/<span>Isar</span>.”</span> In <em>Mathematical <span>Knowledge</span> <span>Management</span></em>, edited by Jonathan M. Borwein and William M. Farmer, 17–30. Berlin, Heidelberg: Springer Berlin Heidelberg.
-</div>
-<div id="ref-wenzel_isabelle_2011" class="csl-entry" role="doc-biblioentry">
-———. 2011. <span>“Isabelle as <span>Document</span>-<span>Oriented</span> <span>Proof</span> <span>Assistant</span>.”</span> In <em>Intelligent <span>Computer</span> <span>Mathematics</span></em>, edited by James H. Davenport, William M. Farmer, Josef Urban, and Florian Rabe, 244–59. Berlin, Heidelberg: Springer Berlin Heidelberg.
+<div class="csl-left-margin">[38] </div><div class="csl-right-inline">Tassi, E. 2008. <em>Interactive theorem provers: Issues faced as a user and tackled as a developer</em>. alma.</div>
 </div>
 <div id="ref-wenzel_asynchronous_2014" class="csl-entry" role="doc-biblioentry">
-———. 2014. <span>“Asynchronous <span>User</span> <span>Interaction</span> and <span>Tool</span> <span>Integration</span> in <span>Isabelle</span>/<span>PIDE</span>.”</span> In <em>Interactive <span>Theorem</span> <span>Proving</span></em>, edited by Gerwin Klein and Ruben Gamboa, 515–30. Cham: Springer International Publishing.
+<div class="csl-left-margin">[39] </div><div class="csl-right-inline">Wenzel, M. 2014. Asynchronous <span>User</span> <span>Interaction</span> and <span>Tool</span> <span>Integration</span> in <span>Isabelle</span>/<span>PIDE</span>. <em>Interactive <span>Theorem</span> <span>Proving</span></em> (Cham, 2014), 515–530.</div>
+</div>
+<div id="ref-wenzel_isabelle_2011" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[40] </div><div class="csl-right-inline">Wenzel, M. 2011. Isabelle as <span>Document</span>-<span>Oriented</span> <span>Proof</span> <span>Assistant</span>. <em>Intelligent <span>Computer</span> <span>Mathematics</span></em> (Berlin, Heidelberg, 2011), 244–259.</div>
+</div>
+<div id="ref-wenzel_structured_2006" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[41] </div><div class="csl-right-inline">Wenzel, M. 2006. Structured <span>Induction</span> <span>Proofs</span> in <span>Isabelle</span>/<span>Isar</span>. <em>Mathematical <span>Knowledge</span> <span>Management</span></em> (Berlin, Heidelberg, 2006), 17–30.</div>
 </div>
 <div id="ref-zacchiroli_user_2007" class="csl-entry" role="doc-biblioentry">
-Zacchiroli, Stefano. 2007. <span>“User Interaction Widgets for Interactive Theorem Proving.”</span> {PhD} {Thesis}, alma. <a href="http://amsdottorato.unibo.it/616/">http://amsdottorato.unibo.it/616/</a>.
+<div class="csl-left-margin">[42] </div><div class="csl-right-inline">Zacchiroli, S. 2007. <em>User interaction widgets for interactive theorem proving</em>. alma.</div>
 </div>
 </div>
 </body>
