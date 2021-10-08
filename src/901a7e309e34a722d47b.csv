@@ -1,0 +1,55 @@
+package,authors,description,url,msc,verified
+ACCoRD,,Framework for the analysis of air traffic conflict detection and resolution algorithms,https://github.com/nasa/pvslib/blob/master/ACCoRD/README.md,,False
+affine_arith,,Formalization of affine arithmetic and strategy for evaluating polynomial functions with variables on interval domains.,https://github.com/nasa/pvslib/blob/master/affine_arith/README.md,,False
+algebra,,"Groups, monoids, rings, etc.",https://github.com/nasa/pvslib/blob/master/algebra/README.md,,False
+analysis,,"Real analysis, limits, continuity, derivatives, integrals.",https://github.com/nasa/pvslib/blob/master/analysis/README.md,,False
+ASP,,Denotational semantics of Answer Set Programming.,https://github.com/nasa/pvslib/blob/master/ASP/README.md,,False
+aviation,,Support definitions and properties for aviation-related formalizations.,https://github.com/nasa/pvslib/blob/master/aviation/README.md,,False
+Bernstein,,Formalization of multivariate Bernstein polynomials.,https://github.com/nasa/pvslib/blob/master/Bernstein/README.md,,False
+CCG,,Formalization of diverse termination criteria.,https://github.com/nasa/pvslib/blob/master/CCG/README.md,,False
+complex,,Complex numbers.,https://github.com/nasa/pvslib/blob/master/complex/README.md,,False
+complex_alt,,Alternative formalization of complex numbers.,https://github.com/nasa/pvslib/blob/master/complex_alt/README.md,,False
+complex_integration,,Complex integration.,https://github.com/nasa/pvslib/blob/master/complex_integration/README.md,,False
+co_structures,,Sequences of countable length defined as co-algebraic datatypes.,https://github.com/nasa/pvslib/blob/master/co_structures/README.md,,False
+digraphs,,"Directed graphs: circuits, maximal subtrees, paths, DAGs.",https://github.com/nasa/pvslib/blob/master/digraphs/README.md,,False
+exact_real_arith,,Exact real arithmetic including trig functions.,https://github.com/nasa/pvslib/blob/master/exact_real_arith/README.md,,False
+examples,,Examples of application of the functionality provided by NASALib.,https://github.com/nasa/pvslib/blob/master/examples/README.md,,False
+extended_nnreal,,Extended non-negative reals.,https://github.com/nasa/pvslib/blob/master/extended_nnreal/README.md,,False
+fast_approx,,Approximations of standard numerical functions.,https://github.com/nasa/pvslib/blob/master/fast_approx/README.md,,False
+fault_tolerance,,Fault tolerance protocols.,https://github.com/nasa/pvslib/blob/master/fault_tolerance/README.md,,False
+float,,Floating point numbers and arithmetic.,https://github.com/nasa/pvslib/blob/master/float/README.md,,False
+graphs,,Graph theory.,https://github.com/nasa/pvslib/blob/master/graphs/README.md,,False
+groups,,Group theory.,https://github.com/nasa/pvslib/blob/master/groups/README.md,,False
+interval_arith,,Interval arithmetic and numerical approximations. Includes automated strategies numerical for computing numerical approximations and interval for checking satisfiability and validity of simply quantified real-valued formulas. This development includes a formalization of Allen interval temporal logic.,https://github.com/nasa/pvslib/blob/master/interval_arith/README.md,,False
+ints,,"Integer division, gcd, mod, prime factorization, min, max.",https://github.com/nasa/pvslib/blob/master/ints/README.md,,False
+lebesgue,,Lebesgue integral with connection to Riemann Integral.,https://github.com/nasa/pvslib/blob/master/lebesgue/README.md,,False
+linear_algebra,,Linear algebra.,https://github.com/nasa/pvslib/blob/master/linear_algebra/README.md,,False
+lnexp,,"Logarithm, exponential and hyperbolic functions. & Foundational definitions of logarithm, exponential and hyperbolic functions.",https://github.com/nasa/pvslib/blob/master/lnexp/README.md,,False
+matrices,,Executable specification of MxN matrices. This library includes computation of inverse and basic matrix operations such as addition and multiplication.,https://github.com/nasa/pvslib/blob/master/matrices/README.md,,False
+measure_integration,,"Sigma algebras, measures, Fubini-Tonelli Lemmas.",https://github.com/nasa/pvslib/blob/master/measure_integration/README.md,,False
+MetiTarski,,"Integration of MetiTarski, an automated theorem prover for real-valued functions.",https://github.com/nasa/pvslib/blob/master/MetiTarski/README.md,,False
+metric_space,,"Domains with a distance metric, continuity and uniform continuity.",https://github.com/nasa/pvslib/blob/master/metric_space/README.md,,False
+numbers,,Elementary number theory.,https://github.com/nasa/pvslib/blob/master/numbers/README.md,,False
+orders,,"Abstract orders, lattices, fix points.",https://github.com/nasa/pvslib/blob/master/orders/README.md,,False
+power,,Generalized Power function (without ln/exp).,https://github.com/nasa/pvslib/blob/master/power/README.md,,False
+probability,,Probability theory.,https://github.com/nasa/pvslib/blob/master/probability/README.md,,False
+PVS0,,Formalization of fundamental computability concepts.,https://github.com/nasa/pvslib/blob/master/PVS0/README.md,,False
+PVSioChecker,,Animation of PVS specifications.,https://github.com/nasa/pvslib/blob/master/PVSioChecker/README.md,,False
+reals,,"Summations, sup, inf, sqrt over the reals, absolute value, etc.",https://github.com/nasa/pvslib/blob/master/reals/README.md,,False
+Riemann,,Riemann integral.,https://github.com/nasa/pvslib/blob/master/Riemann/README.md,,False
+scott,,Scott topology.,https://github.com/nasa/pvslib/blob/master/scott/README.md,,False
+series,,"Power series, comparison test, ratio test, Taylor's theorem.",https://github.com/nasa/pvslib/blob/master/series/README.md,,False
+sets_aux,,"Power sets, orders, cardinality over infinite sets. Includes functional and relational facts based on Axiom of Choice and refinement relations based on equivalence relations.",https://github.com/nasa/pvslib/blob/master/sets_aux/README.md,,False
+shapes,,"2D-Shapes: triangle, parallelogram, rectangle, circular segment",https://github.com/nasa/pvslib/blob/master/shapes/README.md,,False
+sigma_set,,Summations over countably infinite sets.,https://github.com/nasa/pvslib/blob/master/sigma_set/README.md,,False
+sorting,,Sorting algorithms.,https://github.com/nasa/pvslib/blob/master/sorting/README.md,,False
+structures,,"Bounded arrays, finite sequences, bags, and several other structures.",https://github.com/nasa/pvslib/blob/master/structures/README.md,,False
+Sturm,,Formalization of Sturm's theorem for univariate polynomials. Includes strategies sturm and mono-poly for automatically proving univariate polynomial relations over a real interval.,https://github.com/nasa/pvslib/blob/master/Sturm/README.md,,False
+Tarski,,Formalization of Tarski's theorem for univariate polynomials. Includes strategy tarski for automatically proving systems of univariate polynomial relations on the real line.,https://github.com/nasa/pvslib/blob/master/Tarski/README.md,,False
+topology,,"Continuity, homeomorphisms, connected and compact spaces, Borel sets/functions.",https://github.com/nasa/pvslib/blob/master/topology/README.md,,False
+trig,,"Trigonometry: definitions, identities, approximations.",https://github.com/nasa/pvslib/blob/master/trig/README.md,,False
+TRS,,Term rewrite systems and Robinson unification algorithm.,https://github.com/nasa/pvslib/blob/master/TRS/README.md,,False
+TU_games,,Cooperative TU-games.,https://github.com/nasa/pvslib/blob/master/TU_games/README.md,,False
+vect_analysis,,"Limits, continuity, and derivatives of vector functions.",https://github.com/nasa/pvslib/blob/master/vect_analysis/README.md,,False
+vectors,,"2-D, 3-D, 4-D, and n-dimensional vectors.",https://github.com/nasa/pvslib/blob/master/vectors/README.md,,False
+while,,Semantics for the programming language While.,https://github.com/nasa/pvslib/blob/master/while/README.md,,False

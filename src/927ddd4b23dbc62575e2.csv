@@ -1,0 +1,12 @@
+name,section,file,url
+Coq,Library,coq_library.csv,https://coq.inria.fr/library/index.html
+Coq,Packages,coq_packages.csv,https://coq.inria.fr/opam/www/
+Isabelle,Library,isabelle_library.csv,https://isabelle.in.tum.de/dist/library/
+Isabelle,Archive of Formal Proofs,afp_packages.csv,https://www.isa-afp.org/
+ACL2,Community Books,acl2_library.csv,https://github.com/acl2/acl2/tree/master/books
+Agda,Libraries,agda_libraries.csv,https://wiki.portal.chalmers.se/agda/Main/Libraries
+Agda,Standard Library,agda_std_library.csv,https://github.com/agda/agda-stdlib
+HOL,HOL Library,hol_library.csv,https://github.com/HOL-Theorem-Prover/HOL/tree/develop/src
+Mizar,Mizar Mathematical Library,mizar_library.csv,http://www.mizar.org/library/
+Metamath,Metamath Library,mm_library.csv,http://us.metamath.org/mpeuni/mmset.html
+PVS,NASA PVS Library of Formal Developments,pvs_library.csv,https://github.com/nasa/pvslib

@@ -1,0 +1,117 @@
+package,authors,description,url,msc,verified
+Algebra,,"Definitions of algebraic structures like monoids and rings (packed in records together with sets, operations, etc.)",https://agda.github.io/agda-stdlib/Algebra.html,,False
+Algebra.Bundles,,"Definitions of algebraic structures like monoids and rings (packed in records together with sets, operations, etc.)",https://agda.github.io/agda-stdlib/Algebra.Bundles.html,,False
+Algebra.Definitions,,"Properties of functions, such as associativity and commutativity",https://agda.github.io/agda-stdlib/Algebra.Definitions.html,,False
+Algebra.Morphism,,Morphisms between algebraic structures,https://agda.github.io/agda-stdlib/Algebra.Morphism.html,,False
+Algebra.Structures,,"Some algebraic structures (not packed up with sets, operations, etc.)",https://agda.github.io/agda-stdlib/Algebra.Structures.html,,False
+Axiom.DoubleNegationElimination,,Results concerning double negation elimination.,https://agda.github.io/agda-stdlib/Axiom.DoubleNegationElimination.html,,False
+Axiom.ExcludedMiddle,,Results concerning the excluded middle axiom.,https://agda.github.io/agda-stdlib/Axiom.ExcludedMiddle.html,,False
+Axiom.UniquenessOfIdentityProofs,,Results concerning uniqueness of identity proofs,https://agda.github.io/agda-stdlib/Axiom.UniquenessOfIdentityProofs.html,,False
+Category.Applicative,,Applicative functors,https://agda.github.io/agda-stdlib/Category.Applicative.html,,False
+Category.Comonad,,Comonads,https://agda.github.io/agda-stdlib/Category.Comonad.html,,False
+Category.Functor,,Functors,https://agda.github.io/agda-stdlib/Category.Functor.html,,False
+Category.Monad,,Monads,https://agda.github.io/agda-stdlib/Category.Monad.html,,False
+Codata.Cofin,,"""Finite"" sets indexed on coinductive ""natural"" numbers",https://agda.github.io/agda-stdlib/Codata.Cofin.html,,False
+Codata.Colist,,The Colist type and some operations,https://agda.github.io/agda-stdlib/Codata.Colist.html,,False
+Codata.Conat,,The Conat type and some operations,https://agda.github.io/agda-stdlib/Codata.Conat.html,,False
+Codata.Covec,,The Covec type and some operations,https://agda.github.io/agda-stdlib/Codata.Covec.html,,False
+Codata.Cowriter,,The Cowriter type and some operations,https://agda.github.io/agda-stdlib/Codata.Cowriter.html,,False
+Codata.Delay,,The Delay type and some operations,https://agda.github.io/agda-stdlib/Codata.Delay.html,,False
+Codata.M,,M-types (the dual of W-types),https://agda.github.io/agda-stdlib/Codata.M.html,,False
+Codata.Stream,,The Stream type and some operations,https://agda.github.io/agda-stdlib/Codata.Stream.html,,False
+Codata.Thunk,,"The Thunk wrappers for sized codata, copredicates and corelations",https://agda.github.io/agda-stdlib/Codata.Thunk.html,,False
+Data.Bool,,Booleans,https://agda.github.io/agda-stdlib/Data.Bool.html,,False
+Data.Char,,Characters,https://agda.github.io/agda-stdlib/Data.Char.html,,False
+Data.Container,,"Containers, based on the work of Abbott and others",https://agda.github.io/agda-stdlib/Data.Container.html,,False
+Data.Default,,A way to specify that a function's argument takes a default value if the argument is not passed explicitly.,https://agda.github.io/agda-stdlib/Data.Default.html,,False
+Data.DifferenceList,,Lists with fast append,https://agda.github.io/agda-stdlib/Data.DifferenceList.html,,False
+Data.DifferenceNat,,Natural numbers with fast addition (for use together with DifferenceVec),https://agda.github.io/agda-stdlib/Data.DifferenceNat.html,,False
+Data.DifferenceVec,,Vectors with fast append,https://agda.github.io/agda-stdlib/Data.DifferenceVec.html,,False
+Data.Digit,,Digits and digit expansions,https://agda.github.io/agda-stdlib/Data.Digit.html,,False
+Data.Empty,,Empty type,https://agda.github.io/agda-stdlib/Data.Empty.html,,False
+Data.Erased,,Wrapper for the erased modality,https://agda.github.io/agda-stdlib/Data.Erased.html,,False
+Data.Fin,,Finite sets,https://agda.github.io/agda-stdlib/Data.Fin.html,,False
+Data.Float,,Floating point numbers,https://agda.github.io/agda-stdlib/Data.Float.html,,False
+Data.Integer,,Integers,https://agda.github.io/agda-stdlib/Data.Integer.html,,False
+Data.List,,Lists,https://agda.github.io/agda-stdlib/Data.List.html,,False
+Data.Maybe,,The Maybe type,https://agda.github.io/agda-stdlib/Data.Maybe.html,,False
+Data.Nat,,Natural numbers,https://agda.github.io/agda-stdlib/Data.Nat.html,,False
+Data.Product,,Products,https://agda.github.io/agda-stdlib/Data.Product.html,,False
+Data.Rational,,Rational numbers,https://agda.github.io/agda-stdlib/Data.Rational.html,,False
+Data.Record,,"Record types with manifest fields and ""with"", based on Randy Pollack's ""Dependently Typed Records in Type Theory""",https://agda.github.io/agda-stdlib/Data.Record.html,,False
+Data.Refinement,,Refinement type: a value together with an erased proof.,https://agda.github.io/agda-stdlib/Data.Refinement.html,,False
+Data.Sign,,Signs,https://agda.github.io/agda-stdlib/Data.Sign.html,,False
+Data.String,,Strings,https://agda.github.io/agda-stdlib/Data.String.html,,False
+Data.Sum,,Sums (disjoint unions),https://agda.github.io/agda-stdlib/Data.Sum.html,,False
+Data.These,,An either-or-both data type,https://agda.github.io/agda-stdlib/Data.These.html,,False
+Data.Trie,,"Trie, basic type and operations",https://agda.github.io/agda-stdlib/Data.Trie.html,,False
+Data.Unit,,The unit type,https://agda.github.io/agda-stdlib/Data.Unit.html,,False
+Data.Universe,,Universes,https://agda.github.io/agda-stdlib/Data.Universe.html,,False
+Data.Vec,,Vectors,https://agda.github.io/agda-stdlib/Data.Vec.html,,False
+Data.W,,W-types,https://agda.github.io/agda-stdlib/Data.W.html,,False
+Data.Word,,Machine words,https://agda.github.io/agda-stdlib/Data.Word.html,,False
+Data.Wrap,,Turn a relation into a record definition so as to remember the things being related. This module has a readme file: README.Data.Wrap,https://agda.github.io/agda-stdlib/Data.Wrap.html,,False
+Debug.Trace,,Printing Strings During Evaluation,https://agda.github.io/agda-stdlib/Debug.Trace.html,,False
+Foreign.Haskell,,Type(s) used (only) when calling out to Haskell via the FFI,https://agda.github.io/agda-stdlib/Foreign.Haskell.html,,False
+Function,,Functions,https://agda.github.io/agda-stdlib/Function.html,,False
+Function.Base,,Simple combinators working solely on and with functions,https://agda.github.io/agda-stdlib/Function.Base.html,,False
+Function.Bijection,,Bijections,https://agda.github.io/agda-stdlib/Function.Bijection.html,,False
+Function.Bundles,,Bundles for types of functions,https://agda.github.io/agda-stdlib/Function.Bundles.html,,False
+Function.Consequences,,Relationships between properties of functions,https://agda.github.io/agda-stdlib/Function.Consequences.html,,False
+Function.Definitions,,Definitions for types of functions.,https://agda.github.io/agda-stdlib/Function.Definitions.html,,False
+Function.Equality,,Function setoids and related constructions,https://agda.github.io/agda-stdlib/Function.Equality.html,,False
+Function.Equivalence,,Equivalence (coinhabitance),https://agda.github.io/agda-stdlib/Function.Equivalence.html,,False
+Function.HalfAdjointEquivalence,,Half adjoint equivalences,https://agda.github.io/agda-stdlib/Function.HalfAdjointEquivalence.html,,False
+Function.Injection,,Injections,https://agda.github.io/agda-stdlib/Function.Injection.html,,False
+Function.Inverse,,Inverses,https://agda.github.io/agda-stdlib/Function.Inverse.html,,False
+Function.LeftInverse,,Left inverses,https://agda.github.io/agda-stdlib/Function.LeftInverse.html,,False
+Function.Metric,,Metrics with arbitrary domains and codomains,https://agda.github.io/agda-stdlib/Function.Metric.html,,False
+Function.Properties,,Basic properties of the function type,https://agda.github.io/agda-stdlib/Function.Properties.html,,False
+Function.Reasoning,,"A module used for creating function pipelines, see README.Function.Reasoning for examples",https://agda.github.io/agda-stdlib/Function.Reasoning.html,,False
+Function.Related,,"A universe which includes several kinds of ""relatedness"" for sets, such as equivalences, surjections and bijections",https://agda.github.io/agda-stdlib/Function.Related.html,,False
+Function.Strict,,Strict combinators (i.e. that use call-by-value),https://agda.github.io/agda-stdlib/Function.Strict.html,,False
+Function.Structures,,Structures for types of functions,https://agda.github.io/agda-stdlib/Function.Structures.html,,False
+Function.Surjection,,Surjections,https://agda.github.io/agda-stdlib/Function.Surjection.html,,False
+IO,,IO,https://agda.github.io/agda-stdlib/IO.html,,False
+IO.Base,,IO: basic types and functions,https://agda.github.io/agda-stdlib/IO.Base.html,,False
+IO.Finite,,IO only involving finite objects,https://agda.github.io/agda-stdlib/IO.Finite.html,,False
+IO.Infinite,,IO only involving infinite objects,https://agda.github.io/agda-stdlib/IO.Infinite.html,,False
+IO.Primitive,,Primitive IO: simple bindings to Haskell types and functions,https://agda.github.io/agda-stdlib/IO.Primitive.html,,False
+Induction,,An abstraction of various forms of recursion/induction,https://agda.github.io/agda-stdlib/Induction.html,,False
+Induction.Lexicographic,,Lexicographic induction,https://agda.github.io/agda-stdlib/Induction.Lexicographic.html,,False
+Induction.WellFounded,,Well-founded induction,https://agda.github.io/agda-stdlib/Induction.WellFounded.html,,False
+Level,,Universe levels,https://agda.github.io/agda-stdlib/Level.html,,False
+Level.Literals,,Conversion from naturals to universe levels,https://agda.github.io/agda-stdlib/Level.Literals.html,,False
+Reflection,,Support for reflection,https://agda.github.io/agda-stdlib/Reflection.html,,False
+Reflection.Abstraction,,Abstractions used in the reflection machinery,https://agda.github.io/agda-stdlib/Reflection.Abstraction.html,,False
+Reflection.Annotated,,Annotated reflected syntax.,https://agda.github.io/agda-stdlib/Reflection.Annotated.html,,False
+Reflection.Argument,,Arguments used in the reflection machinery,https://agda.github.io/agda-stdlib/Reflection.Argument.html,,False
+Reflection.DeBruijn,,"Weakening, strengthening and free variable check for reflected terms.",https://agda.github.io/agda-stdlib/Reflection.DeBruijn.html,,False
+Reflection.Definition,,Definitions used in the reflection machinery,https://agda.github.io/agda-stdlib/Reflection.Definition.html,,False
+Reflection.External,,Support for system calls as part of reflection,https://agda.github.io/agda-stdlib/Reflection.External.html,,False
+Reflection.Instances,,Instances for reflected syntax,https://agda.github.io/agda-stdlib/Reflection.Instances.html,,False
+Reflection.Literal,,Literals used in the reflection machinery,https://agda.github.io/agda-stdlib/Reflection.Literal.html,,False
+Reflection.Meta,,Metavariables used in the reflection machinery,https://agda.github.io/agda-stdlib/Reflection.Meta.html,,False
+Reflection.Name,,Names used in the reflection machinery,https://agda.github.io/agda-stdlib/Reflection.Name.html,,False
+Reflection.Pattern,,Patterns used in the reflection machinery,https://agda.github.io/agda-stdlib/Reflection.Pattern.html,,False
+Reflection.Show,,Converting reflection machinery to strings,https://agda.github.io/agda-stdlib/Reflection.Show.html,,False
+Reflection.Term,,Terms used in the reflection machinery,https://agda.github.io/agda-stdlib/Reflection.Term.html,,False
+Reflection.Traversal,,de Bruijn-aware generic traversal of reflected terms.,https://agda.github.io/agda-stdlib/Reflection.Traversal.html,,False
+Reflection.Universe,,A universe for the types involved in the reflected syntax.,https://agda.github.io/agda-stdlib/Reflection.Universe.html,,False
+Relation.Binary,,Properties of homogeneous binary relations,https://agda.github.io/agda-stdlib/Relation.Binary.html,,False
+Relation.Nary,,Heterogeneous N-ary Relations,https://agda.github.io/agda-stdlib/Relation.Nary.html,,False
+Relation.Nullary,,Operations on nullary relations (like negation and decidability),https://agda.github.io/agda-stdlib/Relation.Nullary.html,,False
+Relation.Unary,,Unary relations,https://agda.github.io/agda-stdlib/Relation.Unary.html,,False
+Size,,Sizes for Agda's sized types,https://agda.github.io/agda-stdlib/Size.html,,False
+System.Clock,,Measuring time,https://agda.github.io/agda-stdlib/System.Clock.html,,False
+System.Directory,,Directory manipulation,https://agda.github.io/agda-stdlib/System.Directory.html,,False
+System.Environment,,Miscellanous information about the system environment,https://agda.github.io/agda-stdlib/System.Environment.html,,False
+System.Exit,,Exiting the program.,https://agda.github.io/agda-stdlib/System.Exit.html,,False
+System.Process,,Calling external processes,https://agda.github.io/agda-stdlib/System.Process.html,,False
+Tactic.MonoidSolver,,Reflection-based solver for monoid equalities,https://agda.github.io/agda-stdlib/Tactic.MonoidSolver.html,,False
+Tactic.RingSolver,,A solver that uses reflection to automatically obtain and solve equations over rings.,https://agda.github.io/agda-stdlib/Tactic.RingSolver.html,,False
+Test.Golden,,Golden testing framework,https://agda.github.io/agda-stdlib/Test.Golden.html,,False
+Text.Format,,Format strings for Printf and Scanf,https://agda.github.io/agda-stdlib/Text.Format.html,,False
+Text.Pretty,,"Pretty Printing This module is based on Jean-Philippe Bernardy's functional pearl ""A Pretty But Not Greedy Printer""",https://agda.github.io/agda-stdlib/Text.Pretty.html,,False
+Text.Printf,,Printf,https://agda.github.io/agda-stdlib/Text.Printf.html,,False
+Text.Regex,,Regular expressions,https://agda.github.io/agda-stdlib/Text.Regex.html,,False

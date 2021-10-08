@@ -7,6 +7,7 @@ citeproc: true
 bibliography: References.bib
 toc: true
 toc-title: Table of Contents
+numbersections: true
 date: 29th of September 2021
 strip-comments: true
 abstract: |
@@ -24,72 +25,47 @@ linkReferences: true
 biblio-style: unsrt
 header-logo: Images/rmit-logo.png
 ---
+
 # Introduction
 This is a thesis about **Interactive Theorem Provers**, what they are, how
 they've been used in the past and whether you should explore using them in your
 next project.
 
-An **Interactive Theorem Prover** (henceforth ITPs) is a program that interactively guides the user
-in proving mathematical theorems. They are also synonymous called **Proof Assistants**.
-ITPs are often called upon in mathematics, and have been used to create original
-proofs of theorems such as the four colour theorem [@four_colour_2008].
-
-ITPs also have another use. As computer programs can be computer programs can
-often be expressed through a type of mathematical logic, and have a lot of similarities,
-ITPs can be used to prove the correctness of software systems.
-
-
-Projects that use ITPs include the certified C compiler CompCert [@leroy_formal_2009], which is a C compiler that allows for a fully correct compilation of C. Or the fully verified microkernel SeL4 [@klein_sel4_2009].
-<!-- Might need better description -->
-
-However, ITPs are far from commonplace for verifying software. This is likely
-due to verifying software being very difficult, requiring a lot of knowledge about proof theory.
-
-Ensuring that software operates correctly is very important, especially as systems
-get more and more complicated. The goal of this thesis is to identify the roadblocks in adaption, and help users decide between what technology they should use in their next project.
-
-The research questions for this thesis are:
-
-RQ1 *What usability issues and solutions have been mentioned in literature regarding ITPs?* 
-
-RQ2 *Do these usability issues and solutions still exist in the ITPs?*
-
-RQ3 *What, if any, ITP should be used for a specific project?*
-
-# Background
-## Interactive Theorem Provers {#sec:background_itp}
-An **Interactive Theorem Prover** or **Proof Assistant** is a piece of software
+## Interactive Theorem Provers
+An **Interactive Theorem Prover** (ITP) or **Proof Assistant** is a piece of software
 that helps prove mathematical theorems, or equivalently, prove correctness
 properties about software. Some of the more well known examples of provers 
 include [Coq](https://coq.inria.fr/) and [Isabelle](https://isabelle.in.tum.de/).
 
-In computer science, often correctness proofs of algorithms (like Dijkstra in
-an undergraduate context) are described and proved on pen and paper. The use of an
-ITP in analogous to this type of activity. 
+In computer science, often correctness proofs of algorithms (For example,
+Dijkstra's algorithm in an undergraduate context) are described and proved to
+be correct on pen and paper. The use of an ITP in analogous to this type of
+activity. 
 
-You first specify what it is that you would like to prove, for example, that
-Dijkstra's algorithm always finds the shortest path between two nodes in a
-weighted graph. In this step, you would specify what Dijkstra's algorithm, graphs
-, and shortest paths are, then state that Dijkstra's algorithm finds the shortest
-path.
+The task of creating verified software is split into two steps: first specification
+and then verification.
 
-This leaves you with a **proof obligation**. It is then up to the user to provide
-to the ITP the reasoning as to why this theorem is correct. This can be done
+During specification, You specify what it is that you would like to prove, for
+example, that Dijkstra's algorithm always finds the shortest path between two
+nodes in a weighted graph, assuming positive weights. In this step, you would
+create a specification for what is Dijkstra's algorithm, graphs, and shortest
+paths. Then state that Dijkstra's algorithm finds the shortest path. This
+step is far from trivial, and there exist dedicated specification languages for
+this such as Z of VDL.
+
+This specification leaves you with a **proof obligation**. A proof obligation is a onus
+on the user to prove that the specification of the software is correct. Then,
+during verification, it is then up to the user to provide
+to the ITP the reasoning as to why this proposition is correct. This can be done
 in several ways, sometimes through the use of automated software, or manipulating
 with the proof by pointing and clicking, or writing down a **proof script** that
-describes the steps made to prove the theorem.
+describes the steps made to prove the theorem. Often this involves breaking down one proof obligation into many other simpler
+proof obligations that can be solved individually.
 
-The ITP then checks whether the proof of the theorem is valid, assisting you
-along the way in any errors that you make, until you have specified a proof
-of the statement you wish to claim. Once that proof is made, you can be assured
-that the system works correctly.
-
-Proving software is correct is far from a trivial task, and proving correctness
-of different types of systems requires a strong understanding of formal proof
-theory and the ITP at hand. The inspiration for this thesis was due to nature
-of ITPs producing proofs that are readable for a computer but not for a user.
-A full description of usability issues with ITPs are discussed in the literature
-review.
+The ITP then checks whether the proof of the proposition is valid, assisting
+you along the way in any errors that you make. The user and the ITP work
+together until you have specified a proof of the statement you wish to claim.
+Once that proof is made, you can be assured that the system works correctly.
 
 Another way of approaching ITPs is through programming languages. Often a goal
 in programming language design is to create languages where you cannot make a
@@ -101,13 +77,19 @@ design features that allow you to go as far as proving the correctness of your
 software. Almost all ITPs use Type Systems and Functional Programming to assist
 in proving software.
 
+ITPs can be used to both prove mathematical theorems and prove software is correct.
+Because software can be expressed as a type of logic, the activities are identical.
+
+Projects that use ITPs include the certified C compiler CompCert [@leroy_formal_2009], which is a C compiler that allows for a fully correct compilation of C. Or the fully verified microkernel SeL4 [@klein_sel4_2009].
+
 ## Formal Methods
-ITPs are not the only way to verify software. They belong to a class of techniques
+ITPs are not the only way to specify and verify software. They belong to a class of techniques
 named **Formal Methods**.
 
 In essence, formal methods attempts to improve the process that users can prove
 the correctness of their software systems. Use of formal methods can be done
-without any tools at all, by simply proving properties by hand.
+without any tools at all, by simply proving properties by hand, such as the Dijkstra
+example above.
 
 However, computers and tools have aided people in providing large proofs for
 software systems. The tools used in Formal Methods can be roughly divided into
@@ -115,7 +97,9 @@ three categories, Model Checkers, Automated Theorem Provers and Interactive
 Theorem Provers. 
 
 These three techniques are a trade off in three dimensions. You can pick two
-but not all three:
+but not all three.
+
+![Three categories of Formal Methods](./Images/formalmethods.png){#fig:formal_methods}
 
 **Automation**: Whether finding a proof is fully automated. That is, the user
 does not need to specify a proof manually for the proposition, the system simply
@@ -145,15 +129,227 @@ often include minor user interaction in order to correct it's path and
 find a proof. And ITPs often have automatic features and can even call
 external ATPs to discharge proof obligations.
 
-ITPs were chosen for this thesis due to their application in fully certified
-software. A Model Checker cannot be used to create fully certified software,
-and ATPs can be used as a component of ITPs. 
+ITPs were chose for this investigation due to their usage in creating fully verified
+software such as Coq and SeL4. Although large scale formalization fully certified
+software efforts are possible through the usage of ATPs and Model Checkers, as 
+far as the authors are aware, they have not been done. Furthermore, ATPs are
+often used alongside ITPs to resolve proof obligations automatically, getting
+the best of both worlds.
 
-## Living Reviews {#sec:living_review}
-A living review is a review of a field that updates periodically to reflect the
-current state of the research. These reviews are often published
-electronically, such as to a website. The goal of a living review is to ensure
-that the review never goes stale, and can be used as a reference years to come.
+## Using an ITP
+Proving properties with an ITP has the flavour of starting with a goal, and then
+manipulating that goal into subgoals until you have proven the proposition.
+
+To demonstrate the usage of an ITP, we will take a look at proving a theorem
+in a pseudocode ITP syntax.
+
+We start with a function:
+
+$$
+f(x) = 
+  \begin{cases}
+    f(x - 1) + x, & x > 0 \\
+    0, & x = 0
+  \end{cases}
+$$
+
+And I would like to prove that:
+
+$$ f(x) = x(x - 1)/2 $$
+
+To start with our proof, we first state to the ITP what we want to prove.
+
+```
+Prove: forall x, f(x) = x * (x - 1) / 2.
+```
+
+This is syntax that would look like what you would see in a textual ITP such as
+Coq, Isabelle or HOL. However, there are many different styles of proving propositions.
+
+After making this statement, you would likely be given a goal and your current
+assumptions. For instance:
+
+```
+---
+forall x, f(x) = x * (x - 1) / 2
+```
+
+All things above the `---` are assumptions, and the statement below it is the goal.
+
+The next thing the user would likely do is attempt to prove it automatically.
+Most ITPs have the ability to automatically prove simple propositions, often
+by giving the `auto` command to the prover. If this succeeds, then the user is
+done and the proposition is proven. Otherwise, the user must continue to explore
+proof options.
+
+Our first step is to introduce `x` as an assumption. We execute the `introduce` command.
+
+```
+introduce
+```
+
+Our state then becomes:
+
+```
+x : N
+---
+f(x) = x * (x - 1) / 2
+```
+
+Notice that the command modifies the state of the ITP. Only commands that are
+valid at the time are allowed to be used, ensuring that all proof steps are valid
+and construct a correct proof.
+
+This particular proof is a very common beginners induction proof, so induction
+would be a good start to solving this. The following command performs induction
+on x.
+
+```
+induction x
+```
+
+```
+---
+f(0) = 0 * (0 - 1) / 2
+```
+
+Induction on natural numbers splits the goal up into two subgoals, the base case
+and the inductive step. The prover is currently asking us to prove the base case.
+
+This is a very easy task, as just evaluating the expression on both sides gives
+0. To do this evaluation, we use the command `simplify`
+
+```
+simplify
+```
+
+```
+---
+0=0
+```
+
+Then finally, we can discharge the proof obligation by using the `reflexivity` command,
+that is, everything is equal to itself.
+
+```
+reflexivity
+```
+
+```
+f(x) = x * (x - 1) / 2
+---
+f(x + 1) = (x + 1) * x / 2
+```
+
+Now we are on the second stage of the proof, the inductive step. The ITP is now
+asking us to prove that given the original statement is true, if we can prove
+that it is true for x + 1.
+
+The first step would be to evaluate `f(x + 1)` down by one layer. Which would be the
+`unfold` command. This command replaces a function with it's definition.
+
+```
+unfold f
+```
+
+```
+f(x) = x * (x - 1) / 2
+---
+f(x) + x = (x + 1) * x / 2
+```
+
+The top and the bottom statements are now identical, they just need re-arranging
+for it to be possible. This might involve several commands to manipulate
+the state of the equation. We will for the sake of brevity
+
+```
+expand (x + 1) * x
+subtract both sides x
+replace x with (2 * x / 2)
+combine fraction
+replace ( + x - 2 * x) with ( - x)
+factorise (x * x - x)
+```
+
+The goal gets transformed as follows:
+
+```
+f(x) + x = (x * x + x) / 2
+f(x) = (x * x + x) / 2 - x
+f(x) = (x * x + x) / 2 - ( 2 * x / 2)
+f(x) = (x * x + x - 2 * x) / 2
+f(x) = (x * x - x) / 2
+f(x) = x * (x - 1) / 2
+```
+
+Which leaves the final state being
+
+```
+f(x) = x * (x - 1) / 2
+---
+f(x) = x * (x - 1) / 2
+```
+
+This is exactly the same as our assumption, which means to finish of the proof,
+we would call `assumption`.
+
+```
+assumption
+QED
+```
+
+```
+Proof accepted
+```
+
+It should be noted that the commands we wrote out are akin to deduction rules,
+however, there is a problem with this approach, and the problem should become
+clear once we write down all the commands that you put into the prover.
+
+```
+Prove: f(x) = x * (x - 1) / 2
+introduce
+induction x
+simplify
+reflexivity
+unfold f
+expand (x + 1) * x
+subtract both sides x
+replace x with (2 * x / 2)
+combine fraction
+replace ( + x - 2 * x) with ( - x)
+factorise (x * x - x)
+assumption
+QED
+```
+
+These proof scripts are very difficult to understand statically. Our understanding
+of the commands were aided due to our knowledge of the current state. However,
+when looking at the script without the context of the state, they are often
+very difficult to follow. Especially if the scripts are more complicated than
+this one.
+
+This thesis was inspired by the difficulty in reading static proof scripts. Some
+provers have already moved to attempt to fix this problem. For instance, Isabelle's
+Isar language offers a different way of proving propositions that embeds more
+state, and helps the user understand the proof. It would be therefore valuable
+to determine what usability issues have been reported, what has been done to fix
+them, and whether solutions from some ITPs could be used to help other provers.
+
+And finally, the secondary motivation of this thesis is to encourage further use
+and development of ITPs. So it would be valuable to create a decision tool
+that helps a user determine which ITP, if any, should be used for a particular
+project.
+
+Hence, the research questions for this thesis are:
+
+RQ1 *What usability issues and solutions have been mentioned in literature regarding ITPs?* 
+
+RQ2 *Do these usability issues and solutions still exist in the ITPs?*
+
+RQ3 *What, if any, ITP should be used for a specific project?*
+
+# Background
 
 ## Cognitive Dimensions of Notation
 Cognitive Dimensions of Notation is a framework used to evaluate the
@@ -333,10 +529,21 @@ to different theorem provers.
 Answering RQ2 requires going through the theorem provers and identifying the
 issues.  However, ITPs are continually in development, and any issue that
 arises could be solved at a future date. As of such, we created a **living
-review** (See [@sec:living_review] for definition) to answer this question.
+review** to answer this question.
 
-The creation of this living review will answer RQ3, and provide descriptions of
-the current state of the field for ITPs.
+A living review is a literature review of a field that updates periodically to reflect the
+current state of the research. These reviews are often published
+electronically, such as to a website. The goal of a living review is to ensure
+that the review never goes stale, and can be used as a reference years to come.
+
+This living review is the primary output of this thesis, and although it has the
+word "review" in it, should not be mistaken for just another literature review.
+
+It differentiates itself from a normal review by updating automatically over time,
+being an interactive software product, and existing as a decision tool for users.
+
+The creation of this living review will answer RQ3 and RQ2, and provide
+descriptions of the current state of the field for ITPs.
 
 ## Systematic Literature Review Methodology {#sec:review_methodology}
 A preliminary literature review was done in order to survey what
@@ -441,7 +648,7 @@ as to what they refer to. These explanations will be included within the tool.
 This allows people unfamiliar to the field to learn what the components of ITPs
 are and why they are important.
 
-Some Newer ITPs were not included in the dataset, such as Lean, F* and Idris.
+Some newer ITPs were not included in the dataset, such as Lean, F* and Idris.
 These were added manually to the dataset.
 
 The systematic literature review we source our data from however, is already
@@ -454,13 +661,25 @@ review doesn't go out of date by having newer releases.
 ### Comparing projects between ITPs
 One important thing to consider when making decisions about ITPs to choose is
 what past projects have been completed within the ITP. As of such, we contain
-a literature review of different notable projects within the ITP.
+a review of different notable projects within the ITP.
 
-<!-- Need to be more specific --> 
+Each project will describe:
+
+- The project's name
+- The project's scope
+- When it was completed
+- The ITP used
+
+This should help users understand what work has been done with an ITP before
+using it. This should help a user decide whether this ITP is suitable for the
+task at hand.
 
 ### Comparing progress on usability issues for ITPs
 Finally, depending on the results of the literature review, progress on different
 usability issues will be reported in this living review.
+
+How these will be included into the living review will be detailed later, once
+those features have been identified.
 
 # Literature Review
 The amount of papers found in each section of the review are shown in
@@ -1130,13 +1349,59 @@ theorems, as demonstrated with iCon [@shams_accessible_2018] and Proof
 Transitions in CoqEdit [@berman_development_2014]. This has not been
 tested empirically against other ITPs
 
-## Final Analysis
+## Analysis
 
 Many problems were identified. A summary of the problem is tabulated in [@fig:usability_issues].
 
 ![Identified Usability Issues](./Images/MyProblem.png){#fig:usability_issues}
 
-This analysis answers Research Question 1.
+This analysis finds that although many issues were identified, there is very little
+empirical research on these problems. This is probably due to the difficulty
+in recruiting expert participants to these studies, and the small size of the
+field.
+
+An empirical analysis of all of these problems is well and truly outside the scope
+of this thesis. The task at hand is to now select problems that can be addressed.
+
+The first thing to consider is that we are creating a living review. Many of the
+usability issues that arose have a strong human component. For instance, "Hard
+to predict the results of tactics" would be very difficult to evaluate without
+performing a usability test. If we were to include a measure within the living
+review that required the conducting of a usability test, the usability test would
+need to be run on a periodic basis to keep it up to date with the current state
+of technology. This is highly undesirable, as such a project would be extremely
+time consuming and expensive, and would require a time and money investment for
+years after this thesis is published.
+
+To address this, we restrict this thesis to usability issues that can be determined
+to exist without the highly expensive intervention of a user. This leaves the 
+following options:
+
+ - Quality of Library
+ - Notation support
+ - Counterexamples
+ - Performance
+
+We considered all these issues beside performance to be within the scope of our
+living review.
+
+### Scope of Library
+In a focus group~\cite{beckert_usability_2015}, it was found that Isabelle/HOL
+was missing important mathematical foundations in their library.
+
+We decided to evaluate whether these problems still exist by evaluating the scope
+of library support of ITPs. This library support also includes the package systems.
+For instance, Isabelle has both a standard library and it's Archive of Formal
+Proofs. This archive contains mathematics that is submitted by Isabelle users,
+and was also included while evaluating the scope of the ITPs.
+
+First, we collected modules within the ITP libraries, and then we sorted these
+packages into the Mathematical Subject Classification 2020 (MSC2020). MSC2020
+is a classification of mathematics often used to classify math papers. 
+
+<!-- Not sure about citation here -->
+
+This will allow for a comparison of the scope of ITP libraries
 
 # Results
 The result of the living review was the following tool:
@@ -1144,6 +1409,9 @@ The result of the living review was the following tool:
 ```{=latex}
 https://samnolan.me/thesis
 ```
+
+It includes 11 different ITPs, and classifies 100 math modules from 4 different 
+libraries.
 
 <div id='itps'></div>
 
