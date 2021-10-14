@@ -343,3 +343,14 @@ table td {
 .center {
  text-align: center;
 }
+.listing {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+}
+
+.listing pre {
+  padding: 0.5em;
+  background-color: #f5f5fa;
+  border: 1px solid black;
+}

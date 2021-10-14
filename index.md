@@ -8,14 +8,17 @@ bibliography: References.bib
 toc: true
 toc-title: Table of Contents
 numbersections: true
+listings: true
 date: 29th of September 2021
 strip-comments: true
 abstract: |
-  Interactive Theorem Provers allow you to prove that software is correct. However,
-  the adoption of ITPs is far from widespread. This thesis creates a living review
-  about usability issues that may prohibit ITPs from being used, and further
-  creates a tool to help aid decision in choosing what ITP should be used for
-  a given project.
+  Interactive Theorem Provers are tools that allow you to prove that software
+  is correct. However, ITPs are known to be quite difficult to use and the
+  adoption of ITPs is far from widespread. This thesis investigates usability
+  issues that exist in literature, and then creates a living review that that
+  covers progress on different theorem provers, in order to encourage newcomers
+  to the field and document progress on the development. This review doubles as
+  a decision tool for deciding whether an ITP should be used for a project.
 declaration: "I certify that except where due acknowledgment has been made, the work is that of the author alone; the work has not been submitted previously, in whole or in part, to qualify for any other academic award; the content of the thesis is the result of work which has been carried out since the official commencement date of the approved research program; any editorial work, paid or unpaid, carried out by a third party is acknowledged; and, ethics procedures and guidelines have been followed."
 acknowledgment: |
   I would like to acknowledge my supervisor Maria Spichkova for her guidance and high expectations for this project. I would also like to thank Flora Salim for inspiring me to further invest myself into research and never stopping in opening doors for me.
@@ -24,6 +27,7 @@ link-citations: true
 linkReferences: true
 biblio-style: unsrt
 header-logo: Images/rmit-logo.png
+codeBlockCaptions: true
 ---
 
 # Introduction
@@ -31,11 +35,26 @@ This is a thesis about **Interactive Theorem Provers**, what they are, how
 they've been used in the past and whether you should explore using them in your
 next project.
 
-## Interactive Theorem Provers
 An **Interactive Theorem Prover** (ITP) or **Proof Assistant** is a piece of software
 that helps prove mathematical theorems, or equivalently, prove correctness
 properties about software. Some of the more well known examples of provers 
 include [Coq](https://coq.inria.fr/) and [Isabelle](https://isabelle.in.tum.de/).
+
+An ITP is often used by either a mathematician or an engineer. From
+the side of a mathematician, it is possible to prove theorems that the ITP
+can prove is correct. This ensures that no errors find themselves into any
+proof that's made. ITPs have been used for the QED Manifesto, POPLMark and 
+proving theorems such as the four colour theorem, and Mizar's Mathematical Library.
+
+<!-- Needs citations -->
+
+An ITP can however also be used by a software engineer to create certified software.
+Certified software is software that's been proven to operate correctly. This
+is a very high level of assurance in terms of quality, and in industry and research
+today, is often used to ensure correctness of cryptographic libraries, microcode,
+kernels and compilers.
+
+<!-- Also needs citations -->
 
 In computer science, often correctness proofs of algorithms (For example,
 Dijkstra's algorithm in an undergraduate context) are described and proved to
@@ -77,10 +96,12 @@ design features that allow you to go as far as proving the correctness of your
 software. Almost all ITPs use Type Systems and Functional Programming to assist
 in proving software.
 
-ITPs can be used to both prove mathematical theorems and prove software is correct.
-Because software can be expressed as a type of logic, the activities are identical.
+<!-- Needs citation -->
 
-Projects that use ITPs include the certified C compiler CompCert [@leroy_formal_2009], which is a C compiler that allows for a fully correct compilation of C. Or the fully verified microkernel SeL4 [@klein_sel4_2009].
+More widespread use of ITPs is valuable as it allows for errors to be caught
+much earlier in the development process.
+
+<!-- Needs citation -->
 
 ## Formal Methods
 ITPs are not the only way to specify and verify software. They belong to a class of techniques
@@ -143,6 +164,10 @@ manipulating that goal into subgoals until you have proven the proposition.
 To demonstrate the usage of an ITP, we will take a look at proving a theorem
 in a pseudocode ITP syntax.
 
+Our pseudocode syntax is based on textual theorem provers such as Isabelle, Coq
+and HOL. The syntax is simplified to get the basic concepts of theorem provers
+across without too many of the confusing details.
+
 We start with a function:
 
 $$
@@ -153,154 +178,207 @@ f(x) =
   \end{cases}
 $$
 
-And I would like to prove that:
+This is the triangle number function. It adds a number to every number below
+that number up until 0. For instance, $f(5) = 5 + 4 + 3 + 2 + 1 + 0 = 15$.
 
-$$ f(x) = x(x - 1)/2 $$
+However, there is a quicker way to calculate the triangle number, and that is that
+is that $f(x) = x(x + 1) / 2$.
 
-To start with our proof, we first state to the ITP what we want to prove.
+This proof is an elementary induction proof. But we shall demonstrate that this
+statement is true.
+
+We would like to prove that:
+
+$$ f(x) = x(x + 1)/2 $$
+
+Textual ITPs are in a sense like an interactive programming language. You write
+a line of code and then you get an output from this code.
+
+To start with our proof, we write [@lst:proposition] into our ITP. This statement
+says that you would like to `Prove` the statement `forall x, f(x) = x * (x + 1) / 2`.
+Prove here is a keyword that starts the proof. Everything between the `:` and the `.`
+represent the statement you wish to prove.
 
 ```
-Prove: forall x, f(x) = x * (x - 1) / 2.
+Prove: forall x, f(x) = x * (x + 1) / 2.
 ```
 
-This is syntax that would look like what you would see in a textual ITP such as
-Coq, Isabelle or HOL. However, there are many different styles of proving propositions.
+: Statement of the proposition you wish to prove {#lst:proposition}
 
-After making this statement, you would likely be given a goal and your current
-assumptions. For instance:
+After writing this statement, the prover will return to you (often in a window
+in the ITP interface, or if it is a command line prover, it will print it to console)
+the state [@lst:starting_state].
+
+The state is separated into two sections, everything above the `---` is an assumption,
+that is, what we already know. We can have multiple assumptions, but in this case,
+there is none. Then the statement below the `---` is the **goal**. This is the
+statement that you want to prove. When starting a proof, whatever statement you
+want to prove becomes your first goal, but both the assumptions and the goal
+will change as you progress in the proof.
 
 ```
+
 ---
-forall x, f(x) = x * (x - 1) / 2
+forall x, f(x) = x * (x + 1) / 2
 ```
 
-All things above the `---` are assumptions, and the statement below it is the goal.
+: Starting state of the prover {#lst:starting_state}
 
-The next thing the user would likely do is attempt to prove it automatically.
-Most ITPs have the ability to automatically prove simple propositions, often
-by giving the `auto` command to the prover. If this succeeds, then the user is
-done and the proposition is proven. Otherwise, the user must continue to explore
-proof options.
-
-Our first step is to introduce `x` as an assumption. We execute the `introduce` command.
-
-```
-introduce
-```
-
-Our state then becomes:
-
-```
-x : N
----
-f(x) = x * (x - 1) / 2
-```
-
-Notice that the command modifies the state of the ITP. Only commands that are
-valid at the time are allowed to be used, ensuring that all proof steps are valid
-and construct a correct proof.
+It should be noted that during any time during the process, the user may wish
+to attempt to prove a goal automatically. Most ITPs have the ability to
+automatically prove simple propositions, often by giving the `auto` command to
+the prover. If this succeeds, then the user is done and the proposition is
+proven. Otherwise, the user must continue to explore proof options. We will assume
+that the statement cannot be proven automatically.
 
 This particular proof is a very common beginners induction proof, so induction
-would be a good start to solving this. The following command performs induction
-on x.
+would be a good start to solving this. Entering the pseudocode in [@lst:induction_tactic] performs induction
+on the variable x. To perform induction, we must prove the base case, and then
+prove the inductive case. The ITP will get you to prove them one at a time, starting
+with the base case. After the command is executed, it will show the state in [@lst:induction_state].
+This means that the theorem prover is asking you to prove the base case, that
+is, that the statement is true when $x = 0$.
 
 ```
 induction x
 ```
 
+: Running the induction tactic {#lst:induction_tactic}
+
 ```
+
 ---
-f(0) = 0 * (0 - 1) / 2
+f(0) = 0 * (0 + 1) / 2
 ```
 
-Induction on natural numbers splits the goal up into two subgoals, the base case
-and the inductive step. The prover is currently asking us to prove the base case.
+: State after the induction tactic {#lst:induction_state}
 
-This is a very easy task, as just evaluating the expression on both sides gives
-0. To do this evaluation, we use the command `simplify`
+Notice that the command modifies the state of the ITP. Only commands that are
+valid at the time are allowed to be used, ensuring that all proof steps are valid
+and construct a correct proof.
+
+The base case is very easy to solve, as simply evaluating the function on both
+sides ($f(0) = 0$ and $\frac {0 \cdot (0 + 1)}{2} = 0$) gives 0.
+
+To evaluate this, we use the `simplify` tactic in [@lst:simplify_tactic]. This
+tactic attempts to try a list of rules that the prover guesses will simplify
+the current statement. In our pseudocode ITP, this includes evaluating
+statements between constants. The result is as we expect and shown in [@lst:simplify_state].
+Indicating that after the simplification, both sides are equal to each other.
 
 ```
 simplify
 ```
 
+: Running the simplify tactic {#lst:simplify_tactic}
+
 ```
+
 ---
 0=0
 ```
 
-Then finally, we can discharge the proof obligation by using the `reflexivity` command,
-that is, everything is equal to itself.
+: State after running the simplify tactic {#lst:simplify_state}
+
+Now the goal is to prove that `0=0`. This is trivially true because equality
+is reflexive. As of such, we can prove the current goal by indicating that it's
+reflexive. This uses the `reflexivity` tactic in listing [@lst:reflexivity_tactic].
+
+Now that we have solved the first goal, the base case, the pseudo-ITP is now
+asking us to prove the inductive case [@lst:reflexivity_state]. It is now our goal to prove
+the inductive case. The inductive case now lets us assume that the statement is 
+true, and that we need to prove that it is the case for x + 1. Therefore, the
+statement for proposition for (x + 1) is our goal.
 
 ```
 reflexivity
 ```
 
+: Running the reflexivity tactic {#lst:reflexivity_tactic}
+
 ```
-f(x) = x * (x - 1) / 2
+f(x) = x * (x + 1) / 2
 ---
-f(x + 1) = (x + 1) * x / 2
+f(x + 1) = (x + 1) * (x + 2) / 2
 ```
 
-Now we are on the second stage of the proof, the inductive step. The ITP is now
-asking us to prove that given the original statement is true, if we can prove
-that it is true for x + 1.
+: State after running the reflexivity tactic {#lst:reflexivity_state}
 
-The first step would be to evaluate `f(x + 1)` down by one layer. Which would be the
-`unfold` command. This command replaces a function with it's definition.
+
+The first step would be to evaluate `f(x + 1)` down by one layer. That is,
+to replace it with it's definition. This can be done with the 
+`unfold` command [@lst:unfold_tactic]. This command replaces a function with it's definition.
+This replacement is shown in [@lst:unfold_state]
 
 ```
 unfold f
 ```
 
+: Running the unfold tactic {#lst:unfold_tactic}
+
 ```
-f(x) = x * (x - 1) / 2
+f(x) = x * (x + 1) / 2
 ---
-f(x) + x = (x + 1) * x / 2
+f(x) + (x + 1) = (x + 1) * (x + 2) / 2
 ```
+
+: State after running the reflexivity tactic {#lst:unfold_state}
 
 The top and the bottom statements are now identical, they just need re-arranging
-for it to be possible. This might involve several commands to manipulate
-the state of the equation. We will for the sake of brevity
+for it to be seen. This might involve several commands to manipulate
+the state of the equation. We will for the sake of brevity written these commands
+in English like code in [@lst:rearangement_tactics]. The intermediate goals are
+shown in [@lst:intermediate_states] to show the progress towards the desired goal,
+and the final state is shown in [@lst:rearangement_state].
 
 ```
-expand (x + 1) * x
-subtract both sides x
-replace x with (2 * x / 2)
+expand (x + 1) * (x + 2)
+subtract both sides (x + 1)
+replace (x + 1) with (2 * (x + 1) / 2)
 combine fraction
-replace ( + x - 2 * x) with ( - x)
+simplify
 factorise (x * x - x)
 ```
 
-The goal gets transformed as follows:
+: Running re-arangement tactics {#lst:rearangement_tactics}
+
 
 ```
-f(x) + x = (x * x + x) / 2
-f(x) = (x * x + x) / 2 - x
-f(x) = (x * x + x) / 2 - ( 2 * x / 2)
-f(x) = (x * x + x - 2 * x) / 2
-f(x) = (x * x - x) / 2
-f(x) = x * (x - 1) / 2
+f(x) + (x + 1) = (x^2 + 3x + 2) / 2
+f(x) = (x^2 + 3x + 2) / 2 - (x + 1)
+f(x) = (x^2 x + 3x + 2) / 2 - ( 2 * (x + 1) / 2)
+f(x) = (x^2 + 3x + 2 - 2 * (x + 1)) / 2
+f(x) = (x^2 + x) / 2
+f(x) = x * (x + 1) / 2
 ```
 
-Which leaves the final state being
+: States after running each command {#lst:intermediate_states}
 
 ```
-f(x) = x * (x - 1) / 2
+f(x) = x * (x + 1) / 2
 ---
-f(x) = x * (x - 1) / 2
+f(x) = x * (x + 1) / 2
 ```
 
-This is exactly the same as our assumption, which means to finish of the proof,
-we would call `assumption`.
+: Final state after running each command {#lst:rearangement_state}
+
+Because we know the inductive hypothesis is true, and the goal is exactly the same
+as the inductive hypothesis, we can simply indicate that we have proven the goal.
+We do this be the `assumption` command, and then close off the proof with the `QED`
+command [@lst:assumption_tactic]. This then accepts the proof as true [@lst:assumption_state].
 
 ```
 assumption
 QED
 ```
 
+: Running the assumption tactic {#lst:assumption_tactic}
+
 ```
 Proof accepted
 ```
+
+: State after running the assumption tactic {#lst:assumption_state}
 
 It should be noted that the commands we wrote out are akin to deduction rules,
 however, there is a problem with this approach, and the problem should become
@@ -322,6 +400,8 @@ factorise (x * x - x)
 assumption
 QED
 ```
+
+: Final Proof script {#lst:final_proof_script}
 
 These proof scripts are very difficult to understand statically. Our understanding
 of the commands were aided due to our knowledge of the current state. However,
@@ -345,7 +425,7 @@ Hence, the research questions for this thesis are:
 
 RQ1 *What usability issues and solutions have been mentioned in literature regarding ITPs?* 
 
-RQ2 *Do these usability issues and solutions still exist in the ITPs?*
+RQ2 *To what extent to these usability issues exist at the latest versions of ITPs?*
 
 RQ3 *What, if any, ITP should be used for a specific project?*
 
@@ -518,9 +598,10 @@ To recall our research questions:
 
 RQ1 *What usability issues and solutions have been mentioned in literature regarding ITPs?* 
 
-RQ2 *Do these usability issues and solutions still exist in the ITPs?*
+RQ2 *To what extent to these usability issues exist at the latest versions of ITPs?*
 
 RQ3 *What, if any, ITP should be used for a specific project?*
+RQ1 *What usability issues and solutions have been mentioned in literature regarding ITPs?* 
 
 The natural method for answering RQ1 is to perform a systematic literature review.
 This literature review intends to identify and categorize usability issues related
@@ -1406,28 +1487,132 @@ This will allow for a comparison of the scope of ITP libraries
 # Results
 The result of the living review was the following tool:
 
+<div id='itps'></div>
+
 ```{=latex}
 https://samnolan.me/thesis
 ```
 
-It includes 11 different ITPs, and classifies 100 math modules from 4 different 
-libraries.
+The living review classified 17 different ITPs, and 11 different libraries from
+those ITPs, totalling about 300 math packages.
 
-<div id='itps'></div>
+The ITPs covered in this review were:
+
+ - ACL2
+ - Isabelle
+ - Atelier B
+ - Metamath
+ - Twelf
+ - Agda
+ - Mizar
+ - HOL
+ - RedPRL
+ - Coq
+ - PVS
+ - Yarrow
+ - Watson
+ - JAPE
+ - LEO-II
+ - Getfol
+ - Z/EVES
+
+The libraries covered in this review were:
+
+- ACL2's Community Books
+- Isabelle's Standard Library
+- Isabelle's Archive of Formal Proofs
+- Metamath's Proof Library
+- Agda's "standard library"
+- Agda's community libraries
+- Mizar's Mathematical Library
+- HOL's standard library
+- Coq's Standard Library
+- Coq's Package Ecosystem
+- PVS's NASA Library
+
+It should be noted that Although Twelf and RedPRL have library support and a
+standard library, they were excluded from this review as they are much too small
+to be useful for a mathematician, and only include basic building blocks for
+building programs in the respective languages.
+
+## Math Classifications
+As of October 2021, after classifying all the packages, it was found that Isabelle had one of the
+largest package collections. This seems to contradict the finding that Isabelle
+was missing mathematical foundations, at least relatively speaking.
+
+![Math Package classifications, as of October 2021](./Images/MathClassification.png){#fig:math_classifications}
+
+[@fig:math_classifications] shows verified packages as reported by the utility
+on October 2021. It shows that of all packages, most contributions go to Computer
+Science (68-XX) and Mathematical Logic and Foundations (03-XX). This indicates
+that ITPs have a larger audience among computer scientists rather than mathematicians.
+Further work could go into developing resources for other areas. 
+
+Behind that, combinatorics has the largest number of packages verified in this
+category, with most algorithms being under graph theory. This also indicates a
+tendency for computer science related works due to graph theory's prominence in
+computing problems.
+
+The rest of the categories only had a few packages in each, indicating there is
+still much to be desired for in other areas of mathematics for ITPs. However, 
+this result does give the opportunity for mathematicians to find the few similar
+efforts that have been done in their field of interest.
+
+As for provers, Isabelle has the largest mathematical library, followed by Coq
+and then ACL2. This indicates that mathematical users should consider using
+Isabelle for their tasks of interest.
 
 # Discussion
 
-This living literature review offers a lot to the field of ITPs.
+We can evaluate this review by comparing it to other literature reviews, and other
+living reviews.
 
-It tracks progress on different ITPs, allowing people new to the field to get
-familiar with different ITPs and the differences between them. This lowers the
-bar for entry into ITP research and usage, hopefully encouraging more usage
+There are not a large amount of literature reviews in the space of ITPs, but
+we shall first compare it to the literature review the data was based on.
 
-It further helps those who want to contribute, either in projects or packages,
-to the theorem provers. It helps them identify whether their task has already
-been completed, or what gaps exist that they could fill in ITP support.
+It should first stand to say that this is the first living review on ITPs. As
+of such, this review already has many benefits over the current literature.
 
-It also offers an honest summary of the field for people interested in starting
-using ITPs in their own projects and verify their own software.
+The clear improvement is this is the only review on ITPs that automatically 
+updates to reflect the current state of the art. This means it can be referred
+back to at any time, and even used to track progress on efforts, such as formalizing
+mathematics.
+
+Due to the availability of web technologies and interactivity, the living
+review is also much more accessible than a paper one. It allows readers to
+compare features of ITPs without scouring through large amounts of text or
+needing to pay large amounts of money to find them. The use of interactive
+tables and multiple pages in our review mean that the user can extract the
+knowledge that they are interested in without difficulty.
+
+These benefits of the fact that it is living are great, but even without
+considering them, this review does build on past reviews.
+
+A good place to start in comparison is the literature review we base some of
+our data on [@nawaz_survey_2019]. This review covers Theorem Provers in Formal
+Methods and what features they have. This literature review covers both
+Automatic Theorem Provers and Interactive Theorem Provers. For the sake of
+ITPs, the review has the scope of discovering what features each ITP has. This
+living review includes all of the features and compares them, but also explains
+what these features mean for a particular provers, allowing newcomers to better
+understand the field. The living review also offers the benefits of being able
+to check the differences between mathematical libraries. This, in the domain of
+ITPs, therefore contains a superset of the knowledge in this one. This is
+however expected, as we used this review as a basis for our one.
+
+Other literature reviews include a survey on the field of Interactive Theorem
+Proving [@a_survey_of_itp]. This review covers a brief history of ITPs, and a
+discussion of different calculi present in ITPs. This survey has a larger scope
+in terms of history, and detailed discussions of types of calculus and
+achievements. It however, is not systematic, and more represents an introduction
+to the field of ITPs, and may not be suitable for those currently in the field
+to understand the current state of the art. Furthermore, this review is difficult
+to understand without a strong knowledge of logic.
+
+Finally, John Harrison completed a review of the history of ITPs
+[@history_of_itps]. As the title suggests, this review covers the history of
+ITPs, which is again outside the scope of this living review. This review is
+comprehensive in covering the development of ITPs up until 2014. However, at 7
+years, it is currently out of date.
 
 # Bibliography

@@ -5,7 +5,7 @@ pkgs.mkShell {
     pandoc 
     haskellPackages.pandoc-crossref
     haskellPackages.pandoc-csv2table
-    (texlive.combine { inherit (texlive) scheme-small latexmk biblatex; }) 
+    (texlive.combine { inherit (texlive) scheme-small latexmk biblatex soul; }) 
     yarn 
     nodejs
     inotify-tools

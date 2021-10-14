@@ -453,8 +453,13 @@ $endif$
 $if(csquotes)$
 \usepackage{csquotes}
 $endif$
-
+\definecolor{verb_border}{rgb}{0.7,0.7,1}
+\definecolor{verb_bg}{rgb}{.95,.96,.97}
 \begin{document}
+\lstset{  
+backgroundcolor=\color{verb_bg},  
+frame=single
+}
 \begin{titlepage}
 $if(header-logo)$
 \begin{figure}[t!]

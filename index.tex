@@ -47,6 +47,10 @@
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage{geometry}
 \geometry{a4paper, portrait, margin=3cm}
+\usepackage{listings}
+\newcommand{\passthrough}[1]{#1}
+\lstset{defaultdialect=[5.3]Lua}
+\lstset{defaultdialect=[x86masm]Assembler}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -73,7 +77,7 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\setcounter{secnumdepth}{5}
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
@@ -126,17 +130,21 @@
 \addtocounter{footnote}{-\value{pandoccrossref@subfigures@footnote@counter}}
 \@for\f:=\global@pandoccrossref@subfigures@footnotes\do{\stepcounter{footnote}\footnotetext{\f}}%
 \gdef\global@pandoccrossref@subfigures@footnotes{}}
-\@ifpackageloaded{float}{}{\usepackage{float}}
-\floatstyle{ruled}
-\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
-\floatname{codelisting}{Listing}
-\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\newcommand*\listoflistings\lstlistoflistings
+\AtBeginDocument{%
+\renewcommand*{\lstlistlistingname}{List of Listings}
+}
 \makeatother
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-
+\definecolor{verb_border}{rgb}{0.7,0.7,1}
+\definecolor{verb_bg}{rgb}{.95,.96,.97}
 \begin{document}
+\lstset{  
+backgroundcolor=\color{verb_bg},  
+frame=single
+}
 \begin{titlepage}
 \begin{figure}[t!]
 \centering
@@ -190,11 +198,14 @@ research and never stopping in opening doors for me.
 \newpage
 
 \begin{abstract}
-Interactive Theorem Provers allow you to prove that software is correct.
-However, the adoption of ITPs is far from widespread. This thesis
-creates a living review about usability issues that may prohibit ITPs
-from being used, and further creates a tool to help aid decision in
-choosing what ITP should be used for a given project.
+Interactive Theorem Provers are tools that allow you to prove that
+software is correct. However, ITPs are known to be quite difficult to
+use and the adoption of ITPs is far from widespread. This thesis
+investigates usability issues that exist in literature, and then creates
+a living review that that covers progress on different theorem provers,
+in order to encourage newcomers to the field and document progress on
+the development. This review doubles as a decision tool for deciding
+whether an ITP should be used for a project.
 \end{abstract}
 \newpage
 
@@ -208,84 +219,59 @@ This is a thesis about \textbf{Interactive Theorem Provers}, what they
 are, how they've been used in the past and whether you should explore
 using them in your next project.
 
-An \textbf{Interactive Theorem Prover} (henceforth ITPs) is a program
-that interactively guides the user in proving mathematical theorems.
-They are also synonymous called \textbf{Proof Assistants}. ITPs are
-often called upon in mathematics, and have been used to create original
-proofs of theorems such as the four colour theorem
-{[}\protect\hyperlink{ref-four_colour_2008}{15}{]}.
-
-ITPs also have another use. As computer programs can be computer
-programs can often be expressed through a type of mathematical logic,
-and have a lot of similarities, ITPs can be used to prove the
-correctness of software systems.
-
-Projects that use ITPs include the certified C compiler CompCert
-{[}\protect\hyperlink{ref-leroy_formal_2009}{29}{]}, which is a C
-compiler that allows for a fully correct compilation of C. Or the fully
-verified microkernel SeL4
-{[}\protect\hyperlink{ref-klein_sel4_2009}{28}{]}.
-
-However, ITPs are far from commonplace for verifying software. This is
-likely due to verifying software being very difficult, requiring a lot
-of knowledge about proof theory.
-
-Ensuring that software operates correctly is very important, especially
-as systems get more and more complicated. The goal of this thesis is to
-identify the roadblocks in adaption, and help users decide between what
-technology they should use in their next project.
-
-The research questions for this thesis are:
-
-RQ1 \emph{What usability issues and solutions have been mentioned in
-literature regarding ITPs?}
-
-RQ2 \emph{Do these usability issues and solutions still exist in the
-ITPs?}
-
-RQ3 \emph{What, if any, ITP should be used for a specific project?}
-
-\hypertarget{background}{%
-\section{Background}\label{background}}
-
-\hypertarget{sec:background_itp}{%
-\subsection{Interactive Theorem Provers}\label{sec:background_itp}}
-
-An \textbf{Interactive Theorem Prover} or \textbf{Proof Assistant} is a
-piece of software that helps prove mathematical theorems, or
+An \textbf{Interactive Theorem Prover} (ITP) or \textbf{Proof Assistant}
+is a piece of software that helps prove mathematical theorems, or
 equivalently, prove correctness properties about software. Some of the
 more well known examples of provers include
 \href{https://coq.inria.fr/}{Coq} and
 \href{https://isabelle.in.tum.de/}{Isabelle}.
 
-In computer science, often correctness proofs of algorithms (like
-Dijkstra in an undergraduate context) are described and proved on pen
-and paper. The use of an ITP in analogous to this type of activity.
+An ITP is often used by either a mathematician or an engineer. From the
+side of a mathematician, it is possible to prove theorems that the ITP
+can prove is correct. This ensures that no errors find themselves into
+any proof that's made. ITPs have been used for the QED Manifesto,
+POPLMark and proving theorems such as the four colour theorem, and
+Mizar's Mathematical Library.
 
-You first specify what it is that you would like to prove, for example,
-that Dijkstra's algorithm always finds the shortest path between two
-nodes in a weighted graph. In this step, you would specify what
-Dijkstra's algorithm, graphs , and shortest paths are, then state that
-Dijkstra's algorithm finds the shortest path.
+An ITP can however also be used by a software engineer to create
+certified software. Certified software is software that's been proven to
+operate correctly. This is a very high level of assurance in terms of
+quality, and in industry and research today, is often used to ensure
+correctness of cryptographic libraries, microcode, kernels and
+compilers.
 
-This leaves you with a \textbf{proof obligation}. It is then up to the
-user to provide to the ITP the reasoning as to why this theorem is
+In computer science, often correctness proofs of algorithms (For
+example, Dijkstra's algorithm in an undergraduate context) are described
+and proved to be correct on pen and paper. The use of an ITP in
+analogous to this type of activity.
+
+The task of creating verified software is split into two steps: first
+specification and then verification.
+
+During specification, You specify what it is that you would like to
+prove, for example, that Dijkstra's algorithm always finds the shortest
+path between two nodes in a weighted graph, assuming positive weights.
+In this step, you would create a specification for what is Dijkstra's
+algorithm, graphs, and shortest paths. Then state that Dijkstra's
+algorithm finds the shortest path. This step is far from trivial, and
+there exist dedicated specification languages for this such as Z of VDL.
+
+This specification leaves you with a \textbf{proof obligation}. A proof
+obligation is a onus on the user to prove that the specification of the
+software is correct. Then, during verification, it is then up to the
+user to provide to the ITP the reasoning as to why this proposition is
 correct. This can be done in several ways, sometimes through the use of
 automated software, or manipulating with the proof by pointing and
 clicking, or writing down a \textbf{proof script} that describes the
-steps made to prove the theorem.
+steps made to prove the theorem. Often this involves breaking down one
+proof obligation into many other simpler proof obligations that can be
+solved individually.
 
-The ITP then checks whether the proof of the theorem is valid, assisting
-you along the way in any errors that you make, until you have specified
-a proof of the statement you wish to claim. Once that proof is made, you
-can be assured that the system works correctly.
-
-Proving software is correct is far from a trivial task, and proving
-correctness of different types of systems requires a strong
-understanding of formal proof theory and the ITP at hand. The
-inspiration for this thesis was due to nature of ITPs producing proofs
-that are readable for a computer but not for a user. A full description
-of usability issues with ITPs are discussed in the literature review.
+The ITP then checks whether the proof of the proposition is valid,
+assisting you along the way in any errors that you make. The user and
+the ITP work together until you have specified a proof of the statement
+you wish to claim. Once that proof is made, you can be assured that the
+system works correctly.
 
 Another way of approaching ITPs is through programming languages. Often
 a goal in programming language design is to create languages where you
@@ -298,16 +284,19 @@ to go as far as proving the correctness of your software. Almost all
 ITPs use Type Systems and Functional Programming to assist in proving
 software.
 
+More widespread use of ITPs is valuable as it allows for errors to be
+caught much earlier in the development process.
+
 \hypertarget{formal-methods}{%
 \subsection{Formal Methods}\label{formal-methods}}
 
-ITPs are not the only way to verify software. They belong to a class of
-techniques named \textbf{Formal Methods}.
+ITPs are not the only way to specify and verify software. They belong to
+a class of techniques named \textbf{Formal Methods}.
 
 In essence, formal methods attempts to improve the process that users
 can prove the correctness of their software systems. Use of formal
 methods can be done without any tools at all, by simply proving
-properties by hand.
+properties by hand, such as the Dijkstra example above.
 
 However, computers and tools have aided people in providing large proofs
 for software systems. The tools used in Formal Methods can be roughly
@@ -315,7 +304,15 @@ divided into three categories, Model Checkers, Automated Theorem Provers
 and Interactive Theorem Provers.
 
 These three techniques are a trade off in three dimensions. You can pick
-two but not all three:
+two but not all three.
+
+\begin{figure}
+\hypertarget{fig:formal_methods}{%
+\centering
+\includegraphics{./Images/formalmethods.png}
+\caption{Three categories of Formal Methods}\label{fig:formal_methods}
+}
+\end{figure}
 
 \textbf{Automation}: Whether finding a proof is fully automated. That
 is, the user does not need to specify a proof manually for the
@@ -346,18 +343,280 @@ often include minor user interaction in order to correct it's path and
 find a proof. And ITPs often have automatic features and can even call
 external ATPs to discharge proof obligations.
 
-ITPs were chosen for this thesis due to their application in fully
-certified software. A Model Checker cannot be used to create fully
-certified software, and ATPs can be used as a component of ITPs.
+ITPs were chose for this investigation due to their usage in creating
+fully verified software such as Coq and SeL4. Although large scale
+formalization fully certified software efforts are possible through the
+usage of ATPs and Model Checkers, as far as the authors are aware, they
+have not been done. Furthermore, ATPs are often used alongside ITPs to
+resolve proof obligations automatically, getting the best of both
+worlds.
 
-\hypertarget{sec:living_review}{%
-\subsection{Living Reviews}\label{sec:living_review}}
+\hypertarget{using-an-itp}{%
+\subsection{Using an ITP}\label{using-an-itp}}
 
-A living review is a review of a field that updates periodically to
-reflect the current state of the research. These reviews are often
-published electronically, such as to a website. The goal of a living
-review is to ensure that the review never goes stale, and can be used as
-a reference years to come.
+Proving properties with an ITP has the flavour of starting with a goal,
+and then manipulating that goal into subgoals until you have proven the
+proposition.
+
+To demonstrate the usage of an ITP, we will take a look at proving a
+theorem in a pseudocode ITP syntax.
+
+Our pseudocode syntax is based on textual theorem provers such as
+Isabelle, Coq and HOL. The syntax is simplified to get the basic
+concepts of theorem provers across without too many of the confusing
+details.
+
+We start with a function:
+
+\[
+f(x) = 
+  \begin{cases}
+    f(x - 1) + x, & x > 0 \\
+    0, & x = 0
+  \end{cases}
+\]
+
+This is the triangle number function. It adds a number to every number
+below that number up until 0. For instance,
+\(f(5) = 5 + 4 + 3 + 2 + 1 + 0 = 15\).
+
+However, there is a quicker way to calculate the triangle number, and
+that is that is that \(f(x) = x(x + 1) / 2\).
+
+This proof is an elementary induction proof. But we shall demonstrate
+that this statement is true.
+
+We would like to prove that:
+
+\[ f(x) = x(x + 1)/2 \]
+
+Textual ITPs are in a sense like an interactive programming language.
+You write a line of code and then you get an output from this code.
+
+To start with our proof, we write lst.~\ref{lst:proposition} into our
+ITP. This statement says that you would like to
+\passthrough{\lstinline!Prove!} the statement
+\passthrough{\lstinline!forall x, f(x) = x * (x + 1) / 2!}. Prove here
+is a keyword that starts the proof. Everything between the
+\passthrough{\lstinline!:!} and the \passthrough{\lstinline!.!}
+represent the statement you wish to prove.
+
+\begin{lstlisting}[caption={Statement of the proposition you wish to prove}, label=lst:proposition]
+Prove: forall x, f(x) = x * (x + 1) / 2.
+\end{lstlisting}
+
+After writing this statement, the prover will return to you (often in a
+window in the ITP interface, or if it is a command line prover, it will
+print it to console) the state lst.~\ref{lst:starting_state}.
+
+The state is separated into two sections, everything above the
+\passthrough{\lstinline!---!} is an assumption, that is, what we already
+know. We can have multiple assumptions, but in this case, there is none.
+Then the statement below the \passthrough{\lstinline!---!} is the
+\textbf{goal}. This is the statement that you want to prove. When
+starting a proof, whatever statement you want to prove becomes your
+first goal, but both the assumptions and the goal will change as you
+progress in the proof.
+
+\begin{lstlisting}[caption={Starting state of the prover}, label=lst:starting_state]
+---
+forall x, f(x) = x * (x + 1) / 2
+\end{lstlisting}
+
+It should be noted that during any time during the process, the user may
+wish to attempt to prove a goal automatically. Most ITPs have the
+ability to automatically prove simple propositions, often by giving the
+\passthrough{\lstinline!auto!} command to the prover. If this succeeds,
+then the user is done and the proposition is proven. Otherwise, the user
+must continue to explore proof options. We will assume that the
+statement cannot be proven automatically.
+
+This particular proof is a very common beginners induction proof, so
+induction would be a good start to solving this. Entering the pseudocode
+in lst.~\ref{lst:induction_tactic} performs induction on the variable x.
+To perform induction, we must prove the base case, and then prove the
+inductive case. The ITP will get you to prove them one at a time,
+starting with the base case. After the command is executed, it will show
+the state in lst.~\ref{lst:induction_state}. This means that the theorem
+prover is asking you to prove the base case, that is, that the statement
+is true when \(x = 0\).
+
+\begin{lstlisting}[caption={Running the induction tactic}, label=lst:induction_tactic]
+induction x
+\end{lstlisting}
+
+\begin{lstlisting}[caption={State after the induction tactic}, label=lst:induction_state]
+---
+f(0) = 0 * (0 + 1) / 2
+\end{lstlisting}
+
+Notice that the command modifies the state of the ITP. Only commands
+that are valid at the time are allowed to be used, ensuring that all
+proof steps are valid and construct a correct proof.
+
+The base case is very easy to solve, as simply evaluating the function
+on both sides (\(f(0) = 0\) and \(\frac {0 \cdot (0 + 1)}{2} = 0\))
+gives 0.
+
+To evaluate this, we use the \passthrough{\lstinline!simplify!} tactic
+in lst.~\ref{lst:simplify_tactic}. This tactic attempts to try a list of
+rules that the prover guesses will simplify the current statement. In
+our pseudocode ITP, this includes evaluating statements between
+constants. The result is as we expect and shown in
+lst.~\ref{lst:simplify_state}. Indicating that after the simplification,
+both sides are equal to each other.
+
+\begin{lstlisting}[caption={Running the simplify tactic}, label=lst:simplify_tactic]
+simplify
+\end{lstlisting}
+
+\begin{lstlisting}[caption={State after running the simplify tactic}, label=lst:simplify_state]
+---
+0=0
+\end{lstlisting}
+
+Now the goal is to prove that \passthrough{\lstinline!0=0!}. This is
+trivially true because equality is reflexive. As of such, we can prove
+the current goal by indicating that it's reflexive. This uses the
+\passthrough{\lstinline!reflexivity!} tactic in listing
+lst.~\ref{lst:reflexivity_tactic}.
+
+Now that we have solved the first goal, the base case, the pseudo-ITP is
+now asking us to prove the inductive case
+lst.~\ref{lst:reflexivity_state}. It is now our goal to prove the
+inductive case. The inductive case now lets us assume that the statement
+is true, and that we need to prove that it is the case for x + 1.
+Therefore, the statement for proposition for (x + 1) is our goal.
+
+\begin{lstlisting}[caption={Running the reflexivity tactic}, label=lst:reflexivity_tactic]
+reflexivity
+\end{lstlisting}
+
+\begin{lstlisting}[caption={State after running the reflexivity tactic}, label=lst:reflexivity_state]
+f(x) = x * (x + 1) / 2
+---
+f(x + 1) = (x + 1) * (x + 2) / 2
+\end{lstlisting}
+
+The first step would be to evaluate \passthrough{\lstinline!f(x + 1)!}
+down by one layer. That is, to replace it with it's definition. This can
+be done with the \passthrough{\lstinline!unfold!} command
+lst.~\ref{lst:unfold_tactic}. This command replaces a function with it's
+definition. This replacement is shown in lst.~\ref{lst:unfold_state}
+
+\begin{lstlisting}[caption={Running the unfold tactic}, label=lst:unfold_tactic]
+unfold f
+\end{lstlisting}
+
+\begin{lstlisting}[caption={State after running the reflexivity tactic}, label=lst:unfold_state]
+f(x) = x * (x + 1) / 2
+---
+f(x) + (x + 1) = (x + 1) * (x + 2) / 2
+\end{lstlisting}
+
+The top and the bottom statements are now identical, they just need
+re-arranging for it to be seen. This might involve several commands to
+manipulate the state of the equation. We will for the sake of brevity
+written these commands in English like code in
+lst.~\ref{lst:rearangement_tactics}. The intermediate goals are shown in
+lst.~\ref{lst:intermediate_states} to show the progress towards the
+desired goal, and the final state is shown in
+lst.~\ref{lst:rearangement_state}.
+
+\begin{lstlisting}[caption={Running re-arangement tactics}, label=lst:rearangement_tactics]
+expand (x + 1) * (x + 2)
+subtract both sides (x + 1)
+replace (x + 1) with (2 * (x + 1) / 2)
+combine fraction
+simplify
+factorise (x * x - x)
+\end{lstlisting}
+
+\begin{lstlisting}[caption={States after running each command}, label=lst:intermediate_states]
+f(x) + (x + 1) = (x^2 + 3x + 2) / 2
+f(x) = (x^2 + 3x + 2) / 2 - (x + 1)
+f(x) = (x^2 x + 3x + 2) / 2 - ( 2 * (x + 1) / 2)
+f(x) = (x^2 + 3x + 2 - 2 * (x + 1)) / 2
+f(x) = (x^2 + x) / 2
+f(x) = x * (x + 1) / 2
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Final state after running each command}, label=lst:rearangement_state]
+f(x) = x * (x + 1) / 2
+---
+f(x) = x * (x + 1) / 2
+\end{lstlisting}
+
+Because we know the inductive hypothesis is true, and the goal is
+exactly the same as the inductive hypothesis, we can simply indicate
+that we have proven the goal. We do this be the
+\passthrough{\lstinline!assumption!} command, and then close off the
+proof with the \passthrough{\lstinline!QED!} command
+lst.~\ref{lst:assumption_tactic}. This then accepts the proof as true
+lst.~\ref{lst:assumption_state}.
+
+\begin{lstlisting}[caption={Running the assumption tactic}, label=lst:assumption_tactic]
+assumption
+QED
+\end{lstlisting}
+
+\begin{lstlisting}[caption={State after running the assumption tactic}, label=lst:assumption_state]
+Proof accepted
+\end{lstlisting}
+
+It should be noted that the commands we wrote out are akin to deduction
+rules, however, there is a problem with this approach, and the problem
+should become clear once we write down all the commands that you put
+into the prover.
+
+\begin{lstlisting}[caption={Final Proof script}, label=lst:final_proof_script]
+Prove: f(x) = x * (x - 1) / 2
+introduce
+induction x
+simplify
+reflexivity
+unfold f
+expand (x + 1) * x
+subtract both sides x
+replace x with (2 * x / 2)
+combine fraction
+replace ( + x - 2 * x) with ( - x)
+factorise (x * x - x)
+assumption
+QED
+\end{lstlisting}
+
+These proof scripts are very difficult to understand statically. Our
+understanding of the commands were aided due to our knowledge of the
+current state. However, when looking at the script without the context
+of the state, they are often very difficult to follow. Especially if the
+scripts are more complicated than this one.
+
+This thesis was inspired by the difficulty in reading static proof
+scripts. Some provers have already moved to attempt to fix this problem.
+For instance, Isabelle's Isar language offers a different way of proving
+propositions that embeds more state, and helps the user understand the
+proof. It would be therefore valuable to determine what usability issues
+have been reported, what has been done to fix them, and whether
+solutions from some ITPs could be used to help other provers.
+
+And finally, the secondary motivation of this thesis is to encourage
+further use and development of ITPs. So it would be valuable to create a
+decision tool that helps a user determine which ITP, if any, should be
+used for a particular project.
+
+Hence, the research questions for this thesis are:
+
+RQ1 \emph{What usability issues and solutions have been mentioned in
+literature regarding ITPs?}
+
+RQ2 \emph{To what extent to these usability issues exist at the latest
+versions of ITPs?}
+
+RQ3 \emph{What, if any, ITP should be used for a specific project?}
+
+\hypertarget{background}{%
+\section{Background}\label{background}}
 
 \hypertarget{cognitive-dimensions-of-notation}{%
 \subsection{Cognitive Dimensions of
@@ -365,7 +624,7 @@ Notation}\label{cognitive-dimensions-of-notation}}
 
 Cognitive Dimensions of Notation is a framework used to evaluate the
 effectiveness of
-notations~{[}\protect\hyperlink{ref-green_usability_1996}{18}{]}, that
+notations~{[}\protect\hyperlink{ref-green_usability_1996}{17}{]}, that
 is, ways of writing down information. The notation was originally
 proposed by Green as a way of discussing the design trade-offs of visual
 programming languages, but has been applied elsewhere for a variety of
@@ -549,10 +808,12 @@ To recall our research questions:
 RQ1 \emph{What usability issues and solutions have been mentioned in
 literature regarding ITPs?}
 
-RQ2 \emph{Do these usability issues and solutions still exist in the
-ITPs?}
+RQ2 \emph{To what extent to these usability issues exist at the latest
+versions of ITPs?}
 
-RQ3 \emph{What, if any, ITP should be used for a specific project?}
+RQ3 \emph{What, if any, ITP should be used for a specific project?} RQ1
+\emph{What usability issues and solutions have been mentioned in
+literature regarding ITPs?}
 
 The natural method for answering RQ1 is to perform a systematic
 literature review. This literature review intends to identify and
@@ -561,10 +822,23 @@ categorize usability issues related to different theorem provers.
 Answering RQ2 requires going through the theorem provers and identifying
 the issues. However, ITPs are continually in development, and any issue
 that arises could be solved at a future date. As of such, we created a
-\textbf{living review} (See sec.~\ref{sec:living_review} for definition)
-to answer this question.
+\textbf{living review} to answer this question.
 
-The creation of this living review will answer RQ3, and provide
+A living review is a literature review of a field that updates
+periodically to reflect the current state of the research. These reviews
+are often published electronically, such as to a website. The goal of a
+living review is to ensure that the review never goes stale, and can be
+used as a reference years to come.
+
+This living review is the primary output of this thesis, and although it
+has the word ``review'' in it, should not be mistaken for just another
+literature review.
+
+It differentiates itself from a normal review by updating automatically
+over time, being an interactive software product, and existing as a
+decision tool for users.
+
+The creation of this living review will answer RQ3 and RQ2, and provide
 descriptions of the current state of the field for ITPs.
 
 \hypertarget{sec:review_methodology}{%
@@ -579,7 +853,7 @@ papers on the topic. We then attempted to construct a query that would
 match these papers and also other papers in the field.
 
 Papers were searched for having the title matching the following query:
-\texttt{("Interactive"\ OR\ "Deductive")\ AND\ ("prover"\ OR\ "provers"\ OR\ "proving"\ OR\ "verifier")\ AND\ ("usability"\ OR\ "user"\ OR\ "users")}
+\passthrough{\lstinline!("Interactive" OR "Deductive") AND ("prover" OR "provers" OR "proving" OR "verifier") AND ("usability" OR "user" OR "users")!}
 
 The justification for using quotes around prover, provers and proving is
 that some search engines will return papers with the text "prove" when
@@ -649,7 +923,7 @@ We then read the paper to discover:
 \end{itemize}
 
 The issues were then categorized by Green's cognitive dimensions of
-notations~{[}\protect\hyperlink{ref-green_usability_1996}{18}{]}.
+notations~{[}\protect\hyperlink{ref-green_usability_1996}{17}{]}.
 
 \hypertarget{living-review-methodology}{%
 \subsection{Living Review Methodology}\label{living-review-methodology}}
@@ -679,7 +953,7 @@ be collected.
 
 We decided to use a 2019 Systematic Literature Reviews on Theorem
 Provers as our starting dataset
-{[}\protect\hyperlink{ref-nawaz_survey_2019}{33}{]}. This review went
+{[}\protect\hyperlink{ref-nawaz_survey_2019}{32}{]}. This review went
 through 27 theorem provers and described the features that each prover
 had. This was converted into a dataset and used to compare general
 features.
@@ -728,7 +1002,7 @@ explanations as to what they refer to. These explanations will be
 included within the tool. This allows people unfamiliar to the field to
 learn what the components of ITPs are and why they are important.
 
-Some Newer ITPs were not included in the dataset, such as Lean, F* and
+Some newer ITPs were not included in the dataset, such as Lean, F* and
 Idris. These were added manually to the dataset.
 
 The systematic literature review we source our data from however, is
@@ -745,8 +1019,25 @@ ITPs}\label{comparing-projects-between-itps}}
 
 One important thing to consider when making decisions about ITPs to
 choose is what past projects have been completed within the ITP. As of
-such, we contain a literature review of different notable projects
-within the ITP.
+such, we contain a review of different notable projects within the ITP.
+
+Each project will describe:
+
+\begin{itemize}
+\tightlist
+\item
+  The project's name
+\item
+  The project's scope
+\item
+  When it was completed
+\item
+  The ITP used
+\end{itemize}
+
+This should help users understand what work has been done with an ITP
+before using it. This should help a user decide whether this ITP is
+suitable for the task at hand.
 
 \hypertarget{comparing-progress-on-usability-issues-for-itps}{%
 \subsubsection{Comparing progress on usability issues for
@@ -754,6 +1045,9 @@ ITPs}\label{comparing-progress-on-usability-issues-for-itps}}
 
 Finally, depending on the results of the literature review, progress on
 different usability issues will be reported in this living review.
+
+How these will be included into the living review will be detailed
+later, once those features have been identified.
 
 \hypertarget{literature-review}{%
 \section{Literature Review}\label{literature-review}}
@@ -802,7 +1096,7 @@ improvement~{[}\protect\hyperlink{ref-berman_development_2014}{12},
 \protect\hyperlink{ref-hentschel_empirical_2016}{21}{]}. That there is
 not enough empirical studies verifying usability issues has been cited
 as an issue that needs to addressed in the
-past~{[}\protect\hyperlink{ref-hahnle_deductive_2019}{20}{]}.
+past~{[}\protect\hyperlink{ref-hahnle_deductive_2019}{19}{]}.
 
 The following sections outline usability issues and solutions to those
 issues. Tables are included outlining the usability issues mentioned. If
@@ -883,7 +1177,7 @@ The problems raised by them however, are often relevant for current day
 ITPs.
 
 This is by no means a complete list of modern ITPs. Such compilations
-have been done~{[}\protect\hyperlink{ref-nawaz_survey_2019}{33}{]}.
+have been done~{[}\protect\hyperlink{ref-nawaz_survey_2019}{32}{]}.
 These are only the ITPs discussed in the papers found in the review.
 There are notable ITPs that are missing from this list that caught us by
 surprise, including Agda, Lean and Mizar.
@@ -932,7 +1226,7 @@ them, could cause a lemma that was proven before to become unproven.
 Developments in IDEs to allow asynchronous interfaces, reloading only
 parts needed and loading proofs out of order have been introduces to fix
 this problem. They are called "Prover IDEs", with two examples being
-Isabelle/PIDE~{[}\protect\hyperlink{ref-wenzel_asynchronous_2014}{39}{]}
+Isabelle/PIDE~{[}\protect\hyperlink{ref-wenzel_asynchronous_2014}{38}{]}
 and Coq/PIDE~{[}\protect\hyperlink{ref-barras_asynchronous_2015}{6}{]}.
 These hopefully will resolve some of the issues cited above.
 
@@ -940,9 +1234,9 @@ Although we have examples of large projects undertaken with ITPs,
 optimal interaction paradigms are still up for debate, and several novel
 interaction paradigms have surfaced. Including proving theorems and
 writing tactics with
-diagrams~{[}\protect\hyperlink{ref-grov_tinker_2018}{19},
-\protect\hyperlink{ref-lin_understanding_2016}{30},
-\protect\hyperlink{ref-shams_accessible_2018}{36}{]}, or providing agent
+diagrams~{[}\protect\hyperlink{ref-grov_tinker_2018}{18},
+\protect\hyperlink{ref-lin_understanding_2016}{28},
+\protect\hyperlink{ref-shams_accessible_2018}{35}{]}, or providing agent
 based
 interfaces~{[}\protect\hyperlink{ref-hunter_agent-based_2005}{24}{]}.
 
@@ -1012,7 +1306,7 @@ Coq & Cannot use mathematical notation & Survey &
 {[}\protect\hyperlink{ref-berman_development_2014}{12}{]} \\
 Coq & Cannot use mathematical notation & Suggested &
 {[}\protect\hyperlink{ref-asperti_user_2007}{3},
-\protect\hyperlink{ref-zacchiroli_user_2007}{42}{]} \\
+\protect\hyperlink{ref-zacchiroli_user_2007}{41}{]} \\
 \bottomrule
 \end{longtable}
 
@@ -1043,7 +1337,7 @@ commands such as rightarrow to render math notation, whereas Agda allows
 Unicode in source files. In order to avoid ambiguity, Coq has no support
 for math notation, and in response to this, Matita has LaTeX~style
 mathematical notation~{[}\protect\hyperlink{ref-asperti_user_2007}{3},
-\protect\hyperlink{ref-zacchiroli_user_2007}{42}{]}. This issue came up
+\protect\hyperlink{ref-zacchiroli_user_2007}{41}{]}. This issue came up
 in three different sources.
 
 \hypertarget{consistency-1}{%
@@ -1066,15 +1360,15 @@ Groups & {[}\protect\hyperlink{ref-beckert_usability_2015}{8},
 HOL & Difficult to know what tactic to apply next & Suggested &
 {[}\protect\hyperlink{ref-aitken_interactive_1998}{1}{]} \\
 Isabelle & Hard to remember prover specific details & Suggested &
-{[}\protect\hyperlink{ref-nagashima_pamper_2018}{32}{]} \\
+{[}\protect\hyperlink{ref-nagashima_pamper_2018}{31}{]} \\
 KeY & Difficult to know what tactic to apply next & Suggested &
-{[}\protect\hyperlink{ref-mitsch_keymaera_2017}{31}{]} \\
+{[}\protect\hyperlink{ref-mitsch_keymaera_2017}{30}{]} \\
 Isabelle,HOL & Difficult to remember names of theorems & Observational &
 {[}\protect\hyperlink{ref-aitken_analysis_2000}{2}{]} \\
 Coq & Difficult to find relevant lemmas & Survey &
 {[}\protect\hyperlink{ref-berman_development_2014}{12}{]} \\
 Coq & Difficult to find arguments for tactics & Observational &
-{[}\protect\hyperlink{ref-ringer_replica_2020}{34}{]} \\
+{[}\protect\hyperlink{ref-ringer_replica_2020}{33}{]} \\
 Coq & Bad Library, inconsistent naming & Survey &
 {[}\protect\hyperlink{ref-berman_development_2014}{12}{]} \\
 \bottomrule
@@ -1097,17 +1391,17 @@ menu~{[}\protect\hyperlink{ref-aitken_interactive_1998}{1},
 \protect\hyperlink{ref-aitken_analysis_2000}{2}{]} Which has been
 implemented in Coq through Proof
 Previews~{[}\protect\hyperlink{ref-berman_development_2014}{12}{]} and
-in KeYmaera X~{[}\protect\hyperlink{ref-mitsch_keymaera_2017}{31}{]}.
+in KeYmaera X~{[}\protect\hyperlink{ref-mitsch_keymaera_2017}{30}{]}.
 Machine learning for choosing appropriate recommendations has been
 suggested for this
-problem~{[}\protect\hyperlink{ref-ringer_replica_2020}{34}{]}, and has
+problem~{[}\protect\hyperlink{ref-ringer_replica_2020}{33}{]}, and has
 also been implemented through the PaMpeR tool in
-Isabelle~{[}\protect\hyperlink{ref-nagashima_pamper_2018}{32}{]}. A
+Isabelle~{[}\protect\hyperlink{ref-nagashima_pamper_2018}{31}{]}. A
 second way of tackling this problem is to improve library searching,
 which was
 suggested~{[}\protect\hyperlink{ref-aitken_analysis_2000}{2}{]} and is a
 focus in
-Matita~{[}\protect\hyperlink{ref-tassi_interactive_2008}{38}{]}.
+Matita~{[}\protect\hyperlink{ref-tassi_interactive_2008}{37}{]}.
 Improving these tools is a promising area for improving the usability of
 ITPs
 
@@ -1210,10 +1504,10 @@ Theorem prover & Problems & Discovered & citation \\
 \midrule
 \endhead
 Coq & Hard to understand proof scripts statically & Suggested &
-{[}\protect\hyperlink{ref-zacchiroli_user_2007}{42}{]} \\
+{[}\protect\hyperlink{ref-zacchiroli_user_2007}{41}{]} \\
 General & Difficult to understand tacticals & Suggested &
-{[}\protect\hyperlink{ref-grov_tinker_2018}{19},
-\protect\hyperlink{ref-lin_understanding_2016}{30}{]} \\
+{[}\protect\hyperlink{ref-grov_tinker_2018}{18},
+\protect\hyperlink{ref-lin_understanding_2016}{28}{]} \\
 General & Proof scripts can become complicated & Suggested &
 {[}\protect\hyperlink{ref-aspinall_towards_2016}{5}{]} \\
 \bottomrule
@@ -1227,21 +1521,21 @@ is reflected with difficult syntax.
 Proofs are hard enough to understand while viewing the dynamic nature of
 the proof, investigating proof state bit by bit. They are often near
 impossible to understand
-statically~{[}\protect\hyperlink{ref-zacchiroli_user_2007}{42}{]}. This
+statically~{[}\protect\hyperlink{ref-zacchiroli_user_2007}{41}{]}. This
 issue has not been investigated empirically, but solutions often involve
 changing the syntax around proofs. One notable example of this is Isar
-for Isabelle~{[}\protect\hyperlink{ref-wenzel_structured_2006}{41}{]},
+for Isabelle~{[}\protect\hyperlink{ref-wenzel_structured_2006}{40}{]},
 which attempts to mirror how a pen and paper proof is structured.
 
 It is often difficult to understand tacticals, and the problem is made
 even worse when it is not possible to view the state of a tactical mid
 way through interaction. This problem has been suggested in several
-sources~{[}\protect\hyperlink{ref-grov_tinker_2018}{19},
-\protect\hyperlink{ref-lin_understanding_2016}{30},
-\protect\hyperlink{ref-zacchiroli_user_2007}{42}{]} but never
+sources~{[}\protect\hyperlink{ref-grov_tinker_2018}{18},
+\protect\hyperlink{ref-lin_understanding_2016}{28},
+\protect\hyperlink{ref-zacchiroli_user_2007}{41}{]} but never
 empirically investigated. Solutions to this include representing
-tacticals as graphs~{[}\protect\hyperlink{ref-grov_tinker_2018}{19},
-\protect\hyperlink{ref-lin_understanding_2016}{30}{]}. This solution has
+tacticals as graphs~{[}\protect\hyperlink{ref-grov_tinker_2018}{18},
+\protect\hyperlink{ref-lin_understanding_2016}{28}{]}. This solution has
 not been tested with users.
 
 Proof scripts can also get very complicated for larger propositions.
@@ -1265,7 +1559,7 @@ Theorem prover & Problems & Discovered & citation \\
 \midrule
 \endhead
 Isabelle & Hard to see dependencies between proofs & Suggested &
-{[}\protect\hyperlink{ref-spichkova_human-centred_2017}{37}{]} \\
+{[}\protect\hyperlink{ref-spichkova_human-centred_2017}{36}{]} \\
 KeY & Difficult to patch proofs that have slightly changed & Suggested &
 {[}\protect\hyperlink{ref-beckert_evaluating_2012}{10}{]} \\
 Isabelle & Hidden automation dependencies & Suggested &
@@ -1289,9 +1583,9 @@ other lemmas it is references are above it, may cause it to fail due to
 it using a lemma by automation. Monitoring dependencies has been
 suggested as part of formal proof metrics. It's been suggested and
 implemented within CoqPIE to show these dependencies within the
-IDE~{[}\protect\hyperlink{ref-roe_coqpie_2016}{35}{]}. Tools have also
+IDE~{[}\protect\hyperlink{ref-roe_coqpie_2016}{34}{]}. Tools have also
 been built to analyse dependencies between Isabelle
-proofs~{[}\protect\hyperlink{ref-spichkova_human-centred_2017}{37}{]}.
+proofs~{[}\protect\hyperlink{ref-spichkova_human-centred_2017}{36}{]}.
 For automated tactics, Isabelle's sledgehammer offers a unique solution
 to showing dependencies. The automatic tactic, after execution, simply
 prints a set of manual tactics that were used to prove the theorem into
@@ -1398,13 +1692,13 @@ KeY & Hard to understand why proof state fails & Suggested &
 \protect\hyperlink{ref-beckert_interaction_2017}{9},
 \protect\hyperlink{ref-beckert_interactive_2015}{11}{]} \\
 Dafny & Hard to understand why proof state fails & Suggested &
-{[}\protect\hyperlink{ref-grebing_seamless_2020}{16}{]} \\
+{[}\protect\hyperlink{ref-grebing_seamless_2020}{15}{]} \\
 KeY & Hard to understand why proof state fails & Suggested &
-{[}\protect\hyperlink{ref-lin_understanding_2016}{30}{]} \\
+{[}\protect\hyperlink{ref-lin_understanding_2016}{28}{]} \\
 General & Hard to understand automated tactics & Suggested &
-{[}\protect\hyperlink{ref-mitsch_keymaera_2017}{31}{]} \\
+{[}\protect\hyperlink{ref-mitsch_keymaera_2017}{30}{]} \\
 e General & Not enough feedback hinders learning & Suggested &
-{[}\protect\hyperlink{ref-mitsch_keymaera_2017}{31}{]} \\
+{[}\protect\hyperlink{ref-mitsch_keymaera_2017}{30}{]} \\
 Coq & Lack of background automation & Survey &
 {[}\protect\hyperlink{ref-berman_development_2014}{12}{]} \\
 General & Lack of background automation & Suggested &
@@ -1479,7 +1773,7 @@ HOL & Allow notes in tree contexts & Suggested &
 Isabelle,HOL & Allow adding notes to proof context & Suggested &
 {[}\protect\hyperlink{ref-beckert_evaluating_2012}{10}{]} \\
 Isabelle & Add document orientated features & Suggested &
-{[}\protect\hyperlink{ref-wenzel_isabelle_2011}{40}{]} \\
+{[}\protect\hyperlink{ref-wenzel_isabelle_2011}{39}{]} \\
 Isabelle & Gravity for automated lemma placement & Suggested &
 {[}\protect\hyperlink{ref-bourke_challenges_2012}{13}{]} \\
 Isabelle & Deprecation tags & Suggested &
@@ -1541,28 +1835,28 @@ Isabelle & No support for proof refactoring & Focus Groups &
 {[}\protect\hyperlink{ref-beckert_usability_2015}{8}{]} \\
 Direct Manipulation & Tedious Interactions & Suggested &
 {[}\protect\hyperlink{ref-beckert_usability_2015}{8},
-\protect\hyperlink{ref-grebing_usability_2020}{17}{]} \\
+\protect\hyperlink{ref-grebing_usability_2020}{16}{]} \\
 General & Hard to make effective use of large library & Suggested &
 {[}\protect\hyperlink{ref-asperti_considerations_2010}{4},
-\protect\hyperlink{ref-tassi_interactive_2008}{38}{]} \\
+\protect\hyperlink{ref-tassi_interactive_2008}{37}{]} \\
 Isabelle & Tacticals difficult to write & Suggested &
 {[}\protect\hyperlink{ref-becker_lassie_2021}{7}{]} \\
 Coq & Have to update proofs once definition changes & Suggested &
-{[}\protect\hyperlink{ref-ringer_replica_2020}{34}{]} \\
+{[}\protect\hyperlink{ref-ringer_replica_2020}{33}{]} \\
 Coq & Proof renaming and refactoring is tedious & Suggested &
-{[}\protect\hyperlink{ref-ringer_replica_2020}{34}{]} \\
+{[}\protect\hyperlink{ref-ringer_replica_2020}{33}{]} \\
 Coq & Large proof scripts require too long to recompile & Suggested &
 {[}\protect\hyperlink{ref-barras_asynchronous_2015}{6}{]} \\
 Isabelle & Large proof scripts require too long to recompile & Suggested
-& {[}\protect\hyperlink{ref-wenzel_asynchronous_2014}{39}{]} \\
+& {[}\protect\hyperlink{ref-wenzel_asynchronous_2014}{38}{]} \\
 Coq & Difficult to select terms & Survey &
 {[}\protect\hyperlink{ref-berman_development_2014}{12}{]} \\
 Coq & Unnecessary re-running of proofs & Survey &
 {[}\protect\hyperlink{ref-berman_development_2014}{12}{]} \\
 Coq & Slow for large proofs & Suggested &
-{[}\protect\hyperlink{ref-roe_coqpie_2016}{35}{]} \\
+{[}\protect\hyperlink{ref-roe_coqpie_2016}{34}{]} \\
 Coq & Change in lemma requires change in proof & Suggested &
-{[}\protect\hyperlink{ref-roe_coqpie_2016}{35}{]} \\
+{[}\protect\hyperlink{ref-roe_coqpie_2016}{34}{]} \\
 KeY & Bad change management & Suggested &
 {[}\protect\hyperlink{ref-beckert_evaluating_2012}{10}{]} \\
 KeY & Bad Automated proof performance & Suggested &
@@ -1582,12 +1876,12 @@ surveys. This becomes a particularly difficult problem especially for
 larger systems. Attempts to improve performance have been done by
 asynchronously loading only required parts of the proof in
 Coq~{[}\protect\hyperlink{ref-barras_asynchronous_2015}{6}{]} and
-Isabelle~{[}\protect\hyperlink{ref-wenzel_asynchronous_2014}{39}{]}.
+Isabelle~{[}\protect\hyperlink{ref-wenzel_asynchronous_2014}{38}{]}.
 Improvements to performance of automatic strategies will always be an
 improvement~{[}\protect\hyperlink{ref-bourke_challenges_2012}{13}{]},
 including making better use of the
 library~{[}\protect\hyperlink{ref-asperti_considerations_2010}{4},
-\protect\hyperlink{ref-tassi_interactive_2008}{38}{]}.
+\protect\hyperlink{ref-tassi_interactive_2008}{37}{]}.
 
 A second source is the need to make trivial interactions when making
 small changes. For instance, the renaming of a lemma might mean you need
@@ -1596,9 +1890,9 @@ Messy downwards compatibility, changing definitions, and lack of
 refactoring are all examples of this. These are usually addressed by
 refactoring tools that have been suggested as
 necessary~{[}\protect\hyperlink{ref-bourke_challenges_2012}{13},
-\protect\hyperlink{ref-ringer_replica_2020}{34}{]} and implemented in
+\protect\hyperlink{ref-ringer_replica_2020}{33}{]} and implemented in
 some IDEs such as
-CoqPIE~{[}\protect\hyperlink{ref-roe_coqpie_2016}{35}{]}. These
+CoqPIE~{[}\protect\hyperlink{ref-roe_coqpie_2016}{34}{]}. These
 solutions have not been tested with users.
 
 The third is simply interactions that are tedious and error prone. This
@@ -1612,7 +1906,7 @@ want to rewrite. This part might be complicated, but has to be
 represented textually. This has served as a challenge for ITP designers.
 Selections using patterns has been implemented in
 Matita~{[}\protect\hyperlink{ref-asperti_user_2007}{3},
-\protect\hyperlink{ref-zacchiroli_user_2007}{42}{]} to address this pain
+\protect\hyperlink{ref-zacchiroli_user_2007}{41}{]} to address this pain
 point.
 
 \hypertarget{visibility}{%
@@ -1632,13 +1926,13 @@ Theorem prover & Problems & Discovered & citation \\
 KeY & Proof tree too detailed & Focus Groups &
 {[}\protect\hyperlink{ref-beckert_usability_2015}{8}{]} \\
 Textual & Limited insight to automated tactics & Suggested &
-{[}\protect\hyperlink{ref-grebing_usability_2020}{17}{]} \\
+{[}\protect\hyperlink{ref-grebing_usability_2020}{16}{]} \\
 HOL & Hard to understand proof tree & Suggested &
 {[}\protect\hyperlink{ref-aitken_interactive_1998}{1}{]} \\
 HOL & Allow showing and hiding of proof contexts & Suggested &
 {[}\protect\hyperlink{ref-aitken_interactive_1998}{1}{]} \\
 Coq & Cannot see intermediate proof states & Suggested &
-{[}\protect\hyperlink{ref-zacchiroli_user_2007}{42}{]} \\
+{[}\protect\hyperlink{ref-zacchiroli_user_2007}{41}{]} \\
 Coq & Difficult to see structure of proof tree & Suggested &
 {[}\protect\hyperlink{ref-berman_development_2014}{12}{]} \\
 Coq & Cannot see the relation between subgoals & Survey &
@@ -1684,10 +1978,10 @@ fact, it is not even possible to investigate the inside of tacticals
 making it even more difficult to understand intuitively a proof. The
 tactical problem has been resolved by only using a subset of tacticals
 with Matita's Tinycals~{[}\protect\hyperlink{ref-asperti_user_2007}{3},
-\protect\hyperlink{ref-zacchiroli_user_2007}{42}{]}. KeYmaera X also
+\protect\hyperlink{ref-zacchiroli_user_2007}{41}{]}. KeYmaera X also
 offers traceability with automatic tactics, allowing insight to the
 operations they
-performed~{[}\protect\hyperlink{ref-mitsch_keymaera_2017}{31}{]}.
+performed~{[}\protect\hyperlink{ref-mitsch_keymaera_2017}{30}{]}.
 
 In one of the only empirical tests of two different user interfaces, an
 interface akin to a symbolic debugger is compared against the standard
@@ -1700,17 +1994,17 @@ context of source code, and offers visibility of that connection.
 Offering different ways of viewing and interacting with proof state has
 been suggested as a way forward in the usability of
 ITPs~{[}\protect\hyperlink{ref-eastaughffe_support_1998}{14},
-\protect\hyperlink{ref-grebing_seamless_2020}{16}{]}.
+\protect\hyperlink{ref-grebing_seamless_2020}{15}{]}.
 
 Diagrammatic representations of proof is an alternative way of proving
 theorems, as demonstrated with
-iCon~{[}\protect\hyperlink{ref-shams_accessible_2018}{36}{]} and Proof
+iCon~{[}\protect\hyperlink{ref-shams_accessible_2018}{35}{]} and Proof
 Transitions in
 CoqEdit~{[}\protect\hyperlink{ref-berman_development_2014}{12}{]}. This
 has not been tested empirically against other ITPs
 
-\hypertarget{final-analysis}{%
-\subsection{Final Analysis}\label{final-analysis}}
+\hypertarget{analysis}{%
+\subsection{Analysis}\label{analysis}}
 
 Many problems were identified. A summary of the problem is tabulated in
 fig.~\ref{fig:usability_issues}.
@@ -1723,34 +2017,250 @@ fig.~\ref{fig:usability_issues}.
 }
 \end{figure}
 
-This analysis answers Research Question 1.
+This analysis finds that although many issues were identified, there is
+very little empirical research on these problems. This is probably due
+to the difficulty in recruiting expert participants to these studies,
+and the small size of the field.
+
+An empirical analysis of all of these problems is well and truly outside
+the scope of this thesis. The task at hand is to now select problems
+that can be addressed.
+
+The first thing to consider is that we are creating a living review.
+Many of the usability issues that arose have a strong human component.
+For instance, ``Hard to predict the results of tactics'' would be very
+difficult to evaluate without performing a usability test. If we were to
+include a measure within the living review that required the conducting
+of a usability test, the usability test would need to be run on a
+periodic basis to keep it up to date with the current state of
+technology. This is highly undesirable, as such a project would be
+extremely time consuming and expensive, and would require a time and
+money investment for years after this thesis is published.
+
+To address this, we restrict this thesis to usability issues that can be
+determined to exist without the highly expensive intervention of a user.
+This leaves the following options:
+
+\begin{itemize}
+\tightlist
+\item
+  Quality of Library
+\item
+  Notation support
+\item
+  Counterexamples
+\item
+  Performance
+\end{itemize}
+
+We considered all these issues beside performance to be within the scope
+of our living review.
+
+\hypertarget{scope-of-library}{%
+\subsubsection{Scope of Library}\label{scope-of-library}}
+
+In a focus group\textasciitilde{}\cite{beckert_usability_2015}, it was
+found that Isabelle/HOL was missing important mathematical foundations
+in their library.
+
+We decided to evaluate whether these problems still exist by evaluating
+the scope of library support of ITPs. This library support also includes
+the package systems. For instance, Isabelle has both a standard library
+and it's Archive of Formal Proofs. This archive contains mathematics
+that is submitted by Isabelle users, and was also included while
+evaluating the scope of the ITPs.
+
+First, we collected modules within the ITP libraries, and then we sorted
+these packages into the Mathematical Subject Classification 2020
+(MSC2020). MSC2020 is a classification of mathematics often used to
+classify math papers.
+
+This will allow for a comparison of the scope of ITP libraries
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
 The result of the living review was the following tool:
 
+\hypertarget{itps}{}
+
 https://samnolan.me/thesis
 
-\hypertarget{itps}{}
+The living review classified 17 different ITPs, and 11 different
+libraries from those ITPs, totalling about 300 math packages.
+
+The ITPs covered in this review were:
+
+\begin{itemize}
+\tightlist
+\item
+  ACL2
+\item
+  Isabelle
+\item
+  Atelier B
+\item
+  Metamath
+\item
+  Twelf
+\item
+  Agda
+\item
+  Mizar
+\item
+  HOL
+\item
+  RedPRL
+\item
+  Coq
+\item
+  PVS
+\item
+  Yarrow
+\item
+  Watson
+\item
+  JAPE
+\item
+  LEO-II
+\item
+  Getfol
+\item
+  Z/EVES
+\end{itemize}
+
+The libraries covered in this review were:
+
+\begin{itemize}
+\tightlist
+\item
+  ACL2's Community Books
+\item
+  Isabelle's Standard Library
+\item
+  Isabelle's Archive of Formal Proofs
+\item
+  Metamath's Proof Library
+\item
+  Agda's ``standard library''
+\item
+  Agda's community libraries
+\item
+  Mizar's Mathematical Library
+\item
+  HOL's standard library
+\item
+  Coq's Standard Library
+\item
+  Coq's Package Ecosystem
+\item
+  PVS's NASA Library
+\end{itemize}
+
+It should be noted that Although Twelf and RedPRL have library support
+and a standard library, they were excluded from this review as they are
+much too small to be useful for a mathematician, and only include basic
+building blocks for building programs in the respective languages.
+
+\hypertarget{math-classifications}{%
+\subsection{Math Classifications}\label{math-classifications}}
+
+As of October 2021, after classifying all the packages, it was found
+that Isabelle had one of the largest package collections. This seems to
+contradict the finding that Isabelle was missing mathematical
+foundations, at least relatively speaking.
+
+\begin{figure}
+\hypertarget{fig:math_classifications}{%
+\centering
+\includegraphics{./Images/MathClassification.png}
+\caption{Math Package classifications, as of October
+2021}\label{fig:math_classifications}
+}
+\end{figure}
+
+fig.~\ref{fig:math_classifications} shows verified packages as reported
+by the utility on October 2021. It shows that of all packages, most
+contributions go to Computer Science (68-XX) and Mathematical Logic and
+Foundations (03-XX). This indicates that ITPs have a larger audience
+among computer scientists rather than mathematicians. Further work could
+go into developing resources for other areas.
+
+Behind that, combinatorics has the largest number of packages verified
+in this category, with most algorithms being under graph theory. This
+also indicates a tendency for computer science related works due to
+graph theory's prominence in computing problems.
+
+The rest of the categories only had a few packages in each, indicating
+there is still much to be desired for in other areas of mathematics for
+ITPs. However, this result does give the opportunity for mathematicians
+to find the few similar efforts that have been done in their field of
+interest.
+
+As for provers, Isabelle has the largest mathematical library, followed
+by Coq and then ACL2. This indicates that mathematical users should
+consider using Isabelle for their tasks of interest.
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-This living literature review offers a lot to the field of ITPs.
+We can evaluate this review by comparing it to other literature reviews,
+and other living reviews.
 
-It tracks progress on different ITPs, allowing people new to the field
-to get familiar with different ITPs and the differences between them.
-This lowers the bar for entry into ITP research and usage, hopefully
-encouraging more usage
+There are not a large amount of literature reviews in the space of ITPs,
+but we shall first compare it to the literature review the data was
+based on.
 
-It further helps those who want to contribute, either in projects or
-packages, to the theorem provers. It helps them identify whether their
-task has already been completed, or what gaps exist that they could fill
-in ITP support.
+It should first stand to say that this is the first living review on
+ITPs. As of such, this review already has many benefits over the current
+literature.
 
-It also offers an honest summary of the field for people interested in
-starting using ITPs in their own projects and verify their own software.
+The clear improvement is this is the only review on ITPs that
+automatically updates to reflect the current state of the art. This
+means it can be referred back to at any time, and even used to track
+progress on efforts, such as formalizing mathematics.
+
+Due to the availability of web technologies and interactivity, the
+living review is also much more accessible than a paper one. It allows
+readers to compare features of ITPs without scouring through large
+amounts of text or needing to pay large amounts of money to find them.
+The use of interactive tables and multiple pages in our review mean that
+the user can extract the knowledge that they are interested in without
+difficulty.
+
+These benefits of the fact that it is living are great, but even without
+considering them, this review does build on past reviews.
+
+A good place to start in comparison is the literature review we base
+some of our data on {[}\protect\hyperlink{ref-nawaz_survey_2019}{32}{]}.
+This review covers Theorem Provers in Formal Methods and what features
+they have. This literature review covers both Automatic Theorem Provers
+and Interactive Theorem Provers. For the sake of ITPs, the review has
+the scope of discovering what features each ITP has. This living review
+includes all of the features and compares them, but also explains what
+these features mean for a particular provers, allowing newcomers to
+better understand the field. The living review also offers the benefits
+of being able to check the differences between mathematical libraries.
+This, in the domain of ITPs, therefore contains a superset of the
+knowledge in this one. This is however expected, as we used this review
+as a basis for our one.
+
+Other literature reviews include a survey on the field of Interactive
+Theorem Proving {[}\protect\hyperlink{ref-a_survey_of_itp}{29}{]}. This
+review covers a brief history of ITPs, and a discussion of different
+calculi present in ITPs. This survey has a larger scope in terms of
+history, and detailed discussions of types of calculus and achievements.
+It however, is not systematic, and more represents an introduction to
+the field of ITPs, and may not be suitable for those currently in the
+field to understand the current state of the art. Furthermore, this
+review is difficult to understand without a strong knowledge of logic.
+
+Finally, John Harrison completed a review of the history of ITPs
+{[}\protect\hyperlink{ref-history_of_itps}{20}{]}. As the title
+suggests, this review covers the history of ITPs, which is again outside
+the scope of this living review. This review is comprehensive in
+covering the development of ITPs up until 2014. However, at 7 years, it
+is currently out of date.
 
 \hypertarget{bibliography}{%
 \section*{Bibliography}\label{bibliography}}
@@ -1850,20 +2360,14 @@ of Iowa.}
 {Theorem} {Proving}: {Some} {Design} {Principles} and {Their}
 {Application}. (1998).}
 
-\leavevmode\vadjust pre{\hypertarget{ref-four_colour_2008}{}}%
-\CSLLeftMargin{{[}15{]} }
-\CSLRightInline{Gonthier, G. 2008. Formal proof --- the four-color
-theorem. \emph{Notices American Mathematical Society}. (2008),
-1382-\/-1393.}
-
 \leavevmode\vadjust pre{\hypertarget{ref-grebing_seamless_2020}{}}%
-\CSLLeftMargin{{[}16{]} }
+\CSLLeftMargin{{[}15{]} }
 \CSLRightInline{Grebing, S. et al. 2020. Seamless {Interactive}
 {Program} {Verification}. \emph{Verified {Software}. {Theories},
 {Tools}, and {Experiments}} (Cham, 2020), 68--86.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-grebing_usability_2020}{}}%
-\CSLLeftMargin{{[}17{]} }
+\CSLLeftMargin{{[}16{]} }
 \CSLRightInline{Grebing, S. and Ulbrich, M. 2020. Usability
 {Recommendations} for {User} {Guidance} in {Deductive} {Program}
 {Verification}. \emph{Deductive {Software} {Verification}: {Future}
@@ -1871,7 +2375,7 @@ theorem. \emph{Notices American Mathematical Society}. (2008),
 W. Ahrendt et al., eds. Springer International Publishing. 261--284.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-green_usability_1996}{}}%
-\CSLLeftMargin{{[}18{]} }
+\CSLLeftMargin{{[}17{]} }
 \CSLRightInline{Green, T.R.G. and Petre, M. 1996. Usability {Analysis}
 of {Visual} {Programming} {Environments}: {A} {`{Cognitive}
 {Dimensions}'} {Framework}. \emph{Journal of Visual Languages \&
@@ -1879,19 +2383,24 @@ Computing}. 7, 2 (1996), 131--174.
 DOI:https://doi.org/\url{https://doi.org/10.1006/jvlc.1996.0009}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-grov_tinker_2018}{}}%
-\CSLLeftMargin{{[}19{]} }
+\CSLLeftMargin{{[}18{]} }
 \CSLRightInline{Grov, G. and Lin, Y. 2018. The {Tinker} tool for
 graphical tactic development. \emph{International Journal on Software
 Tools for Technology Transfer}. 20, 2 (Apr. 2018), 139--155.
 DOI:https://doi.org/\href{https://doi.org/10.1007/s10009-017-0452-7}{10.1007/s10009-017-0452-7}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-hahnle_deductive_2019}{}}%
-\CSLLeftMargin{{[}20{]} }
+\CSLLeftMargin{{[}19{]} }
 \CSLRightInline{Hähnle, R. and Huisman, M. 2019. Deductive {Software}
 {Verification}: {From} {Pen}-and-{Paper} {Proofs} to {Industrial}
 {Tools}. \emph{Computing and {Software} {Science}: {State} of the {Art}
 and {Perspectives}}. B. Steffen and G. Woeginger, eds. Springer
 International Publishing. 345--373.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-history_of_itps}{}}%
+\CSLLeftMargin{{[}20{]} }
+\CSLRightInline{Harrison, J. et al. 2014. History of interactive theorem
+proving. \emph{Handbook of the History of Logic}. 135--214.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-hentschel_empirical_2016}{}}%
 \CSLLeftMargin{{[}21{]} }
@@ -1940,28 +2449,21 @@ educational theorem provers - a cognitive dimensions viewpoint.
 {Tree} {Viewer} {Cooperating} with {Coq} {Through} {Proof} {General}.
 \emph{Programming {Languages} and {Systems}} (Cham, 2018), 157--165.}
 
-\leavevmode\vadjust pre{\hypertarget{ref-klein_sel4_2009}{}}%
-\CSLLeftMargin{{[}28{]} }
-\CSLRightInline{Klein, G. et al. 2009. {SeL4}: {Formal} {Verification}
-of an {OS} {Kernel}. \emph{Proceedings of the {ACM} {SIGOPS} 22nd
-{Symposium} on {Operating} {Systems} {Principles}} (New York, NY, USA,
-2009), 207--220.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-leroy_formal_2009}{}}%
-\CSLLeftMargin{{[}29{]} }
-\CSLRightInline{Leroy, X. 2009. Formal verification of a realistic
-compiler. \emph{Communications of the ACM}. 52, 7 (2009), 107--115.}
-
 \leavevmode\vadjust pre{\hypertarget{ref-lin_understanding_2016}{}}%
-\CSLLeftMargin{{[}30{]} }
+\CSLLeftMargin{{[}28{]} }
 \CSLRightInline{Lin, Y. et al. 2016. Understanding and maintaining
 tactics graphically {OR} how we are learning that a diagram can be worth
 more than {10K} {LoC}. \emph{Journal of Formalized Reasoning}. 9, 2
 (Dec. 2016), 69--130.
 DOI:https://doi.org/\href{https://doi.org/10.6092/issn.1972-5787/6298}{10.6092/issn.1972-5787/6298}.}
 
+\leavevmode\vadjust pre{\hypertarget{ref-a_survey_of_itp}{}}%
+\CSLLeftMargin{{[}29{]} }
+\CSLRightInline{Marić, F. 2015. A survey of interactive theorem proving.
+\emph{Zbornik radova}. (Jul. 2015).}
+
 \leavevmode\vadjust pre{\hypertarget{ref-mitsch_keymaera_2017}{}}%
-\CSLLeftMargin{{[}31{]} }
+\CSLLeftMargin{{[}30{]} }
 \CSLRightInline{Mitsch, S. and Platzer, A. 2017. The {KeYmaera} {X}
 {Proof} {IDE} - {Concepts} on {Usability} in {Hybrid} {Systems}
 {Theorem} {Proving}. \emph{Electronic Proceedings in Theoretical
@@ -1969,7 +2471,7 @@ Computer Science}. 240, (Jan. 2017), 67--81.
 DOI:https://doi.org/\href{https://doi.org/10.4204/eptcs.240.5}{10.4204/eptcs.240.5}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-nagashima_pamper_2018}{}}%
-\CSLLeftMargin{{[}32{]} }
+\CSLLeftMargin{{[}31{]} }
 \CSLRightInline{Nagashima, Y. and He, Y. 2018. {PaMpeR}: {Proof}
 {Method} {Recommendation} {System} for {Isabelle}/{HOL}.
 \emph{Proceedings of the 33rd {ACM}/{IEEE} {International} {Conference}
@@ -1977,31 +2479,31 @@ on {Automated} {Software} {Engineering}} (New York, NY, USA, 2018),
 362--372.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-nawaz_survey_2019}{}}%
-\CSLLeftMargin{{[}33{]} }
+\CSLLeftMargin{{[}32{]} }
 \CSLRightInline{Nawaz, M.S. et al. 2019. A {Survey} on {Theorem}
 {Provers} in {Formal} {Methods}. (2019).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-ringer_replica_2020}{}}%
-\CSLLeftMargin{{[}34{]} }
+\CSLLeftMargin{{[}33{]} }
 \CSLRightInline{Ringer, T. et al. 2020. {REPLica}: {REPL}
 {Instrumentation} for {Coq} {Analysis}. \emph{Proceedings of the 9th
 {ACM} {SIGPLAN} {International} {Conference} on {Certified} {Programs}
 and {Proofs}} (New York, NY, USA, 2020), 99--113.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-roe_coqpie_2016}{}}%
-\CSLLeftMargin{{[}35{]} }
+\CSLLeftMargin{{[}34{]} }
 \CSLRightInline{Roe, K. and Smith, S. 2016. {CoqPIE}: {An} {IDE} {Aimed}
 at {Improving} {Proof} {Development} {Productivity}. \emph{Interactive
 {Theorem} {Proving}} (Cham, 2016), 491--499.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-shams_accessible_2018}{}}%
-\CSLLeftMargin{{[}36{]} }
+\CSLLeftMargin{{[}35{]} }
 \CSLRightInline{Shams, Z. et al. 2018. Accessible {Reasoning} with
 {Diagrams}: {From}~{Cognition} to {Automation}. \emph{Diagrammatic
 {Representation} and {Inference}} (Cham, 2018), 247--263.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-spichkova_human-centred_2017}{}}%
-\CSLLeftMargin{{[}37{]} }
+\CSLLeftMargin{{[}36{]} }
 \CSLRightInline{Spichkova, M. and Simic, M. 2017. Human-centred analysis
 of the dependencies within sets of proofs. \emph{Knowledge-Based and
 Intelligent Information \& Engineering Systems: Proceedings of the 21st
@@ -2010,30 +2512,30 @@ France}. 112, (Jan. 2017), 2290--2298.
 DOI:https://doi.org/\href{https://doi.org/10.1016/j.procs.2017.08.256}{10.1016/j.procs.2017.08.256}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-tassi_interactive_2008}{}}%
-\CSLLeftMargin{{[}38{]} }
+\CSLLeftMargin{{[}37{]} }
 \CSLRightInline{Tassi, E. 2008. \emph{Interactive theorem provers:
 Issues faced as a user and tackled as a developer}. alma.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-wenzel_asynchronous_2014}{}}%
-\CSLLeftMargin{{[}39{]} }
+\CSLLeftMargin{{[}38{]} }
 \CSLRightInline{Wenzel, M. 2014. Asynchronous {User} {Interaction} and
 {Tool} {Integration} in {Isabelle}/{PIDE}. \emph{Interactive {Theorem}
 {Proving}} (Cham, 2014), 515--530.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-wenzel_isabelle_2011}{}}%
-\CSLLeftMargin{{[}40{]} }
+\CSLLeftMargin{{[}39{]} }
 \CSLRightInline{Wenzel, M. 2011. Isabelle as {Document}-{Oriented}
 {Proof} {Assistant}. \emph{Intelligent {Computer} {Mathematics}}
 (Berlin, Heidelberg, 2011), 244--259.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-wenzel_structured_2006}{}}%
-\CSLLeftMargin{{[}41{]} }
+\CSLLeftMargin{{[}40{]} }
 \CSLRightInline{Wenzel, M. 2006. Structured {Induction} {Proofs} in
 {Isabelle}/{Isar}. \emph{Mathematical {Knowledge} {Management}} (Berlin,
 Heidelberg, 2006), 17--30.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-zacchiroli_user_2007}{}}%
-\CSLLeftMargin{{[}42{]} }
+\CSLLeftMargin{{[}41{]} }
 \CSLRightInline{Zacchiroli, S. 2007. \emph{User interaction widgets for
 interactive theorem proving}. alma.}
 
