@@ -697,6 +697,12 @@ To do this, the living review is scoped as follows:
 - Comparing past projects that have been completed by ITPs (RQ3)
 - Comparing progress on usability issues about ITPs (RQ2)
 
+The living review will be implemented using the Elm framework[@elm_lang_book].
+Elm is a functional programming language for web applications, and acts like
+other web frameworks such as React, Vue and Angular. Elm was chosen due to it
+being suitability for data representation, being very fast and small, and having
+a strong enough type system to prevent all runtime errors.
+
 ### General features of about ITPs
 To compare between different ITPs, general features about them need to be collected.
 
@@ -1485,82 +1491,113 @@ is a classification of mathematics often used to classify math papers.
 This will allow for a comparison of the scope of ITP libraries
 
 # Results
-The result of the living review was the following tool:
-
+{{#html}}
+The result of this investigation was the following widget.
 <div id='itps'></div>
+{{/html}}
 
-```{=latex}
-https://samnolan.me/thesis
-```
+{{#latex}}
+The result of this investigation can be found on the following website:
 
-The living review classified 17 different ITPs, and 11 different libraries from
-those ITPs, totalling about 300 math packages.
+[https://samnolan.me/thesis](https://samnolan.me/thesis)
+{{/latex}}
+
+All the results can be review from looking through the widget. The widget has
+the benefit of being interactive, as well as being perfectly up to date. The
+following is a description of the results of the study as of {{date}}.
+
+The living review reviewed {{itpCount}} different ITPs.
 
 The ITPs covered in this review were:
 
- - ACL2
- - Isabelle
- - Atelier B
- - Metamath
- - Twelf
- - Agda
- - Mizar
- - HOL
- - RedPRL
- - Coq
- - PVS
- - Yarrow
- - Watson
- - JAPE
- - LEO-II
- - Getfol
- - Z/EVES
+{{#itps}}
+ - {{Name}}
+{{/itps}}
 
-The libraries covered in this review were:
+The results are split into four sections, implementation details, results about
+mathematical libraries, results about counterexample generators, and results
+about UTF-8 notation.
 
-- ACL2's Community Books
-- Isabelle's Standard Library
-- Isabelle's Archive of Formal Proofs
-- Metamath's Proof Library
-- Agda's "standard library"
-- Agda's community libraries
-- Mizar's Mathematical Library
-- HOL's standard library
-- Coq's Standard Library
-- Coq's Package Ecosystem
-- PVS's NASA Library
-
-It should be noted that Although Twelf and RedPRL have library support and a
-standard library, they were excluded from this review as they are much too small
-to be useful for a mathematician, and only include basic building blocks for
-building programs in the respective languages.
+## Implementation details
 
 ## Math Classifications
-As of October 2021, after classifying all the packages, it was found that Isabelle had one of the
-largest package collections. This seems to contradict the finding that Isabelle
-was missing mathematical foundations, at least relatively speaking.
+This section details results about the distribution of mathematical topics
+currently covered by interactive theorem provers, as of {{date}}.
 
-![Math Package classifications, as of October 2021](./Images/MathClassification.png){#fig:math_classifications}
+The following {{libraryCount}} mathematical libraries were covered in this analysis.
 
-[@fig:math_classifications] shows verified packages as reported by the utility
-on October 2021. It shows that of all packages, most contributions go to Computer
-Science (68-XX) and Mathematical Logic and Foundations (03-XX). This indicates
-that ITPs have a larger audience among computer scientists rather than mathematicians.
-Further work could go into developing resources for other areas. 
+{{#libraries}}
+ - {{name}}: [{{section}}]({{url}})
+{{/libraries}}
 
-Behind that, combinatorics has the largest number of packages verified in this
-category, with most algorithms being under graph theory. This also indicates a
-tendency for computer science related works due to graph theory's prominence in
-computing problems.
+Four libraries failed to meet the inclusion criteria.
 
-The rest of the categories only had a few packages in each, indicating there is
-still much to be desired for in other areas of mathematics for ITPs. However, 
-this result does give the opportunity for mathematicians to find the few similar
-efforts that have been done in their field of interest.
+- Idris' standard library, due to being too small to be of interest to a mathematician
+- RedPRL's standard library, due to being too small to be of interest to a mathematician
+- HOL Light's library, due to missing documentation.
+- F*'s standard library, due to missing documentation.
 
-As for provers, Isabelle has the largest mathematical library, followed by Coq
-and then ACL2. This indicates that mathematical users should consider using
-Isabelle for their tasks of interest.
+We must now chose what we mean by a module for comparison. What we chose as a
+module is listed below for each theorem prover.
+
+{{#libraries}}
+ - {{name}}: {{section}}, {{module_def}}
+{{/libraries}}
+
+It should be noted that Mizar ended up with a largest package count of {{mizarPackageCount}}.
+However, this may not be because it has the largest mathematical scope. Mizar's
+module size is quite small in comparison to other theorem provers, and the largest
+single mathematical library could be is Lean's mathlib at {{leanPackageCount}}.
+
+From these libraries, {{totalPackages}} math modules were classified. From these
+modules, {{totalVerifiedPackages}} were manually verified and classified into
+an appropriate category. The sizes of these libraries are detailed in [@tbl:package_results].
+
+```{.table caption="Packages classified" source="results/library_stats.csv"}  
+```
+
+It was found that some libraries were clear outliers in mathematical scope covered.
+Those libraries were Isabelle, Mizar, Coq and Lean. It would be difficult to
+justify use of other theorem provers as a mathematician, unless it was for a
+specific purpose.
+
+![Math Package classifications, as of {{date}}](./Images/MathClassification.png){#fig:math_classifications}
+
+[@fig:math_classifications] shows which top level MSC Classifications these
+modules were sorted into as of {{date}}. This indicates that of all areas of 
+math, theoretical computer science (68-XX) has the largest amount of packages
+classified to it, followed by Mathematical Logic and Foundations (03-XX). This
+indicates that people studying in proving theorems around theoretical computer
+science, should strongly consider looking into the use of a theorem prover.
+
+## Counterexample generators
+It was found that only a few ITPs had counterexample generators. The ones that did included:
+
+{{#counterexampleITPs}}
+ - {{name}}
+{{/counterexampleITPs}}
+
+ITPs without counterexample generators include:
+
+{{#noCounterexampleITPs}}
+ - {{name}}
+{{/noCounterexampleITPs}}
+
+ITPs without counterexample generators could be improved by adding that useful
+tool.
+
+## Math Notation in libraries
+Math Notation was found to be supported in the following libraries:
+
+{{#mathNotationITPs}}
+ - {{name}}
+{{/mathNotationITPs}}
+
+ITPs without math notation include:
+
+{{#noMathNotationITPs}}
+ - {{name}}
+{{/noMathNotationITPs}}
 
 # Discussion
 
