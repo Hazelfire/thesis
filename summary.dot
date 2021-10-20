@@ -1,0 +1,166 @@
+digraph G {
+  node [fontname = "Handlee"];
+  edge [fontname = "Handlee"];
+
+  splines=true;
+  hasLibrary [
+    label = "Does the ITP have a\n standard library?";
+    shape = diamond;    
+    group=g1;
+  ];
+  
+  libraryHasDocumentation [
+    label = "Does the ITP have\n documentation?";
+    shape = diamond;    
+  ];
+  
+  libraryBigEnough [
+    label = "Is the library\n large enough?";
+    shape = diamond;    
+  ];
+  excludeLibrary [
+    label = "Exclude Library";
+    shape = oval;    
+  ];
+  librarySize [
+    label = "Is the library\n small or large?";
+    shape = diamond;    
+  ];
+  
+  topLevel [
+    label = "Turn the top level\n of the library into modules";
+    shape = rect;   
+  ];
+  
+  secondLevel [
+    label = "Turn the second to top\n level into modules";
+    shape = rect;   
+  ];
+  
+  hasCommunity [
+    label = "Does the ITP have\ncommunity contributions?";
+    shape = diamond;    
+    group=g1;
+  ];
+  
+  communityToModules [
+    label = "Turn community contributions\ninto modules";
+    shape = rect;   
+  ];
+  
+  moduleDocumentation [
+    label = "Does the module have\ndocumentation?";
+    shape = diamond;   
+    group=g1;
+  ];
+  
+  moduleDepr [
+    label = "Is the module\ndeprecated?";
+    shape = diamond;   
+  ];
+  
+  moduleOnlyDoc [
+    label = "Is the module\nonly documentation?";
+    shape = diamond;   
+  ];
+  
+  moduleUtility [
+    label = "Is the module\na utility?";
+    shape = diamond;   
+  ];
+  
+  moduleCategory [
+    label = "Does the module have\na category?";
+    shape = diamond;   
+    group=g1;
+  ];
+  
+  excludeModule [
+    label = "Exclude Module";
+    shape = oval;    
+  ];
+  
+  autoAssign [
+    label= "Assign the module\nautomatically to a topic\nbased on the category";
+    shape=rect;
+    group=g1;
+  ];
+  
+  unverified [
+    label= "Module classified\n and unverified";
+    shape=oval;
+    color=green;
+  ];
+  
+  unclassified [
+    label= "Module is unclassified\n and unverified";
+    shape=oval;
+    color=red;
+  ];
+  
+  manualAssign [
+      label="Inspect module and\nmanually assign it a topic\nbased on documentation";
+      shape=rect;
+  ];
+  
+  classified [
+    label= "Module is classified\n and verified";
+    shape=oval;
+    color=green;
+  ];
+  
+  
+  
+  hasLibrary -> libraryHasDocumentation [ label="Yes" ];
+  libraryHasDocumentation -> libraryBigEnough [ label="Yes" ];
+  libraryHasDocumentation -> excludeLibrary [ label="No"];
+  libraryBigEnough -> excludeLibrary [ label="No"];
+  libraryBigEnough -> librarySize [ label="Yes"];
+  librarySize -> topLevel [label="Small"];
+  librarySize -> secondLevel [label="Large"];
+  hasCommunity -> communityToModules [label="Yes"];
+  
+  topLevel -> moduleDocumentation;
+  secondLevel -> moduleDocumentation;
+  communityToModules -> moduleDocumentation;
+  moduleDocumentation -> moduleUtility [label="Yes"];
+  moduleUtility -> moduleDepr [label="No"];
+  moduleDepr -> moduleOnlyDoc [label="No"];
+  moduleOnlyDoc -> moduleCategory [label="No"];
+  
+  moduleDocumentation -> excludeModule [label="No"];
+  moduleUtility -> excludeModule [ label="Yes"];
+  moduleDepr -> excludeModule[ label="Yes"];
+  moduleOnlyDoc -> excludeModule[label="Yes"];
+  
+  moduleCategory -> autoAssign [label="Yes"];
+  autoAssign -> unverified;
+  moduleCategory -> unclassified [label="No"];
+  unverified -> manualAssign;
+  manualAssign -> classified;
+  unclassified -> manualAssign;
+  
+  
+  edge[style=invis];
+  hasLibrary -> hasCommunity -> moduleDocumentation -> moduleCategory -> autoAssign;
+
+  {
+      rank=same;
+      hasLibrary; libraryHasDocumentation; libraryBigEnough;librarySize;
+  }
+  {
+      rank=same;
+      topLevel; secondLevel; communityToModules;
+  }
+  
+  
+  {
+      rank=same;
+      moduleDocumentation;moduleUtility;moduleDepr;moduleOnlyDoc
+  }
+  {
+      rank=same;
+      autoAssign;manualAssign;unverified;classified
+  }
+
+}

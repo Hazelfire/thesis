@@ -9,5 +9,9 @@
   "main": "index.js",
   "repository": "git@github.com:Hazelfire/thesis.git",
   "author": "Sam Nolan <samnolan555@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "mustache": "^4.2.0",
+    "pug": "^3.0.2"
+  }
 }

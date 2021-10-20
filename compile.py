@@ -3,6 +3,7 @@ from zipfile import ZipFile
 import csv
 import datetime
 import typing
+import sys
 now = datetime.datetime.now().strftime("%d %B %Y")
 
 data = {
@@ -15,7 +16,7 @@ data = {
 with ZipFile('results/all_data.zip', 'r') as all_data:
     with all_data.open("itps.csv", mode='r') as itpsFile:
         itps = list(csv.DictReader([line.decode('utf8') for line in itpsFile.readlines()]))
-        data['itps'] = itps
+        data['itps'] = list(itps)
         data['itpCount'] = len(data['itps'])
         data['counterexampleITPs'] = [itp for itp in itps if itp['Counterexamples'] != 'No']
         data['noCounterexampleITPs'] = [itp for itp in itps if itp['Counterexamples'] == 'No']
@@ -29,7 +30,7 @@ with ZipFile('results/all_data.zip', 'r') as all_data:
         data['libraryCount'] = len(data['itps'])
 
 with open("results/library_stats.csv", "r") as libstats:
-    data['libstats'] = csv.DictReader(libstats)
+    data['libstats'] = list(csv.DictReader(libstats))
     data['totalPackageCount'] = sum([int(line['Total']) for line in data['libstats']])
     data['verifiedPackageCount'] = sum([int(line['Verified']) for line in data['libstats']])
 
@@ -37,14 +38,28 @@ with open("results/library_stats.csv", "r") as libstats:
 
     data['mizarPackageCount'] = sum([int(line['Total']) for line in data['libstats'] if line['ITP'] == 'Mizar'])
 
+with open("results/classification.csv", "r") as classification:
+    packages = list(csv.DictReader(classification))
+    verifiedPackages = [package for package in packages if package['Verified'] == 'Yes']
+    data['totalCompSciModules'] = len([package for package in verifiedPackages if package['MSC'].startswith('68')])
+    data['totalLogicModules'] = len([package for package in verifiedPackages if package['MSC'].startswith('03')])
+    data['totalProgrammingLanguageModules'] = len([package for package in verifiedPackages if package['MSC'] == "68N15"])
+    data['totalDataStructuresModules'] = len([package for package in verifiedPackages if package['MSC'] == "68P05"])
+    data['totalProcessorModules'] = len([package for package in verifiedPackages if package['MSC'] == "68N20"])
 
-with open('index.md', 'r') as f:
-    result = chevron.render(f, data)
-    data["html"] = True
-    with open("build.html.md", "w") as out:
-        out.write(result)
 
-    data["html"] = False
-    data["latex"] = True
-    with open("build.tex.md", "w") as out:
-        out.write(result)
+
+if sys.argv[1] == 'html':
+    with open('index.md', 'r') as f:
+        contents = f.read()
+        data['html'] = True
+        result = chevron.render(contents, data)
+        with open("build.html.md", "w") as out:
+            out.write(result)
+elif sys.argv[1] == 'latex':
+    with open('index.md', 'r') as f:
+        contents = f.read()
+        data['latex'] = True
+        result = chevron.render(contents, data)
+        with open("build.tex.md", "w") as out:
+            out.write(result)

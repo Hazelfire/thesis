@@ -9,3 +9,7 @@ todo
 yarn-error.log
 dist
 hatelist
+build.*
+node_modules
+.direnv
+results

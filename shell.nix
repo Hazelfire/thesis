@@ -8,6 +8,7 @@ pkgs.mkShell {
     (texlive.combine { inherit (texlive) scheme-small latexmk biblatex soul; }) 
     yarn 
     nodejs
+    python310
     inotify-tools
   ];
 }

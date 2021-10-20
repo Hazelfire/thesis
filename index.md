@@ -9,7 +9,7 @@ toc: true
 toc-title: Table of Contents
 numbersections: true
 listings: true
-date: 29th of September 2021
+date: {{date}}
 strip-comments: true
 abstract: |
   Interactive Theorem Provers are tools that allow you to prove that software
@@ -423,11 +423,11 @@ project.
 
 Hence, the research questions for this thesis are:
 
-RQ1 *What usability issues and solutions have been mentioned in literature regarding ITPs?* 
+RQ1 *{{RQ1}}* 
 
-RQ2 *To what extent to these usability issues exist at the latest versions of ITPs?*
+RQ2 *{{RQ2}}*
 
-RQ3 *What, if any, ITP should be used for a specific project?*
+RQ3 *{{RQ3}}*
 
 # Background
 
@@ -745,21 +745,6 @@ been released by checking GitHub Tags. It gets the latest tag to be published
 and adds that as the latest release on the living review, ensuring that the
 review doesn't go out of date by having newer releases.
 
-### Comparing projects between ITPs
-One important thing to consider when making decisions about ITPs to choose is
-what past projects have been completed within the ITP. As of such, we contain
-a review of different notable projects within the ITP.
-
-Each project will describe:
-
-- The project's name
-- The project's scope
-- When it was completed
-- The ITP used
-
-This should help users understand what work has been done with an ITP before
-using it. This should help a user decide whether this ITP is suitable for the
-task at hand.
 
 ### Comparing progress on usability issues for ITPs
 Finally, depending on the results of the literature review, progress on different
@@ -1473,64 +1458,167 @@ We considered all these issues beside performance to be within the scope of our
 living review.
 
 ### Scope of Library
+This section reviews the methodology for investigating the scope of libraries
+within the living review.
+
 In a focus group~\cite{beckert_usability_2015}, it was found that Isabelle/HOL
 was missing important mathematical foundations in their library.
 
 We decided to evaluate whether these problems still exist by evaluating the scope
-of library support of ITPs. This library support also includes the package systems.
-For instance, Isabelle has both a standard library and it's Archive of Formal
-Proofs. This archive contains mathematics that is submitted by Isabelle users,
-and was also included while evaluating the scope of the ITPs.
+of library support of ITPs. We have the goal of determining whether mathematical
+foundations were covered, and by which provers they are covered by.
 
-First, we collected modules within the ITP libraries, and then we sorted these
-packages into the Mathematical Subject Classification 2020 (MSC2020). MSC2020
-is a classification of mathematics often used to classify math papers. 
+On a high level, the mathematical libraries for different ITPs will be decomposed 
+into modules, and each of these modules are classified according to which section
+of mathematics they cover. This way we can identify which ITPs cover which mathematical
+topics, and make meaningful comparisons between them.
 
-<!-- Not sure about citation here -->
+![Flow chart for classifying mathematical libraries](Images/summary.png){#fig:classification_summary}
 
-This will allow for a comparison of the scope of ITP libraries
+The flowchart shown in [@fig:classification_summary] has an overview of the 
+methodology used to evaluate the scope of the mathematical libraries.
+
+ start by identifying mathematical libraries. For the sake
+of this analysis, we also included community contributions, such as package
+management systems, as part of the scope. As of such, a "library" will refer
+to both a library that comes along with an ITP (often titled a "standard library")
+as well as community contributions, such as packages. A "module" from a library
+may refer to different things, including a "package" in some systems or a collection
+of code files in a library that one might normally call a "module".
+
+For each ITP, it was determined whether they first had a body of code similar
+to a "standard library". If it did, then it was determined whether the library
+met the following inclusion criteria:
+
+**IC1:** The library large enough that it would be of interest to a mathematician. 
+We define this as including more than just basic data types. This however,
+is a somewhat subjective measure.
+  
+**IC2:** The library has documentation describing the purpose of its modules. The 
+documentation of the libraries and its modules were used to determine which area
+of mathematics they covered. If simply code was provided, this was excluded.
+
+For each ITP, it was determined whether they had a collection of community maintained
+contributions. These community contributions were included if they were collected
+and listed in some freely available place on the internet. This was done to
+ensure that when the list of contributions changes or expands, this living review
+could be updated.
+
+The next step was to determine what constituted a module for each of the libraries.
+
+If the modules came from a "standard library". The library is determined to be either
+"large" or "small". Standard libraries are often organised in an hierarchy. A
+large library considered a module to be 2 levels down from the root of the hierarchy,
+whereas a small library was one where a module was considered to be one level
+down the hierarchy. This is done with the purpose of ensuring that the modules
+that end up being compared are of similar size regardless of the size of the original
+library. This classification however, is also somewhat subjective.
+
+If the module came from a community contribution, then it is considered a "package" type. 
+Meaning a module is considered to be whatever a unit of contribution is. For instance,
+a package is considered a module in Coq's package management system, or a submission
+in the Archive of Formal Proofs is considered a module.
+
+There are a number of exclusion criteria for this classification. These exclusion
+criteria exist for packages that would be difficult or impossible to classify as
+a part of a mathematical topic. Those possible exclusion criteria include:
+
+**EC1:** Utility, The module only offers a utility that is only relevant to
+this ITP. For instance, many ITPs double as programming languages, so any
+modules that allow for programming that works with the system such as file
+operations are excluded. This also includes modules that are integrations with
+other tools, or simply initialization libraries that only reference other
+modules.
+
+**EC2:** No Documentation, If the module doesn't have any documentation or
+description of purpose, it is excluded from the classification. It should be
+noted that the definition of documentation is very minimal in this case. The
+module doesn't need to have much documentation, one sentence of its purpose is
+enough. However, if it is missing, the module is difficult to classify and is
+excluded.
+
+**EC3:** Only Documentation: If the module is simply documentation and doesn't
+provide any new resources, it is also excluded.
+
+**EC4:** Deprecated: If the module has been marked or considered deprecated, then
+it is excluded from 
+
+Excluded modules will be marked as excluded, and the reason for exclusion placed
+in the living review.
+
+If a module doesn't fall under any exclusion criteria, then the package is ready
+to be classified. Each module was then assigned a mathematical subject that its
+relevant to.
+
+The topics these modules were classified under come from the Mathematical Subject Classification 2020 (MSC2020) [@msc2021]. MSC2020
+is a classification of mathematical subjects that is often used for mathematics
+papers. Each topic is given a code representing its classification, One such
+example of a code is 68P05, the code for work about data structures. The code
+is split up into three sections, the top level is represented by a top level mathematical
+field, For instance, the 68 in 68P05 means that it's in the field of Computer
+Science. If you wish to refer to a vague field of Computer Science, it is referred
+to is 68-XX, with the -XX meaning that it could be anything under this field.
+The next level of classification is represented by a letter. In this case, the P
+in 68P05 refers to subclassification of "Theory of Data" under "Computer Science".
+If one wishes to refer to the mid level classification, then one can do so like
+68Pxx, by replacing the final two numbers with "x"s. Finally, the last two numbers
+represents the final level of classification. In this case, the 05 refers to 
+"Data Structures" under "Theory of Data" under "Computer Science".
+
+This classification was chosen in order to be familiar to mathematicians, and ensure
+that modules can be classified with enough specificity.
+
+If the module also comes with some form of category (for instance, Coq's package
+management system allows you to add categories to a package, indicating the subject
+it covers, or large library modules use the top level module as a category), then
+the classification of the package is "guessed". This is done by mapping the
+category to a classification. The module can be browsed and seen in the tree,
+but however is marked as "unverified". If the module doesn't come with a category,
+then the module is marked as "unclassified".
+
+Finally, a module's description (for instance, abstracts, package descriptions,
+names) is inspected manually and a classification is given to it. The package
+is then considered to be "verified".
 
 # Results
+In this section, we discuss in detail the living review that we have contributed.
+It should be noted that the living review itself contains all the information found
+in this section and more. The static version of the results is only up to date
+as of {{date}}. If you wish to view the results as it is up to date, then
+looking we invite the reader to look through the online widget.
+
 {{#html}}
-The result of this investigation was the following widget.
+As you are viewing this via the web, the widget is embedded below for you to explore:
 <div id='itps'></div>
 {{/html}}
 
 {{#latex}}
-The result of this investigation can be found on the following website:
-
+The widget can be explored from this link:
 [https://samnolan.me/thesis](https://samnolan.me/thesis)
 {{/latex}}
 
-All the results can be review from looking through the widget. The widget has
-the benefit of being interactive, as well as being perfectly up to date. The
-following is a description of the results of the study as of {{date}}.
-
-The living review reviewed {{itpCount}} different ITPs.
-
-The ITPs covered in this review were:
+The following {{itpCount}} ITPs were included in the review:
 
 {{#itps}}
- - {{Name}}
+ - [{{Name}}]({{Homepage}})
 {{/itps}}
 
-The results are split into four sections, implementation details, results about
-mathematical libraries, results about counterexample generators, and results
-about UTF-8 notation.
+The results are split into four sections. In [@In [@sec:math_libraries], results about
+the state and scope of mathematical libraries of ITPS are discussed. In
+[@sec:counterexamples] results about the support of Counterexample generators are
+covered. Finally, in [@sec:math_notation] and results about mathematical notation
+support are covered.
 
-## Implementation details
+## Implementation and Features {#sec:implementation}
 
-## Math Classifications
+## Mathematical Libraries {#sec:math_libraries}
 This section details results about the distribution of mathematical topics
 currently covered by interactive theorem provers, as of {{date}}.
 
-The following {{libraryCount}} mathematical libraries were covered in this analysis.
+{{libraryCount}} mathematical libraries were covered in this analysis. They
+are detailed in [@tbl:libraries]
 
-{{#libraries}}
- - {{name}}: [{{section}}]({{url}})
-{{/libraries}}
-
-Four libraries failed to meet the inclusion criteria.
+It should be noted that four libraries failed to meet the inclusion criteria.
 
 - Idris' standard library, due to being too small to be of interest to a mathematician
 - RedPRL's standard library, due to being too small to be of interest to a mathematician
@@ -1540,9 +1628,13 @@ Four libraries failed to meet the inclusion criteria.
 We must now chose what we mean by a module for comparison. What we chose as a
 module is listed below for each theorem prover.
 
+| Name | Library | Type | Module Definition |
+|------|----------------|-------------------|---------------------|
 {{#libraries}}
- - {{name}}: {{section}}, {{module_def}}
+| {{name}} | [{{section}}]({{url}}) | {{type}} | {{module_def}} |
 {{/libraries}}
+
+  : Libraries covered in the living review {#tbl:libraries}
 
 It should be noted that Mizar ended up with a largest package count of {{mizarPackageCount}}.
 However, this may not be because it has the largest mathematical scope. Mizar's
@@ -1553,51 +1645,60 @@ From these libraries, {{totalPackages}} math modules were classified. From these
 modules, {{totalVerifiedPackages}} were manually verified and classified into
 an appropriate category. The sizes of these libraries are detailed in [@tbl:package_results].
 
-```{.table caption="Packages classified" source="results/library_stats.csv"}  
-```
+| Name | Total Packages | Verified Packages | Classified Packages | Excluded Packages |
+|------|----------------|-------------------|---------------------|-------------------|
+{{#libstats}}
+| {{ITP}} | {{Total}} | {{Verified}} | {{Classified}} | {{Excluded}} |
+{{/libstats}}
+
+  : Modules considered per prover {#tbl:package_results}
+
 
 It was found that some libraries were clear outliers in mathematical scope covered.
 Those libraries were Isabelle, Mizar, Coq and Lean. It would be difficult to
-justify use of other theorem provers as a mathematician, unless it was for a
-specific purpose.
+justify use of other theorem provers as a mathematician getting into the field.
 
 ![Math Package classifications, as of {{date}}](./Images/MathClassification.png){#fig:math_classifications}
 
-[@fig:math_classifications] shows which top level MSC Classifications these
-modules were sorted into as of {{date}}. This indicates that of all areas of 
-math, theoretical computer science (68-XX) has the largest amount of packages
-classified to it, followed by Mathematical Logic and Foundations (03-XX). This
-indicates that people studying in proving theorems around theoretical computer
-science, should strongly consider looking into the use of a theorem prover.
+The chart in [@fig:math_classifications] shows which verified top level
+MSC Classifications these modules were sorted into as of {{date}}, sorted
+by the amount of total modules in each classification. Again, a fully up
+to date version of this chart is available on the widget.
 
-## Counterexample generators
-It was found that only a few ITPs had counterexample generators. The ones that did included:
+Computer Science modules dominated the topics, making up
+{{totalCompSciModules}} modules. These modules were often related to
+parsing and reasoning about programming languages (68N15)
+({{totalProgrammingLanguageModules}} modules) and  data structures (68P05)
+({{totalDataStructuresModules}} modules). This is likely because a strong
+library in computer science is often required for people wanting to do
+formal verification. This is particularly of interest for anyone working
+in theoretical computer science. Anyone within this field should strongly
+consider the use of an ITP.
 
-{{#counterexampleITPs}}
- - {{name}}
-{{/counterexampleITPs}}
+The second largest category was Mathematical Logic and Foundations (03-XX)
+with {{totalLogicModules}} modules. This was likely because working with ITPs
+often meant working with low level axiomatic systems such as set theory,
+general logic, recursion and computability. A mathematician working in
+logic should strongly consider exploring the use on an ITP in their work.
 
-ITPs without counterexample generators include:
+It is interesting to note that some provers, such as Coq and Isabelle,
+covered more computer science topics than Mizar and Lean. It seems that
+large scale verification efforts of software have yet to be done in Mizar
+or Lean, and these two ITPs have been populated with more modules from
+higher math. 
 
-{{#noCounterexampleITPs}}
- - {{name}}
-{{/noCounterexampleITPs}}
+## Counterexample generators {#sec:counterexamples}
+It was found that only a few ITPs had counterexample generators. The ones that did include {{#counterexampleITPs}}{{Name}}, {{/counterexampleITPs}}
+
+ITPs without counterexample generators include {{#noCounterexampleITPs}}{{Name}}, {{/noCounterexampleITPs}}
 
 ITPs without counterexample generators could be improved by adding that useful
 tool.
 
-## Math Notation in libraries
-Math Notation was found to be supported in the following libraries:
+## Math Notation in libraries {#sec:math_notation}
+Math Notation was found to be supported by {{#mathNotationITPs}}{{Name}}, {{/mathNotationITPs}}.
 
-{{#mathNotationITPs}}
- - {{name}}
-{{/mathNotationITPs}}
-
-ITPs without math notation include:
-
-{{#noMathNotationITPs}}
- - {{name}}
-{{/noMathNotationITPs}}
+ITPs without math notation include {{#noMathNotationITPs}}{{Name}}, {{/noMathNotationITPs}}.
 
 # Discussion
 
