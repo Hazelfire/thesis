@@ -27,7 +27,7 @@ with ZipFile('results/all_data.zip', 'r') as all_data:
 
     with all_data.open("libraries.csv", mode='r') as libraries:
         data['libraries'] = list(csv.DictReader([line.decode('utf8') for line in libraries.readlines()]))
-        data['libraryCount'] = len(data['itps'])
+        data['libraryCount'] = len(data['libraries'])
 
 with open("results/library_stats.csv", "r") as libstats:
     data['libstats'] = list(csv.DictReader(libstats))

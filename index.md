@@ -1603,13 +1603,12 @@ The following {{itpCount}} ITPs were included in the review:
  - [{{Name}}]({{Homepage}})
 {{/itps}}
 
-The results are split into four sections. In [@In [@sec:math_libraries], results about
+The results are split into three sections. In [@sec:math_libraries], results about
 the state and scope of mathematical libraries of ITPS are discussed. In
 [@sec:counterexamples] results about the support of Counterexample generators are
 covered. Finally, in [@sec:math_notation] and results about mathematical notation
 support are covered.
 
-## Implementation and Features {#sec:implementation}
 
 ## Mathematical Libraries {#sec:math_libraries}
 This section details results about the distribution of mathematical topics
@@ -1636,10 +1635,12 @@ module is listed below for each theorem prover.
 
   : Libraries covered in the living review {#tbl:libraries}
 
-It should be noted that Mizar ended up with a largest package count of {{mizarPackageCount}}.
-However, this may not be because it has the largest mathematical scope. Mizar's
-module size is quite small in comparison to other theorem provers, and the largest
-single mathematical library could be is Lean's mathlib at {{leanPackageCount}}.
+It should be noted that Mizar ended up with a largest package count of
+{{mizarPackageCount}}. However, Mizar was an unusual library in that it was
+large but has no form of structure. This meant that each module in the entire
+library was included in the review. Mizar's module size is quite small in
+comparison to other theorem provers, and the largest single mathematical
+library could be is Lean's mathlib at {{leanPackageCount}}.
 
 From these libraries, {{totalPackages}} math modules were classified. From these
 modules, {{totalVerifiedPackages}} were manually verified and classified into

@@ -106,7 +106,6 @@ Date: 21 October 2021<br />
 </ul></li>
 <li><a href="#results">Results</a>
 <ul>
-<li><a href="#sec:implementation">Implementation and Features</a></li>
 <li><a href="#sec:math_libraries">Mathematical Libraries</a></li>
 <li><a href="#sec:counterexamples">Counterexample generators</a></li>
 <li><a href="#sec:math_notation">Math Notation in libraries</a></li>
@@ -1283,11 +1282,10 @@ As you are viewing this via the web, the widget is embedded below for you to exp
 <li><a href="https://github.com/getfol/GETFOL">Getfol</a></li>
 <li><a href="http://czt.sourceforge.net/eclipse/zeves/">Z/EVES</a></li>
 </ul>
-<p>The results are split into four sections. In [<span class="citation" data-cites="In">[<a href="#ref-In" role="doc-biblioref"><strong>In?</strong></a>]</span>, sec. <a href="#sec:math_libraries">5.2</a>, results about the state and scope of mathematical libraries of ITPS are discussed. In sec. <a href="#sec:counterexamples">5.3</a> results about the support of Counterexample generators are covered. Finally, in sec. <a href="#sec:math_notation">5.4</a> and results about mathematical notation support are covered.</p>
-<h2 id="sec:implementation">Implementation and Features</h2>
+<p>The results are split into three sections. In sec. <a href="#sec:math_libraries">5.1</a>, results about the state and scope of mathematical libraries of ITPS are discussed. In sec. <a href="#sec:counterexamples">5.2</a> results about the support of Counterexample generators are covered. Finally, in sec. <a href="#sec:math_notation">5.3</a> and results about mathematical notation support are covered.</p>
 <h2 id="sec:math_libraries">Mathematical Libraries</h2>
 <p>This section details results about the distribution of mathematical topics currently covered by interactive theorem provers, as of 21 October 2021.</p>
-<p>21 mathematical libraries were covered in this analysis. They are detailed in tbl. <a href="#tbl:libraries">14</a></p>
+<p>12 mathematical libraries were covered in this analysis. They are detailed in tbl. <a href="#tbl:libraries">14</a></p>
 <p>It should be noted that four libraries failed to meet the inclusion criteria.</p>
 <ul>
 <li>Idris’ standard library, due to being too small to be of interest to a mathematician</li>
@@ -1389,7 +1387,7 @@ As you are viewing this via the web, the widget is embedded below for you to exp
 </tbody>
 </table>
 </div>
-<p>It should be noted that Mizar ended up with a largest package count of 1383. However, this may not be because it has the largest mathematical scope. Mizar’s module size is quite small in comparison to other theorem provers, and the largest single mathematical library could be is Lean’s mathlib at 739.</p>
+<p>It should be noted that Mizar ended up with a largest package count of 1383. However, Mizar was an unusual library in that it was large but has no form of structure. This meant that each module in the entire library was included in the review. Mizar’s module size is quite small in comparison to other theorem provers, and the largest single mathematical library could be is Lean’s mathlib at 739.</p>
 <p>From these libraries, math modules were classified. From these modules, were manually verified and classified into an appropriate category. The sizes of these libraries are detailed in tbl. <a href="#tbl:package_results">15</a>.</p>
 <div id="tbl:package_results">
 <table>

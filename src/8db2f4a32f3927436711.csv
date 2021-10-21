@@ -1,0 +1,13 @@
+name,section,file,url,type,module_def
+Coq,Library,coq_library.csv,https://coq.inria.fr/library/index.html,small,"a top level module, such as Init or Arith"
+Coq,Packages,coq_packages.csv,https://coq.inria.fr/opam/www/,packages,"a package"
+Isabelle,Library,isabelle_library.csv,https://isabelle.in.tum.de/dist/library/,large,"a session, such as HOL/HOL-Algebra"
+Isabelle,Archive of Formal Proofs,afp_packages.csv,https://www.isa-afp.org/,packages,"a submission"
+ACL2,Community Books,acl2_library.csv,https://github.com/acl2/acl2/tree/master/books,packages,"a community book, such as acl2ls or data-structures"
+Agda,Libraries,agda_libraries.csv,https://wiki.portal.chalmers.se/agda/Main/Libraries,packages,"a submission such as AoPA or DTGP"
+Agda,Standard Library,agda_std_library.csv,https://github.com/agda/agda-stdlib,small,"a top level module, such as Data or Algebra"
+HOL4,HOL Library,hol_library.csv,https://github.com/HOL-Theorem-Prover/HOL/tree/develop/src,small,"a top level module, such as bool or topology"
+Mizar,Mizar Mathematical Library,mizar_library.csv,http://www.mizar.org/library/,large,"a submission, such as abian of aff_2"
+Metamath,Metamath Library,mm_library.csv,http://us.metamath.org/mpeuni/mmset.html,small,"a ""part"", such as ""ZF SET THEORY"""
+PVS,NASA PVS Library of Formal Developments,pvs_library.csv,https://github.com/nasa/pvslib,packages,"a module, such as algebra or analysis"
+Lean,Lean Mathematical Library,lean_library.csv,https://leanprover-community.github.io/mathlib-overview.html,large,"a second level module, such as algebra.algebra or probability.distribution"
