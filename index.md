@@ -1179,7 +1179,7 @@ such, solutions are found in the visibility section.
   HOL              Need to redesign model if proof attempt fails             Suggested    [@beckert_usability_2015]
   Coq              Have to apply tactics before understanding what they do   Suggested    [@berman_development_2014]
 
-  : Premature Commitment Problems {#tbl:premature_commitment
+  : Premature Commitment Problems {#tbl:premature_commitment}
 
 When an attempt to prove a theorem fails, either one of two things has
 happened. First, the proof you are attempting to perform is incorrect,
@@ -1427,37 +1427,80 @@ Many problems were identified. A summary of the problem is tabulated in [@fig:us
 
 ![Identified Usability Issues](./Images/MyProblem.png){#fig:usability_issues}
 
-This analysis finds that although many issues were identified, there is very little
-empirical research on these problems. This is probably due to the difficulty
-in recruiting expert participants to these studies, and the small size of the
-field.
+This analysis finds that although many issues were identified, there is
+very little empirical research on these problems. This is probably due to
+the difficulty in recruiting expert participants to these studies, and the
+small size of the field.
 
-An empirical analysis of all of these problems is well and truly outside the scope
-of this thesis. The task at hand is to now select problems that can be addressed.
+An empirical analysis of all of these problems is well and truly outside
+the scope of this thesis. The task at hand is to now select problems that
+can be addressed.
 
-The first thing to consider is that we are creating a living review. Many of the
-usability issues that arose have a strong human component. For instance, "Hard
-to predict the results of tactics" would be very difficult to evaluate without
-performing a usability test. If we were to include a measure within the living
-review that required the conducting of a usability test, the usability test would
-need to be run on a periodic basis to keep it up to date with the current state
-of technology. This is highly undesirable, as such a project would be extremely
-time consuming and expensive, and would require a time and money investment for
-years after this thesis is published.
+The first thing to consider is that we are creating a living review. Many
+of the usability issues that arose have a strong human component. For
+instance, "Hard to predict the results of tactics" would be very difficult
+to evaluate without performing a usability test. If we were to include a
+measure within the living review that required the conducting of a
+usability test, the usability test would need to be run on a periodic
+basis to keep it up to date with the current state of technology. This is
+highly undesirable, as such a project would be extremely time consuming
+and expensive, and would require a time and money investment for years
+after this thesis is published.
 
-To address this, we restrict this thesis to usability issues that can be determined
-to exist without the highly expensive intervention of a user. This leaves the 
-following options:
+To address this, we restrict this thesis to usability issues that can be
+determined to exist without the highly expensive intervention of a user.
+This leaves the following options:
 
- - Quality of Library
- - Notation support
+ - Scope of Library
+ - Math Notation support
  - Counterexamples
  - Performance
 
-We considered all these issues beside performance to be within the scope of our
+We considered all these issues beside performance to be within the scope
+of our living review. 
+The following sections describes the methodology in detail. First, we discuss
+the choice of Interactive Theorem Provers included within the review in [@sec:chosing_itps]. Then, we
+discuss the methodology used in evaluating the scope of the library in
+[@sec:scope_of_library_meth]. Then, we discuss the methodology for evaluating
+support for counterexample generators in [@sec:counterexample_meth]. Finally,
+we discuss the methodology for evaluating support for math notation in
+[@sec:math_notation_meth].
+
+## Choosing Interactive Theorem Provers to cover {#sec:chosing_itps}
+In this section, we discuss the choice of which ITPs to cover as part of the
 living review.
 
-### Scope of Library
+A reasonable approach to this would be to reference a past review and borrow
+their scope of ITPs. This was done with [@nawaz_survey_2019]. The ITPs 
+in this review include {{nawazITPs}}.
+
+However, we noted a couple of issues with this consideration of ITPs. In particular,
+it seemed to favour reviews of older ITPs, and didn't include successful ITPs
+that have come out more recently. 
+
+One clearly missing consideration was that of Lean [@leanprover], a highly popular
+ITP that's more often used by mathematicians. Lean is mentioned within the review
+as a 'newer ITP' but is not considered as part of the review. We chose to add Lean, particularly
+because of its large community based mathematical library. It would be difficult
+to make a comparison between mathematical libraries, as we intend to do, without
+including this one, due to being particularly large.
+
+Secondly, there were some provers that were included within this review that
+are currently abandoned. Those two provers were Yarrow, and Watson.
+These two provers had their last releases in 1999 and 2001. Considering the rate
+of development of ITPs, these were removed due to meeting a very conservative
+definition of being abandoned.
+
+Finally, the last modification that was made was that the survey referenced "HOL"
+as a theorem prover. HOL has many implementations, including HOL4 [@HOL4], HOL Light [@HOL_Light],
+ProofPower [@ProofPower] and HOL Zero [@HOL_Zero]. For the sake of this review, keeping these seperate
+was appropriate as only properties of different theorem provers were discussed,
+and these properties remained largely the same for each implementation. However,
+because this living review covers mathematical libraries, it will require comparing
+between implementations. As of such, "HOL" was split into its two most popular
+interventions, HOL4 and HOL Light.
+
+### Scope of Library {#sec:scope_of_library_meth}
 This section reviews the methodology for investigating the scope of libraries
 within the living review.
 
@@ -1580,6 +1623,15 @@ Finally, a module's description (for instance, abstracts, package descriptions,
 names) is inspected manually and a classification is given to it. The package
 is then considered to be "verified".
 
+### Counterexample Generator Methodology {#sec:counterexample_meth}
+It was suggested that counterexample generators could help users understand proof state [@beckert_usability_2015]. When proving a theorem,
+a counterexample generator attempts to find an example for which the theorem does not hold. This helps you better understand when the theorem you want to prove might be wrong
+
+<!-- Bad discussion of counterexamples -->
+
+### Math Notation Methodology {#sec:math_notation_meth}
+Fin
+
 # Results
 In this section, we discuss in detail the living review that we have contributed.
 It should be noted that the living review itself contains all the information found
@@ -1597,11 +1649,7 @@ The widget can be explored from this link:
 [https://samnolan.me/thesis](https://samnolan.me/thesis)
 {{/latex}}
 
-The following {{itpCount}} ITPs were included in the review:
-
-{{#itps}}
- - [{{Name}}]({{Homepage}})
-{{/itps}}
+The following {{itpCount}} ITPs were included in the review: {{itpNames}}.
 
 The results are split into three sections. In [@sec:math_libraries], results about
 the state and scope of mathematical libraries of ITPS are discussed. In
@@ -1619,10 +1667,10 @@ are detailed in [@tbl:libraries]
 
 It should be noted that four libraries failed to meet the inclusion criteria.
 
-- Idris' standard library, due to being too small to be of interest to a mathematician
-- RedPRL's standard library, due to being too small to be of interest to a mathematician
-- HOL Light's library, due to missing documentation.
-- F*'s standard library, due to missing documentation.
+- Idris' standard library, due to being too small to be of interest to a mathematician (IC1)
+- RedPRL's standard library, due to being too small to be of interest to a mathematician (IC1)
+- HOL Light's library, due to missing documentation. (IC2)
+- F*'s standard library, due to missing documentation. (IC2)
 
 We must now chose what we mean by a module for comparison. What we chose as a
 module is listed below for each theorem prover.
@@ -1646,10 +1694,10 @@ From these libraries, {{totalPackages}} math modules were classified. From these
 modules, {{totalVerifiedPackages}} were manually verified and classified into
 an appropriate category. The sizes of these libraries are detailed in [@tbl:package_results].
 
-| Name | Total Packages | Verified Packages | Classified Packages | Excluded Packages |
-|------|----------------|-------------------|---------------------|-------------------|
+| Name | Library |Total Packages | Verified Packages | Classified Packages | Excluded Packages |
+|------|-----|---------------|-------------------|---------------------|-------------------|
 {{#libstats}}
-| {{ITP}} | {{Total}} | {{Verified}} | {{Classified}} | {{Excluded}} |
+| {{ITP}} | {{Library}} | {{Total}} | {{Verified}} | {{Classified}} | {{Excluded}} |
 {{/libstats}}
 
   : Modules considered per prover {#tbl:package_results}
@@ -1689,17 +1737,29 @@ or Lean, and these two ITPs have been populated with more modules from
 higher math. 
 
 ## Counterexample generators {#sec:counterexamples}
-It was found that only a few ITPs had counterexample generators. The ones that did include {{#counterexampleITPs}}{{Name}}, {{/counterexampleITPs}}
+Counterexample generators have been suggested to be beneficial in helping users understand the proof state they they were in [@beckert_usability_2015].
 
-ITPs without counterexample generators include {{#noCounterexampleITPs}}{{Name}}, {{/noCounterexampleITPs}}
+This living review covers {{counterExampleCount}} counter example generators. These counterexamples generators were;
 
-ITPs without counterexample generators could be improved by adding that useful
-tool.
+{{#counterExampleGenerators}}
+**{{name}}**: {{description}}. It has support for {{supports}}
+
+{{/counterExampleGenerators}}
+
+This leaves {{noCounterExampleITPS}} not having counter example generators.
+
 
 ## Math Notation in libraries {#sec:math_notation}
-Math Notation was found to be supported by {{#mathNotationITPs}}{{Name}}, {{/mathNotationITPs}}.
+Support of mathematical notation was suggested [@berman_development_2014,@asperti_considerations_2010,@zacchiroli_user_2007].
 
-ITPs without math notation include {{#noMathNotationITPs}}{{Name}}, {{/noMathNotationITPs}}.
+The ITPs that use math notation include:
+
+{{#mathNotationITPs}}
+**{{name}}**: {{description}}.
+
+{{/mathNotationITPs}}
+
+The ITPs in this study without math notation are {{noMathNotationITPs}}. These theorem provers may also be improved with math notation support.
 
 # Discussion
 
@@ -1753,5 +1813,45 @@ Finally, John Harrison completed a review of the history of ITPs
 ITPs, which is again outside the scope of this living review. This review is
 comprehensive in covering the development of ITPs up until 2014. However, at 7
 years, it is currently out of date.
+
+## Limitations with current work
+As much as this work does make progress on the current state of the field,
+it is not without limitations. This section covers possible limitations on
+this work, or items that were deemed out of scope but would be helpful.
+
+One limitation of this work is that although it does represent a review of
+the field, the review would likely not be suitable as an introduction.
+Often, reviews allow users unfamiliar with a field to introduce themselves
+and better understand the topic so that they can make direct work. This
+review does not do this, and instead tracks the progress of the field, and
+may be more suitable to people within it.
+
+A second limitation is that this review may contain errors in it, one
+particularly prominent likely source of error was that this review was
+performed by a non-mathematician. This means that although the packages
+were attempted to be classified correctly, there may be errors made in the
+classification. This could be remedied through allowing viewers or
+visitors to suggest edits and corrections to the state of the review. This
+is fully possible in a living review. However, this feature is not
+implemented in this review. This, however, could easily be done at a
+future date.
+
+A third limitation is that although this is a living review, it does not
+often reference conference papers or journal articles, even though it
+possibly could. A more complete living review might include a discussion
+of the current trends in research, such as the usability research done on
+a particular theorem prover. We chose to exclude this from the current
+contribution due to requiring a large amount of manual work to keep up to
+date. However, we are convinced that such a review would be worth the
+effort in creating.
+
+## Summary
+This thesis was motivated by ITP systems having low usability, and their potential in creating verified software.
+
+This thesis opens with a literature review of the usability of ITPs to uncover possible usability problems. From these usability problems, we selected a subset to determine whether they still existed in ITPs, and determined how to track progress on them.
+
+Finally, we contributed a living review that tracks the these issues in ITPs. This living review mainly tracks the scope of mathematical libraries of ITPs, but further includes details about math notation and counterexample generators.
+
+This contribution will continue to shed light on ITPs and their capabilities from now until into the future.
 
 # Bibliography

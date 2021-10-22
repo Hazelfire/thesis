@@ -1242,3 +1242,90 @@ author = {{Associate Editors of Mathematical Reviews and zbMATH}},
 year = {2020},
 title = {MSC2020-Mathematics Subject Classification System}
 }
+
+@misc{leanprover, title={Theorem Proving in Lean}, url={https://kilthub.cmu.edu/articles/journal_contribution/Theorem_Proving_in_Lean/6492902/1}, DOI={10.1184/R1/6492902.v1}, abstractNote={
+Formal verification involves the use of logical and computational methods to establish claims that are expressed in precise mathematical terms. These can include ordinary mathematical theorems, as well as claims that pieces of hardware or software, network protocols, and mechanical and hybrid systems meet their specifications. In practice, there is not a sharp distinction between verifying a piece of mathematics and verifying the correctness of a system: formal verification requires describing hardware and software systems in mathematical terms, at which point establishing claims as to their correctness becomes a form of theorem proving. Conversely, the proof of a mathematical theorem may require a lengthy computation, in which case verifying the truth of the theorem requires verifying that the computation does what it is supposed to do.
+
+The gold standard for supporting a mathematical claim is to provide a proof, and twentieth-century developments in logic show most if not all conventional proof methods can be reduced to a small set of axioms and rules in any of a number of foundational systems. With this reduction, there are two ways that a computer can help establish a claim: it can help find a proof in the first place, and it can help verify that a purported proof is correct.
+
+Automated theorem proving focuses on the “finding” aspect. Resolution theorem provers, tableau theorem provers, fast satisfiability solvers, and so on provide means of establishing the validity of formulas in propositional and first-order logic. Other systems provide search procedures and decision procedures for specific languages and domains, such as linear or nonlinear expressions over the integers or the real numbers. Architectures like SMT (“satisfiability modulo theories”) combine domain-general search methods with domain-specific procedures. Computer algebra systems and specialized mathematical software packages provide means of carrying out mathematical computations, establishing mathematical bounds, or finding mathematical objects. A calculation can be viewed as a proof as well, and these systems, too, help establish mathematical claims.
+
+Automated reasoning systems strive for power and efficiency, often at the expense of guaranteed soundness. Such systems can have bugs, and it can be difficult to ensure that the results they deliver are correct. In contrast, interactive theorem proving focuses on the “verification” aspect of theorem proving, requiring that every claim is supported by a proof in a suitable axiomatic foundation. This sets a very high standard: every rule of inference and every step of a calculation has to be justified by appealing to prior definitions and theorems, all the way down to basic axioms and rules. In fact, most such systems provide fully elaborated “proof objects” that can be communicated to other systems and checked independently. Constructing such proofs typically requires much more input and interaction from users, but it allows us to obtain deeper and more complex proofs.
+
+The Lean Theorem Prover aims to bridge the gap between interactive and automated theorem proving, by situating automated tools and methods in a framework that supports user interaction and the construction of fully specified axiomatic proofs. The goal is to support both mathematical reasoning and reasoning about complex systems, and to verify claims in both domains.
+
+}, publisher={Carnegie Mellon University}, author={Avigad, Jeremy and de Moura, Leonardo and Kong, Soonho}, year={2018}, month={Jun} }
+
+@InProceedings{HOL_Light,
+author="Harrison, John",
+editor="Berghofer, Stefan
+and Nipkow, Tobias
+and Urban, Christian
+and Wenzel, Makarius",
+title="HOL Light: An Overview",
+booktitle="Theorem Proving in Higher Order Logics",
+year="2009",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="60--66",
+abstract="HOL Light is an interactive proof assistant for classical higher-order logic, intended as a clean and simplified version of Mike Gordon's original HOL system. Theorem provers in this family use a version of ML as both the implementation and interaction language; in HOL Light's case this is Objective CAML (OCaml). Thanks to its adherence to the so-called `LCF approach', the system can be extended with new inference rules without compromising soundness. While retaining this reliability and programmability from earlier HOL systems, HOL Light is distinguished by its clean and simple design and extremely small logical kernel. Despite this, it provides powerful proof tools and has been applied to some non-trivial tasks in the formalization of mathematics and industrial formal verification.",
+isbn="978-3-642-03359-9"
+}
+
+@inproceedings{HOL4,
+author = {Slind, Konrad and Norrish, Michael},
+title = {A Brief Overview of HOL4},
+year = {2008},
+isbn = {9783540710653},
+publisher = {Springer-Verlag},
+address = {Berlin, Heidelberg},
+url = {https://doi.org/10.1007/978-3-540-71067-7_6},
+doi = {10.1007/978-3-540-71067-7_6},
+abstract = {The HOLF proof assistant supports specification and proof in classical higher order
+logic. It is the latest in a long line of similar systems. In this short overview,
+we give an outline of the HOLF system and how it may be applied in formal verification.},
+booktitle = {Proceedings of the 21st International Conference on Theorem Proving in Higher Order Logics},
+pages = {28–32},
+numpages = {5},
+location = {Montreal, P.Q., Canada},
+series = {TPHOLs '08}
+}
+
+@InProceedings{HOL_Zero,
+author="Adams, Mark",
+editor="Fukuda, Komei
+and Hoeven, Joris van der
+and Joswig, Michael
+and Takayama, Nobuki",
+title="Introducing HOL Zero",
+booktitle="Mathematical Software -- ICMS 2010",
+year="2010",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="142--143",
+abstract="Theorem provers are now playing an important role in two diverse fields: computer system verification and mathematics. In computer system verification, they are a key component in toolsets that rigorously establish the absence of errors in critical computer hardware and software, such as processor design and safety-critical software, where traditional testing techniques provide inadequate assurance. In mathematics, they are used to check the veracity of recent high-profile proofs, such as the Four Colour Theorem and the Kepler Conjecture, whose scale and complexity have pushed traditional peer review to its limits.",
+isbn="978-3-642-15582-6"
+}
+
+@msc{ProofPower,
+  author={{R. Arthan}},
+  title={{ProofPower–SLRP user guide. Technical report}},
+  journal={{Lemma 1 Limited}},
+  year={{2005}}
+}
+
+@Inbook{ACL2,
+author="Kaufmann, Matt
+and Manolios, Panagiotis
+and Moore, J. Strother",
+title="Introduction",
+bookTitle="Computer-Aided Reasoning: An Approach",
+year="2000",
+publisher="Springer US",
+address="Boston, MA",
+pages="1--5",
+abstract="This book is a textbook introduction to applied formal reasoning. We show how to use a formal logic to define concepts and to state and prove theorems. Moreover, we show how to carry out these tasks in cooperation with a particular computed-aided reasoning system.",
+isbn="978-1-4615-4449-4",
+doi="10.1007/978-1-4615-4449-4_1",
+url="https://doi.org/10.1007/978-1-4615-4449-4_1"
+}
