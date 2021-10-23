@@ -1,0 +1,10 @@
+name,author,start_date,end_date,description,website,category
+Proof Carrying Code,,,,"scaling up the idea of Proof Carrying Code to real programming languages, using a logic encoded in Twelf's dependent type system.",http://www.cs.princeton.edu/sip/projects/pcc/,
+The SeLF Project,,,,encodings of security policies and proofs of security properties for the Grey project.,http://www.cs.cmu.edu/~self/,
+Mechanizing the Metatheory of Standard ML,,,,a formalization of Standard ML and verification of its metatheory in Twelf. ,http://www.cs.cmu.edu/~dklee/tslf/,
+Modal Types for Mobile Code,,,,Tom's Ph.D. thesis project,http://tom7.org/proposal/,
+LATIN,,,,a project aimed at the creation of a large library of logics and logic translations supported by a web-scalable infrastructure,https://trac.omdoc.org/LATIN,
+Dependent Types for ML,,,,A paper by Dan Licata and Bob Harper about enriching an ML-like type system with a form of dependent types.  Much of the metatheory of the language is mechanized in Twelf.  ,http://www.cs.cmu.edu/~drl/pubs/lh05dmlproofs-tr/lh05dmlproofs-tr.pdf,
+Substructural Languages,,,,Twelf code from some of Matthew Fluet's papers on substructural languages.,http://www.cs.cornell.edu/people/fluet/twelf/index.html,
+Self-Adjusting Computation,,,,Jake Donham's formalization of a consistency proof of non-deterministic semantics.,http://www.cs.cmu.edu/~jdonham/aml-proof/,
+Elaborating Intersection and Union Types,,,,Joshua Dunfield's proofs about an elaboration semantics.,http://www.cs.cmu.edu/~joshuad/papers/intcomp/,

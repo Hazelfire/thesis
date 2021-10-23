@@ -1,0 +1,1388 @@
+package,authors,description,url,msc,verified
+Preliminaries to Structures,Library Committee of the Association of Mizar Users,,http://mizar.org/version/current/html/struct_0.html,Exclude-Util,True
+Arithmetic of Non-Negative Rational Numbers,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/arytm_3.html,Exclude-Util,True
+Introduction to Arithmetics,"Trybulec, Andrzej",,http://mizar.org/version/current/html/arytm_0.html,Exclude-Util,True
+Subsets of Complex Numbers,"Trybulec, Andrzej",,http://mizar.org/version/current/html/numbers.html,Exclude-Util,True
+Basic Properties of Real Numbers - Requirements,Library Committee of the Association of Mizar Users,,http://mizar.org/version/current/html/real.html,Exclude-Util,True
+Binary Operations on Numbers,Library Committee of the Association of Mizar Users,,http://mizar.org/version/current/html/binop_2.html,08A02,True
+Introduction to Arithmetic of Extended Real Numbers,Library Committee of the Association of Mizar Users,,http://mizar.org/version/current/html/xxreal_0.html,Exclude-Util,True
+Number-Valued Functions,Library Committee of the Association of Mizar Users,,http://mizar.org/version/current/html/valued_0.html,Exclude-Util,True
+Basic Operations on Extended Real Numbers,"Trybulec, Andrzej",,http://mizar.org/version/current/html/xxreal_3.html,Exclude-Util,True
+Tarski Grothendieck Set Theory,"Trybulec, Andrzej",,http://fm.mizar.org/1990-1/pdf1-1/tarski.pdf,03E65,True
+Built-in Concepts,"Trybulec, Andrzej",,http://fm.mizar.org/1990-1/pdf1-1/axioms.pdf,Exclude-Util,True
+Boolean Properties of Sets,"Trybulec, Zinaida and Święczkowska, Halina",,http://fm.mizar.org/1990-1/pdf1-1/boole.pdf,Exclude-Util,True
+Enumerated Sets,"Trybulec, Andrzej",,http://fm.mizar.org/1990-1/pdf1-1/enumset1.pdf,Exclude-Util,True
+Basic Properties  of Real Numbers,"Hryniewiecki, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-1/real_1.pdf,Exclude-Util,True
+The Fundamental Properties of Natural Numbers,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-1/nat_1.pdf,11A05,True
+Some Basic Properties of Sets,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-1/zfmisc_1.pdf,Exclude-Util,True
+Functions and Their Basic Properties,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-1/funct_1.pdf,03E20,True
+Properties of Subsets,"Trybulec, Zinaida",,http://fm.mizar.org/1990-1/pdf1-1/subset_1.pdf,Exclude-Util,True
+Relations and Their Basic Properties,"Woronowicz, Edmund",,http://fm.mizar.org/1990-1/pdf1-1/relat_1.pdf,03E20,True
+Properties of Binary Relations,"Woronowicz, Edmund and Zalewska, Anna",,http://fm.mizar.org/1990-1/pdf1-1/relat_2.pdf,Exclude-Util,True
+The Ordinal Numbers,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-1/ordinal1.pdf,03E10,True
+"Tuples, Projections and Cartesian Products","Trybulec, Andrzej",,http://fm.mizar.org/1990-1/pdf1-1/mcart_1.pdf,Exclude-Util,True
+Segments of Natural Numbers and Finite Sequences,"Bancerek, Grzegorz and Hryniewiecki, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-1/finseq_1.pdf,Exclude-Util,True
+Domains and Their Cartesian Products,"Trybulec, Andrzej",,http://fm.mizar.org/1990-1/pdf1-1/domain_1.pdf,47A05,True
+The Well Ordering Relations,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-1/wellord1.pdf,06A05,True
+A Model of ZF Set Theory Language,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-1/zf_lang.pdf,03C62,True
+Families of Sets,"Padlewska, Beata",,http://fm.mizar.org/1990-1/pdf1-1/setfam_1.pdf,03E20,True
+Functions from a Set to a Set,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-1/funct_2.pdf,03E20,True
+Finite Sets,"Darmochwał, Agata",,http://fm.mizar.org/1990-1/pdf1-1/finset_1.pdf,03E20,True
+Graphs of Functions,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-1/grfunc_1.pdf,03E20,True
+Binary Operations,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-1/binop_1.pdf,47A05,True
+Relations Defined on Sets,"Woronowicz, Edmund",,http://fm.mizar.org/1990-1/pdf1-1/relset_1.pdf,03E20,True
+Boolean Domains,"Trybulec, Andrzej and Darmochwał, Agata",,http://fm.mizar.org/1990-1/pdf1-1/finsub_1.pdf,03E40,True
+Models and Satisfiability,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-1/zf_model.pdf,03E20,True
+The Contraction Lemma,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-1/zf_colla.pdf,03E20,True
+Axioms of Incidence,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-1/incsp_1.pdf,51A05,True
+Introduction to Lattice Theory,"Żukowski, Stanisław",,http://fm.mizar.org/1990-1/pdf1-1/lattices.pdf,03G10,True
+Topological Spaces and Continuous Functions,"Padlewska, Beata and Darmochwał, Agata",,http://fm.mizar.org/1990-1/pdf1-1/pre_topc.pdf,26A03,True
+Subsets of Topological Spaces,"Wysocki, Mirosław and Darmochwał, Agata",,http://fm.mizar.org/1990-1/pdf1-1/tops_1.pdf,54B05,True
+Connected Spaces,"Padlewska, Beata",,http://fm.mizar.org/1990-1/pdf1-1/connsp_1.pdf,54A05,True
+Basic Functions and Operations on Functions,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-1/funct_3.pdf,47A48,True
+"Families of Subsets, Subspaces and Mappings in Topological Spaces","Darmochwał, Agata",,http://fm.mizar.org/1990-1/pdf1-2/tops_2.pdf,54C60,True
+Some Properties of Functions Modul and Signum,"Popiołek, Jan",,http://fm.mizar.org/1990-1/pdf1-2/anal_1.pdf,Exclude-NoDoc,True
+Some Properties of Functions Modul and Signum,"Popiołek, Jan",,http://fm.mizar.org/1990-1/pdf1-2/absvalue.pdf,26A09,True
+Zermelo Theorem and Axiom of Choice,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-2/wellord2.pdf,03E25,True
+Real Sequences and Basic Operations on Them,"Kotowicz, Jarosław",,http://fm.mizar.org/1990-1/pdf1-2/seq_1.pdf,40-01 ,True
+Convergent Sequences and the Limit of Sequences,"Kotowicz, Jarosław",,http://fm.mizar.org/1990-1/pdf1-2/seq_2.pdf,40A05,True
+Properties of ZF Models,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-2/zfmodel1.pdf,03C62,True
+Sequences of Ordinal Numbers,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-2/ordinal2.pdf,03E10,True
+Vectors in Real Linear Space,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-2/rlvect_1.pdf,15A03,True
+Subspaces and Cosets of Subspaces in Real Linear Space,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-2/rlsub_1.pdf,15A03,True
+A First Order Language,"Rudnicki, Piotr and Trybulec, Andrzej",,http://fm.mizar.org/1990-1/pdf1-2/qc_lang1.pdf,03B10,True
+Partially Ordered Sets,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-2/orders_1.pdf,06A06,True
+Recursive Definitions,"Hryniewiecki, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-2/recdef_1.pdf,03D20,True
+Binary Operations Applied to Functions,"Trybulec, Andrzej",,http://fm.mizar.org/1990-1/pdf1-2/funcop_1.pdf,18F05,True
+"Abelian Groups, Fields and Vector Spaces","Kusak, Eugeniusz and Leończuk, Wojciech and Muzalewski, Michał",,http://fm.mizar.org/1990-1/pdf1-2/vectsp_1.pdf,15A03,True
+Parallelity Spaces,"Kusak, Eugeniusz and Leończuk, Wojciech and Muzalewski, Michał",,http://fm.mizar.org/1990-1/pdf1-2/parsp_1.pdf,51A15,True
+Construction of a bilinear antisymmetric form in simplectic vector space,"Kusak, Eugeniusz and Leończuk, Wojciech and Muzalewski, Michał",,http://fm.mizar.org/1990-1/pdf1-2/symsp_1.pdf,51A50,True
+Construction of a bilinear symmetric form in orthogonal vector space,"Kusak, Eugeniusz and Leończuk, Wojciech and Muzalewski, Michał",,http://fm.mizar.org/1990-1/pdf1-2/ortsp_1.pdf,51A50,True
+Partial Functions,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-2/partfun1.pdf,Exclude-Util,True
+Semilattice Operations on Finite Subsets,"Trybulec, Andrzej",,http://fm.mizar.org/1990-1/pdf1-2/setwiseo.pdf,03E20,True
+Cardinal Numbers,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-2/card_1.pdf,03E10,True
+Compact Spaces,"Darmochwał, Agata",,http://fm.mizar.org/1990-1/pdf1-2/compts_1.pdf,54E45,True
+Kuratowski – Zorn Lemma,"Trybulec, Wojciech A. and Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-2/orders_2.pdf,03E20,True
+Operations on Subspaces in Real Linear Space,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-2/rlsub_2.pdf,14N20,True
+σ-Fields and Probability,"Nędzusiak, Andrzej",,http://fm.mizar.org/1990-1/pdf1-2/prob_1.pdf,28A05,True
+Introduction to Categories and Functors,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-2/cat_1.pdf,18A05,True
+Introduction to Trees,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-2/trees_1.pdf,05C05,True
+Zermelo's Theorem,"Nowak, Bogdan and Białecki, Sławomir",,http://fm.mizar.org/1990-1/pdf1-3/wellset1.pdf,03E20,True
+Group and Field Definitions,"Białas, Józef",,http://fm.mizar.org/1990-1/pdf1-3/realset1.pdf,20A05,True
+Equivalence Relations and Classes of Abstraction,"Raczkowski, Konrad and Sadowski, Paweł",,http://fm.mizar.org/1990-1/pdf1-3/eqrel_1.pdf,03E02,True
+Some Properties of Real Numbers,"Trybulec, Andrzej and Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-3/square_1.pdf,Exclude-Util,True
+Connectives and Subformulae of the First Order Language,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-3/qc_lang2.pdf,03B10,True
+Variables in Formulae of the First Order Language,"Byliński, Czesław and Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-3/qc_lang3.pdf,03B10,True
+Monotone Real Sequences. Subsequences,"Kotowicz, Jarosław",,http://fm.mizar.org/1990-1/pdf1-3/seqm_3.pdf,26A48,True
+Convergent Real Sequences. Upper and Lower Bound of Sets of Real Numbers,"Kotowicz, Jarosław",,http://fm.mizar.org/1990-1/pdf1-3/seq_4.pdf,40A05,True
+Midpoint algebras,"Muzalewski, Michał",,http://fm.mizar.org/1990-1/pdf1-3/midsp_1.pdf,15A03,True
+The Fundamental Logic Structure in Quantum Mechanics,"Sadowski, Paweł and Trybulec, Andrzej and Raczkowski, Konrad",,http://fm.mizar.org/1990-1/pdf1-3/qmax_1.pdf,81P10,True
+Function Domains and Frænkel Operator,"Trybulec, Andrzej",,http://fm.mizar.org/1990-1/pdf1-3/fraenkel.pdf,03E47,True
+Integers,"Trybulec, Michał J.",,http://fm.mizar.org/1990-1/pdf1-3/int_1.pdf,Exclude-Util,True
+The Complex Numbers,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-3/complex1.pdf,Exclude-Util,True
+Ordinal Arithmetics,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-3/ordinal3.pdf,03E10,True
+The Modification of a Function by a Function and the Iteration of the Composition of a Function,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-3/funct_4.pdf,,False
+Finite Sequences and Tuples of Elements of a Non-empty Sets,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-3/finseq_2.pdf,Exclude-Util,True
+Curried and Uncurried Functions,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-3/funct_5.pdf,18A99,True
+Cardinal Arithmetics,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-3/card_2.pdf,03E10,True
+Fano-Desargues Parallelity Spaces,"Kusak, Eugeniusz and Leończuk, Wojciech",,http://fm.mizar.org/1990-1/pdf1-3/parsp_2.pdf,51A15,True
+Real Functions Spaces,"Oryszczyszyn , Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-3/funcsdom.pdf,13J30,True
+Tarski's Classes and Ranks,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-3/classes1.pdf,03E20,True
+Non-contiguous Substrings and One-to-one Finite Sequences,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-3/finseq_3.pdf,Exclude-Util,True
+Pigeon Hole Principle,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-3/finseq_4.pdf,Exclude-Util,True
+Linear Combinations in Real Linear Space,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-3/rlvect_2.pdf,15A04,True
+König's Theorem,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-3/card_3.pdf,03E10,True
+Universal Classes,"Nowak, Bogdan and Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-3/classes2.pdf,03E20,True
+Analytical Ordered Affine Spaces,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-3/analoaf.pdf,51N10,True
+Metric Spaces,"Kanas, Stanisława and Lecko, Adam and Startek, Mariusz",,http://fm.mizar.org/1990-1/pdf1-3/metric_1.pdf,54E35,True
+Ordered Affine Spaces Defined in Terms of Directed Parallelity – Part I,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-3/diraf.pdf,51N10,True
+Parallelity and Lines in Affine Spaces,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-3/aff_1.pdf,14R10,True
+Classical Configurations in Affine Planes,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-4/aff_2.pdf,14R10,True
+Affine Localizations of Desargues Axiom,"Kusak, Eugeniusz and Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-4/aff_3.pdf,14R10,True
+Binary Operations Applied to Finite Sequences,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-4/finseqop.pdf,40B99,True
+Semigroup operations on finite subsets,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-4/setwop_2.pdf,03E20,True
+The Collinearity Structure,"Skaba, Wojciech",,http://fm.mizar.org/1990-1/pdf1-4/collsp.pdf,51A05,True
+The Sum and Product of Finite Sequences of Real Numbers,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-4/rvsum_1.pdf,Exclude-Util,True
+A Classical First Order Language,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-4/cqc_lang.pdf,03B10,True
+Classical and Non–classical Pasch Configurations in Ordered Affine Planes,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof and Prażmowska, Małgorzata",,http://fm.mizar.org/1990-1/pdf1-4/pasch.pdf,51M05,True
+The Lattice of Real Numbers. The Lattice of Real Functions,"Chmur, Marek",,http://fm.mizar.org/1990-1/pdf1-4/real_lat.pdf,03G10,True
+A Construction of an Abstract Space of Congruence of Vectors,"Lewandowski, Grzegorz and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-4/tdgroup.pdf,20Kxx,True
+A First–Order Predicate Calculus,"Darmochwał, Agata",,http://fm.mizar.org/1990-1/pdf1-4/cqc_the1.pdf,03B10,True
+Partial Functions from a Domain to a Domain,"Kotowicz, Jarosław",,http://fm.mizar.org/1990-1/pdf1-4/partfun2.pdf,03E20,True
+Partial Functions from a Domain to the Set of Real Numbers,"Kotowicz, Jarosław",,http://fm.mizar.org/1990-1/pdf1-4/rfunct_1.pdf,03E20,True
+Increasing and Continuous Ordinal Sequences,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-4/ordinal4.pdf,03E10,True
+Transformations in Affine Spaces,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-4/transgeo.pdf,51N10,True
+Subcategories and Products of Categories,"Byliński, Czesław",,http://fm.mizar.org/1990-1/pdf1-4/cat_2.pdf,18A05,True
+Many Argument Relations,"Woronowicz, Edmund",,http://fm.mizar.org/1990-1/pdf1-4/margrel1.pdf,,False
+Interpretation and Satisfiability in the First Order Logic,"Woronowicz, Edmund",,http://fm.mizar.org/1990-1/pdf1-4/valuat_1.pdf,03B10,True
+Probability,"Nędzusiak, Andrzej",,http://fm.mizar.org/1990-1/pdf1-4/prob_2.pdf,60A05,True
+Translations in Affine Planes,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-4/translac.pdf,,False
+Introduction to Probability,"Popiołek, Jan",,http://fm.mizar.org/1990-1/pdf1-4/rpr_1.pdf,60A05,True
+A Construction of Analytical Projective Space,"Leończuk, Wojciech and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-4/anproj_1.pdf,51N05,True
+Projective Spaces – Part I,"Leończuk, Wojciech and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-4/anproj_2.pdf,51N15,True
+Topological Properties of Subsets in Real Numbers,"Raczkowski, Konrad and Sadowski, Paweł",,http://fm.mizar.org/1990-1/pdf1-4/rcomp_1.pdf,54C30,True
+Properties of Real Functions,"Kotowicz, Jarosław",,http://fm.mizar.org/1990-1/pdf1-4/rfunct_2.pdf,26A48,True
+Real Function Continuity,"Raczkowski, Konrad and Sadowski, Paweł",,http://fm.mizar.org/1990-1/pdf1-4/fcont_1.pdf,26A15,True
+Real Function Uniform Continuity,"Kotowicz, Jarosław and Raczkowski, Konrad",,http://fm.mizar.org/1990-1/pdf1-4/fcont_2.pdf,26A15,True
+Real Function Differentiability,"Raczkowski, Konrad and Sadowski, Paweł",,http://fm.mizar.org/1990-1/pdf1-4/fdiff_1.pdf,26A27,True
+Average Value Theorems for Real Functions of One Variable,"Kotowicz, Jarosław and Raczkowski, Konrad and Sadowski, Paweł",,http://fm.mizar.org/1990-1/pdf1-4/rolle.pdf,26A24,True
+Properties of Fields,"Białas, Józef",,http://fm.mizar.org/1990-1/pdf1-5/realset2.pdf,,False
+Filters – Part I,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-5/filter_0.pdf,54A20,True
+Groups,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-5/group_1.pdf,20A05,True
+The Divisibility of Integers and Integer Relatively Primes,"Kwiatek, Rafał and Zwara, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-5/int_2.pdf,11A51,True
+From Loops to Abelian Multiplicative Groups with Zero,"Muzalewski, Michał and Skaba, Wojciech",,http://fm.mizar.org/1990-1/pdf1-5/algstr_1.pdf,,False
+Basic Properties of Rational Numbers,"Kondracki, Andrzej",,http://fm.mizar.org/1990-1/pdf1-5/rat_1.pdf,11B05,True
+Basis of Real Linear Space,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-5/rlvect_3.pdf,15A03,True
+Finite Sums of Vectors in Vector Space,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-5/vectsp_3.pdf,15A03,True
+Subgroup and Cosets of Subgroups,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-5/group_2.pdf,20E07,True
+Subspaces and Cosets of Subspaces in Vector Space,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-5/vectsp_4.pdf,54B05,True
+Operations on Subspaces in Vector Space,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-5/vectsp_5.pdf,54B05,True
+Linear Combinations in Vector Space,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-5/vectsp_6.pdf,15A04,True
+Basis of Vector Space,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-5/vectsp_7.pdf,15A03,True
+Factorial and Newton coefficients,"Kwiatek, Rafał",,http://fm.mizar.org/1990-1/pdf1-5/newton.pdf,05A10,True
+Analytical Metric Affine Spaces and Planes,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-5/analmetr.pdf,51N10,True
+Projective Spaces – part II,"Leończuk, Wojciech and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-5/anproj_3.pdf,51N15,True
+Projective Spaces – part III,"Leończuk, Wojciech and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-5/anproj_4.pdf,51N15,True
+Projective Spaces – part IV,"Leończuk, Wojciech and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-5/anproj_5.pdf,51N15,True
+Projective Spaces – part V,"Leończuk, Wojciech and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-5/anproj_6.pdf,51N15,True
+Projective Spaces – part VI,"Leończuk, Wojciech and Prażmowski, Krzysztof",,http://fm.mizar.org/1990-1/pdf1-5/anproj_7.pdf,51N15,True
+Some Elementary Notions of the Theory of Petri Nets,"Korczyński, Waldemar",,http://fm.mizar.org/1990-1/pdf1-5/net_1.pdf,93C65,True
+Classes of Conjugation. Normal Subgroups,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-5/group_3.pdf,20A05,True
+Replacing of Variables in Formulas of ZF Theory,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-5/zf_lang1.pdf,03E30,True
+The Reflection Theorem,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-5/zf_refle.pdf,,False
+Binary Operations on Finite Sequences,"Trybulec, Wojciech A.",,http://fm.mizar.org/1990-1/pdf1-5/finsop_1.pdf,,False
+Finite Join and Finite Meet and Dual Lattices,"Trybulec, Andrzej",,http://fm.mizar.org/1990-1/pdf1-5/lattice2.pdf,06D20,True
+Consequences of the Reflection Theorem,"Bancerek, Grzegorz",,http://fm.mizar.org/1990-1/pdf1-5/zfrefle1.pdf,,False
+"Construction of Rings and Left-, Right-, and Bi-Modules over a Ring","Muzalewski, Michał",,http://fm.mizar.org/1991-2/pdf2-1/vectsp_2.pdf,16D20,True
+Desargues Theorem In Projective 3-Space,"Kusak, Eugeniusz",,http://fm.mizar.org/1991-2/pdf2-1/projdes1.pdf,51A05,True
+The Limit of a Real Function at Infinity,"Kotowicz, Jarosław",,http://fm.mizar.org/1991-2/pdf2-1/limfunc1.pdf,26A03,True
+One-Side Limits of a Real Function at a Point,"Kotowicz, Jarosław",,http://fm.mizar.org/1991-2/pdf2-1/limfunc2.pdf,26A03,True
+Lattice of Subgroups of a Group. Frattini Subgroup,"Trybulec, Wojciech A.",,http://fm.mizar.org/1991-2/pdf2-1/group_4.pdf,20D25,True
+Equalities and Inequalities in Real Numbers,"Kondracki, Andrzej",,http://fm.mizar.org/1991-2/pdf2-1/real_2.pdf,Exclude-Util,True
+Countable Sets and Hessenberg's Theorem,"Bancerek, Grzegorz",,http://fm.mizar.org/1991-2/pdf2-1/card_4.pdf,03E10,True
+The Limit of a Real Function at a Point,"Kotowicz, Jarosław",,http://fm.mizar.org/1991-2/pdf2-1/limfunc3.pdf,26A03,True
+The Limit of a Composition of Real Functions,"Kotowicz, Jarosław",,http://fm.mizar.org/1991-2/pdf2-1/limfunc4.pdf,26A03,True
+Locally Connected Spaces,"Padlewska, Beata",,http://fm.mizar.org/1991-2/pdf2-1/connsp_2.pdf,54D05,True
+"Construction of Finite Sequences over Ring and Left-, Right-,  and Bi-Modules over a Ring","Muzalewski, Michał and Szczerba, Lesław W.",,http://fm.mizar.org/1991-2/pdf2-1/algseq_1.pdf,13C05,True
+Relations of Tolerance,"Hryniewiecki, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-1/toler_1.pdf,08A02,True
+Real Normed Space,"Popiołek, Jan",,http://fm.mizar.org/1991-2/pdf2-1/normsp_1.pdf,12J05,True
+Schemes of Existence of some Types of Functions,"Kotowicz, Jarosław",,http://fm.mizar.org/1991-2/pdf2-1/scheme1.pdf,14A15,True
+Integer and Rational Exponents,"Raczkowski, Konrad",,http://fm.mizar.org/1991-2/pdf2-1/prepower.pdf,26A09,True
+Homotheties and Shears in Affine Planes,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-1/homothet.pdf,51N10,True
+Directed Geometrical Bundles and Their Analytical Representation,"Lewandowski, Grzegorz and Prażmowski, Krzysztof and Lewandowska, Bożena",,http://fm.mizar.org/1991-2/pdf2-1/afvect0.pdf,32L10,True
+Definable Functions,"Bancerek, Grzegorz",,http://fm.mizar.org/1991-2/pdf2-1/zfmodel2.pdf,03E30,True
+Propositional Calculus,"Bancerek, Grzegorz  and Darmochwał, Agata and Trybulec, Andrzej",,http://fm.mizar.org/1991-2/pdf2-1/lukasi_1.pdf,03B05,True
+Complex Spaces,"Byliński, Czesław and Trybulec, Andrzej",,http://fm.mizar.org/1991-2/pdf2-1/complsp1.pdf,32C15,True
+Several Properties of Fields. Field Theory,"Białas, Józef",,http://fm.mizar.org/1991-2/pdf2-1/realset3.pdf,12E30,True
+Infimum and Supremum of the Set of Real Numbers. Measure Theory,"Białas, Józef",,http://fm.mizar.org/1991-2/pdf2-1/supinf_1.pdf,06B20,True
+Series of  Positive Real Numbers. Measure Theory,"Białas, Józef",,http://fm.mizar.org/1991-2/pdf2-1/supinf_2.pdf,28A10,True
+From Double Loops to Fields,"Skaba, Wojciech and Muzalewski, Michał",,http://fm.mizar.org/1991-2/pdf2-1/algstr_2.pdf,12E15,True
+Metrics in Cartesian Product,"Kanas, Stanisława and Stankiewicz, Jan",,http://fm.mizar.org/1991-2/pdf2-2/metric_3.pdf,54E35,True
+Submetric Spaces – Part I,"Lecko, Adam and Startek, Mariusz",,http://fm.mizar.org/1991-2/pdf2-2/sub_metr.pdf,54E35,True
+On Pseudometric Spaces,"Lecko, Adam and Startek, Mariusz",,http://fm.mizar.org/1991-2/pdf2-2/metric_2.pdf,54E25,True
+Real Exponents and Logarithms,"Raczkowski, Konrad and Nędzusiak, Andrzej",,http://fm.mizar.org/1991-2/pdf2-2/power.pdf,26A09,True
+Hessenberg Theorem,"Kusak, Eugeniusz and Leończuk, Wojciech",,http://fm.mizar.org/1991-2/pdf2-2/hessenbe.pdf,,False
+Three-Argument Operations and Four-Argument Operations,"Muzalewski, Michał and Skaba, Wojciech",,http://fm.mizar.org/1991-2/pdf2-2/multop_1.pdf,,False
+Incidence Projective Spaces,"Leończuk, Wojciech and Prażmowski, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-2/incproj.pdf,51A05,True
+"One-Dimensional Congruence of Segments, Basic Facts and Midpoint  Relation","Konstanta, Barbara and Kowieska, Urszula and Lewandowski, Grzegorz and Prażmowski, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-2/afvect01.pdf,,False
+Algebra of Normal Forms,"Trybulec, Andrzej",,http://fm.mizar.org/1991-2/pdf2-2/normform.pdf,,False
+Ordered Rings – Part I,"Muzalewski, Michał and Szczerba, Lesław W.",,http://fm.mizar.org/1991-2/pdf2-2/o_ring_1.pdf,06F25,True
+Ordered Rings – Part II,"Muzalewski, Michał and Szczerba, Lesław W.",,http://fm.mizar.org/1991-2/pdf2-2/o_ring_2.pdf,06F25,True
+Ordered Rings – Part III,"Muzalewski, Michał and Szczerba, Lesław W.",,http://fm.mizar.org/1991-2/pdf2-2/o_ring_3.pdf,06F25,True
+N-Tuples and Cartesian Products for n=5,"Muzalewski, Michał and Skaba, Wojciech",,http://fm.mizar.org/1991-2/pdf2-2/mcart_2.pdf,,False
+Ternary Fields,"Muzalewski, Michał and Skaba, Wojciech",,http://fm.mizar.org/1991-2/pdf2-2/algstr_3.pdf,20N10,True
+The σ-additive Measure Theory,"Białas, Józef",,http://fm.mizar.org/1991-2/pdf2-2/measure1.pdf,28A05,True
+Incidence Projective Space (a reduction theorem in a plane),"Kusak, Eugeniusz and Leończuk, Wojciech",,http://fm.mizar.org/1991-2/pdf2-2/projred1.pdf,51A05,True
+"Groups, Rings, Left- and Right-Modules","Muzalewski, Michał and Skaba, Wojciech",,http://fm.mizar.org/1991-2/pdf2-2/mod_1.pdf,16D20,True
+Finite Sums of Vectors in Left Module over Associative Ring,"Muzalewski, Michał and Skaba, Wojciech",,http://fm.mizar.org/1991-2/pdf2-2/lmod_1.pdf,13C05,True
+Submodules and Cosets of Submodules in Left Module over Associative Ring,"Muzalewski, Michał and Skaba, Wojciech",,http://fm.mizar.org/1991-2/pdf2-2/lmod_2.pdf,13C05,True
+Operations on Submodules in Left Module over Associative Ring,"Muzalewski, Michał and Skaba, Wojciech",,http://fm.mizar.org/1991-2/pdf2-2/lmod_3.pdf,13C05,True
+Linear Combinations in Left Module over Associative Ring,"Muzalewski, Michał and Skaba, Wojciech",,http://fm.mizar.org/1991-2/pdf2-2/lmod_4.pdf,13C05,True
+Linear Independence in Left Module over Domain,"Muzalewski, Michał and Skaba, Wojciech",,http://fm.mizar.org/1991-2/pdf2-2/lmod_5.pdf,13C05,True
+Calculus of Propositions,"Popiołek, Jan and Trybulec, Andrzej",,http://fm.mizar.org/1991-2/pdf2-2/procal_1.pdf,03B05,True
+Calculus of Quantifiers. Deduction Theorem,"Darmochwał, Agata",,http://fm.mizar.org/1991-2/pdf2-2/cqc_the2.pdf,03B05,True
+A construction of analytical Ordered Trapezium Spaces,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-3/analtrap.pdf,Exclude-NoDoc,False
+A construction of analytical Ordered Trapezium Spaces,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-3/geomtrap.pdf,51N10,True
+On Projections in Projective Planes (Part II ),"Kusak, Eugeniusz and Leończuk, Wojciech and Prażmowski, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-3/projred2.pdf,51A05,True
+Metric-Affine Configurations in Metric Affine Planes – Part I,"Świerzyńska, Jolanta and Świerzyński, Bogdan",,http://fm.mizar.org/1991-2/pdf2-3/conaffm.pdf,51A05,True
+Metric-Affine Configurations in Metric Affine Planes – Part II,"Świerzyńska, Jolanta and Świerzyński, Bogdan",,http://fm.mizar.org/1991-2/pdf2-3/conmetr.pdf,51A05,True
+"Fanoian, Pappian and Desarguesian Affine Spaces","Prażmowski, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-3/papdesaf.pdf,51N10,True
+Elementary Variants of Affine Configurational Theorems,"Prażmowski, Krzysztof and Radziszewski, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-3/pardepap.pdf,51A20,True
+Semi_Affine Space,"Kusak, Eugeniusz and Radziszewski, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-3/semi_af1.pdf,51N10,True
+Planes in Affine Spaces,"Leończuk, Wojciech and Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-3/aff_4.pdf,51N10,True
+Graphs,"Hryniewiecki, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-3/graph_1.pdf,05C99,True
+Mostowski's Fundamental Operations – Part I,"Kondracki, Andrzej",,http://fm.mizar.org/1991-2/pdf2-3/zf_fund1.pdf,03E45,True
+A Projective Closure and Projective Horizon of an Affine Space,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-3/afproj.pdf,,False
+Schemes,"Czuba, Stanisław T.",,http://fm.mizar.org/1991-2/pdf2-3/schems_1.pdf,,False
+Algebra of Normal Forms Is a Heyting Algebra,"Trybulec, Andrzej",,http://fm.mizar.org/1991-2/pdf2-3/heyting1.pdf,06D20,True
+König's Lemma,"Bancerek, Grzegorz",,http://fm.mizar.org/1991-2/pdf2-3/trees_2.pdf,05C05,True
+Monotonic and Continuous Real Function,"Kotowicz, Jarosław",,http://fm.mizar.org/1991-2/pdf2-3/fcont_3.pdf,26A48,True
+Real Function Differentiability – Part II,"Kotowicz, Jarosław and Raczkowski, Konrad",,http://fm.mizar.org/1991-2/pdf2-3/fdiff_2.pdf,26A27,True
+Preliminaries to the Lambek calculus,"Zielonka, Wojciech",,http://fm.mizar.org/1991-2/pdf2-3/prelamb.pdf,03B47,True
+Opposite Categories and Contravariant Functors,"Byliński, Czesław",,http://fm.mizar.org/1991-2/pdf2-3/oppcat_1.pdf,18A25,True
+Mostowski's Fundamental Operations – Part II,"Bancerek, Grzegorz and Kondracki, Andrzej",,http://fm.mizar.org/1991-2/pdf2-3/zf_fund2.pdf,03E45,True
+Fundamental Types of Metric Affine Spaces,"Oryszczyszyn, Henryk and Prażmowski, Krzysztof",,http://fm.mizar.org/1991-2/pdf2-3/euclmetr.pdf,51N10,True
+Filters – Part II. Quotient Lattices Modulo Filters and Direct Product of Two Lattices,"Bancerek, Grzegorz",,http://fm.mizar.org/1991-2/pdf2-3/filter_1.pdf,,False
+Shear Theorems and their role in Affine Geometry,"Świerzyńska, Jolanta and Świerzyński, Bogdan",,http://fm.mizar.org/1991-2/pdf2-3/conmetr1.pdf,51N10,True
+Series,"Raczkowski, Konrad and Nędzusiak, Andrzej",,http://fm.mizar.org/1991-2/pdf2-4/series_1.pdf,40A05,True
+The Lattice of Natural Numbers and The Sublattice of it. The Set of Prime Numbers,"Chmur, Marek",,http://fm.mizar.org/1991-2/pdf2-4/nat_lat.pdf,11A41,True
+Commutator and Center of a Group,"Trybulec, Wojciech A.",,http://fm.mizar.org/1991-2/pdf2-4/group_5.pdf,,False
+Natural Transformations. Discrete Categories,"Trybulec, Andrzej",,http://fm.mizar.org/1991-2/pdf2-4/nattra_1.pdf,18A25,True
+Matrices. Abelian Group of Matrices,"Jankowska, Katarzyna",,http://fm.mizar.org/1991-2/pdf2-4/matrix_1.pdf,15A30,True
+Paracompact and Metrizable Spaces,"Borys, Leszek",,http://fm.mizar.org/1991-2/pdf2-4/pcomps_1.pdf,54D20,True
+Atlas of Midpoint Algebra,"Muzalewski, Michał",,http://fm.mizar.org/1991-2/pdf2-4/midsp_2.pdf,15A03,True
+Several Properties of the σ-additive Measure,"Białas, Józef",,http://fm.mizar.org/1991-2/pdf2-4/measure2.pdf,,False
+Metrics in the Cartesian Product – Part II,"Kanas, Stanisława and Lecko, Adam",,http://fm.mizar.org/1991-2/pdf2-4/metric_4.pdf,54E35,True
+Fix Point Theorem for Compact Spaces,"de la Cruz, Alicia",,http://fm.mizar.org/1991-2/pdf2-4/ali2.pdf,54E45,True
+Quadratic Inequalities,"Popiołek, Jan",,http://fm.mizar.org/1991-2/pdf2-4/quin_1.pdf,26D05,True
+Introduction to Banach and Hilbert Spaces – Part I,"Popiołek, Jan",,http://fm.mizar.org/1991-2/pdf2-4/bhsp_1.pdf,46C05,True
+Introduction to Banach and Hilbert Spaces – Part II,"Popiołek, Jan",,http://fm.mizar.org/1991-2/pdf2-4/bhsp_2.pdf,46C05,True
+Introduction to Banach and Hilbert Spaces – Part III,"Popiołek, Jan",,http://fm.mizar.org/1991-2/pdf2-4/bhsp_3.pdf,46C05,True
+Category Ens,"Byliński, Czesław",,http://fm.mizar.org/1991-2/pdf2-4/ens_1.pdf,,False
+A Borsuk Theorem on Homotopy Types,"Trybulec, Andrzej",,http://fm.mizar.org/1991-2/pdf2-4/borsuk_1.pdf,55P99,True
+Cartesian Product of Functions,"Bancerek, Grzegorz",,http://fm.mizar.org/1991-2/pdf2-4/funct_6.pdf,,False
+Introduction to Modal Propositional Logic,"de la Cruz, Alicia",,http://fm.mizar.org/1991-2/pdf2-4/modal_1.pdf,03B45,True
+Totally Bounded Metric Spaces,"de la Cruz, Alicia",,http://fm.mizar.org/1991-2/pdf2-4/tbsp_1.pdf,54E45,True
+Categories of Groups,"Muzalewski, Michał",,http://fm.mizar.org/1991-2/pdf2-4/grcat_1.pdf,20J15,True
+Homomorphisms and Isomorphisms of Groups. Quotient Group,"Trybulec, Wojciech A. and Trybulec, Michał J.",,http://fm.mizar.org/1991-2/pdf2-4/group_6.pdf,20K30,True
+Rings and Modules – Part II,"Muzalewski, Michał",,http://fm.mizar.org/1991-2/pdf2-4/mod_2.pdf,16D10,True
+Free Modules,"Muzalewski, Michał",,http://fm.mizar.org/1991-2/pdf2-4/mod_3.pdf,16D40,True
+Oriented Metric-Affine Plane – Part I,"Zajkowski, Jarosław",,http://fm.mizar.org/1991-2/pdf2-4/analort.pdf,,False
+The Euclidean Space,"Darmochwał, Agata",,http://fm.mizar.org/1991-2/pdf2-4/euclid.pdf,51M04,True
+Metric Spaces as Topological Spaces – Fundamental Concepts,"Darmochwał, Agata and Nakamura, Yatsuka",,http://fm.mizar.org/1991-2/pdf2-4/topmetr.pdf,,False
+Heine–Borel's Covering Theorem,"Darmochwał, Agata and Nakamura, Yatsuka",,http://fm.mizar.org/1991-2/pdf2-4/heine.pdf,,False
+Some Facts about Union of Two Functions and Continuity of Union of Functions,"Nakamura, Yatsuka and Darmochwał, Agata",,http://fm.mizar.org/1991-2/pdf2-4/topmetr2.pdf,,False
+"The Topological Space ^2_. Arcs, Line Segments and Special Polygonal Arcs","Darmochwał, Agata and Nakamura, Yatsuka",,http://fm.mizar.org/1991-2/pdf2-5/topreal1.pdf,54C30,True
+Cyclic Groups and Some of Their Properties – Part I,"Surowik, Dariusz",,http://fm.mizar.org/1991-2/pdf2-5/gr_cy_1.pdf,,False
+Isomorphisms of Categories,"Trybulec, Andrzej",,http://fm.mizar.org/1991-2/pdf2-5/isocat_1.pdf,18A23,True
+Similarity of Formulae,"Darmochwał, Agata and Trybulec, Andrzej",,http://fm.mizar.org/1991-2/pdf2-5/cqc_sim1.pdf,,False
+Category of Rings,"Muzalewski, Michał",,http://fm.mizar.org/1991-2/pdf2-5/ringcat1.pdf,13D02,True
+Category of Left Modules,"Muzalewski, Michał",,http://fm.mizar.org/1991-2/pdf2-5/modcat_1.pdf,13D07,True
+Real Function One-Side Differentiability,"Burakowska, Ewa and Madras, Beata",,http://fm.mizar.org/1991-2/pdf2-5/fdiff_3.pdf,26A27,True
+Sequences in Metric Spaces,"Kanas, Stanisława and Lecko, Adam",,http://fm.mizar.org/1991-2/pdf2-5/metric_6.pdf,,False
+The Topological Space ^2_. Simple Closed Curves,"Darmochwał, Agata and Nakamura, Yatsuka",,http://fm.mizar.org/1991-2/pdf2-5/topreal2.pdf,,False
+Separated and Weakly Separated Subspaces of Topological Spaces,"Karno, Zbigniew",,http://fm.mizar.org/1991-2/pdf2-5/tsep_1.pdf,,False
+The de l'Hospital Theorem,"Korolkiewicz, Małgorzata",,http://fm.mizar.org/1991-2/pdf2-5/l_hospit.pdf,26A27,True
+Comma Category,"Bancerek, Grzegorz and Darmochwał, Agata",,http://fm.mizar.org/1991-2/pdf2-5/commacat.pdf,18A25,True
+Context-Free Grammar – Part I,"Carlson, Patricia L. and Bancerek, Grzegorz",,http://fm.mizar.org/1991-2/pdf2-5/lang1.pdf,03D05,True
+Completeness of the σ-Additive Measure. Measure Theory,"Białas, Józef",,http://fm.mizar.org/1991-2/pdf2-5/measure3.pdf,28B15,True
+Series in Banach and Hilbert Spaces,"Kraszewska, Elżbieta and Popiołek, Jan",,http://fm.mizar.org/1991-2/pdf2-5/bhsp_4.pdf,46C05,True
+Products and Coproducts in Categories,"Byliński, Czesław",,http://fm.mizar.org/1991-2/pdf2-5/cat_3.pdf,18A05,True
+Transpose Matrices and Groups of Permutations,"Jankowska, Katarzyna",,http://fm.mizar.org/1991-2/pdf2-5/matrix_2.pdf,20B05,True
+Complete Lattices,"Bancerek, Grzegorz",,http://fm.mizar.org/1991-2/pdf2-5/lattice3.pdf,06B23,True
+Continuity of Mappings over the Union  of Subspaces,"Karno, Zbigniew",,http://fm.mizar.org/1992-3/pdf3-1/tmap_1.pdf,54C05,True
+Functional Sequence from a Domain to a Domain,"Perkowska, Beata",,http://fm.mizar.org/1992-3/pdf3-1/seqfunc.pdf,,False
+Reper Algebras,"Muzalewski, Michał",,http://fm.mizar.org/1992-3/pdf3-1/midsp_3.pdf,,False
+Isomorphisms of Cyclic Groups. Some Properties of Cyclic Groups,"Surowik, Dariusz",,http://fm.mizar.org/1992-3/pdf3-1/gr_cy_2.pdf,,False
+Some Isomorphisms Between Functor Categories,"Trybulec, Andrzej",,http://fm.mizar.org/1992-3/pdf3-1/isocat_2.pdf,18A25,True
+The Lattice of Domains of a Topological Space,"Watanabe, Toshihiko",,http://fm.mizar.org/1992-3/pdf3-1/tdlat_1.pdf,54A10,True
+Submodules,"Muzalewski, Michał",,http://fm.mizar.org/1992-3/pdf3-1/lmod_6.pdf,,False
+Oriented Metric-Affine Plane – Part II,"Zajkowski, Jarosław",,http://fm.mizar.org/1992-3/pdf3-1/dirort.pdf,,False
+"Opposite Rings, Modules and their Morphisms","Muzalewski, Michał",,http://fm.mizar.org/1992-3/pdf3-1/mod_4.pdf,,False
+Properties of Caratheodor's Measure,"Białas, Józef",,http://fm.mizar.org/1992-3/pdf3-1/measure4.pdf,28A12,True
+Completeness of the Lattices of Domains  of a Topological Space,"Karno, Zbigniew and Watanabe, Toshihiko",,http://fm.mizar.org/1992-3/pdf3-1/tdlat_2.pdf,54A10,True
+On Paracompactness of Metrizable Spaces,"Borys, Leszek",,http://fm.mizar.org/1992-3/pdf3-1/pcomps_2.pdf,54D20,True
+The Brouwer Fixed Point Theorem for Intervals,"Watanabe, Toshihiko",,http://fm.mizar.org/1992-3/pdf3-1/treal_1.pdf,54H25,True
+On Powers of Cardinals,"Bancerek, Grzegorz",,http://fm.mizar.org/1992-3/pdf3-1/card_5.pdf,03E10,True
+Basic Properties of Connecting Points with Line Segments in ^2_,"Nakamura, Yatsuka and Kotowicz, Jarosław",,http://fm.mizar.org/1992-3/pdf3-1/topreal3.pdf,51M04,True
+Connectedness Conditions Using Polygonal Arcs,"Nakamura, Yatsuka and Kotowicz, Jarosław",,http://fm.mizar.org/1992-3/pdf3-1/topreal4.pdf,,False
+Introduction to Go-Board – Part I,"Kotowicz, Jarosław and Nakamura, Yatsuka",,http://fm.mizar.org/1992-3/pdf3-1/goboard1.pdf,91A05,True
+Introduction to Go-Board – Part II,"Kotowicz, Jarosław and Nakamura, Yatsuka",,http://fm.mizar.org/1992-3/pdf3-1/goboard2.pdf,91A05,True
+Properties of Go-Board – Part III,"Kotowicz, Jarosław and Nakamura, Yatsuka",,http://fm.mizar.org/1992-3/pdf3-1/goboard3.pdf,91A05,True
+Go-Board Theorem,"Kotowicz, Jarosław and Nakamura, Yatsuka",,http://fm.mizar.org/1992-3/pdf3-1/goboard4.pdf,91A05,True
+Some Properties of Binary Relations,"Korczyński, Waldemar",,http://fm.mizar.org/1992-3/pdf3-1/sysrel.pdf,08A02,True
+The Jordan's Property for Certain Subsets of the Plane,"Nakamura, Yatsuka and Kotowicz, Jarosław",,http://fm.mizar.org/1992-3/pdf3-2/jordan1.pdf,,False
+The Lattice of Domains of an Extremally Disconnected Space,"Karno, Zbigniew",,http://fm.mizar.org/1992-3/pdf3-2/tdlat_3.pdf,54A10,True
+A Mathematical Model of CPU,"Nakamura, Yatsuka and Trybulec, Andrzej",,http://fm.mizar.org/1992-3/pdf3-2/ami_1.pdf,68N25,True
+Cartesian Categories,"Byliński, Czesław",,http://fm.mizar.org/1992-3/pdf3-2/cat_4.pdf,18D15,True
+Algebra of Vector Functions,"Yamazaki, Hiroshi and Shidama, Yasunari",,http://fm.mizar.org/1992-3/pdf3-2/vfunct_1.pdf,26B12,True
+On a Duality between Weakly Separated  Subspaces of Topological Spaces,"Karno, Zbigniew",,http://fm.mizar.org/1992-3/pdf3-2/tsep_2.pdf,,False
+Basic Petri Net Concepts,"Kawamoto, Pauline N. and Fuwa, Yasushi and Nakamura, Yatsuka",,http://fm.mizar.org/1992-3/pdf3-2/petri.pdf,93C65,True
+Finite Topological Spaces,"Imura, Hiroshi and Eguchi, Masayoshi",,http://fm.mizar.org/1992-3/pdf3-2/fin_topo.pdf,,False
+Sets and Functions of Trees and Joining Operations of Trees,"Bancerek, Grzegorz",,http://fm.mizar.org/1992-3/pdf3-2/trees_3.pdf,05C05,True
+The Sum and Product of Finite Sequences of Elements of a Field,"Zawadzka, Katarzyna",,http://fm.mizar.org/1992-3/pdf3-2/fvsum_1.pdf,,False
+Monoids,"Bancerek, Grzegorz",,http://fm.mizar.org/1992-3/pdf3-2/monoid_0.pdf,18M05,True
+Monoid of Multisets and Subsets,"Bancerek, Grzegorz",,http://fm.mizar.org/1992-3/pdf3-2/monoid_1.pdf,18M05,True
+Product of Families of Groups and Vector Spaces,"Lango, Anna and Bancerek, Grzegorz",,http://fm.mizar.org/1992-3/pdf3-2/prvect_1.pdf,,False
+On a Mathematical Model of Programs,"Nakamura, Yatsuka and Trybulec, Andrzej",,http://fm.mizar.org/1992-3/pdf3-2/ami_2.pdf,68N15,True
+Basic Notation of Universal Algebra,"Kotowicz, Jarosław and Madras, Beata and Korolkiewicz, Małgorzata",,http://fm.mizar.org/1992-3/pdf3-2/unialg_1.pdf,16S30,True
+Coherent Space,"Kotowicz, Jarosław and Raczkowski, Konrad",,http://fm.mizar.org/1992-3/pdf3-2/coh_sp.pdf,,False
+Properties of the Intervals of Real Numbers,"Białas, Józef",,http://fm.mizar.org/1992-3/pdf3-2/measure5.pdf,65G30,True
+"Subspaces of Real Linear Space generated by One, Two, or Three        Vectors and Their Cosets","Trybulec, Wojciech A.",,http://fm.mizar.org/1992-3/pdf3-2/rlvect_4.pdf,15A03,True
+Functions and Finite Sequences of Real Numbers,"Kotowicz, Jarosław",,http://fm.mizar.org/1992-3/pdf3-2/rfinseq.pdf,,False
+Properties of Partial Functions from a Domain to the Set of Real Numbers,"Kotowicz, Jarosław and Sakai, Yuji",,http://fm.mizar.org/1992-3/pdf3-2/rfunct_3.pdf,26A36,True
+"Domains of Submodules, Join and Meet of Finite Sequences of Submodules and Quotient Modules","Muzalewski, Michał",,http://fm.mizar.org/1992-3/pdf3-2/lmod_7.pdf,,False
+Remarks on Special Subsets of Topological Spaces,"Karno, Zbigniew",,http://fm.mizar.org/1992-3/pdf3-2/tops_3.pdf,54A05,True
+On Discrete and Almost Discrete Topological Spaces,"Karno, Zbigniew",,http://fm.mizar.org/1992-3/pdf3-2/tex_1.pdf,,False
+The Product and the Determinant of Matrices with Entries in a Field,"Zawadzka, Katarzyna",,http://fm.mizar.org/1993-4/pdf4-1/matrix_3.pdf,15A15,True
+Introduction to Theory of Rearrangement,"Sakai, Yuji and Kotowicz, Jarosław",,http://fm.mizar.org/1993-4/pdf4-1/rearran1.pdf,,False
+Many sorted Sets,"Trybulec, Andrzej",,http://fm.mizar.org/1993-4/pdf4-1/pboole.pdf,,False
+Subalgebras of the Universal Algebra. Lattices of Subalgebras,"Burakowska, Ewa",,http://fm.mizar.org/1993-4/pdf4-1/unialg_2.pdf,,False
+Hahn-Banach Theorem,"Nowak, Bogdan and Trybulec, Andrzej",,http://fm.mizar.org/1993-4/pdf4-1/hahnban.pdf,,False
+"Homomorphisms of Lattices, Finite Join and Finite Meet","Kamieńska, Jolanta and Walijewski, Jarosław Stanisław",,http://fm.mizar.org/1993-4/pdf4-1/lattice4.pdf,,False
+Representation Theorem for Heyting Lattices,"Kamieńska, Jolanta",,http://fm.mizar.org/1993-4/pdf4-1/openlatt.pdf,,False
+Representation Theorem for Boolean Algebras,"Walijewski, Jarosław Stanisław",,http://fm.mizar.org/1993-4/pdf4-1/lopclset.pdf,,False
+Some Remarks on the Simple Concrete Model of Computer,"Trybulec, Andrzej and Nakamura, Yatsuka",,http://fm.mizar.org/1993-4/pdf4-1/ami_3.pdf,,False
+Euclid's Algorithm,"Trybulec, Andrzej and Nakamura, Yatsuka",,http://fm.mizar.org/1993-4/pdf4-1/ami_4.pdf,,False
+Development of Terminology for,"Bancerek, Grzegorz and Rudnicki, Piotr",,http://fm.mizar.org/1993-4/pdf4-1/scm_1.pdf,,False
+Two Programs for . Part I – Preliminaries,"Bancerek, Grzegorz and Rudnicki, Piotr",,http://fm.mizar.org/1993-4/pdf4-1/pre_ff.pdf,,False
+Two Programs for . Part II – Programs,"Bancerek, Grzegorz and Rudnicki, Piotr",,http://fm.mizar.org/1993-4/pdf4-1/fib_fusc.pdf,,False
+Joining of Decorated Trees,"Bancerek, Grzegorz",,http://fm.mizar.org/1993-4/pdf4-1/trees_4.pdf,,False
+Binary Arithmetics,"Nishiyama, Takaya and Mizuhara, Yasuho",,http://fm.mizar.org/1993-4/pdf4-1/binarith.pdf,,False
+Basic Concepts for Petri Nets with Boolean Markings,"Kawamoto, Pauline N. and Fuwa, Yasushi and Nakamura, Yatsuka",,http://fm.mizar.org/1993-4/pdf4-1/boolmark.pdf,93C65,False
+On Defining Functions on Trees,"Bancerek, Grzegorz and Rudnicki, Piotr",,http://fm.mizar.org/1993-4/pdf4-1/dtconstr.pdf,,False
+Product of Family of Universal Algebras,"Madras, Beata",,http://fm.mizar.org/1993-4/pdf4-1/pralg_1.pdf,,False
+Homomorphisms of Algebras. Quotient Universal Algebra,"Korolkiewicz, Małgorzata",,http://fm.mizar.org/1993-4/pdf4-1/alg_1.pdf,,False
+Free Universal Algebra Construction,"Perkowska, Beata",,http://fm.mizar.org/1993-4/pdf4-1/freealg.pdf,,False
+Complex Sequences,"Banachowicz, Agnieszka and Winnicka, Anna",,http://fm.mizar.org/1993-4/pdf4-1/comseq_1.pdf,,False
+Maximal Discrete Subspaces of Almost Discrete Topological Spaces,"Karno, Zbigniew",,http://fm.mizar.org/1993-4/pdf4-1/tex_2.pdf,,False
+On Nowhere and Everywhere Dense Subspaces of Topological Spaces,"Karno, Zbigniew",,http://fm.mizar.org/1993-4/pdf4-1/tex_3.pdf,,False
+On the Decomposition of the States of SCM,"Tanaka, Yasushi",,http://fm.mizar.org/1996-5/pdf5-1/ami_5.pdf,,False
+On Defining Functions on Binary Trees,"Bancerek, Grzegorz and Rudnicki, Piotr",,http://fm.mizar.org/1996-5/pdf5-1/bintree1.pdf,,False
+A Compiler of Arithmetic Expressions for SCM,"Bancerek, Grzegorz and Rudnicki, Piotr",,http://fm.mizar.org/1996-5/pdf5-1/scm_comp.pdf,,False
+Some Properties of the Intervals,"Białas, Józef",,http://fm.mizar.org/1996-5/pdf5-1/measure6.pdf,,False
+"Binary Arithmetics, Addition and Subtraction of Integers","Mizuhara, Yasuho and Nishiyama, Takaya",,http://fm.mizar.org/1996-5/pdf5-1/binari_2.pdf,,False
+Boolean Properties of Lattices,"Marasik, Agnieszka Julia",,http://fm.mizar.org/1996-5/pdf5-1/boolealg.pdf,,False
+Many Sorted Algebras,"Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-1/msualg_1.pdf,,False
+On the Group of Inner Automorphisms,"Korniłowicz, Artur",,http://fm.mizar.org/1996-5/pdf5-1/autgroup.pdf,,False
+Subalgebras of Many Sorted Algebra. Lattice of Subalgebras,"Burakowska, Ewa",,http://fm.mizar.org/1996-5/pdf5-1/msualg_2.pdf,,False
+Products of Many Sorted Algebras,"Madras, Beata",,http://fm.mizar.org/1996-5/pdf5-1/pralg_2.pdf,,False
+Homomorphisms of Many Sorted Algebras,"Korolkiewicz, Małgorzata",,http://fm.mizar.org/1996-5/pdf5-1/msualg_3.pdf,,False
+Free Many Sorted Universal Algebra,"Perkowska, Beata",,http://fm.mizar.org/1996-5/pdf5-1/msafree.pdf,,False
+Topological Spaces,"Żynel, Mariusz and Guzowski, Adam",,http://fm.mizar.org/1996-5/pdf5-1/t_0topsp.pdf,,False
+Many Sorted Quotient Algebra,"Korolkiewicz, Małgorzata",,http://fm.mizar.org/1996-5/pdf5-1/msualg_4.pdf,,False
+Quantales,"Bancerek, Grzegorz",,http://fm.mizar.org/1996-5/pdf5-1/quantal1.pdf,,False
+Sequences in ^N_,"Sakowicz, Agnieszka and Gryko, Jarosław and Grabowski, Adam",,http://fm.mizar.org/1996-5/pdf5-1/toprns_1.pdf,,False
+Extremal Properties of Vertices on Special Polygons. Part I,"Nakamura, Yatsuka and Byliński, Czesław",,http://fm.mizar.org/1996-5/pdf5-1/sppol_1.pdf,,False
+Relocatability,"Tanaka, Yasushi",,http://fm.mizar.org/1996-5/pdf5-1/reloc.pdf,,False
+Maximal Anti-Discrete Subspaces of Topological Spaces,"Karno, Zbigniew",,http://fm.mizar.org/1996-5/pdf5-1/tex_4.pdf,,False
+On Kolmogorov Topological Spaces,"Karno, Zbigniew",,http://fm.mizar.org/1996-5/pdf5-1/tsp_1.pdf,,False
+Maximal Kolmogorov Subspaces of a Topological Space as Stone Retracts of the Ambient Space,"Karno, Zbigniew",,http://fm.mizar.org/1996-5/pdf5-1/tsp_2.pdf,,False
+Projective Planes,"Muzalewski, Michał",,http://fm.mizar.org/1996-5/pdf5-1/projpl_1.pdf,,False
+The Formalization of Simple Graphs,"Toda, Yozo",,http://fm.mizar.org/1996-5/pdf5-1/sgraph1.pdf,,False
+Solvable Groups,"Zawadzka, Katarzyna",,http://fm.mizar.org/1996-5/pdf5-1/grsolv_1.pdf,,False
+Ideals,"Bancerek, Grzegorz",,http://fm.mizar.org/1996-5/pdf5-2/filter_2.pdf,,False
+Categorial Categories and Slice Categories,"Bancerek, Grzegorz",,http://fm.mizar.org/1996-5/pdf5-2/cat_5.pdf,,False
+"Preliminaries to Circuits, I","Nakamura, Yatsuka and Rudnicki, Piotr and Trybulec, Andrzej and Kawamoto, Pauline N.",,http://fm.mizar.org/1996-5/pdf5-2/pre_circ.pdf,,False
+Minimization of finite state machines,"Kaloper , Miroslava and Rudnicki, Piotr",,http://fm.mizar.org/1996-5/pdf5-2/fsm_1.pdf,,False
+Subtrees,"Bancerek, Grzegorz",,http://fm.mizar.org/1996-5/pdf5-2/trees_9.pdf,,False
+Terms Over Many Sorted Universal Algebra,"Bancerek, Grzegorz",,http://fm.mizar.org/1996-5/pdf5-2/msaterm.pdf,,False
+On the Decomposition of the Continuity,"Przemski, Marian",,http://fm.mizar.org/1996-5/pdf5-2/decomp_1.pdf,,False
+A Scheme for Extensions of Homomorphisms of Many sorted Algebras,"Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-2/msafree1.pdf,,False
+The Correspondence Between Homomorphisms of Universal Algebra   & Many Sorted Algebra,"Grabowski, Adam",,http://fm.mizar.org/1996-5/pdf5-2/msuhom_1.pdf,,False
+"Preliminaries to Circuits, II","Nakamura, Yatsuka and Rudnicki, Piotr and Trybulec, Andrzej and Kawamoto, Pauline N.",,http://fm.mizar.org/1996-5/pdf5-2/msafree2.pdf,,False
+On the Group of Automorphisms of Universal Algebra &         Many Sorted Algebra,"Korniłowicz, Artur",,http://fm.mizar.org/1996-5/pdf5-2/autalg_1.pdf,,False
+"Introduction to Circuits, I","Nakamura, Yatsuka and Rudnicki, Piotr and Trybulec, Andrzej and Kawamoto, Pauline N.",,http://fm.mizar.org/1996-5/pdf5-2/circuit1.pdf,,False
+The Cantor Set,"Shibakov, Alexander Yu. and Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-2/cantor_1.pdf,,False
+Logical Equivalence of Formulae,"Okhotnikov, Oleg",,http://fm.mizar.org/1996-5/pdf5-2/cqc_the3.pdf,,False
+Some Properties of Restrictions of Finite Sequences,"Byliński, Czesław",,http://fm.mizar.org/1996-5/pdf5-2/finseq_5.pdf,,False
+Special Polygons,"Byliński, Czesław and Nakamura, Yatsuka",,http://fm.mizar.org/1996-5/pdf5-2/sppol_2.pdf,,False
+The One-Dimensional Lebesgue Measure,"Białas, Józef",,http://fm.mizar.org/1996-5/pdf5-2/measure7.pdf,,False
+Categories without Uniqueness of cod and dom,"Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-2/altcat_1.pdf,,False
+Extensions of Mappings on Generator Set,"Korniłowicz, Artur",,http://fm.mizar.org/1996-5/pdf5-2/extens_1.pdf,,False
+"Introduction to Circuits, II","Nakamura, Yatsuka and Rudnicki, Piotr and Trybulec, Andrzej and Kawamoto, Pauline N.",,http://fm.mizar.org/1996-5/pdf5-2/circuit2.pdf,,False
+Definitions and Basic Properties of Boolean & Union of Many Sorted Sets,"Korniłowicz, Artur",,http://fm.mizar.org/1996-5/pdf5-2/mboolean.pdf,,False
+Combining of Circuits,"Nakamura, Yatsuka and Bancerek, Grzegorz",,http://fm.mizar.org/1996-5/pdf5-2/circcomb.pdf,,False
+Vertex Sequences Induced by Chains,"Nakamura, Yatsuka and Rudnicki, Piotr",,http://fm.mizar.org/1996-5/pdf5-3/graph_2.pdf,,False
+On the Lattice of Subspaces of a Vector Space,"Iwaniuk, Andrzej",,http://fm.mizar.org/1996-5/pdf5-3/vectsp_8.pdf,,False
+On the Lattice of Subgroups of a Group,"Ganczarski, Janusz",,http://fm.mizar.org/1996-5/pdf5-3/latsubgr.pdf,,False
+On the Lattice of Subalgebras of a Universal Algebra,"Paszek, Mirosław Jan",,http://fm.mizar.org/1996-5/pdf5-3/unialg_3.pdf,,False
+On the Decomposition of Finite Sequences,"Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-3/finseq_6.pdf,,False
+Decomposing a Go-Board into Cells,"Nakamura, Yatsuka and Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-3/goboard5.pdf,,False
+Indexed Category,"Bancerek, Grzegorz",,http://fm.mizar.org/1996-5/pdf5-3/index_1.pdf,,False
+Associated Matrix of Linear Map,"Milewski, Robert",,http://fm.mizar.org/1996-5/pdf5-3/matrlin.pdf,,False
+On the Geometry of a Go-Board,"Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-3/goboard6.pdf,,False
+The Theorem of Weierstrass,"Białas, Józef and Nakamura, Yatsuka",,http://fm.mizar.org/1996-5/pdf5-3/weierstr.pdf,,False
+Dyadic Numbers and T_4 Topological Spaces,"Białas, Józef and Nakamura, Yatsuka",,http://fm.mizar.org/1996-5/pdf5-3/urysohn1.pdf,,False
+Full Adder Circuit.  Part I,"Bancerek, Grzegorz and Nakamura, Yatsuka",,http://fm.mizar.org/1996-5/pdf5-3/facirc_1.pdf,,False
+"Continuous, Stable, and Linear Maps of Coherence Spaces","Bancerek, Grzegorz",,http://fm.mizar.org/1996-5/pdf5-3/cohsp_1.pdf,,False
+Some Basic Properties of Many Sorted Sets,"Korniłowicz, Artur",,http://fm.mizar.org/1996-5/pdf5-3/pzfmisc1.pdf,,False
+Replacement of Subtrees in a Tree,"Okhotnikov, Oleg",,http://fm.mizar.org/1996-5/pdf5-3/trees_a.pdf,,False
+Minimal Signature for Partial Algebra,"Bancerek, Grzegorz",,http://fm.mizar.org/1996-5/pdf5-3/pua2mss1.pdf,,False
+The Subformula Tree of a Formula of the First Order Language,"Okhotnikov, Oleg",,http://fm.mizar.org/1996-5/pdf5-3/qc_lang4.pdf,,False
+The Steinitz Theorem and the Dimension of a Vector Space,"Żynel, Mariusz",,http://fm.mizar.org/1996-5/pdf5-3/vectsp_9.pdf,,False
+On the Go-Board of a Standard Special Circular Sequence,"Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-3/goboard7.pdf,,False
+On the Monoid of Endomorphisms of Universal Algebra and Many Sorted Algebra,"Gryko, Jarosław",,http://fm.mizar.org/1996-5/pdf5-3/endalg.pdf,,False
+More on Segments on a Go-Board,"Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-3/goboard8.pdf,,False
+Certain Facts about Families of Subsets of Many Sorted Sets,"Korniłowicz, Artur",,http://fm.mizar.org/1996-5/pdf5-3/mssubfam.pdf,,False
+On the Concept of the Triangulation,"Madras, Beata",,http://fm.mizar.org/1996-5/pdf5-3/triang_1.pdf,,False
+Left and Right Component of the Complement of a Special Closed Curve,"Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-4/goboard9.pdf,,False
+Reduction Relations,"Bancerek, Grzegorz",,http://fm.mizar.org/1996-5/pdf5-4/rewrite1.pdf,,False
+Lattice of Congruences in Many Sorted Algebra,"Milewski, Robert",,http://fm.mizar.org/1996-5/pdf5-4/msualg_5.pdf,,False
+Miscellaneous Facts about Functions,"Bancerek, Grzegorz and Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-4/funct_7.pdf,,False
+Examples of Category Structures,"Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-4/altcat_2.pdf,,False
+On the Category of Posets,"Grabowski, Adam",,http://fm.mizar.org/1996-5/pdf5-4/orders_3.pdf,,False
+An Extension of,"Trybulec, Andrzej and Nakamura, Yatsuka and Rudnicki, Piotr",,http://fm.mizar.org/1996-5/pdf5-4/scmfsa_1.pdf,,False
+Components and Unions of Components,"Nakamura, Yatsuka and Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-4/connsp_3.pdf,,False
+The  Computer,"Trybulec, Andrzej and Nakamura, Yatsuka and Rudnicki, Piotr",,http://fm.mizar.org/1996-5/pdf5-4/scmfsa_2.pdf,,False
+On the Many Sorted Closure Operator and the Many Sorted Closure System,"Korniłowicz, Artur",,http://fm.mizar.org/1996-5/pdf5-4/closure1.pdf,,False
+Computation in,"Trybulec, Andrzej and Nakamura, Yatsuka",,http://fm.mizar.org/1996-5/pdf5-4/scmfsa_3.pdf,,False
+On the Closure Operator and the Closure System of Many Sorted Sets,"Korniłowicz, Artur",,http://fm.mizar.org/1996-5/pdf5-4/closure2.pdf,,False
+"Translations, Endomorphisms, and Stable Equational Theories","Bancerek, Grzegorz",,http://fm.mizar.org/1996-5/pdf5-4/msualg_6.pdf,,False
+More on the Lattice of Many Sorted Equivalence Relations,"Milewski, Robert",,http://fm.mizar.org/1996-5/pdf5-4/msualg_7.pdf,,False
+Modifying Addresses of Instructions of,"Trybulec, Andrzej and Nakamura, Yatsuka",,http://fm.mizar.org/1996-5/pdf5-4/scmfsa_4.pdf,,False
+The Correspondence Between Monotonic Many Sorted Signatures and Well-Founded Graphs. Part I,"Byliński, Czesław and Rudnicki, Piotr",,http://fm.mizar.org/1996-5/pdf5-4/msscyc_1.pdf,,False
+Relocability for,"Trybulec, Andrzej and Nakamura, Yatsuka",,http://fm.mizar.org/1996-5/pdf5-4/scmfsa_5.pdf,,False
+More on the Lattice of Congruences in Many Sorted Algebra,"Milewski, Robert",,http://fm.mizar.org/1996-5/pdf5-4/msualg_8.pdf,,False
+The Correspondence Between Monotonic Many Sorted Signatures and Well-Founded Graphs. Part II,"Byliński, Czesław and Rudnicki, Piotr",,http://fm.mizar.org/1996-5/pdf5-4/msscyc_2.pdf,,False
+Functors for Alternative Categories,"Trybulec, Andrzej",,http://fm.mizar.org/1996-5/pdf5-4/functor0.pdf,,False
+Basic Properties of Functor Structures,"Zinn, Claus and Jaksch, Wolfgang",,http://fm.mizar.org/1996-5/pdf5-4/functor1.pdf,,False
+Some Multi Instructions Defined by Sequence of Instructions of,"Asamoto, Noriko",,http://fm.mizar.org/1996-5/pdf5-4/scmfsa_7.pdf,,False
+More on Products of Many Sorted Algebras,"Giero, Mariusz",,http://fm.mizar.org/1996-5/pdf5-4/pralg_3.pdf,,False
+Adjacency Concept for Pairs of Natural Numbers,"Nakamura, Yatsuka and Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-1/gobrd10.pdf,,False
+Inverse Limits of Many Sorted Algebras,"Grabowski, Adam",,http://fm.mizar.org/1997-6/pdf6-1/msalimit.pdf,,False
+On the Trivial Many Sorted Algebras and Many Sorted Congruences,"Korniłowicz, Artur",,http://fm.mizar.org/1997-6/pdf6-1/msualg_9.pdf,,False
+Examples of Category Structures,"Grabowski, Adam",,http://fm.mizar.org/1997-6/pdf6-1/msinst_1.pdf,,False
+On the Compositions of Macro Instructions. Part I,"Trybulec, Andrzej and Nakamura, Yatsuka and Asamoto, Noriko",,http://fm.mizar.org/1997-6/pdf6-1/scmfsa6a.pdf,,False
+Memory Handling for,"Rudnicki, Piotr and Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-1/sf_mastr.pdf,,False
+Some Topological Properties of Cells in ^2_,"Nakamura, Yatsuka and Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-1/gobrd11.pdf,,False
+On the Composition of Macro Instructions. Part II,"Asamoto, Noriko and Nakamura, Yatsuka and Rudnicki, Piotr and Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-1/scmfsa6b.pdf,,False
+The First Part of Jordan's Theorem for Special Polygons,"Nakamura, Yatsuka and Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-1/gobrd12.pdf,,False
+On the Composition of Macro Instructions. Part III,"Asamoto, Noriko and Nakamura, Yatsuka and Rudnicki, Piotr and Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-1/scmfsa6c.pdf,,False
+Constant Assignment Macro Instructions of . Part II,"Asamoto, Noriko",,http://fm.mizar.org/1997-6/pdf6-1/scmfsa7b.pdf,,False
+Conditional Branch Macro Instructions of . Part I,"Asamoto, Noriko",,http://fm.mizar.org/1997-6/pdf6-1/scmfsa8a.pdf,,False
+Conditional Branch Macro Instructions of . Part II,"Asamoto, Noriko",,http://fm.mizar.org/1997-6/pdf6-1/scmfsa8b.pdf,,False
+Bounds in Posets and Relational Substructures,"Bancerek, Grzegorz",,http://fm.mizar.org/1997-6/pdf6-1/yellow_0.pdf,,False
+"Directed Sets, Nets, Ideals, Filters, and Maps","Bancerek, Grzegorz",,http://fm.mizar.org/1997-6/pdf6-1/waybel_0.pdf,,False
+Fixpoints in Complete Lattices,"Rudnicki, Piotr and Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-1/knaster.pdf,,False
+"Boolean Posets, Posets under Inclusion and Products of Relational Structures","Grabowski, Adam and Milewski, Robert",,http://fm.mizar.org/1997-6/pdf6-1/yellow_1.pdf,,False
+"Properties of Relational Structures, Posets, Lattices and Maps","Żynel, Mariusz and Byliński, Czesław",,http://fm.mizar.org/1997-6/pdf6-1/yellow_2.pdf,,False
+Galois Connections,"Byliński, Czesław",,http://fm.mizar.org/1997-6/pdf6-1/waybel_1.pdf,,False
+Cartesian Products of Relations and Relational Structures,"Korniłowicz, Artur",,http://fm.mizar.org/1997-6/pdf6-1/yellow_3.pdf,,False
+Definitions and Properties of the Join and Meet of Subsets,"Korniłowicz, Artur",,http://fm.mizar.org/1997-6/pdf6-1/yellow_4.pdf,,False
+Meet–Continuous Lattices,"Korniłowicz, Artur",,http://fm.mizar.org/1997-6/pdf6-1/waybel_2.pdf,,False
+The “Way-Below” Relation,"Bancerek, Grzegorz",,http://fm.mizar.org/1997-6/pdf6-1/waybel_3.pdf,,False
+Auxiliary and Approximating Relations,"Grabowski, Adam",,http://fm.mizar.org/1997-6/pdf6-2/waybel_4.pdf,,False
+2's Complement Circuit,"Wasaki, Katsumi and Kawamoto, Pauline N.",,http://fm.mizar.org/1997-6/pdf6-2/twoscomp.pdf,,False
+The Equational Characterization of Continuous Lattices,"Żynel, Mariusz",,http://fm.mizar.org/1997-6/pdf6-2/waybel_5.pdf,,False
+Miscellaneous Facts about Relation Structure,"Marasik, Agnieszka Julia",,http://fm.mizar.org/1997-6/pdf6-2/yellow_5.pdf,,False
+Moore-Smith Convergence,"Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-2/yellow_6.pdf,,False
+Duality in Relation Structures,"Bancerek, Grzegorz",,http://fm.mizar.org/1997-6/pdf6-2/yellow_7.pdf,,False
+Irreducible and Prime Elements,"Madras, Beata",,http://fm.mizar.org/1997-6/pdf6-2/waybel_6.pdf,,False
+Prime Ideals and Filters,"Bancerek, Grzegorz",,http://fm.mizar.org/1997-6/pdf6-2/waybel_7.pdf,,False
+Algebraic Lattices,"Milewski, Robert",,http://fm.mizar.org/1997-6/pdf6-2/waybel_8.pdf,,False
+Reconstructions of Special Sequences,"Nakamura, Yatsuka and Matuszewski, Roman",,http://fm.mizar.org/1997-6/pdf6-2/jordan3.pdf,,False
+"Conjugate Sequences, Bounded Complex Sequences and    Convergent Complex Sequences","Naumowicz, Adam",,http://fm.mizar.org/1997-6/pdf6-2/comseq_2.pdf,,False
+On the Topological Properties of Meet-Continuous Lattices,"Korniłowicz, Artur",,http://fm.mizar.org/1997-6/pdf6-2/waybel_9.pdf,,False
+Institution of Many Sorted Algebras. Part I: Signature Reduct of an Algebra,"Bancerek, Grzegorz",,http://fm.mizar.org/1997-6/pdf6-2/instalg1.pdf,,False
+"Baire Spaces, Sober Spaces","Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-2/yellow_8.pdf,,False
+Closure Operators and Subalgebras,"Bancerek, Grzegorz",,http://fm.mizar.org/1997-6/pdf6-2/waybel10.pdf,,False
+Algebra of Morphisms,"Bancerek, Grzegorz",,http://fm.mizar.org/1997-6/pdf6-2/catalg_1.pdf,,False
+Scott Topology,"Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-2/waybel11.pdf,,False
+On the Baire Category Theorem,"Korniłowicz, Artur",,http://fm.mizar.org/1997-6/pdf6-2/waybel12.pdf,,False
+Basic Properties of Objects and Morphisms,"Madras, Beata",,http://fm.mizar.org/1997-6/pdf6-3/altcat_3.pdf,,False
+Abian's Fixed Point Theorem,"Rudnicki, Piotr and Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-3/abian.pdf,,False
+On Same Equivalents of Well-foundedness,"Rudnicki, Piotr and Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-3/wellfnd1.pdf,,False
+Algebraic and Arithmetic Lattices,"Milewski, Robert",,http://fm.mizar.org/1997-6/pdf6-3/waybel13.pdf,,False
+Subsequences of Standard Special Circular Sequences in ^2_,"Nakamura, Yatsuka and Matuszewski, Roman and Grabowski, Adam",,http://fm.mizar.org/1997-6/pdf6-3/jordan4.pdf,,False
+Lattice of Substitutions,"Grabowski, Adam",,http://fm.mizar.org/1997-6/pdf6-3/substlat.pdf,,False
+Equations in Many Sorted Algebras,"Korniłowicz, Artur",,http://fm.mizar.org/1997-6/pdf6-3/equation.pdf,,False
+Category of Functors Between Alternative Categories,"Nieszczerzewski, Robert",,http://fm.mizar.org/1997-6/pdf6-3/functor2.pdf,,False
+Yoneda Embedding,"Wojciechowski, Mirosław",,http://fm.mizar.org/1997-6/pdf6-3/yoneda_1.pdf,,False
+The Correctness of the Generic Algorithms of Brown and Henrici Concerning Addition and Multiplication in Fraction Fields,"Schwarzweller, Christoph",,http://fm.mizar.org/1997-6/pdf6-3/gcd_1.pdf,,False
+Birkhoff Theorem for Many Sorted Algebras,"Korniłowicz, Artur",,http://fm.mizar.org/1997-6/pdf6-3/birkhoff.pdf,,False
+Algebraic Operation on Subsets of Many Sorted Sets,"Marasik, Agnieszka Julia",,http://fm.mizar.org/1997-6/pdf6-3/closure3.pdf,,False
+Convergence and the Limit of Complex Sequences. Series,"Shidama, Yasunari and Korniłowicz, Artur",,http://fm.mizar.org/1997-6/pdf6-3/comseq_3.pdf,,False
+The Steinitz Theorem and the Dimension of a Real Linear Space,"Chen, Jing-Chao",,http://fm.mizar.org/1997-6/pdf6-3/rlvect_5.pdf,,False
+Euler Circuits and Paths,"Nakamura, Yatsuka and Rudnicki, Piotr",,http://fm.mizar.org/1997-6/pdf6-3/graph_3.pdf,,False
+Bounding Boxes for Compact Sets in ^2,"Byliński, Czesław and Rudnicki, Piotr",,http://fm.mizar.org/1997-6/pdf6-3/pscomp_1.pdf,,False
+The Scott Topology. Part II,"Byliński, Czesław and Rudnicki, Piotr",,http://fm.mizar.org/1997-6/pdf6-3/waybel14.pdf,,False
+Introduction to the Homotopy Theory,"Grabowski, Adam",,http://fm.mizar.org/1997-6/pdf6-4/borsuk_2.pdf,,False
+Some Properties of Real Maps,"Grabowski, Adam and Nakamura, Yatsuka",,http://fm.mizar.org/1997-6/pdf6-4/jordan5a.pdf,,False
+The Ordering of Points on a Curve. Part I,"Grabowski, Adam and Nakamura, Yatsuka",,http://fm.mizar.org/1997-6/pdf6-4/jordan5b.pdf,,False
+The Ordering of Points on a Curve. Part II,"Grabowski, Adam and Nakamura, Yatsuka",,http://fm.mizar.org/1997-6/pdf6-4/jordan5c.pdf,,False
+On the Categories Without Uniqueness of  cod and  dom. Some Properties of the Morphisms and the Functors,"Korniłowicz, Artur",,http://fm.mizar.org/1997-6/pdf6-4/altcat_4.pdf,,False
+The loop and Times Macroinstruction for,"Asamoto, Noriko",,http://fm.mizar.org/1997-6/pdf6-4/scmfsa8c.pdf,,False
+Algebraic and Arithmetic Lattices. Part II,"Milewski, Robert",,http://fm.mizar.org/1997-6/pdf6-4/waybel15.pdf,,False
+Projections in n-Dimensional Euclidean Space to Each Coordinates,"Matuszewski, Roman and Nakamura, Yatsuka",,http://fm.mizar.org/1997-6/pdf6-4/jordan2b.pdf,,False
+Intermediate Value Theorem and Thickness of Simple Closed Curves,"Nakamura, Yatsuka and Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-4/topreal5.pdf,,False
+The Jónson's Theorem,"Gryko, Jarosław",,http://fm.mizar.org/1997-6/pdf6-4/lattice5.pdf,,False
+"Lebesgue's Covering Lemma, Uniform Continuity and Segmentation of Arcs","Nakamura, Yatsuka and Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-4/uniform1.pdf,,False
+On the Rectangular Finite Sequences of the Points of the Plane,"Trybulec, Andrzej and Nakamura, Yatsuka",,http://fm.mizar.org/1997-6/pdf6-4/sprect_1.pdf,,False
+On the Order on a Special Polygon,"Trybulec, Andrzej and Nakamura, Yatsuka",,http://fm.mizar.org/1997-6/pdf6-4/sprect_2.pdf,,False
+The Euler's Function,"Fujisawa, Yoshinori and Fuwa, Yasushi",,http://fm.mizar.org/1997-6/pdf6-4/euler_1.pdf,,False
+While Macro Instructions of,"Chen, Jing-Chao",,http://fm.mizar.org/1997-6/pdf6-4/scmfsa_9.pdf,,False
+A Decomposition of a Simple Closed Curves and the Order of Their Points,"Nakamura, Yatsuka and Trybulec, Andrzej",,http://fm.mizar.org/1997-6/pdf6-4/jordan6.pdf,,False
+The Chinese Remainder Theorem,"Kondracki, Andrzej",,http://fm.mizar.org/1997-6/pdf6-4/wsierp_1.pdf,,False
+The Composition of Functors and Transformations in Alternative   Categories,"Korniłowicz, Artur",,http://fm.mizar.org/1998-7/pdf7-1/functor3.pdf,,False
+Completely-Irreducible Elements,"Milewski, Robert",,http://fm.mizar.org/1998-7/pdf7-1/waybel16.pdf,,False
+Scott-Continuous Functions,"Grabowski, Adam",,http://fm.mizar.org/1998-7/pdf7-1/waybel17.pdf,,False
+Natural Numbers,"Milewski, Robert",,http://fm.mizar.org/1998-7/pdf7-1/nat_2.pdf,,False
+Binary Arithmetics. Binary Sequences,"Milewski, Robert",,http://fm.mizar.org/1998-7/pdf7-1/binari_3.pdf,,False
+Full Trees,"Milewski, Robert",,http://fm.mizar.org/1998-7/pdf7-1/bintree2.pdf,,False
+On  Reflex of Topological Space,"Naumowicz, Adam and Łapiński, Mariusz",,http://fm.mizar.org/1998-7/pdf7-1/t_1topsp.pdf,,False
+Bases and Refinements of Topologies,"Bancerek, Grzegorz",,http://fm.mizar.org/1998-7/pdf7-1/yellow_9.pdf,,False
+The Properties of Product of Relational Structures,"Korniłowicz, Artur",,http://fm.mizar.org/1998-7/pdf7-1/yellow10.pdf,,False
+On the Characterization of Modular and Distributive Lattices,"Naumowicz, Adam",,http://fm.mizar.org/1998-7/pdf7-1/yellow11.pdf,,False
+Injective Spaces,"Gryko, Jarosław",,http://fm.mizar.org/1998-7/pdf7-1/waybel18.pdf,,False
+On the Characterization of Hausdorff Spaces,"Korniłowicz, Artur",,http://fm.mizar.org/1998-7/pdf7-1/yellow12.pdf,,False
+The Field of Quotients Over an Integral Domain,"Schwarzweller, Christoph",,http://fm.mizar.org/1998-7/pdf7-1/quofield.pdf,,False
+"First-countable, Sequential, and Frechet Spaces","Skorulski, Bartłomiej",,http://fm.mizar.org/1998-7/pdf7-1/frechet.pdf,,False
+On the Composition of Non-parahalting Macro Instructions,"Rudnicki, Piotr",,http://fm.mizar.org/1998-7/pdf7-1/sfmastr1.pdf,,False
+The while Macro Instructions of . Part II,"Rudnicki, Piotr",,http://fm.mizar.org/1998-7/pdf7-1/scmfsa9a.pdf,,False
+Another times Macro Instruction,"Rudnicki, Piotr",,http://fm.mizar.org/1998-7/pdf7-1/sfmastr2.pdf,,False
+The for (going up) Macro Instruction,"Rudnicki, Piotr",,http://fm.mizar.org/1998-7/pdf7-1/sfmastr3.pdf,,False
+Bounding Boxes for Special Sequences in ^2,"Nakamura, Yatsuka and Grabowski, Adam",,http://fm.mizar.org/1998-7/pdf7-1/jordan5d.pdf,,False
+Euler's Theorem and Small Fermat's Theorem,"Fujisawa, Yoshinori and Fuwa, Yasushi and Shimizu, Hidetaka",,http://fm.mizar.org/1998-7/pdf7-1/euler_2.pdf,,False
+The Product of the Families of the Groups,"Korniłowicz, Artur",,http://fm.mizar.org/1998-7/pdf7-1/group_7.pdf,,False
+On the Dividing Function of the Simple Closed Curve into Segments,"Nakamura, Yatsuka",,http://fm.mizar.org/1998-7/pdf7-1/jordan7.pdf,,False
+Initialization Halting Concepts and Their Basic Properties of,"Chen, Jing-Chao and Nakamura, Yatsuka",,http://fm.mizar.org/1998-7/pdf7-1/scm_halt.pdf,,False
+Bubble Sort on,"Chen, Jing-Chao and Nakamura, Yatsuka",,http://fm.mizar.org/1998-7/pdf7-1/scmbsort.pdf,,False
+The Lawson Topology,"Bancerek, Grzegorz",,http://fm.mizar.org/1998-7/pdf7-2/waybel19.pdf,,False
+Kernel Projections and Quotient Lattices,"Rudnicki, Piotr",,http://fm.mizar.org/1998-7/pdf7-2/waybel20.pdf,,False
+Lawson Topology in Continuous Lattices,"Bancerek, Grzegorz",,http://fm.mizar.org/1998-7/pdf7-2/waybel21.pdf,,False
+Representation Theorem for Free Continuous Lattices,"Rudnicki, Piotr",,http://fm.mizar.org/1998-7/pdf7-2/waybel22.pdf,,False
+Oriented Chains,"Nakamura, Yatsuka and Rudnicki, Piotr",,http://fm.mizar.org/1998-7/pdf7-2/graph_4.pdf,,False
+Graph Theoretical Properties of Arcs in the Plane and Fashoda Meet Theorem,"Nakamura, Yatsuka",,http://fm.mizar.org/1998-7/pdf7-2/jgraph_1.pdf,,False
+Algebraic Group on Fixed-length Bit Integer and its Adaptation to IDEA Cryptography,"Fuwa, Yasushi and Fujisawa, Yoshinori",,http://fm.mizar.org/1998-7/pdf7-2/idea_1.pdf,,False
+The Definition and Basic Properties of Topological Groups,"Korniłowicz, Artur",,http://fm.mizar.org/1998-7/pdf7-2/topgrp_1.pdf,,False
+The Correspondence Between Lattices of Subalgebras of  Universal Algebras and Many Sorted Algebras,"Naumowicz, Adam and Marasik, Agnieszka Julia",,http://fm.mizar.org/1998-7/pdf7-2/mssublat.pdf,,False
+Introduction to Concept Lattices,"Schwarzweller, Christoph",,http://fm.mizar.org/1998-7/pdf7-2/conlat_1.pdf,,False
+A Theory of Partitions. Part I,"Kobayashi, Shunichi and Jia, Kui",,http://fm.mizar.org/1998-7/pdf7-2/partit1.pdf,,False
+A Theory of Boolean Valued Functions and Partitions,"Kobayashi, Shunichi and Jia, Kui",,http://fm.mizar.org/1998-7/pdf7-2/bvfunc_1.pdf,,False
+Trigonometric Functions and Existence of Circle Ratio,"Yang, Yuguang and Shidama, Yasunari",,http://fm.mizar.org/1998-7/pdf7-2/sin_cos.pdf,,False
+Some Properties of Special Polygonal Curves,"Trybulec, Andrzej and Nakamura, Yatsuka",,http://fm.mizar.org/1998-7/pdf7-2/sprect_3.pdf,,False
+Real Linear-Metric Space and Isometric Functions,"Milewski, Robert",,http://fm.mizar.org/1998-7/pdf7-2/vectmetr.pdf,,False
+Introduction to Meet-Continuous Topological Lattices,"Korniłowicz, Artur",,http://fm.mizar.org/1998-7/pdf7-2/yellow13.pdf,,False
+Bases of Continuous Lattices,"Milewski, Robert",,http://fm.mizar.org/1998-7/pdf7-2/waybel23.pdf,,False
+The Construction of  over Ring,"Korniłowicz, Artur",,http://fm.mizar.org/1998-7/pdf7-2/scmring1.pdf,,False
+The Basic Properties of  over Ring,"Korniłowicz, Artur",,http://fm.mizar.org/1998-7/pdf7-2/scmring2.pdf,,False
+A Theory of Boolean Valued Functions and Quantifiers with Respect to Partitions,"Kobayashi, Shunichi and Nakamura, Yatsuka",,http://fm.mizar.org/1998-7/pdf7-2/bvfunc_2.pdf,,False
+Predicate Calculus for Boolean Valued Functions. Part I,"Kobayashi, Shunichi and Nakamura, Yatsuka",,http://fm.mizar.org/1998-7/pdf7-2/bvfunc_3.pdf,,False
+Public-Key Cryptography and Pepin's Test for the Primality of Fermat Numbers,"Fujisawa, Yoshinori and Fuwa, Yasushi and Shimizu, Hidetaka",,http://fm.mizar.org/1998-7/pdf7-2/pepin.pdf,,False
+Lattice of Substitutions is a Heyting Algebra,"Grabowski, Adam",,http://fm.mizar.org/1998-7/pdf7-2/heyting2.pdf,,False
+Bounded Domains and Unbounded Domains,"Nakamura, Yatsuka and Trybulec, Andrzej and Byliński, Czesław",,http://fm.mizar.org/1999-8/pdf8-1/jordan2c.pdf,,False
+Rotating and Reversing,"Trybulec, Andrzej",,http://fm.mizar.org/1999-8/pdf8-1/revrot_1.pdf,,False
+On the Components of the Complement of a Special Polygonal Curve,"Trybulec, Andrzej and Nakamura, Yatsuka",,http://fm.mizar.org/1999-8/pdf8-1/sprect_4.pdf,,False
+Gauges,"Byliński, Czesław",,http://fm.mizar.org/1999-8/pdf8-1/jordan8.pdf,,False
+"The Ring of Integers, Euclidean Rings and Modulo Integers","Schwarzweller, Christoph",,http://fm.mizar.org/1999-8/pdf8-1/int_3.pdf,,False
+Logic Gates and Logical Equivalence of Adders,"Nakamura, Yatsuka",,http://fm.mizar.org/1999-8/pdf8-1/gate_1.pdf,,False
+The Sequential Closure Operator in Sequential and Frechet Spaces,"Skorulski, Bartłomiej",,http://fm.mizar.org/1999-8/pdf8-1/frechet2.pdf,,False
+Properties of the Product of Compact Topological Spaces,"Grabowski, Adam",,http://fm.mizar.org/1999-8/pdf8-1/borsuk_3.pdf,,False
+Compactness of the Bounded Closed Subsets of ^2_,"Korniłowicz, Artur",,http://fm.mizar.org/1999-8/pdf8-1/topreal6.pdf,,False
+Hilbert Positive Propositional Calculus,"Grabowski, Adam",,http://fm.mizar.org/1999-8/pdf8-1/hilbert1.pdf,,False
+"Homeomorphism between [:^i_, ^j_:] and ^i+j_","Korniłowicz, Artur",,http://fm.mizar.org/1999-8/pdf8-1/topreal7.pdf,,False
+Full Subtracter Circuit. Part I,"Wasaki, Katsumi and Endou, Noboru",,http://fm.mizar.org/1999-8/pdf8-1/fscirc_1.pdf,,False
+Correctness of Binary Counter Circuits,"Yang, Yuguang and Wasaki, Katsumi and Fuwa, Yasushi and Nakamura, Yatsuka",,http://fm.mizar.org/1999-8/pdf8-1/gate_2.pdf,,False
+Correctness of Johnson Counter Circuits,"Yang, Yuguang and Wasaki, Katsumi and Fuwa, Yasushi and Nakamura, Yatsuka",,http://fm.mizar.org/1999-8/pdf8-1/gate_3.pdf,,False
+The Definition of the Riemann Definite Integral and some Related Lemmas,"Endou, Noboru and Korniłowicz, Artur",,http://fm.mizar.org/1999-8/pdf8-1/integra1.pdf,,False
+Properties of the Trigonometric Function,"Mitsuishi, Takashi and Yang, Yuguang",,http://fm.mizar.org/1999-8/pdf8-1/sin_cos2.pdf,,False
+Predicate Calculus for Boolean Valued Functions. Part II,"Kobayashi, Shunichi and Nakamura, Yatsuka",,http://fm.mizar.org/1999-8/pdf8-1/bvfunc_4.pdf,,False
+Propositional Calculus for Boolean Valued Functions. Part I,"Kobayashi, Shunichi and Nakamura, Yatsuka",,http://fm.mizar.org/1999-8/pdf8-1/bvfunc_5.pdf,,False
+Propositional Calculus for Boolean Valued Functions. Part II,"Kobayashi, Shunichi and Nakamura, Yatsuka",,http://fm.mizar.org/1999-8/pdf8-1/bvfunc_6.pdf,,False
+Insert Sort on,"Chen, Jing-Chao",,http://fm.mizar.org/1999-8/pdf8-1/scmisort.pdf,,False
+Correctness of a Cyclic Redundancy Check Code Generator,"Yang, Yuguang and Wasaki, Katsumi and Fuwa, Yasushi and Nakamura, Yatsuka",,http://fm.mizar.org/1999-8/pdf8-1/gate_4.pdf,,False
+Defining by Structural Induction in the Positive Propositional Language,"Trybulec, Andrzej",,http://fm.mizar.org/1999-8/pdf8-1/hilbert2.pdf,,False
+Some Properties of Cells on Go-Board,"Byliński, Czesław",,http://fm.mizar.org/1999-8/pdf8-1/gobrd13.pdf,,False
+Propositional Calculus for Boolean Valued Functions. Part III,"Kobayashi, Shunichi",,http://fm.mizar.org/1999-8/pdf8-1/bvfunc_7.pdf,,False
+Propositional Calculus for Boolean Valued Functions. Part IV,"Kobayashi, Shunichi",,http://fm.mizar.org/1999-8/pdf8-1/bvfunc_8.pdf,,False
+Basic Properties of Genetic Algorithm,"Uchibori, Akihiko and Endou, Noboru",,http://fm.mizar.org/1999-8/pdf8-1/genealg1.pdf,,False
+Propositional Calculus for Boolean Valued Functions. Part V,"Kobayashi, Shunichi",,http://fm.mizar.org/1999-8/pdf8-1/bvfunc_9.pdf,,False
+Properties of Left and Right Components,"Korniłowicz, Artur",,http://fm.mizar.org/1999-8/pdf8-1/gobrd14.pdf,,False
+Noetherian Lattices,"Schwarzweller, Christoph",,http://fm.mizar.org/1999-8/pdf8-1/lattice6.pdf,,False
+A Small Computer Model with Push-Down Stack,"Chen, Jing-Chao",,http://fm.mizar.org/1999-8/pdf8-1/scmpds_1.pdf,,False
+The SCMPDS Computer and the Basic Semantics of its Instructions,"Chen, Jing-Chao",,http://fm.mizar.org/1999-8/pdf8-1/scmpds_2.pdf,,False
+Computation and Program Shift in the SCMPDS Computer,"Chen, Jing-Chao",,http://fm.mizar.org/1999-8/pdf8-1/scmpds_3.pdf,,False
+The Construction and Shiftability of Program Blocks for SCMPDS,"Chen, Jing-Chao",,http://fm.mizar.org/1999-8/pdf8-1/scmpds_4.pdf,,False
+Computation of Two Consecutive Program Blocks for SCMPDS,"Chen, Jing-Chao",,http://fm.mizar.org/1999-8/pdf8-1/scmpds_5.pdf,,False
+The Construction and Computation of Conditional Statements for SCMPDS,"Chen, Jing-Chao",,http://fm.mizar.org/1999-8/pdf8-1/scmpds_6.pdf,,False
+Recursive Euclide Algorithm,"Chen, Jing-Chao",,http://fm.mizar.org/2001-9/pdf9-1/scmp_gcd.pdf,,False
+Scott-Continuous Functions. Part II,"Grabowski, Adam",,http://fm.mizar.org/2001-9/pdf9-1/waybel24.pdf,,False
+Some Properties of Isomorphism between Relational Structures. On the Product of Topological Spaces,"Gryko, Jarosław and Korniłowicz, Artur",,http://fm.mizar.org/2001-9/pdf9-1/yellow14.pdf,,False
+Cages – the External Approximation of Jordan's Curve,"Byliński, Czesław and Żynel, Mariusz",,http://fm.mizar.org/2001-9/pdf9-1/jordan9.pdf,,False
+Components and Basis of Topological Spaces,"Milewski, Robert",,http://fm.mizar.org/2001-9/pdf9-1/yellow15.pdf,,False
+Properties of the External Approximation of Jordan's Curve,"Korniłowicz, Artur",,http://fm.mizar.org/2001-9/pdf9-1/jordan10.pdf,,False
+Irrationality of e,"Wiedijk, Freek",,http://fm.mizar.org/2001-9/pdf9-1/irrat_1.pdf,,False
+Injective Spaces. Part II,"Korniłowicz, Artur and Gryko, Jarosław",,http://fm.mizar.org/2001-9/pdf9-1/waybel25.pdf,,False
+Propositional Calculus for Boolean Valued Functions. Part VI,"Kobayashi, Shunichi",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc10.pdf,,False
+Predicate Calculus for Boolean Valued Functions. Part III,"Kobayashi, Shunichi and Nakamura, Yatsuka",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc11.pdf,,False
+A Characterization of Concept Lattices. Dual Concept Lattices,"Schwarzweller, Christoph",,http://fm.mizar.org/2001-9/pdf9-1/conlat_2.pdf,,False
+Predicate Calculus for Boolean Valued Functions. Part IV,"Kobayashi, Shunichi and Nakamura, Yatsuka",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc12.pdf,,False
+Predicate Calculus for Boolean Valued Functions. Part V,"Kobayashi, Shunichi and Nakamura, Yatsuka",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc13.pdf,,False
+Definitions of Radix-2^k Signed-Digit Number and its Adder Algorithm,"Fujisawa, Yoshinori and Fuwa, Yasushi",,http://fm.mizar.org/2001-9/pdf9-1/radix_1.pdf,,False
+Retracts and Inheritance,"Bancerek, Grzegorz",,http://fm.mizar.org/2001-9/pdf9-1/yellow16.pdf,,False
+Technical Preliminaries to Algebraic Specifications,"Bancerek, Grzegorz",,http://fm.mizar.org/2001-9/pdf9-1/algspec1.pdf,,False
+Multivariate Polynomials  with Arbitrary Number of Variables,"Rudnicki, Piotr and Trybulec, Andrzej",,http://fm.mizar.org/2001-9/pdf9-1/polynom1.pdf,,False
+Continuous Lattices of Maps between T_0 Spaces,"Bancerek, Grzegorz",,http://fm.mizar.org/2001-9/pdf9-1/waybel26.pdf,,False
+Predicate Calculus for Boolean Valued Functions. Part VI,"Kobayashi, Shunichi",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc14.pdf,,False
+Predicate Calculus for Boolean Valued Functions. Part VII,"Kobayashi, Shunichi",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc15.pdf,,False
+Predicate Calculus for Boolean Valued Functions. Part VIII,"Kobayashi, Shunichi",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc16.pdf,,False
+Predicate Calculus for Boolean Valued Functions. Part IX,"Kobayashi, Shunichi",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc17.pdf,,False
+Asymptotic Notation. Part I: Theory,"Krueger, Richard and Rudnicki, Piotr and Shelley, Paul",,http://fm.mizar.org/2001-9/pdf9-1/asympt_0.pdf,,False
+Asymptotic Notation. Part II: Examples and Problems,"Krueger, Richard and Rudnicki, Piotr and Shelley, Paul",,http://fm.mizar.org/2001-9/pdf9-1/asympt_1.pdf,,False
+Predicate Calculus for Boolean Valued Functions. Part X,"Kobayashi, Shunichi",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc18.pdf,,False
+Predicate Calculus for Boolean Valued Functions. Part XI,"Kobayashi, Shunichi",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc19.pdf,,False
+Four Variable Predicate Calculus for Boolean Valued Functions. Part I,"Kobayashi, Shunichi",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc20.pdf,,False
+Four Variable Predicate Calculus for Boolean Valued Functions. Part II,"Kobayashi, Shunichi",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc21.pdf,,False
+Function Spaces in the Category of Directed Suprema Preserving Maps,"Bancerek, Grzegorz and Naumowicz, Adam",,http://fm.mizar.org/2001-9/pdf9-1/waybel27.pdf,,False
+Property of Complex Functions,"Mitsuishi, Takashi and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-1/cfunct_1.pdf,,False
+Property of Complex Sequence and Continuity of Complex Function,"Mitsuishi, Takashi and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-1/cfcont_1.pdf,,False
+Scalar Multiple of Riemann Definite Integral,"Endou, Noboru and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-1/integra2.pdf,,False
+Darboux's Theorem,"Endou, Noboru and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-1/integra3.pdf,,False
+Five Variable Predicate Calculus for Boolean Valued Functions. Part I,"Kobayashi, Shunichi",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc22.pdf,,False
+Six Variable Predicate Calculus for Boolean Valued Functions. Part I,"Kobayashi, Shunichi",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc23.pdf,,False
+The Construction and Computation of for-loop Programs for SCMPDS,"Chen, Jing-Chao and Rudnicki, Piotr",,http://fm.mizar.org/2001-9/pdf9-1/scmpds_7.pdf,,False
+Predicate Calculus for Boolean Valued Functions. Part XII,"Kobayashi, Shunichi",,http://fm.mizar.org/2001-9/pdf9-1/bvfunc24.pdf,,False
+Lim-Inf Convergence,"Skorulski, Bartłomiej",,http://fm.mizar.org/2001-9/pdf9-2/waybel28.pdf,,False
+The Characterization of the Continuity of Topologies,"Bancerek, Grzegorz and Naumowicz, Adam",,http://fm.mizar.org/2001-9/pdf9-2/waybel29.pdf,,False
+Meet Continuous Lattices Revisited,"Korniłowicz, Artur",,http://fm.mizar.org/2001-9/pdf9-2/waybel30.pdf,,False
+Weights of Continuous Lattices,"Milewski, Robert",,http://fm.mizar.org/2001-9/pdf9-2/waybel31.pdf,,False
+Representation Theorem for Finite Distributive Lattices,"Dudzicz, Marek",,http://fm.mizar.org/2001-9/pdf9-2/lattice7.pdf,,False
+The Field of Complex Numbers,"Milewska, Anna Justyna",,http://fm.mizar.org/2001-9/pdf9-2/complfld.pdf,,False
+Integrability of Bounded Total Functions,"Endou, Noboru and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-2/integra4.pdf,,False
+High-Speed Algorithms for RSA Cryptograms,"Fuwa, Yasushi and Fujisawa, Yoshinori",,http://fm.mizar.org/2001-9/pdf9-2/radix_2.pdf,,False
+Definition of Integrability for Partial Functions from ℝ to ℝ and Integrability for Continuous Functions,"Endou, Noboru and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-2/integra5.pdf,,False
+Introduction to Several Concepts of Convexity and Semicontinuity for Function from ℝ to ℝ,"Endou, Noboru and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-2/rfunct_4.pdf,,False
+Standard Ordering of Instruction Locations,"Trybulec, Andrzej and Rudnicki, Piotr and Korniłowicz, Artur",,http://fm.mizar.org/2001-9/pdf9-2/amistd_1.pdf,,False
+On the Composition of Macro Instructions of Standard Computers,"Korniłowicz, Artur",,http://fm.mizar.org/2001-9/pdf9-2/amistd_2.pdf,,False
+The Properties of Instructions of SCM over Ring,"Korniłowicz, Artur",,http://fm.mizar.org/2001-9/pdf9-2/scmring3.pdf,,False
+Basic Facts about Inaccessible and Measurable Cardinals,"Urban, Josef",,http://fm.mizar.org/2001-9/pdf9-2/card_fil.pdf,,False
+The Evaluation of Multivariate Polynomials,"Schwarzweller, Christoph and Trybulec, Andrzej",,http://fm.mizar.org/2001-9/pdf9-2/polynom2.pdf,,False
+The Ring of Polynomials,"Milewski, Robert",,http://fm.mizar.org/2001-9/pdf9-2/polynom3.pdf,,False
+Solving Roots of Polynomial Equations of Degree 2 and 3 with Real Coefficients,"Liang, Xiquan",,http://fm.mizar.org/2001-9/pdf9-2/polyeq_1.pdf,,False
+The Concept of Fuzzy Set and Membership Function and Basic Properties of Fuzzy Set Operation,"Mitsuishi, Takashi and Endou, Noboru and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-2/fuzzy_1.pdf,,False
+Basic Properties of Fuzzy Set Operation and Membership Function,"Mitsuishi, Takashi and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-2/fuzzy_2.pdf,,False
+The Hahn Banach Theorem in the Vector Space over the Field of Complex Numbers,"Milewska, Anna Justyna",,http://fm.mizar.org/2001-9/pdf9-2/hahnban1.pdf,,False
+The Tichonov Theorem,"Skorulski, Bartłomiej",,http://fm.mizar.org/2001-9/pdf9-2/yellow17.pdf,,False
+On the Order-consistent Topology of Complete and Uncomplete Lattices,"Grądzka, Ewa",,http://fm.mizar.org/2001-9/pdf9-2/waybel32.pdf,,False
+On Segre's Product of Partial Line Spaces,"Naumowicz, Adam",,http://fm.mizar.org/2001-9/pdf9-2/pencil_1.pdf,,False
+The Evaluation of Polynomials,"Milewski, Robert",,http://fm.mizar.org/2001-9/pdf9-2/polynom4.pdf,,False
+The Construction and Computation of While-Loop Programs for SCMPDS,"Chen, Jing-Chao",,http://fm.mizar.org/2001-9/pdf9-2/scmpds_8.pdf,,False
+Insert Sort on SCMPDS,"Chen, Jing-Chao",,http://fm.mizar.org/2001-9/pdf9-2/scpisort.pdf,,False
+Quick Sort on SCMPDS,"Chen, Jing-Chao",,http://fm.mizar.org/2001-9/pdf9-2/scpqsort.pdf,,False
+Justifying the Correctness of the Fibonacci Sequence and the Euclide Algorithm by Loop-Invariant,"Chen, Jing-Chao",,http://fm.mizar.org/2001-9/pdf9-2/scpinvar.pdf,,False
+On the Isomorphism between Finite Chains,"Pruszyńska, Marta and Dudzicz, Marek",,http://fm.mizar.org/2001-9/pdf9-2/orders_4.pdf,,False
+The Jónsson Theorem about the Representation of Modular Lattices,"Łapiński, Mariusz",,http://fm.mizar.org/2001-9/pdf9-2/lattice8.pdf,,False
+The Canonical Formulae,"Trybulec, Andrzej",,http://fm.mizar.org/2001-9/pdf9-3/hilbert3.pdf,,False
+The Incompleteness of the Lattice of Substitutions,"Grabowski, Adam",,http://fm.mizar.org/2001-9/pdf9-3/heyting3.pdf,,False
+Trigonometric Form of Complex Numbers,"Milewski, Robert",,http://fm.mizar.org/2001-9/pdf9-3/comptrig.pdf,,False
+Fundamental Theorem of Algebra,"Milewski, Robert",,http://fm.mizar.org/2001-9/pdf9-3/polynom5.pdf,,False
+On Replace Function and Swap Function for Finite Sequences,"Yamazaki, Hiroshi and Fujisawa, Yoshinori and Nakamura, Yatsuka",,http://fm.mizar.org/2001-9/pdf9-3/finseq_7.pdf,,False
+The Correctness of the High Speed Array Multiplier Circuits,"Yamazaki, Hiroshi and Wasaki, Katsumi",,http://fm.mizar.org/2001-9/pdf9-3/gate_5.pdf,,False
+Some Lemmas for the Jordan Curve Theorem,"Trybulec, Andrzej",,http://fm.mizar.org/2001-9/pdf9-3/jct_misc.pdf,,False
+Mahlo and Inaccessible Cardinals,"Urban, Josef",,http://fm.mizar.org/2001-9/pdf9-3/card_lar.pdf,,False
+Basic Properties of Extended Real Numbers,"Endou, Noboru and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-3/extreal1.pdf,,False
+Definitions and Basic Properties of Measurable Functions,"Endou, Noboru and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-3/mesfunc1.pdf,,False
+Gauges and Cages. Part I,"Korniłowicz, Artur and Milewski, Robert and Naumowicz, Adam and Trybulec, Andrzej",,http://fm.mizar.org/2001-9/pdf9-3/jordan1a.pdf,,False
+"Some Properties of Extended Real Numbers Operations: abs, min and max","Endou, Noboru and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-3/extreal2.pdf,,False
+The Concept of Fuzzy Relation and Basic Properties of its Operation,"Mitsuishi, Takashi and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-3/fuzzy_3.pdf,,False
+The Measurability of Extended Real Valued Functions,"Endou, Noboru and Wasaki, Katsumi and Shidama, Yasunari",,http://fm.mizar.org/2001-9/pdf9-3/mesfunc2.pdf,,False
+Some Properties of Cells and Arcs,"Milewski, Robert and Trybulec, Andrzej and Korniłowicz, Artur and Naumowicz, Adam",,http://fm.mizar.org/2001-9/pdf9-3/jordan1b.pdf,,False
+Formal Topological Spaces,"Liu, Gang and Fuwa, Yasushi and Eguchi, Masayoshi",,http://fm.mizar.org/2001-9/pdf9-3/fintopo2.pdf,,False
+Some Properties of Cells and Gauges,"Grabowski, Adam and Korniłowicz, Artur and Trybulec, Andrzej",,http://fm.mizar.org/2001-9/pdf9-3/jordan1c.pdf,,False
+Again on the Order on a Special Polygon,"Trybulec, Andrzej and Nakamura, Yatsuka",,http://fm.mizar.org/2001-9/pdf9-3/sprect_5.pdf,,False
+Gauges and Cages. Part II,"Korniłowicz, Artur and Milewski, Robert",,http://fm.mizar.org/2001-9/pdf9-3/jordan1d.pdf,,False
+The Binomial Theorem for Algebraic Structures,"Schwarzweller, Christoph",,http://fm.mizar.org/2001-9/pdf9-3/binom.pdf,,False
+Ring Ideals,"Backer, Jonathan and Rudnicki, Piotr and Schwarzweller, Christoph",,http://fm.mizar.org/2001-9/pdf9-3/ideal_1.pdf,,False
+Hilbert Basis Theorem,"Backer, Jonathan and Rudnicki, Piotr",,http://fm.mizar.org/2001-9/pdf9-3/hilbasis.pdf,,False
+Dynkin's Lemma in Measure Theory,"Merkl, Franz",,http://fm.mizar.org/2001-9/pdf9-3/dynkin.pdf,,False
+Lower Tolerance. Preliminaries to Wroclaw Taxonomy,"Giero, Mariusz and Matuszewski, Roman",,http://fm.mizar.org/2001-9/pdf9-3/taxonom1.pdf,,False
+Concrete Categories,"Bancerek, Grzegorz",,http://fm.mizar.org/2001-9/pdf9-3/yellow18.pdf,,False
+Classes of Independent Partitions,"Trybulec, Andrzej",,http://fm.mizar.org/2001-9/pdf9-3/partit_2.pdf,,False
+Some Properties of Dyadic Numbers and Intervals,"Białas, Józef and Nakamura, Yatsuka",,http://fm.mizar.org/2001-9/pdf9-3/urysohn2.pdf,,False
+The Urysohn Lemma,"Białas, Józef and Nakamura, Yatsuka",,http://fm.mizar.org/2001-9/pdf9-3/urysohn3.pdf,,False
+The Algebra of Polynomials,"Grądzka, Ewa",,http://fm.mizar.org/2001-9/pdf9-3/polyalg1.pdf,,False
+Circuit Generated by Terms and Circuit Calculating Terms,"Bancerek, Grzegorz",,http://fm.mizar.org/2001-9/pdf9-3/circtrm1.pdf,,False
+On the Instructions of,"Korniłowicz, Artur",,http://fm.mizar.org/2001-9/pdf9-4/ami_6.pdf,,False
+Input and Output of Instructions,"Korniłowicz, Artur",,http://fm.mizar.org/2001-9/pdf9-4/ami_7.pdf,,False
+On the Instructions of,"Korniłowicz, Artur",,http://fm.mizar.org/2001-9/pdf9-4/scmfsa10.pdf,,False
+Robbins Algebras vs. Boolean Algebras,"Grabowski, Adam",,http://fm.mizar.org/2001-9/pdf9-4/robbins1.pdf,,False
+Properties of Fuzzy Relation,"Endou, Noboru and Mitsuishi, Takashi and Ohkubo, Keiji",,http://fm.mizar.org/2001-9/pdf9-4/fuzzy_4.pdf,,False
+On Outside Fashoda Meet Theorem,"Nakamura, Yatsuka",,http://fm.mizar.org/2001-9/pdf9-4/jgraph_2.pdf,,False
+The Set of Primitive Recursive Functions,"Bancerek, Grzegorz and Rudnicki, Piotr",,http://fm.mizar.org/2001-9/pdf9-4/comput_1.pdf,,False
+Introduction to Turing Machines,"Chen, Jing-Chao and Nakamura, Yatsuka",,http://fm.mizar.org/2001-9/pdf9-4/turing_1.pdf,,False
+On the Characterizations of Compactness,"Bancerek, Grzegorz and Endou, Noboru and Sakai, Yuji",,http://fm.mizar.org/2001-9/pdf9-4/yellow19.pdf,,False
+Compactness of Lim-inf Topology,"Bancerek, Grzegorz and Endou, Noboru",,http://fm.mizar.org/2001-9/pdf9-4/waybel33.pdf,,False
+Miscellaneous Facts about Functors,"Bancerek, Grzegorz",,http://fm.mizar.org/2001-9/pdf9-4/yellow20.pdf,,False
+Categorial Background for Duality Theory,"Bancerek, Grzegorz",,http://fm.mizar.org/2001-9/pdf9-4/yellow21.pdf,,False
+Duality Based on the Galois Connection. Part I,"Bancerek, Grzegorz",,http://fm.mizar.org/2001-9/pdf9-4/waybel34.pdf,,False
+Yet Another Construction of Free Algebra,"Bancerek, Grzegorz and Korniłowicz, Artur",,http://fm.mizar.org/2001-9/pdf9-4/msafree3.pdf,,False
+Upper and Lower Sequence of a Cage,"Milewski, Robert",,http://fm.mizar.org/2001-9/pdf9-4/jordan1e.pdf,,False
+On Polynomials with Coefficients in a Ring of Polynomials,"Dzienis, Barbara",,http://fm.mizar.org/2001-9/pdf9-4/polynom6.pdf,,False
+On Cosets in Segre's Product of Partial Linear Spaces,"Naumowicz, Adam",,http://fm.mizar.org/2001-9/pdf9-4/pencil_2.pdf,,False
+On the Simple Closed Curve Property of the Circle and the Fashoda Meet Theorem,"Nakamura, Yatsuka",,http://fm.mizar.org/2001-9/pdf9-4/jgraph_3.pdf,,False
+Pythagorean Triples,"Wiedijk, Freek",,http://fm.mizar.org/2001-9/pdf9-4/pythtrip.pdf,,False
+Some Remarks on Finite Sequences on Go-boards,"Naumowicz, Adam",,http://fm.mizar.org/2001-9/pdf9-4/jordan1f.pdf,,False
+Upper and Lower Sequence on the Cage. Part II,"Milewski, Robert",,http://fm.mizar.org/2001-9/pdf9-4/jordan1g.pdf,,False
+Zero-Based Finite Sequences,"Tsunetou, Tetsuya and Bancerek, Grzegorz and Nakamura, Yatsuka",,http://fm.mizar.org/2001-9/pdf9-4/afinsq_1.pdf,,False
+More on the External Approximation of a Continuum,"Trybulec, Andrzej",,http://fm.mizar.org/2001-9/pdf9-4/jordan1h.pdf,,False
+More on the Finite Sequences on the Plane,"Trybulec, Andrzej",,http://fm.mizar.org/2001-9/pdf9-4/topreal8.pdf,,False
+More on Multivariate Polynomials: Monomials and Constant Polynomials,"Schwarzweller, Christoph",,http://fm.mizar.org/2001-9/pdf9-4/polynom7.pdf,,False
+On State Machines of Calculating Type,"Kunimune, Hisayoshi and Bancerek, Grzegorz and Nakamura, Yatsuka",,http://fm.mizar.org/2001-9/pdf9-4/fsm_2.pdf,,False
+Hierarchies and Classifications of Sets,"Giero, Mariusz",,http://fm.mizar.org/2001-9/pdf9-4/taxonom2.pdf,,False
+Fan Homeomorphisms in the Plane,"Nakamura, Yatsuka",,http://fm.mizar.org/2002-10/pdf10-1/jgraph_4.pdf,,False
+Half Open Intervals in Real Numbers,"Nakamura, Yatsuka",,http://fm.mizar.org/2002-10/pdf10-1/rcomp_2.pdf,,False
+Some Remarks on Clockwise Oriented Sequences on Go-boards,"Naumowicz, Adam and Milewski, Robert",,http://fm.mizar.org/2002-10/pdf10-1/jordan1i.pdf,,False
+Dickson's Lemma,"Lee, Gilbert and Rudnicki, Piotr",,http://fm.mizar.org/2002-10/pdf10-1/dickson.pdf,,False
+On Ordering of Bags,"Lee, Gilbert and Rudnicki, Piotr",,http://fm.mizar.org/2002-10/pdf10-1/bagorder.pdf,,False
+Combining of Multi Cell Circuits,"Bancerek, Grzegorz and Yamaguchi, Shin'nosuke and Shidama, Yasunari",,http://fm.mizar.org/2002-10/pdf10-1/circcmb2.pdf,,False
+Full Adder Circuit. Part II,"Bancerek, Grzegorz and Yamaguchi, Shin'nosuke and Wasaki, Katsumi",,http://fm.mizar.org/2002-10/pdf10-1/facirc_2.pdf,,False
+"Upper and Lower Sequence on the Cage, Upper and Lower Arcs","Milewski, Robert",,http://fm.mizar.org/2002-10/pdf10-2/jordan1j.pdf,,False
+Fibonacci Numbers,"Solovay, Robert M.",,http://fm.mizar.org/2002-10/pdf10-2/fib_num.pdf,,False
+Preparing the Internal Approximations of Simple Closed Curves,"Trybulec, Andrzej",,http://fm.mizar.org/2002-10/pdf10-2/jordan11.pdf,,False
+On the General Position of Special Polygons,"Giero, Mariusz",,http://fm.mizar.org/2002-10/pdf10-2/jordan12.pdf,,False
+Introducing Spans,"Trybulec, Andrzej",,http://fm.mizar.org/2002-10/pdf10-2/jordan13.pdf,,False
+General Fashoda Meet Theorem for Unit Circle,"Nakamura, Yatsuka",,http://fm.mizar.org/2002-10/pdf10-2/jgraph_5.pdf,,False
+Properties of the Internal Approximation of Jordan's Curve,"Milewski, Robert",,http://fm.mizar.org/2002-10/pdf10-2/jordan14.pdf,,False
+Preliminaries to Automatic Generation  of Mizar Documentation for Circuits,"Bancerek, Grzegorz and Naumowicz, Adam",,http://fm.mizar.org/2002-10/pdf10-3/circcmb3.pdf,,False
+Properties of the Upper and Lower Sequence on the Cage,"Milewski, Robert",,http://fm.mizar.org/2002-10/pdf10-3/jordan15.pdf,,False
+On the Decompositions of Intervals  and Simple Closed Curves,"Grabowski, Adam",,http://fm.mizar.org/2002-10/pdf10-3/borsuk_4.pdf,,False
+On the Minimal Distance Between Sets  in Euclidean Space,"Trybulec, Andrzej",,http://fm.mizar.org/2002-10/pdf10-3/jordan1k.pdf,,False
+Sequences of Metric Spaces and  an Abstract Intermediate Value Theorem,"Nakamura, Yatsuka and Trybulec, Andrzej",,http://fm.mizar.org/2002-10/pdf10-3/topmetr3.pdf,,False
+On the Decomposition of a Simple Closed Curve into Two Arcs,"Trybulec, Andrzej and Nakamura, Yatsuka",,http://fm.mizar.org/2002-10/pdf10-3/jordan16.pdf,,False
+The Ordering of Points on a Curve.  Part III,"Korniłowicz, Artur",,http://fm.mizar.org/2002-10/pdf10-3/jordan17.pdf,,False
+The Ordering of Points on a Curve.  Part IV,"Korniłowicz, Artur",,http://fm.mizar.org/2002-10/pdf10-3/jordan18.pdf,,False
+Order Sorted Algebras,"Urban, Josef",,http://fm.mizar.org/2002-10/pdf10-3/osalg_1.pdf,,False
+Subalgebras of an Order Sorted Algebra. Lattice of Subalgebras,"Urban, Josef",,http://fm.mizar.org/2002-10/pdf10-3/osalg_2.pdf,,False
+Homomorphisms of Order Sorted Algebras,"Urban, Josef",,http://fm.mizar.org/2002-10/pdf10-3/osalg_3.pdf,,False
+Order Sorted Quotient Algebra,"Urban, Josef",,http://fm.mizar.org/2002-10/pdf10-3/osalg_4.pdf,,False
+Free Order Sorted Universal Algebra,"Urban, Josef",,http://fm.mizar.org/2002-10/pdf10-3/osafree.pdf,,False
+Subspaces and Cosets of Subspace of Real Unitary Space,"Endou, Noboru and Mitsuishi, Takashi and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-1/rusub_1.pdf,,False
+Operations on Subspaces in Real Unitary Space,"Endou, Noboru and Mitsuishi, Takashi and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-1/rusub_2.pdf,,False
+Linear Combinations in Real Unitary Space,"Endou, Noboru and Mitsuishi, Takashi and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-1/rusub_3.pdf,,False
+Dimension of Real Unitary Space,"Endou, Noboru and Mitsuishi, Takashi and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-1/rusub_4.pdf,,False
+Trigonometric Functions on Complex Space,"Mitsuishi, Takashi and Endou, Noboru and Ohkubo, Keiji",,http://fm.mizar.org/2003-11/pdf11-1/sin_cos3.pdf,,False
+Topology of Real Unitary Space,"Endou, Noboru and Mitsuishi, Takashi and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-1/rusub_5.pdf,,False
+Armstrong's Axioms,"Armstrong, William W. and Nakamura, Yatsuka and Rudnicki, Piotr",,http://fm.mizar.org/2003-11/pdf11-1/armstrng.pdf,,False
+Convex Sets and Convex Combinations,"Endou, Noboru and Mitsuishi, Takashi and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-1/convex1.pdf,,False
+Quotient Vector Spaces and Functionals,"Kotowicz, Jarosław",,http://fm.mizar.org/2003-11/pdf11-1/vectsp10.pdf,,False
+Bilinear Functionals in Vector Spaces,"Kotowicz, Jarosław",,http://fm.mizar.org/2003-11/pdf11-1/bilinear.pdf,,False
+Hermitan Functionals. Canonical Construction of Scalar Product in Quotient Vector Space,"Kotowicz, Jarosław",,http://fm.mizar.org/2003-11/pdf11-1/hermitan.pdf,,False
+The Class of Series – Parallel Graphs. Part I,"Retel, Krzysztof",,http://fm.mizar.org/2003-11/pdf11-1/necklace.pdf,,False
+Term Orders,"Schwarzweller, Christoph",,http://fm.mizar.org/2003-11/pdf11-1/termord.pdf,,False
+Polynomial Reduction,"Schwarzweller, Christoph",,http://fm.mizar.org/2003-11/pdf11-1/polyred.pdf,,False
+Processes in Petri nets,"Bancerek, Grzegorz and Aoki, Mitsuru and Matsumoto, Akio and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-1/pnproc_1.pdf,,False
+Improvement of Radix-2^k Signed-Digit Number for High Speed Circuit,"Niimura, Masaaki and Fuwa, Yasushi",,http://fm.mizar.org/2003-11/pdf11-2/radix_3.pdf,,False
+High Speed Adder Algorithm with Radix-2^k Sub Signed-Digit Number,"Niimura, Masaaki and Fuwa, Yasushi",,http://fm.mizar.org/2003-11/pdf11-2/radix_4.pdf,,False
+The Underlying Principle of Dijkstra's Shortest Path Algorithm,"Chen, Jing-Chao and Nakamura, Yatsuka",,http://fm.mizar.org/2003-11/pdf11-2/graph_5.pdf,,False
+On the Hausdorff Distance Between Compact Subsets,"Grabowski, Adam",,http://fm.mizar.org/2003-11/pdf11-2/hausdorf.pdf,,False
+Chains on a Grating in Euclidean Space,"Wiedijk, Freek",,http://fm.mizar.org/2003-11/pdf11-2/chain_1.pdf,,False
+Bessel's Inequality,"Yamazaki, Hiroshi and Shidama, Yasunari and Nakamura, Yatsuka",,http://fm.mizar.org/2003-11/pdf11-2/bhsp_5.pdf,,False
+A Representation of Integers by Binary Arithmetics and Addition of Integers,"Kunimune, Hisayoshi and Nakamura, Yatsuka",,http://fm.mizar.org/2003-11/pdf11-2/binari_4.pdf,,False
+The Inner Product of Finite Sequences  and of Points of n-dimensional Topological Space,"Kanchun and Nakamura, Yatsuka",,http://fm.mizar.org/2003-11/pdf11-2/euclid_2.pdf,,False
+Solving Roots of Polynomial Equation  of Degree 4 with Real Coefficients,"Liang, Xiquan",,http://fm.mizar.org/2003-11/pdf11-2/polyeq_2.pdf,,False
+Morphisms Into Chains. Part I,"Korniłowicz, Artur",,http://fm.mizar.org/2003-11/pdf11-2/waybel35.pdf,,False
+Propositional Calculus for Boolean Valued Functions. Part VII,"Kobayashi, Shunichi",,http://fm.mizar.org/2003-11/pdf11-2/bvfunc25.pdf,,False
+Basic Notions and Properties of Orthoposets,"Moschner, Markus",,http://fm.mizar.org/2003-11/pdf11-2/oposet_1.pdf,,False
+General Fashoda Meet Theorem for Unit Circle and Square,"Nakamura, Yatsuka",,http://fm.mizar.org/2003-11/pdf11-3/jgraph_6.pdf,,False
+On Some Properties of Real Hilbert Space. Part I,"Yamazaki, Hiroshi and Suzuki, Yasumasa and Inoué, Takao and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-3/bhsp_6.pdf,,False
+Full Subtracter Circuit. Part II,"Yamaguchi, Shin'nosuke and Bancerek, Grzegorz and Wasaki, Katsumi",,http://fm.mizar.org/2003-11/pdf11-3/fscirc_2.pdf,,False
+Dijkstra's Shortest Path Algorithm,"Chen, Jing-Chao",,http://fm.mizar.org/2003-11/pdf11-3/graphsp.pdf,,False
+Real Linear Space of Real Sequences,"Endou, Noboru and Suzuki, Yasumasa and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-3/rsspace.pdf,,False
+Hilbert Space of Real Sequences,"Endou, Noboru and Suzuki, Yasumasa and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-3/rsspace2.pdf,,False
+Intuitionistic Propositional Calculus in the Extended Framework with Modal Operator. Part I,"Inoué, Takao",,http://fm.mizar.org/2003-11/pdf11-3/intpro_1.pdf,,False
+Some Properties for Convex Combinations,"Endou, Noboru and Suzuki, Yasumasa and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-3/convex2.pdf,,False
+On Some Properties of Real Hilbert Space. Part II,"Yamazaki, Hiroshi and Suzuki, Yasumasa and Inoué, Takao and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-3/bhsp_7.pdf,,False
+Inner Products and Angles of Complex Numbers,"Chang, Wenpai and Nakamura, Yatsuka and Rudnicki, Piotr",,http://fm.mizar.org/2003-11/pdf11-3/complex2.pdf,,False
+Angle and Triangle in Euclidean Topological Space,"Kubo, Akihiro and Nakamura, Yatsuka",,http://fm.mizar.org/2003-11/pdf11-3/euclid_3.pdf,,False
+The Class of Series-Parallel Graphs.  Part II,"Retel, Krzysztof",,http://fm.mizar.org/2003-11/pdf11-3/neckla_2.pdf,,False
+Characterization and Existence of Gröbner Bases,"Schwarzweller, Christoph",,http://fm.mizar.org/2003-11/pdf11-3/groeb_1.pdf,,False
+Construction of Gröbner bases.  S-Polynomials and Standard Representations,"Schwarzweller, Christoph",,http://fm.mizar.org/2003-11/pdf11-3/groeb_2.pdf,,False
+On the Subcontinua of a Real Line,"Grabowski, Adam",,http://fm.mizar.org/2003-11/pdf11-3/borsuk_5.pdf,,False
+On the Kuratowski Closure-Complement Problem,"Bagińska, Lilla Krystyna and Grabowski, Adam",,http://fm.mizar.org/2003-11/pdf11-3/kurato_1.pdf,,False
+"Convex Hull, Set of Convex Combinations and Convex Cone","Endou, Noboru and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-3/convex3.pdf,,False
+On the Two Short Axiomatizations of Ortholattices,"Truszkowska, Wioletta and Grabowski, Adam",,http://fm.mizar.org/2003-11/pdf11-3/robbins2.pdf,,False
+On the Sets Inhabited by Numbers,"Trybulec, Andrzej",,http://fm.mizar.org/2003-11/pdf11-4/membered.pdf,,False
+Definition of Convex Function  and Jensen's Inequality,"Ivanov, Grigory E.",,http://fm.mizar.org/2003-11/pdf11-4/convfun1.pdf,,False
+On Semilattice Structure of Mizar Types,"Bancerek, Grzegorz",,http://fm.mizar.org/2003-11/pdf11-4/abcmiz_0.pdf,,False
+Lines in n-Dimensional Euclidean Spaces,"Kubo, Akihiro",,http://fm.mizar.org/2003-11/pdf11-4/euclid_4.pdf,,False
+Banach Space of Absolute Summable  Real Sequences,"Suzuki, Yasumasa and Endou, Noboru and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-4/rsspace3.pdf,,False
+Cross Products and Tripple Vector Products  in 3-dimensional Euclidean Space,"Kanchun and Yamazaki, Hiroshi and Nakamura, Yatsuka",,http://fm.mizar.org/2003-11/pdf11-4/euclid_5.pdf,,False
+Calculation of Matrices of Field Elements. Part I,"Nakamura, Yatsuka and Yamazaki, Hiroshi",,http://fm.mizar.org/2003-11/pdf11-4/matrix_4.pdf,,False
+Lattice of Fuzzy Sets,"Mitsuishi, Takashi and Bancerek, Grzegorz",,http://fm.mizar.org/2003-11/pdf11-4/lfuzzy_0.pdf,,False
+On the Kuratowski Limit Operators,"Grabowski, Adam",,http://fm.mizar.org/2003-11/pdf11-4/kurato_2.pdf,,False
+On the Segmentation of a Simple Closed Curve,"Trybulec, Andrzej",,http://fm.mizar.org/2003-11/pdf11-4/jordan_a.pdf,,False
+On the Calculus of Binary Arithmetics,"Kobayashi, Shunichi",,http://fm.mizar.org/2003-11/pdf11-4/binari_5.pdf,,False
+SCMPDS Is Not Standard,"Korniłowicz, Artur and Shidama, Yasunari",,http://fm.mizar.org/2003-11/pdf11-4/scmpds_9.pdf,,False
+On the Upper and Lower Approximations of the Curve,"Milewski, Robert",,http://fm.mizar.org/2003-11/pdf11-4/jordan19.pdf,,False
+Sorting Operators for Finite Sequences,"Nakamura, Yatsuka",,http://fm.mizar.org/2004-12/pdf12-1/rfinseq2.pdf,,False
+Magnitude Relation Properties of Radix-2^k SD Number,"Niimura, Masaaki and Fuwa, Yasushi",,http://fm.mizar.org/2004-12/pdf12-1/radix_5.pdf,,False
+High Speed Modulo Calculation Algorithm with Radix-2^k SD Number,"Niimura, Masaaki and Fuwa, Yasushi",,http://fm.mizar.org/2004-12/pdf12-1/radix_6.pdf,,False
+Transitive Closure of Fuzzy Relations,"Mitsuishi, Takashi and Bancerek, Grzegorz",,http://fm.mizar.org/2004-12/pdf12-1/lfuzzy_1.pdf,,False
+Basic Properties of Rough Sets and Rough Membership Function,"Grabowski, Adam",,http://fm.mizar.org/2004-12/pdf12-1/roughs_1.pdf,,False
+Correctness of Non Overwriting Programs. Part I,"Nakamura, Yatsuka",,http://fm.mizar.org/2004-12/pdf12-1/prgcor_1.pdf,,False
+A Tree of Execution of a Macroinstruction,"Korniłowicz, Artur",,http://fm.mizar.org/2004-12/pdf12-1/amistd_3.pdf,,False
+Banach Space of Bounded Linear Operators,"Shidama, Yasunari",,http://fm.mizar.org/2004-12/pdf12-1/lopban_1.pdf,,False
+Little Bezout Theorem (Factor Theorem),"Rudnicki, Piotr",,http://fm.mizar.org/2004-12/pdf12-1/uproots.pdf,,False
+Primitive Roots of Unity and Cyclotomic Polynomials,"Arneson, Broderick and Rudnicki, Piotr",,http://fm.mizar.org/2004-12/pdf12-1/uniroots.pdf,,False
+Witt's Proof of the Wedderburn Theorem,"Arneson, Broderick and Baaz, Matthias and Rudnicki, Piotr",,http://fm.mizar.org/2004-12/pdf12-1/weddwitt.pdf,,False
+Banach Space of Bounded Real Sequences,"Suzuki, Yasumasa",,http://fm.mizar.org/2004-12/pdf12-2/rsspace4.pdf,,False
+Solving Roots of Polynomial Equation  of Degree 2 and 3 with Complex Coefficients,"Ding, Yuzhong and Liang, Xiquan",,http://fm.mizar.org/2004-12/pdf12-2/polyeq_3.pdf,,False
+Complex Linear Space and Complex Normed Space,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-2/clvect_1.pdf,,False
+The Banach Algebra of Bounded Linear Operators,"Shidama, Yasunari",,http://fm.mizar.org/2004-12/pdf12-2/lopban_2.pdf,,False
+Complex Linear Space of Complex Sequences,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-2/csspace.pdf,,False
+Behaviour of an Arc Crossing a Line,"Nakamura, Yatsuka",,http://fm.mizar.org/2004-12/pdf12-2/jordan20.pdf,,False
+Some Set Series  in Finite Topological Spaces.  Fundamental Concepts for Image Processing,"Tanaka, Masami and Nakamura, Yatsuka",,http://fm.mizar.org/2004-12/pdf12-2/fintopo3.pdf,,False
+The Series on Banach Algebra,"Shidama, Yasunari",,http://fm.mizar.org/2004-12/pdf12-2/lopban_3.pdf,,False
+Formulas and Identities of Trigonometric Functions,"Pacharapokin, Chanapat and Kanchun and Yamazaki, Hiroshi",,http://fm.mizar.org/2004-12/pdf12-2/sin_cos4.pdf,,False
+The Class of Series-Parallel Graphs.  Part III,"Retel, Krzysztof",,http://fm.mizar.org/2004-12/pdf12-2/neckla_3.pdf,,False
+Relocability for SCM over Ring,"Korniłowicz, Artur and Shidama, Yasunari",,http://fm.mizar.org/2004-12/pdf12-2/scmring4.pdf,,False
+Convergent Sequences in Complex Unitary Space,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-2/clvect_2.pdf,,False
+Recursive Definitions. Part II,"Korniłowicz, Artur",,http://fm.mizar.org/2004-12/pdf12-2/recdef_2.pdf,,False
+The Exponential Function on Banach Algebra,"Shidama, Yasunari",,http://fm.mizar.org/2004-12/pdf12-2/lopban_4.pdf,,False
+Fundamental Theorem of Arithmetic,"Korniłowicz, Artur and Rudnicki, Piotr",,http://fm.mizar.org/2004-12/pdf12-2/nat_3.pdf,,False
+Hilbert Space of Complex Sequences,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-2/csspace2.pdf,,False
+Banach Space of Absolute Summable Complex Sequences,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-2/csspace3.pdf,,False
+The Taylor Expansions,"Shidama, Yasunari",,http://fm.mizar.org/2004-12/pdf12-2/taylor_1.pdf,,False
+Complex Banach Space of Bounded Linear Operators,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-2/clopban1.pdf,,False
+Complex Banach Space of Bounded Complex Sequences,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-2/csspace4.pdf,,False
+Concatenation of Finite Sequences Reducing Overlapping Part and an Argument  of Separators of Sequential Files,"Fukura, Hirofumi and Nakamura, Yatsuka",,http://fm.mizar.org/2004-12/pdf12-2/finseq_8.pdf,,False
+Cauchy Sequence of Complex Unitary Space,"Suzuki, Yasumasa and Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-2/clvect_3.pdf,,False
+Complex Valued Functions Space,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-3/cfuncdom.pdf,,False
+Banach Algebra of Bounded Complex Linear Operators,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-3/clopban2.pdf,,False
+Formulas and Identities of Trigonometric Functions,"Ding, Yuzhong and Liang, Xiquan",,http://fm.mizar.org/2004-12/pdf12-3/sin_cos5.pdf,,False
+Solving Roots of the Special Polynomial Equation with Real Coefficients,"Ding, Yuzhong and Liang, Xiquan",,http://fm.mizar.org/2004-12/pdf12-3/polyeq_4.pdf,,False
+Algebraic Properties of Homotopies,"Grabowski, Adam and Korniłowicz, Artur",,http://fm.mizar.org/2004-12/pdf12-3/borsuk_6.pdf,,False
+The Fundamental Group,"Korniłowicz, Artur and Shidama, Yasunari and Grabowski, Adam",,http://fm.mizar.org/2004-12/pdf12-3/topalg_1.pdf,,False
+The Continuous Functions on Normed Linear Spaces,"Nishiyama, Takaya and Ohkubo, Keiji and Shidama, Yasunari",,http://fm.mizar.org/2004-12/pdf12-3/nfcont_1.pdf,,False
+The Uniform Continuity of Functions on Normed Linear Spaces,"Nishiyama, Takaya and Korniłowicz, Artur and Shidama, Yasunari",,http://fm.mizar.org/2004-12/pdf12-3/nfcont_2.pdf,,False
+Series on Complex Banach Algebra,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-3/clopban3.pdf,,False
+Exponential Function on Complex Banach Algebra,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-3/clopban4.pdf,,False
+The Fundamental Group of Convex Subspaces of ^n_,"Korniłowicz, Artur",,http://fm.mizar.org/2004-12/pdf12-3/topalg_2.pdf,,False
+Intersections of Intervals and Balls in ^n_,"Korniłowicz, Artur and Shidama, Yasunari",,http://fm.mizar.org/2004-12/pdf12-3/topreal9.pdf,,False
+Some Properties of Fibonacci Numbers,"Jastrzȩbska, Magdalena and Grabowski, Adam",,http://fm.mizar.org/2004-12/pdf12-3/fib_num2.pdf,,False
+The Hall Marriage Theorem,"Romanowicz, Ewa and Grabowski, Adam",,http://fm.mizar.org/2004-12/pdf12-3/hallmar1.pdf,,False
+The Differentiable Functions on Normed Linear Spaces,"Imura, Hiroshi and Kimura, Morishige and Shidama, Yasunari",,http://fm.mizar.org/2004-12/pdf12-3/ndiff_1.pdf,,False
+Lucas Numbers and Generalized Fibonacci Numbers,"Wojtecki, Piotr and Grabowski, Adam",,http://fm.mizar.org/2004-12/pdf12-3/fib_num3.pdf,,False
+The Operation of Addition of Relational Structures,"Romanowicz, Katarzyna and Grabowski, Adam",,http://fm.mizar.org/2004-12/pdf12-3/latsum_1.pdf,,False
+The Nagata-Smirnov Theorem. Part I,"Pąk, Karol",,http://fm.mizar.org/2004-12/pdf12-3/nagata_1.pdf,,False
+Properties of Groups,"Geleijnse, Gijs and Bancerek, Grzegorz",,http://fm.mizar.org/2004-12/pdf12-3/group_8.pdf,,False
+Catalan Numbers,"Częstochowska, Dorota and Grabowski, Adam",,http://fm.mizar.org/2004-12/pdf12-3/catalan1.pdf,,False
+Axiomatization of Boolean Algebras Based on Sheffer Stroke,"Kozarkiewicz, Violetta and Grabowski, Adam",,http://fm.mizar.org/2004-12/pdf12-3/sheffer1.pdf,,False
+Short Sheffer Stroke-Based Single Axiom for Boolean Algebras,"Łukaszuk, Aneta and Grabowski, Adam",,http://fm.mizar.org/2004-12/pdf12-3/sheffer2.pdf,,False
+Differentiable Functions on Normed Linear Spaces. Part II,"Imura, Hiroshi and Sakai, Yuji and Shidama, Yasunari",,http://fm.mizar.org/2004-12/pdf12-3/ndiff_2.pdf,,False
+Logical Correctness of Vector Calculation Programs,"Nishiyama, Takaya and Fukura, Hirofumi and Nakamura, Yatsuka",,http://fm.mizar.org/2004-12/pdf12-3/prgcor_2.pdf,,False
+Continuous Mappings between Finite and One-Dimensional Finite Topological Spaces,"Imura, Hiroshi and Tanaka, Masami and Nakamura, Yatsuka",,http://fm.mizar.org/2004-12/pdf12-3/fintopo4.pdf,,False
+The Nagata-Smirnov Theorem. Part II,"Pąk, Karol",,http://fm.mizar.org/2004-12/pdf12-3/nagata_2.pdf,,False
+On the Isomorphism of Fundamental Groups,"Korniłowicz, Artur",,http://fm.mizar.org/2004-12/pdf12-3/topalg_3.pdf,,False
+Algebra of Complex Vector Valued Functions,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-3/vfunct_2.pdf,,False
+Continuous Functions on Real and Complex Normed Linear Spaces,"Endou, Noboru",,http://fm.mizar.org/2004-12/pdf12-3/ncfcont1.pdf,,False
+On the Fundamental Groups of Products of Topological Spaces,"Korniłowicz, Artur",,http://fm.mizar.org/2004-12/pdf12-3/topalg_4.pdf,,False
+Partial Sum of Some Series,"Liang, Ming and Ding, Yuzhong",,http://fm.mizar.org/2005-13/pdf13-1/series_2.pdf,,False
+Substitution in First-Order Formulas: Elementary Properties,"Braselmann, Patrick and Koepke, Peter",,http://fm.mizar.org/2005-13/pdf13-1/substut1.pdf,,False
+Coincidence Lemma and Substitution Lemma,"Braselmann, Patrick and Koepke, Peter",,http://fm.mizar.org/2005-13/pdf13-1/sublemma.pdf,,False
+"Substitution in First-Order Formulas.  Part II.
+The Construction of First-Order Formulas","Braselmann, Patrick and Koepke, Peter",,http://fm.mizar.org/2005-13/pdf13-1/substut2.pdf,,False
+A Sequent Calculus for First-Order Logic,"Braselmann, Patrick and Koepke, Peter",,http://fm.mizar.org/2005-13/pdf13-1/calcul_1.pdf,,False
+Consequences of the Sequent Calculus,"Braselmann, Patrick and Koepke, Peter",,http://fm.mizar.org/2005-13/pdf13-1/calcul_2.pdf,,False
+Equivalences of Inconsistency and Henkin Models,"Braselmann, Patrick and Koepke, Peter",,http://fm.mizar.org/2005-13/pdf13-1/henmodel.pdf,,False
+Gödel's Completeness Theorem,"Braselmann, Patrick and Koepke, Peter",,http://fm.mizar.org/2005-13/pdf13-1/goedelcp.pdf,,False
+"Propositional Calculus for Boolean Valued Functions.
+Part VIII","Kobayashi, Shunichi",,http://fm.mizar.org/2005-13/pdf13-1/bvfunc26.pdf,,False
+Hölder's Inequality and Minkowski's Inequality,"Suzuki, Yasumasa",,http://fm.mizar.org/2005-13/pdf13-1/holder_1.pdf,,False
+The Banach Space l^p,"Suzuki, Yasumasa",,http://fm.mizar.org/2005-13/pdf13-1/lp_space.pdf,,False
+Lebesgue Integral of Simple Valued Function,"Shidama, Yasunari and Endou, Noboru",,http://fm.mizar.org/2005-13/pdf13-1/mesfunc3.pdf,,False
+Inverse Trigonometric Functions Arcsin and Arccos,"Korniłowicz, Artur and Shidama, Yasunari",,http://fm.mizar.org/2005-13/pdf13-1/sin_cos6.pdf,,False
+On Some Points of a Simple Closed Curve,"Korniłowicz, Artur",,http://fm.mizar.org/2005-13/pdf13-1/jordan21.pdf,,False
+On Some Points of a Simple Closed Curve. Part II,"Korniłowicz, Artur and Grabowski, Adam",,http://fm.mizar.org/2005-13/pdf13-1/jordan22.pdf,,False
+Uniform Continuity of Functions on Normed Complex Linear Spaces,"Endou, Noboru",,http://fm.mizar.org/2005-13/pdf13-1/ncfcont2.pdf,,False
+Introduction to Real Linear Topological Spaces,"Byliński, Czesław",,http://fm.mizar.org/2005-13/pdf13-1/rltopsp1.pdf,,False
+Some Properties of Rectangles on the Plane,"Korniłowicz, Artur and Shidama, Yasunari",,http://fm.mizar.org/2005-13/pdf13-1/topreala.pdf,,False
+Some Properties of Circles on the Plane,"Korniłowicz, Artur and Shidama, Yasunari",,http://fm.mizar.org/2005-13/pdf13-1/toprealb.pdf,,False
+"On the Characterization of Collineations of the
+Segre Product of Strongly Connected Partial Linear Spaces","Naumowicz, Adam",,http://fm.mizar.org/2005-13/pdf13-1/pencil_3.pdf,,False
+"Spaces of Pencils, Grassmann Spaces, and Generalized Veronese Spaces","Naumowicz, Adam",,http://fm.mizar.org/2005-13/pdf13-1/pencil_4.pdf,,False
+On the Boundary and Derivative of a Set,"Grabowski, Adam",,http://fm.mizar.org/2005-13/pdf13-1/topgen_1.pdf,,False
+"Construction of Gröbner Bases:
+Avoiding S-Polynomials – Buchberger's First Criterium","Schwarzweller, Christoph",,http://fm.mizar.org/2005-13/pdf13-1/groeb_3.pdf,,False
+A Theory of Matrices of Complex Elements,"Chang, Wenpai and Yamazaki, Hiroshi and Nakamura, Yatsuka",,http://fm.mizar.org/2005-13/pdf13-1/matrix_5.pdf,,False
+On the Characteristic and Weight of a Topological Space,"Bancerek, Grzegorz",,http://fm.mizar.org/2005-13/pdf13-1/topgen_2.pdf,,False
+On Constructing Topological Spaces and Sorgenfrey Line,"Bancerek, Grzegorz",,http://fm.mizar.org/2005-13/pdf13-1/topgen_3.pdf,,False
+On the Real Valued Functions,"Korniłowicz, Artur",,http://fm.mizar.org/2005-13/pdf13-1/partfun3.pdf,,False
+Formalization of Ortholattices via Orthoposets,"Grabowski, Adam and Moschner, Markus",,http://fm.mizar.org/2005-13/pdf13-1/robbins3.pdf,,False
+The Fashoda Meet Theorem for Rectangles,"Nakamura, Yatsuka and Trybulec, Andrzej",,http://fm.mizar.org/2005-13/pdf13-2/jgraph_7.pdf,,False
+Preliminaries to Mathematical Morphology and Its Properties,"Ding, Yuzhong and Liang, Xiquan",,http://fm.mizar.org/2005-13/pdf13-2/mathmorp.pdf,,False
+"Subsequences of Almost, Weakly and Poorly One-to-one Finite Sequences","Milewski, Robert",,http://fm.mizar.org/2005-13/pdf13-2/jordan23.pdf,,False
+Alternative Graph Structures,"Lee, Gilbert and Rudnicki, Piotr",,http://fm.mizar.org/2005-13/pdf13-2/glib_000.pdf,,False
+Walks in Graphs,"Lee, Gilbert",,http://fm.mizar.org/2005-13/pdf13-2/glib_001.pdf,,False
+Trees and Graph Components,"Lee, Gilbert",,http://fm.mizar.org/2005-13/pdf13-2/glib_002.pdf,,False
+Weighted and Labeled Graphs,"Lee, Gilbert",,http://fm.mizar.org/2005-13/pdf13-2/glib_003.pdf,,False
+Correctness of Dijkstra's Shortest Path and Prim's Minimum Spanning Tree Algorithms,"Lee, Gilbert and Rudnicki, Piotr",,http://fm.mizar.org/2005-13/pdf13-2/glib_004.pdf,,False
+Correctnesss of Ford-Fulkerson's Maximum Flow Algorithm,"Lee, Gilbert",,http://fm.mizar.org/2005-13/pdf13-2/glib_005.pdf,,False
+Properties of Connected Subsets  of the Real Line,"Korniłowicz, Artur",,http://fm.mizar.org/2005-13/pdf13-2/rcomp_3.pdf,,False
+The Fundamental Group of the Circle,"Korniłowicz, Artur",,http://fm.mizar.org/2005-13/pdf13-2/topalg_5.pdf,,False
+Brouwer Fixed Point Theorem for Disks on the Plane,"Korniłowicz, Artur and Shidama, Yasunari",,http://fm.mizar.org/2005-13/pdf13-2/brouwer.pdf,,False
+Stirling Numbers of the Second Kind,"Pąk, Karol",,http://fm.mizar.org/2005-13/pdf13-2/stirl2_1.pdf,,False
+Limit of Sequence of Subsets,"Zhang, Bo and Yamazaki, Hiroshi and Nakamura, Yatsuka",,http://fm.mizar.org/2005-13/pdf13-2/setlim_1.pdf,,False
+"The Properties of Supercondensed Sets, Subcondensed Sets and Condensed Sets","Jastrzȩbska, Magdalena and Grabowski, Adam",,http://fm.mizar.org/2005-13/pdf13-2/isomichi.pdf,,False
+Properties of First and Second Order Cutting of Binary Relations,"Retel, Krzysztof",,http://fm.mizar.org/2005-13/pdf13-3/relset_2.pdf,,False
+The Inner Product and Conjugate of Finite Sequences of Complex Numbers,"Chang, Wenpai and Yamazaki, Hiroshi and Nakamura, Yatsuka",,http://fm.mizar.org/2005-13/pdf13-3/complsp2.pdf,,False
+Inferior Limit and Superior Limit of Sequences of Real Numbers,"Zhang, Bo and Yamazaki, Hiroshi and Nakamura, Yatsuka",,http://fm.mizar.org/2005-13/pdf13-3/rinfsup1.pdf,,False
+Formulas and Identities of Inverse Hyperbolic Functions,"Ge, Fuguo and Liang, Xiquan and Ding, Yuzhong",,http://fm.mizar.org/2005-13/pdf13-3/sin_cos7.pdf,,False
+Lines on Planes in n-Dimensional Euclidean Spaces,"Kubo, Akihiro",,http://fm.mizar.org/2005-13/pdf13-3/euclidlp.pdf,,False
+Cardinal Numbers and Finite Sets,"Pąk, Karol",,http://fm.mizar.org/2005-13/pdf13-3/card_fin.pdf,,False
+Some Equations Related to the Limit  of Sequence of Subsets,"Zhang, Bo and Yamazaki, Hiroshi and Nakamura, Yatsuka",,http://fm.mizar.org/2005-13/pdf13-3/setlim_2.pdf,,False
+On the Partial Product of Series and Related Basic Inequalities,"Ge, Fuguo and Liang, Xiquan",,http://fm.mizar.org/2005-13/pdf13-3/series_3.pdf,,False
+"Homeomorphism between Finite Topological Spaces, Two-Dimensional Lattice Spaces and a Fixed Point Theorem","Tanaka, Masami and Imura, Hiroshi and Nakamura, Yatsuka",,http://fm.mizar.org/2005-13/pdf13-3/fintopo5.pdf,,False
+The Maclaurin Expansions,"Nishino, Akira and Shidama, Yasunari",,http://fm.mizar.org/2005-13/pdf13-3/taylor_2.pdf,,False
+Several Differentiable Formulas of Special Functions,"Zhang, Yan and Liang, Xiquan",,http://fm.mizar.org/2005-13/pdf13-3/fdiff_4.pdf,,False
+Set Sequences and Monotone Class,"Zhang, Bo and Yamazaki, Hiroshi and Nakamura, Yatsuka",,http://fm.mizar.org/2005-13/pdf13-4/prob_3.pdf,,False
+A Theory of Sequential Files,"Fukura, Hirofumi and Nakamura, Yatsuka",,http://fm.mizar.org/2005-13/pdf13-4/filerec1.pdf,,False
+"Circled Sets, Circled Hull, and Circled Family","Zhai, Fahui and Cao, Jianbing and Liang, Xiquan",,http://fm.mizar.org/2005-13/pdf13-4/circled1.pdf,,False
+On the Borel Families of Subsets of Topological Spaces,"Grabowski, Adam",,http://fm.mizar.org/2005-13/pdf13-4/topgen_4.pdf,,False
+Linearity of Lebesgue Integral of Simple Valued Function,"Endou, Noboru and Shidama, Yasunari",,http://fm.mizar.org/2005-13/pdf13-4/mesfunc4.pdf,,False
+The Fashoda Meet Theorem for Continuous Mappings,"Nakamura, Yatsuka and Trybulec, Andrzej and Korniłowicz, Artur",,http://fm.mizar.org/2005-13/pdf13-4/jgraph_8.pdf,,False
+Tietze Extension Theorem,"Korniłowicz, Artur and Bancerek, Grzegorz and Naumowicz, Adam",,http://fm.mizar.org/2005-13/pdf13-4/tietze.pdf,,False
+Homeomorphisms of Jordan Curves,"Naumowicz, Adam and Bancerek, Grzegorz",,http://fm.mizar.org/2005-13/pdf13-4/jordan24.pdf,,False
+Jordan Curve Theorem,"Korniłowicz, Artur",,http://fm.mizar.org/2005-13/pdf13-4/jordan.pdf,,False
+The Inner Product and Conjugate of Matrix of Complex Numbers,"Chang, Wenpai and Yamazaki, Hiroshi and Nakamura, Yatsuka",,http://fm.mizar.org/2005-13/pdf13-4/matrixc1.pdf,,False
+Partial Sum and Partial Product of Some Series,"Cao, Jianbing and Zhai, Fahui and Liang, Xiquan",,http://fm.mizar.org/2005-13/pdf13-4/series_4.pdf,,False
+Some Differentiable Formulas of Special Functions,"Cao, Jianbing and Zhai, Fahui and Liang, Xiquan",,http://fm.mizar.org/2005-13/pdf13-4/fdiff_5.pdf,,False
+Formulas and Identities of Hyperbolic Functions,"Pacharapokin, Chanapat and Yamazaki, Hiroshi",,http://fm.mizar.org/2005-13/pdf13-4/sin_cos8.pdf,,False
+Niemytzki Plane - an Example of Tychonoff Space Which Is Not T_4,"Bancerek, Grzegorz",,http://fm.mizar.org/2005-13/pdf13-4/topgen_5.pdf,,False
+On the Partial Product and Partial Sum of Series and Related Basic Inequalities,"Ge, Fuguo and Liang, Xiquan",,http://fm.mizar.org/2005-13/pdf13-4/series_5.pdf,,False
+Several Differentiable Formulas of Special Functions. Part II,"Zhang, Yan and Li, Bo and Liang, Xiquan",,http://fm.mizar.org/2005-13/pdf13-4/fdiff_6.pdf,,False
+On the Calculus of Binary Arithmetics. Part II,"Kobayashi, Shunichi",,http://fm.mizar.org/2005-13/pdf13-4/binari_6.pdf,,False
+Some Properties of Some Special Matrices,"Yue, Xiaopeng and Liang, Xiquan and Sun, Zhongpin",,http://fm.mizar.org/2005-13/pdf13-4/matrix_6.pdf,,False
+Generalized Full Adder Circuits (GFAs). Part I,"Yamaguchi, Shin'nosuke and Wasaki, Katsumi and Shimoi, Nobuhiro",,http://fm.mizar.org/2005-13/pdf13-4/gfacirc1.pdf,,False
+Quotient Rings,"Korniłowicz, Artur",,http://fm.mizar.org/2005-13/pdf13-4/ring_1.pdf,,False
+Completeness of the Real Euclidean Space,"Endou, Noboru and Shidama, Yasunari",,http://fm.mizar.org/2005-13/pdf13-4/real_ns1.pdf,,False
+Determinant of Some Matrices  of Field Elements,"Nakamura, Yatsuka",,http://mizar.org/version/current/html/matrix_7.html,,False
+Some Properties of Some Special Matrices.  Part II,"Yue, Xiaopeng and Hu, Dahai and Liang, Xiquan",,http://mizar.org/version/current/html/matrix_8.html,,False
+On the Permanent of a Matrix,"Romanowicz, Ewa and Grabowski, Adam",,http://mizar.org/version/current/html/matrix_9.html,,False
+A Theory of Matrices of Real Elements,"Nakamura, Yatsuka and Tamura, Nobuyuki and Chang, Wenpai",,http://mizar.org/version/current/html/matrixr1.html,,False
+On the Properties of the Möbius Function,"Jastrzȩbska, Magdalena and Grabowski, Adam",,http://mizar.org/version/current/html/moebius1.html,,False
+Several Differentiation Formulas  of Special Functions. Part III,"Li, Bo and Zhang, Yan and Liang, Xiquan",,http://mizar.org/version/current/html/fdiff_7.html,,False
+Pocklington's Theorem and Bertrand's Postulate,"Riccardi, Marco",,http://mizar.org/version/current/html/nat_4.html,,False
+Integral of Measurable Function,"Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/mesfunc5.html,,False
+Simple Continued Fractions  and Their Convergents,"Li, Bo and Zhang, Yan and Korniłowicz, Artur",,http://mizar.org/version/current/html/real_3.html,,False
+Chordal Graphs,"Arneson, Broderick and Rudnicki, Piotr",,http://mizar.org/version/current/html/chord.html,,False
+Connectedness and Continuous Sequences  in Finite Topological Spaces,"Nakamura, Yatsuka",,http://mizar.org/version/current/html/fintopo6.html,,False
+"The Definition of Finite Sequences  and Matrices of Probability, and Addition of Matrices of Real Elements","Zhang, Bo and Nakamura, Yatsuka",,http://mizar.org/version/current/html/matrprob.html,,False
+Several Differentiation Formulas  of Special Functions. Part IV,"Li, Bo and Wang, Peng",,http://mizar.org/version/current/html/fdiff_8.html,,False
+Difference and Difference Quotient,"Li, Bo and Zhang, Yan and Liang, Xiquan",,http://mizar.org/version/current/html/diff_1.html,,False
+Multiplication of Polynomials  using Discrete Fourier Transformation,"Treyderowski, Krzysztof and Schwarzweller, Christoph",,http://mizar.org/version/current/html/polynom8.html,,False
+Some Special Matrices of Real Elements  and Their Properties,"Liang, Xiquan and Ge, Fuguo and Yue, Xiaopeng",,http://mizar.org/version/current/html/matrix10.html,,False
+Schur's Theorem on the Stability of Networks,"Schwarzweller, Christoph and Rowińska-Schwarzweller, Agnieszka",,http://mizar.org/version/current/html/hurwitz.html,,False
+Integral of Real-Valued  Measurable Function,"Shidama, Yasunari and Endou, Noboru",,http://mizar.org/version/current/html/mesfunc6.html,,False
+The Catalan Numbers. Part II,"Pąk, Karol",,http://mizar.org/version/current/html/catalan2.html,,False
+The Quaternion Numbers,"Liang, Xiquan and Ge, Fuguo",,http://mizar.org/version/current/html/quaterni.html,,False
+Model Checking. Part I,"Ishida, Kazuhisa",,http://mizar.org/version/current/html/modelc_1.html,,False
+Recognizing Chordal Graphs: Lex BFS and MCS,"Arneson, Broderick and Rudnicki, Piotr",,http://mizar.org/version/current/html/lexbfs.html,,False
+Integrability and the Integral  of Partial Functions from ℝ into ℝ,"Endou, Noboru and Shidama, Yasunari and Yamazaki, Masahiko",,http://mizar.org/version/current/html/integra6.html,,False
+Baire's Category Theorem and Some Spaces  Generated from Real Normed Space,"Endou, Noboru and Shidama, Yasunari and Okamura, Katsumasa",,http://mizar.org/version/current/html/normsp_2.html,,False
+On the Representation of Natural Numbers  in Positional Numeral Systems,"Naumowicz, Adam",,http://mizar.org/version/current/html/numeral1.html,,False
+"The Relevance of Measure and Probability, and Definition of Completeness of Probability","Zhang, Bo and Yamazaki, Hiroshi and Nakamura, Yatsuka",,http://mizar.org/version/current/html/prob_4.html,,False
+Several Classes of BCI-algebras  and their Properties,"Ding, Yuzhong",,http://mizar.org/version/current/html/bcialg_1.html,,False
+Formal Languages – Concatenation and Closure,"Trybulec, Michał",,http://mizar.org/version/current/html/flang_1.html,,False
+Basic Properties of Determinants  of Square Matrices over a Field,"Pąk, Karol",,http://mizar.org/version/current/html/matrix11.html,,False
+Combinatorial Grassmannians,"Owsiejczuk, Andrzej",,http://mizar.org/version/current/html/combgras.html,,False
+The Jordan-Hölder Theorem,"Riccardi, Marco",,http://mizar.org/version/current/html/group_9.html,,False
+Regular Expression Quantifiers – m to n Occurrences,"Trybulec, Michał",,http://mizar.org/version/current/html/flang_2.html,,False
+Riemann Indefinite Integral of Functions  of Real Variable,"Shidama, Yasunari and Endou, Noboru and Wasaki, Katsumi",,http://mizar.org/version/current/html/integra7.html,,False
+Partial Differentiation on Normed Linear Spaces ^n,"Endou, Noboru and Shidama, Yasunari and Miyajima, Keiichi",,http://mizar.org/version/current/html/pdiff_1.html,,False
+Several Differentiation Formulas of Special Functions. Part V,"Wang, Peng and Li, Bo",,http://mizar.org/version/current/html/fdiff_9.html,,False
+The Product Space of Real Normed Spaces and its Properties,"Endou, Noboru and Shidama, Yasunari and Miyajima, Keiichi",,http://mizar.org/version/current/html/prvect_2.html,,False
+Mizar Analysis of Algorithms: Preliminaries,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/aofa_000.html,,False
+Definition and some Properties of Information Entropy,"Zhang, Bo and Nakamura, Yatsuka",,http://mizar.org/version/current/html/entropy1.html,,False
+String Rewriting Systems,"Trybulec, Michał",,http://mizar.org/version/current/html/rewrite2.html,,False
+Determinant and Inverse of Matrices  of Real Elements,"Tamura, Nobuyuki and Nakamura, Yatsuka",,http://mizar.org/version/current/html/matrixr2.html,,False
+The Rank+Nullity Theorem,"Alama, Jesse",,http://mizar.org/version/current/html/ranknull.html,,False
+Laplace Expansion,"Pąk, Karol and Trybulec, Andrzej",,http://mizar.org/version/current/html/laplace.html,,False
+Some Properties of Line and Column Operations on Matrices,"Liang, Xiquan and Sun, Tao and Hu, Dahai",,http://mizar.org/version/current/html/matrix12.html,,False
+The Sylow Theorems,"Riccardi, Marco",,http://mizar.org/version/current/html/group_10.html,,False
+Alexandroff One Point Compactification,"Byliński, Czesław",,http://mizar.org/version/current/html/compact1.html,,False
+Arrow's Impossibility Theorem,"Wiedijk, Freek",,http://mizar.org/version/current/html/arrow.html,,False
+Congruences and Quotient Algebras  of BCI-algebras,"Ding, Yuzhong and Pang, Zhiyong",,http://mizar.org/version/current/html/bcialg_2.html,,False
+Linear Congruence Relation  and Complete Residue Systems,"Liang, Xiquan and Yan, Li and Zhao, Junjie",,http://mizar.org/version/current/html/int_4.html,,False
+Several Integrability Formulas  of Special Functions,"Peng, Cuiying and Ge, Fuguo and Liang, Xiquan",,http://mizar.org/version/current/html/integra8.html,,False
+Basic Properties of the Rank  of Matrices over a Field,"Pąk, Karol",,http://mizar.org/version/current/html/matrix13.html,,False
+Basic Operations on Preordered  Coherent Spaces,"Grue, Klaus E. and Korniłowicz, Artur",,http://mizar.org/version/current/html/pcs_0.html,,False
+"Inferior Limit, Superior Limit and Convergence of Sequences of Extended Real Numbers","Yamazaki, Hiroshi and Endou, Noboru and Shidama, Yasunari and Okazaki, Hiroyuki",,http://mizar.org/version/current/html/rinfsup2.html,,False
+Several Classes of BCK-algebras  and their Properties,"Sun, Tao and Hu, Dahai and Liang, Xiquan",,http://mizar.org/version/current/html/bcialg_3.html,,False
+Several Differentiation Formulas  of Special Functions. Part VI,"Li, Bo and Wang, Pan",,http://mizar.org/version/current/html/fdiff_10.html,,False
+The Vector Space of Subsets of a Set Based on Symmetric Difference,"Alama, Jesse",,http://mizar.org/version/current/html/bspace.html,,False
+Euler's Polyhedron Formula,"Alama, Jesse",,http://mizar.org/version/current/html/polyform.html,,False
+Uniform Boundedness Principle,"Sakurai, Hideki and Kunimune, Hisayoshi and Shidama, Yasunari",,http://mizar.org/version/current/html/lopban_5.html,,False
+Gauss Lemma and Law of Quadratic Reciprocity,"Yan, Li and Liang, Xiquan and Zhao, Junjie",,http://mizar.org/version/current/html/int_5.html,,False
+Regular Expression Quantifiers – at least m Occurrences,"Trybulec, Michał",,http://mizar.org/version/current/html/flang_3.html,,False
+Complete Spaces,"Pąk, Karol",,http://mizar.org/version/current/html/compl_sp.html,,False
+Difference and Difference Quotient. Part II,"Li, Bo and Zhuang, Yanping and Liang, Xiquan",,http://mizar.org/version/current/html/diff_2.html,,False
+The First Mean Value Theorem for Integrals,"Narita, Keiko and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/mesfunc7.html,,False
+Egoroff's Theorem,"Endou, Noboru and Shidama, Yasunari and Narita, Keiko",,http://mizar.org/version/current/html/mesfunc8.html,,False
+BCI-algebras with Condition (S)  and their Properties,"Sun, Tao and Zhao, Junjie and Liang, Xiquan",,http://mizar.org/version/current/html/bcialg_4.html,,False
+Stability of n-Bit Generalized Full Adder Circuits (GFAs). Part II,"Wasaki, Katsumi",,http://mizar.org/version/current/html/gfacirc2.html,,False
+Solutions of Linear Equations,"Pąk, Karol",,http://mizar.org/version/current/html/matrix15.html,,False
+Helly Property for Subtrees,"Enright, Jessica and Rudnicki, Piotr",,http://mizar.org/version/current/html/helly.html,,False
+Heron's Formula and Ptolemy's Theorem,"Riccardi, Marco",,http://mizar.org/version/current/html/euclid_6.html,,False
+Uniqueness of Factoring an Integer and Multiplicative Group ℤ/pℤ^∗,"Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/int_7.html,,False
+Ideals of BCI-algebras and their Properties,"Wu, Chenglong and Ding, Yuzhong",,http://mizar.org/version/current/html/bciideal.html,,False
+Banach Algebra of Bounded Functionals,"Shidama, Yasunari and Suzuki, Hikofumi and Endou, Noboru",,http://mizar.org/version/current/html/c0sp1.html,,False
+Convex Sets and Convex Combinations  on Complex Linear Spaces,"Matsuzaki, Hidenori and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/convex4.html,,False
+"Inner Products, Group, Ring  of Quaternion Numbers","Ge, Fuguo",,http://mizar.org/version/current/html/quatern2.html,,False
+Several Higher Differentiation Formulas  of Special Functions,"Zhao, Junjie and Liang, Xiquan and Yan, Li",,http://mizar.org/version/current/html/hfdiff_1.html,,False
+Inverse Trigonometric Functions  Arctan and Arccot,"Liang, Xiquan and Xie, Bing",,http://mizar.org/version/current/html/sin_cos9.html,,False
+Inverse Trigonometric Functions  Arcsec and Arccosec,"Xie, Bing and Liang, Xiquan and Ge, Fuguo",,http://mizar.org/version/current/html/sincos10.html,,False
+The Lebesgue Monotone Convergence Theorem,"Endou, Noboru and Narita, Keiko and Shidama, Yasunari",,http://mizar.org/version/current/html/mesfunc9.html,,False
+Mizar Analysis of Algorithms: Algorithms over Integers,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/aofa_i00.html,,False
+Invertibility of Matrices of Field Elements,"Nakamura, Yatsuka and Oniumi, Kunio and Chang, Wenpai",,http://mizar.org/version/current/html/matrix14.html,,False
+Ramsey's Theorem,"Riccardi, Marco",,http://mizar.org/version/current/html/ramsey_1.html,,False
+Towards the Construction of a Model of Mizar Concepts,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/abcmiz_1.html,,False
+Model Checking. Part II,"Ishida, Kazuhisa",,http://mizar.org/version/current/html/modelc_2.html,,False
+Modular Integer Arithmetic,"Schwarzweller, Christoph",,http://mizar.org/version/current/html/int_6.html,,False
+General Theory of Quasi-Commutative BCI-algebras,"Sun, Tao and Pan, Weibo and Wu, Chenglong and Liang, Xiquan",,http://mizar.org/version/current/html/bcialg_5.html,,False
+Block Diagonal Matrices,"Pąk, Karol",,http://mizar.org/version/current/html/matrixj1.html,,False
+Linear Map of Matrices,"Pąk, Karol",,http://mizar.org/version/current/html/matrlin2.html,,False
+Orthomodular Lattices,"Mądra, Elżbieta and Grabowski, Adam",,http://mizar.org/version/current/html/robbins4.html,,False
+Basic Properties and Concept  of Selected Subsequence  of Zero Based Finite Sequences,"Nakamura, Yatsuka and Ito, Hisashi",,http://mizar.org/version/current/html/afinsq_2.html,,False
+Eigenvalues of a Linear Transformation,"Pąk, Karol",,http://mizar.org/version/current/html/vectsp11.html,,False
+Jordan Matrix Decomposition,"Pąk, Karol",,http://mizar.org/version/current/html/matrixj2.html,,False
+Fatou's Lemma and the Lebesgue's Convergence Theorem,"Endou, Noboru and Narita, Keiko and Shidama, Yasunari",,http://mizar.org/version/current/html/mesfun10.html,,False
+Extended Riemann Integral of Functions  of Real Variable  and One-sided Laplace Transform,"Yamazaki, Masahiko and Yamazaki, Hiroshi and Shidama, Yasunari",,http://mizar.org/version/current/html/integr10.html,,False
+Integral of Complex-Valued Measurable Function,"Narita, Keiko and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/mesfun6c.html,,False
+Introduction to Matroids,"Bancerek, Grzegorz and Shidama, Yasunari",,http://mizar.org/version/current/html/matroid0.html,,False
+Partial Differentiation of Real Binary Functions,"Xie, Bing and Liang, Xiquan and Li, Hongwei",,http://mizar.org/version/current/html/pdiff_2.html,,False
+Model Checking. Part III,"Ishida, Kazuhisa and Shidama, Yasunari",,http://mizar.org/version/current/html/modelc_3.html,,False
+Basic Properties of Circulant Matrices  and Anti-Circular Matrices,"Yue, Xiaopeng and Liang, Xiquan",,http://mizar.org/version/current/html/matrix16.html,,False
+On L^1 Space Formed by Real-Valued Partial Functions,"Watase, Yasushige and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/lpspace1.html,,False
+BCI-homomorphisms,"Ding, Yuzhong and Ge, Fuguo and Wu, Chenglong",,http://mizar.org/version/current/html/bcialg_6.html,,False
+Stability of the 4-2 Binary Addition Circuit Cells. Part I,"Wasaki, Katsumi",,http://mizar.org/version/current/html/ftacell1.html,,False
+Several Differentiation Formulas of Special Functions. Part VII,"Ge, Fuguo and Xie, Bing",,http://mizar.org/version/current/html/fdiff_11.html,,False
+Open Mapping Theorem,"Sakurai, Hideki and Kunimune, Hisayoshi and Shidama, Yasunari",,http://mizar.org/version/current/html/lopban_6.html,,False
+The Real Vector Spaces of Finite Sequences are Finite Dimensional,"Nakamura, Yatsuka and Korniłowicz, Artur and Oya, Nagato and Shidama, Yasunari",,http://mizar.org/version/current/html/euclid_7.html,,False
+"Several Integrability Formulas  of Some Functions,  Orthogonal Polynomials  and Norm Functions","Li, Bo and Zhuang, Yanping and Xie, Bing and Wang, Pan",,http://mizar.org/version/current/html/integra9.html,,False
+Several Integrability Formulas of Special Functions. Part II,"Li, Bo and Zhuang, Yanping and Men, Yanhong and Liang, Xiquan",,http://mizar.org/version/current/html/integr11.html,,False
+Cell Petri Net Concepts,"Jitsukawa, Mitsuru and Kawamoto, Pauline N. and Shidama, Yasunari and Nakamura, Yatsuka",,http://mizar.org/version/current/html/petri_2.html,,False
+Arithmetic Operations on Functions from Sets into Functional Sets,"Korniłowicz, Artur",,http://mizar.org/version/current/html/valued_2.html,,False
+Some Operations on Quaternion Numbers,"Li, Bo and Wang, Pan and Liang, Xiquan and Zhuang, Yanping",,http://mizar.org/version/current/html/quatern3.html,,False
+Complex Function Differentiability,"Pacharapokin, Chanapat and Yamazaki, Hiroshi and Shidama, Yasunari and Nakamura, Yatsuka",,http://mizar.org/version/current/html/cfdiff_1.html,,False
+Kolmogorov's Zero-One Law,"Doll, Agnes",,http://mizar.org/version/current/html/kolmog01.html,,False
+Second-Order Partial Differentiation  of Real Binary Functions,"Xie, Bing and Liang, Xiquan and Shen, Xiuzhuan",,http://mizar.org/version/current/html/pdiff_3.html,,False
+The Measurability of Complex-Valued Functional Sequences,"Narita, Keiko and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/mesfun7c.html,,False
+Collective Operations on Number-Membered Sets,"Korniłowicz, Artur",,http://mizar.org/version/current/html/member_1.html,,False
+Solution of Cubic and Quartic Equations,"Riccardi, Marco",,http://mizar.org/version/current/html/polyeq_5.html,,False
+The Perfect Number Theorem  and Wilson's Theorem,"Riccardi, Marco",,http://mizar.org/version/current/html/nat_5.html,,False
+Probability on Finite Set and Real-Valued Random Variables,"Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/random_1.html,,False
+Lebesgue's Convergence Theorem  of Complex-Valued Function,"Narita, Keiko and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/mesfun9c.html,,False
+The Cauchy-Riemann Differential Equations of Complex Functions,"Yamazaki, Hiroshi and Shidama, Yasunari and Pacharapokin, Chanapat and Nakamura, Yatsuka",,http://mizar.org/version/current/html/cfdiff_2.html,,False
+Properties of Primes and Multiplicative Group of a Field,"Arai, Kenichi and Okazaki, Hiroyuki",,http://mizar.org/version/current/html/gr_cy_3.html,,False
+Hopf Extension Theorem of Measure,"Endou, Noboru and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/measure8.html,,False
+Labelled State Transition Systems,"Trybulec, Michał",,http://mizar.org/version/current/html/rewrite3.html,,False
+Probability on Finite and Discrete Set and Uniform Distribution,"Okazaki, Hiroyuki",,http://mizar.org/version/current/html/dist_1.html,,False
+Riemann Integral of Functions  from ℝ into ^n,"Miyajima, Keiichi and Shidama, Yasunari",,http://mizar.org/version/current/html/integr15.html,,False
+Basic Properties of Even and Odd Functions,"Li, Bo and Men, Yanhong",,http://mizar.org/version/current/html/funct_8.html,,False
+Equivalence of Deterministic and Nondeterministic Epsilon Automata,"Trybulec, Michał",,http://mizar.org/version/current/html/fsm_3.html,,False
+Basic Properties of Metrizable Topological Spaces,"Pąk, Karol",,http://mizar.org/version/current/html/metrizts.html,,False
+Small Inductive Dimension of Topological Spaces,"Pąk, Karol",,http://mizar.org/version/current/html/topdim_1.html,,False
+On Rough Subgroup of a Group,"Liang, Xiquan and Li, Dailu",,http://mizar.org/version/current/html/group_11.html,,False
+Small Inductive Dimension of Topological Spaces. Part II,"Pąk, Karol",,http://mizar.org/version/current/html/topdim_2.html,,False
+Dilworth's Decomposition Theorem for Posets,"Rudnicki, Piotr",,http://mizar.org/version/current/html/dilworth.html,,False
+Complex Integral,"Yamazaki, Masahiko and Yamazaki, Hiroshi and Wasaki, Katsumi and Shidama, Yasunari",,http://mizar.org/version/current/html/integr1c.html,,False
+On the Lattice of Intervals and Rough Sets,"Grabowski, Adam and Jastrzębska, Magdalena",,http://mizar.org/version/current/html/interva1.html,,False
+Basic Properties of Periodic Functions,"Li, Bo and Men, Yanhong and Li, Dailu and Liang, Xiquan",,http://mizar.org/version/current/html/funct_9.html,,False
+Epsilon Numbers and Cantor Normal Form,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/ordinal5.html,,False
+Vector Functions and their Differentiation Formulas in 3-dimensional Euclidean Spaces,"Liang, Xiquan and Zhao, Piqing and Bai, Ou",,http://mizar.org/version/current/html/euclid_8.html,,False
+Banach Algebra of Continuous Functionals and the Space of Real-Valued Continuous Functionals with Bounded Support,"Kanazashi, Katuhiko and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/c0sp2.html,,False
+Free Magmas,"Riccardi, Marco",,http://mizar.org/version/current/html/algstr_4.html,,False
+Integrability Formulas. Part I,"Li, Bo and Ma, Na",,http://mizar.org/version/current/html/integr12.html,,False
+Partial Differentiation of Real Ternary Functions,"Inoué, Takao and Xie, Bing and Liang, Xiquan",,http://mizar.org/version/current/html/pdiff_4.html,,False
+Fixpoint Theorem for Continuous Functions on Chain-Complete Posets,"Ishida, Kazuhisa and Shidama, Yasunari",,http://mizar.org/version/current/html/poset_1.html,,False
+Nilpotent Groups,"Li, Dailu and Liang, Xiquan and Men, Yanhong",,http://mizar.org/version/current/html/grnilp_1.html,,False
+Difference and Difference Quotient. Part III,"Liang, Xiquan and Tang, Ling",,http://mizar.org/version/current/html/diff_3.html,,False
+A Model of Mizar Concepts – Unification,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/abcmiz_a.html,,False
+Representation of the Fibonacci and Lucas Numbers in Terms of Floor and Ceiling,"Jastrzębska, Magdalena",,http://mizar.org/version/current/html/fib_num4.html,,False
+The Correspondence Between n-dimensional Euclidean Space and the Product of n Real Lines,"Korniłowicz, Artur",,http://mizar.org/version/current/html/euclid_9.html,,False
+Affine Independence in Vector Spaces,"Pąk, Karol",,http://mizar.org/version/current/html/rlaffin1.html,,False
+Abstract Simplicial Complexes,"Pąk, Karol",,http://mizar.org/version/current/html/simplex0.html,,False
+The Sum and Product of Finite Sequences of Complex Numbers,"Miyajima, Keiichi and Kato, Takahiro",,http://mizar.org/version/current/html/rvsum_2.html,,False
+Second-Order Partial Differentiation of Real Ternary Functions,"Inoué, Takao",,http://mizar.org/version/current/html/pdiff_5.html,,False
+Integrability Formulas. Part II,"Li, Bo and Ma, Na and Liang, Xiquan",,http://mizar.org/version/current/html/integr13.html,,False
+Integrability Formulas. Part III,"Li, Bo and Ma, Na",,http://mizar.org/version/current/html/integr14.html,,False
+On L^p Space Formed by Real-Valued Partial Functions,"Watase, Yasushige and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/lpspace2.html,,False
+Miscellaneous Facts about Open Functions and Continuous Functions,"Korniłowicz, Artur",,http://mizar.org/version/current/html/tops_4.html,,False
+On the Continuity of Some Functions,"Korniłowicz, Artur",,http://mizar.org/version/current/html/toprealc.html,,False
+The Geometric Interior in Real Linear Spaces,"Pąk, Karol",,http://mizar.org/version/current/html/rlaffin2.html,,False
+Sperner's Lemma,"Pąk, Karol",,http://mizar.org/version/current/html/simplex1.html,,False
+"Counting Derangements, Non Bijective Functions and the Birthday Problem","Kaliszyk, Cezary",,http://mizar.org/version/current/html/cardfin2.html,,False
+Riemann Integral of Functions ℝ into ℂ,"Miyajima, Keiichi and Kato, Takahiro and Shidama, Yasunari",,http://mizar.org/version/current/html/integr16.html,,False
+Differentiation of Vector-Valued Functions on n-Dimensional Real Normed Linear Spaces,"Inoué, Takao and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/pdiff_6.html,,False
+Probability Measure on Discrete Spaces and Algebra of Real-Valued Random Variables,"Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/random_2.html,,False
+Partial Differentiation of Vector-Valued Functions on n-Dimensional Real Normed Linear Spaces,"Inoué, Takao and Naumowicz, Adam and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/pdiff_7.html,,False
+Some Properties of p-Groups and Commutative p-Groups,"Liang, Xiquan and Li, Dailu",,http://mizar.org/version/current/html/groupp_1.html,,False
+Riemann Integral of Functions from ℝ into Real Normed Space,"Miyajima, Keiichi and Kato, Takahiro and Shidama, Yasunari",,http://mizar.org/version/current/html/integr18.html,,False
+Normal Subgroup of Product of Groups,"Okazaki, Hiroyuki and Arai, Kenichi and Shidama, Yasunari",,http://mizar.org/version/current/html/group_12.html,,False
+The Mycielskian of a Graph,"Rudnicki, Piotr and Stewart, Lorna",,http://mizar.org/version/current/html/mycielsk.html,,False
+Difference and Difference Quotient. Part IV,"Liang, Xiquan and Tang, Ling and Jiang, Xichun",,http://mizar.org/version/current/html/diff_4.html,,False
+The Definition of Topological Manifolds,"Riccardi, Marco",,http://mizar.org/version/current/html/mfold_1.html,,False
+More on Continuous Functions on Normed Linear Spaces,"Okazaki, Hiroyuki and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/nfcont_3.html,,False
+Cartesian Products of Family of Real Linear Spaces,"Okazaki, Hiroyuki and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/prvect_3.html,,False
+Formalization of Integral Linear Space,"Futa, Yuichi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/rlvect_x.html,,False
+"Partial Differentiation, Differentiation and Continuity on n-Dimensional Real Normed Linear Spaces","Inoué, Takao and Naumowicz, Adam and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/pdiff_8.html,,False
+Differentiable Functions into Real Normed Spaces,"Okazaki, Hiroyuki and Endou, Noboru and Narita, Keiko and Shidama, Yasunari",,http://mizar.org/version/current/html/ndiff_3.html,,False
+Conway's Games and Some of their Basic Properties,"Nittka, Robin",,http://mizar.org/version/current/html/cgames_1.html,,False
+Veblen Hierarchy,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/ordinal6.html,,False
+Sorting by Exchanging,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/exchsort.html,,False
+Linear Transformations of Euclidean Topological Spaces,"Pąk, Karol",,http://mizar.org/version/current/html/matrtop1.html,,False
+Linear Transformations of Euclidean Topological Spaces. Part II,"Pąk, Karol",,http://mizar.org/version/current/html/matrtop2.html,,False
+The Axiomatization of Propositional Linear Time Temporal Logic,"Giero, Mariusz",,http://mizar.org/version/current/html/ltlaxio1.html,,False
+Banach Algebra of Bounded Complex-Valued Functionals,"Kanazashi, Katuhiko and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/cc0sp1.html,,False
+Mazur-Ulam Theorem,"Korniłowicz, Artur",,http://mizar.org/version/current/html/mazurulm.html,,False
+Set of Points on Elliptic Curve in Projective Coordinates,"Futa, Yuichi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/ec_pf_1.html,,False
+Continuity of Barycentric Coordinates in Euclidean Topological Spaces,"Pąk, Karol",,http://mizar.org/version/current/html/rlaffin3.html,,False
+Brouwer Fixed Point Theorem for Simplexes,"Pąk, Karol",,http://mizar.org/version/current/html/simplex2.html,,False
+Brouwer Fixed Point Theorem in the General Case,"Pąk, Karol",,http://mizar.org/version/current/html/brouwer2.html,,False
+Preliminaries to Classical First Order Model Theory,"Caminati, Marco B.",,http://mizar.org/version/current/html/fomodel0.html,,False
+"Definition of First Order Language with Arbitrary Alphabet. Syntax of Terms, Atomic Formulas and their Subterms","Caminati, Marco B.",,http://mizar.org/version/current/html/fomodel1.html,,False
+First Order Languages: Further Syntax and Semantics,"Caminati, Marco B.",,http://mizar.org/version/current/html/fomodel2.html,,False
+"Free Interpretation, Quotient Interpretation and Substitution of a Letter with a Term for First Order Languages","Caminati, Marco B.",,http://mizar.org/version/current/html/fomodel3.html,,False
+"Sequent Calculus, Derivability, Provability. Gödel's Completeness Theorem","Caminati, Marco B.",,http://mizar.org/version/current/html/fomodel4.html,,False
+Cayley's Theorem,"Korniłowicz, Artur",,http://mizar.org/version/current/html/cayley.html,,False
+Borel-Cantelli Lemma,"Jaeger, Peter",,http://mizar.org/version/current/html/bor_cant.html,,False
+More on the Continuity of Real Functions,"Narita, Keiko and Korniłowicz, Artur and Shidama, Yasunari",,http://mizar.org/version/current/html/nfcont_4.html,,False
+Representation Theorem for Stacks,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/stacks_1.html,,False
+Elementary Introduction to Stochastic Finance in Discrete Time,"Jaeger, Peter",,http://mizar.org/version/current/html/finance1.html,,False
+Valuation Theory. Part I,"Bancerek, Grzegorz and Kobayashi, Hidetsune and Korniłowicz, Artur",,http://mizar.org/version/current/html/fvaluat1.html,,False
+"Functional Space (Ω), (Ω)","Kanazashi, Katuhiko and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/cc0sp2.html,,False
+The Rotation Group,"Pąk, Karol",,http://mizar.org/version/current/html/matrtop3.html,,False
+Differentiable Functions on Normed Linear Spaces,"Shidama, Yasunari",,http://mizar.org/version/current/html/ndiff_5.html,,False
+Planes and Spheres as Topological Manifolds. Stereographic Projection,"Riccardi, Marco",,http://mizar.org/version/current/html/mfold_2.html,,False
+ℤ-modules,"Futa, Yuichi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/zmodul01.html,,False
+Morphology for Image Processing. Part I,"Yamazaki, Hiroshi and Byliński, Czesław and Wasaki, Katsumi",,http://mizar.org/version/current/html/morph_01.html,,False
+The Differentiable Functions  from ℝ into ^n,"Narita, Keiko and Korniłowicz, Artur and Shidama, Yasunari",,http://mizar.org/version/current/html/ndiff_4.html,,False
+Some Basic Properties of Some Special Matrices. Part III,"Liang, Xiquan and Wang, Tao",,http://mizar.org/version/current/html/matrix17.html,,False
+Riemann Integral of Functions from ℝ into n-dimensional Real Normed Space,"Miyajima, Keiichi and Korniłowicz, Artur and Shidama, Yasunari",,http://mizar.org/version/current/html/integr19.html,,False
+Operations of Points on Elliptic Curve in Projective Coordinates,"Futa, Yuichi and Okazaki, Hiroyuki and Mizushima, Daichi and Shidama, Yasunari",,http://mizar.org/version/current/html/ec_pf_2.html,,False
+Fundamental Group of n-sphere for n ≥ 2,"Riccardi, Marco and Korniłowicz, Artur",,http://mizar.org/version/current/html/topalg_6.html,,False
+The Borsuk-Ulam Theorem,"Korniłowicz, Artur and Riccardi, Marco",,http://mizar.org/version/current/html/borsuk_7.html,,False
+Higher-Order Partial Differentiation,"Endou, Noboru and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/pdiff_9.html,,False
+Formalization of the Data Encryption Standard,"Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/descip_1.html,,False
+Semantics of MML Query,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/mmlquery.html,,False
+"Routh's, Menelaus' and Generalized Ceva's Theorems","Shminke, Boris A.",,http://mizar.org/version/current/html/menelaus.html,,False
+Simple Graphs as Simplicial Complexes: the Mycielskian of a Graph,"Rudnicki, Piotr and Stewart, Lorna",,http://mizar.org/version/current/html/scmyciel.html,,False
+Extended Euclidean Algorithm and CRT Algorithm,"Okazaki, Hiroyuki and Aoki, Yosiki and Shidama, Yasunari",,http://mizar.org/version/current/html/ntalgo_1.html,,False
+Introduction to Rational Functions,"Schwarzweller, Christoph",,http://mizar.org/version/current/html/ratfunc1.html,,False
+Transition of Consistency and Satisfiability under Language Extensions,"Schlöder, Julian J. and Koepke, Peter",,http://mizar.org/version/current/html/qc_trans.html,,False
+The Gödel Completeness Theorem for Uncountable Languages,"Schlöder, Julian J. and Koepke, Peter",,http://mizar.org/version/current/html/goedcpuc.html,,False
+Quotient Module of ℤ-module,"Futa, Yuichi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/zmodul02.html,,False
+The Derivations of Temporal Logic Formulas,"Giero, Mariusz",,http://mizar.org/version/current/html/ltlaxio2.html,,False
+The Properties of Sets of Temporal Logic Subformulas,"Giero, Mariusz",,http://mizar.org/version/current/html/ltlaxio3.html,,False
+Weak Completeness Theorem for Propositional Linear Time Temporal Logic,"Giero, Mariusz",,http://mizar.org/version/current/html/ltlaxio4.html,,False
+The Friendship Theorem,"Pąk, Karol",,http://mizar.org/version/current/html/friends1.html,,False
+Free Term Algebras,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/msafree4.html,,False
+Posterior Probability on Finite Set,"Okazaki, Hiroyuki",,http://mizar.org/version/current/html/dist_2.html,,False
+Basic Properties of Primitive Root and Order Function,"Ma, Na and Liang, Xiquan",,http://mizar.org/version/current/html/int_8.html,,False
+Banach's Continuous Inverse Theorem and Closed Graph Theorem,"Sakurai, Hideki and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/lopban_7.html,,False
+Free ℤ-module,"Futa, Yuichi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/zmodul03.html,,False
+Cayley-Dickson Construction,"Korniłowicz, Artur",,http://mizar.org/version/current/html/cayldick.html,,False
+Contracting Mapping on Normed Linear Space,"Miyajima, Keiichi and Korniłowicz, Artur and Shidama, Yasunari",,http://mizar.org/version/current/html/ordeq_01.html,,False
+Products in Categories without Uniqueness of cod and dom,"Korniłowicz, Artur",,http://mizar.org/version/current/html/altcat_5.html,,False
+Program Algebra over an Algebra,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/aofa_a00.html,,False
+Isomorphisms of Direct Products of Finite Cyclic Groups,"Arai, Kenichi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/group_14.html,,False
+On L^1 Space Formed by Complex-Valued Partial Functions,"Watase, Yasushige and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/lpspacc1.html,,False
+Analysis of Algorithms: An Example of a Sort Algorithm,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/aofa_a01.html,,False
+The C^k Space,"Kanazashi, Katuhiko and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/ckspace1.html,,False
+Random Variables and Product of Probability Spaces,"Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/random_3.html,,False
+Semantics of MML Query - Ordering,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/mmlquer2.html,,False
+A Test for the Stability of Networks,"Rowińska-Schwarzweller, Agnieszka and Schwarzweller, Christoph",,http://mizar.org/version/current/html/hurwitz2.html,,False
+Relational Formal Characterization of Rough Sets,"Grabowski, Adam",,http://mizar.org/version/current/html/roughs_2.html,,False
+Isomorphisms of Direct Products of Finite Commutative Groups,"Okazaki, Hiroyuki and Yamazaki, Hiroshi and Shidama, Yasunari",,http://mizar.org/version/current/html/group_17.html,,False
+N-Dimensional Binary Vector Spaces,"Arai, Kenichi and Okazaki, Hiroyuki",,http://mizar.org/version/current/html/nbvectsp.html,,False
+Some Properties of the Sorgenfrey Line and the Sorgenfrey Plane,"St. Arnaud, Adam and Rudnicki, Piotr",,http://mizar.org/version/current/html/topgen_6.html,,False
+More on Divisibility Criteria for Selected Primes,"Naumowicz, Adam and Piliszek, Radosław",,http://mizar.org/version/current/html/numeral2.html,,False
+Differentiation in Normed Spaces,"Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/ndiff_6.html,,False
+Polygonal Numbers,"Grabowski, Adam",,http://mizar.org/version/current/html/numpoly1.html,,False
+Gaussian Integers,"Futa, Yuichi and Okazaki, Hiroyuki and Mizushima, Daichi and Shidama, Yasunari",,http://mizar.org/version/current/html/gaussint.html,,False
+Commutativeness of Fundamental Groups of Topological Groups,"Korniłowicz, Artur",,http://mizar.org/version/current/html/topalg_7.html,,False
+Constructing Binary Huffman Tree,"Okazaki, Hiroyuki and Futa, Yuichi and Shidama, Yasunari",,http://mizar.org/version/current/html/huffman1.html,,False
+Riemann Integral of Functions from ℝ into Real Banach Space,"Narita, Keiko and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/integr20.html,,False
+On Square-Free Numbers,"Grabowski, Adam",,http://mizar.org/version/current/html/moebius2.html,,False
+Double Sequences and Limits,"Endou, Noboru and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/dblseq_1.html,,False
+Formalization of the Advanced Encryption Standard. Part I,"Arai, Kenichi and Okazaki, Hiroyuki",,http://mizar.org/version/current/html/aescip_1.html,,False
+The Linearity of Riemann Integral on Functions from ℝ into Real Banach Space,"Narita, Keiko and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/integr21.html,,False
+Object-Free Definition of Categories,"Riccardi, Marco",,http://mizar.org/version/current/html/cat_6.html,,False
+Isomorphisms of Direct Products of Cyclic Groups of Prime Power Order,"Yamazaki, Hiroshi and Okazaki, Hiroyuki and Nakasho, Kazuhisa and Shidama, Yasunari",,http://mizar.org/version/current/html/group_18.html,,False
+Prime Filters and Ideals in Distributive Lattices,"Grabowski, Adam",,http://mizar.org/version/current/html/latticea.html,,False
+Introduction to Formal Preference Spaces,"Niewiadomska, Eliza and Grabowski, Adam",,http://mizar.org/version/current/html/prefer_1.html,,False
+Coproducts in Categories without Uniqueness of cod and dom,"Goliński, Maciej and Korniłowicz, Artur",,http://mizar.org/version/current/html/altcat_6.html,,False
+Formulation of Cell Petri Nets,"Jitsukawa, Mitsuru and Kawamoto, Pauline N. and Shidama, Yasunari",,http://mizar.org/version/current/html/petri_3.html,,False
+Isometric Differentiable Functions on Real Normed Space,"Futa, Yuichi and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/ndiff_7.html,,False
+Differential Equations on Functions from ℝ into Real Banach Space,"Narita, Keiko and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/ordeq_02.html,,False
+Submodule of free ℤ-module,"Futa, Yuichi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/zmodul04.html,,False
+Definition of Flat Poset and Existence Theorems for Recursive Call,"Ishida, Kazuhisa and Shidama, Yasunari and Grabowski, Adam",,http://mizar.org/version/current/html/poset_2.html,,False
+Tietze Extension Theorem for n-dimensional Spaces,"Pąk, Karol",,http://mizar.org/version/current/html/tietze_2.html,,False
+Brouwer Invariance of Domain Theorem,"Pąk, Karol",,http://mizar.org/version/current/html/brouwer3.html,,False
+The Formalization of Decision-Free Petri Net,"Shah, Pratima K. and Kawamoto, Pauline N. and Giero, Mariusz",,http://mizar.org/version/current/html/petri_df.html,,False
+Abstract Reduction Systems and Idea of Knuth-Bendix Completion Algorithm,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/absred_0.html,,False
+Double Series and Sums,"Endou, Noboru",,http://mizar.org/version/current/html/dblseq_2.html,,False
+Dual Spaces and Hahn-Banach Theorem,"Narita, Keiko and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/dualsp01.html,,False
+Semiring of Sets,"Coghetto, Roland",,http://mizar.org/version/current/html/srings_1.html,,False
+Semiring of Sets: Examples,"Coghetto, Roland",,http://mizar.org/version/current/html/srings_2.html,,False
+Topological Interpretation of Rough Sets,"Grabowski, Adam",,http://mizar.org/version/current/html/roughs_4.html,,False
+Pseudo-Canonical Formulae are Classical,"Caminati, Marco B. and Korniłowicz, Artur",,http://mizar.org/version/current/html/hilbert4.html,,False
+Lagrange's Four-Square Theorem,"Watase, Yasushige",,http://mizar.org/version/current/html/lagra4sq.html,,False
+Proth Numbers,"Schwarzweller, Christoph",,http://mizar.org/version/current/html/nat_6.html,,False
+Bertrand's Ballot Theorem,"Pąk, Karol",,http://mizar.org/version/current/html/ballot_1.html,,False
+Term Context,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/msafree5.html,,False
+Cauchy Mean Theorem,"Grabowski, Adam",,http://mizar.org/version/current/html/rvsum_3.html,,False
+Tarski Geometry Axioms,"Richter, William and Grabowski, Adam and Alama, Jesse",,http://mizar.org/version/current/html/gtarski1.html,,False
+A Note on the Seven Bridges of Königsberg Problem,"Naumowicz, Adam",,http://mizar.org/version/current/html/graph_3a.html,,False
+Topological Manifolds,"Pąk, Karol",,http://mizar.org/version/current/html/mfold_0.html,,False
+"Rank of Submodule, Linear Transformations and Linearly Independent Subsets of ℤ-module","Nakasho, Kazuhisa and Futa, Yuichi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/zmodul05.html,,False
+"Events of Borel Sets, Construction of Borel Sets and Random Variables for Stochastic Finance","Jaeger, Peter",,http://mizar.org/version/current/html/finance2.html,,False
+Some Remarkable Identities Involving Numbers,"Ziobro, Rafał",,http://mizar.org/version/current/html/newton01.html,,False
+Topological Properties of Real Normed Space,"Nakasho, Kazuhisa and Futa, Yuichi and Shidama, Yasunari",,http://mizar.org/version/current/html/normsp_3.html,,False
+Algebraic Approach to Algorithmic Logic,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/aofa_l00.html,,False
+Formalization of Generalized Almost Distributive Lattices,"Grabowski, Adam",,http://mizar.org/version/current/html/lattad_1.html,,False
+Difference of Function on Vector Space over 𝔽,"Arai, Kenichi and Wakabayashi, Ken and Okazaki, Hiroyuki",,http://mizar.org/version/current/html/vsdiff_1.html,,False
+Torsion ℤ-module and Torsion-free ℤ-module,"Futa, Yuichi and Okazaki, Hiroyuki and Nakasho, Kazuhisa and Shidama, Yasunari",,http://mizar.org/version/current/html/zmodul06.html,,False
+The First Isomorphism Theorem and Other Properties of Rings,"Korniłowicz, Artur and Schwarzweller, Christoph",,http://mizar.org/version/current/html/ring_2.html,,False
+Bidual Spaces and Reflexivity of Real Normed Spaces,"Narita, Keiko and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/dualsp02.html,,False
+Some Facts about Trigonometry and Euclidean Geometry,"Coghetto, Roland",,http://mizar.org/version/current/html/euclid10.html,,False
+The Formal Construction of Fuzzy Numbers,"Grabowski, Adam",,http://mizar.org/version/current/html/fuznum_1.html,,False
+Categorical Pullbacks,"Riccardi, Marco",,http://mizar.org/version/current/html/cat_7.html,,False
+Definition and Properties of Direct Sum Decomposition of Groups,"Nakasho, Kazuhisa and Yamazaki, Hiroshi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/group_19.html,,False
+Matrix of ℤ-module,"Futa, Yuichi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/zmatrlin.html,,False
+σ-ring and σ-algebra of Sets,"Endou, Noboru and Nakasho, Kazuhisa and Shidama, Yasunari",,http://mizar.org/version/current/html/srings_3.html,,False
+Separability of Real Normed Spaces and Its Basic Properties,"Nakasho, Kazuhisa and Endou, Noboru",,http://mizar.org/version/current/html/normsp_4.html,,False
+Equivalent Expressions of Direct Sum Decomposition of Groups,"Nakasho, Kazuhisa and Okazaki, Hiroyuki and Yamazaki, Hiroshi and Shidama, Yasunari",,http://mizar.org/version/current/html/group_20.html,,False
+Morley's Trisector Theorem,"Coghetto, Roland",,http://mizar.org/version/current/html/euclid11.html,,False
+Flexary Operations,"Pąk, Karol",,http://mizar.org/version/current/html/flexary1.html,,False
+Euler's Partition Theorem,"Pąk, Karol",,http://mizar.org/version/current/html/eulrpart.html,,False
+Introduction to Diophantine Approximation,"Watase, Yasushige",,http://mizar.org/version/current/html/diophan1.html,,False
+Finite Product of Semiring of Sets,"Coghetto, Roland",,http://mizar.org/version/current/html/srings_4.html,,False
+Two Axiomatizations of Nelson Algebras,"Grabowski, Adam",,http://mizar.org/version/current/html/nelson_1.html,,False
+Groups – Additive Notation,"Coghetto, Roland",,http://mizar.org/version/current/html/group_1a.html,,False
+Polish Notation,"Huuskonen, Taneli",,http://mizar.org/version/current/html/polnot_1.html,,False
+Grzegorczyk's Logics. Part I,"Huuskonen, Taneli",,http://mizar.org/version/current/html/grzlog_1.html,,False
+Convergent Filter Bases,"Coghetto, Roland",,http://mizar.org/version/current/html/cardfil2.html,,False
+Polynomially Bounded Sequences and Polynomial Sequences,"Okazaki, Hiroyuki and Futa, Yuichi",,http://mizar.org/version/current/html/asympt_2.html,,False
+Fermat's Little Theorem via Divisibility of Newton's Binomial,"Ziobro, Rafał",,http://mizar.org/version/current/html/newton02.html,,False
+Weak Convergence and Weak* Convergence,"Narita, Keiko and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/dualsp03.html,,False
+The Orthogonal Projection and the Riesz Representation Theorem,"Narita, Keiko and Endou, Noboru and Shidama, Yasunari",,http://mizar.org/version/current/html/dualsp04.html,,False
+Extended Real-Valued Double Sequence and Its Convergence,"Endou, Noboru",,http://mizar.org/version/current/html/dblseq_3.html,,False
+Summable Family in a Commutative Group,"Coghetto, Roland",,http://mizar.org/version/current/html/cardfil3.html,,False
+Topology from Neighbourhoods,"Coghetto, Roland",,http://mizar.org/version/current/html/fintopo7.html,,False
+Torsion Part of ℤ-module,"Futa, Yuichi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/zmodul07.html,,False
+Construction of Measure from Semialgebra of Sets,"Endou, Noboru",,http://mizar.org/version/current/html/measure9.html,,False
+Event-Based Proof of the Mutual Exclusion Property of Peterson's Algorithm,"Ivanov, Ievgen and Nikitchenko, Mykola and Abraham, Uri",,http://mizar.org/version/current/html/peterson.html,,False
+Characteristic of Rings. Prime Fields,"Schwarzweller, Christoph and Korniłowicz, Artur",,http://mizar.org/version/current/html/ring_3.html,,False
+Exponential Objects,"Riccardi, Marco",,http://mizar.org/version/current/html/cat_8.html,,False
+Algebra of Polynomially Bounded Sequences and Negligible Functions,"Okazaki, Hiroyuki",,http://mizar.org/version/current/html/asympt_3.html,,False
+Propositional Linear Temporal Logic with Initial Validity Semantics,"Giero, Mariusz",,http://mizar.org/version/current/html/ltlaxio5.html,,False
+Stone Lattices,"Grabowski, Adam",,http://mizar.org/version/current/html/latstone.html,,False
+Modelling Real World Using Stochastic Processes and Filtration,"Jaeger, Peter",,http://mizar.org/version/current/html/finance3.html,,False
+"Circumcenter, Circumcircle and Centroid of a Triangle","Coghetto, Roland",,http://mizar.org/version/current/html/euclid12.html,,False
+"Altitude, Orthocenter of a Triangle and Triangulation","Coghetto, Roland",,http://mizar.org/version/current/html/euclid13.html,,False
+Divisible ℤ-modules,"Futa, Yuichi and Shidama, Yasunari",,http://mizar.org/version/current/html/zmodul08.html,,False
+Lattice of ℤ-module,"Futa, Yuichi and Shidama, Yasunari",,http://mizar.org/version/current/html/zmodlat1.html,,False
+Product Pre-Measure,"Endou, Noboru",,http://mizar.org/version/current/html/measur10.html,,False
+Conservation Rules of Direct Sum Decomposition of Groups,"Nakasho, Kazuhisa and Yamazaki, Hiroshi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/group_21.html,,False
+On Multiset Ordering,"Bancerek, Grzegorz",,http://mizar.org/version/current/html/bagord_2.html,,False
+Cousin's Lemma,"Coghetto, Roland",,http://mizar.org/version/current/html/cousin.html,,False
+Chebyshev Distance,"Coghetto, Roland",,http://mizar.org/version/current/html/srings_5.html,,False
+Binary Relations-based Rough Sets – an Automated Approach,"Grabowski, Adam",,http://mizar.org/version/current/html/roughs_3.html,,False
+Tarski Geometry Axioms – Part II,"Coghetto, Roland and Grabowski, Adam",,http://mizar.org/version/current/html/gtarski2.html,,False
+Compactness in Metric Spaces,"Nakasho, Kazuhisa and Narita, Keiko and Shidama, Yasunari",,http://mizar.org/version/current/html/topmetr4.html,,False
+Double Sequences and Iterated Limits in Regular Space,"Coghetto, Roland",,http://mizar.org/version/current/html/cardfil4.html,,False
+Prime Factorization of Sums and Differences of Two Like Powers,"Ziobro, Rafał",,http://mizar.org/version/current/html/newton03.html,,False
+Riemann-Stieltjes Integral,"Narita, Keiko and Nakasho, Kazuhisa and Shidama, Yasunari",,http://mizar.org/version/current/html/integr22.html,,False
+Quasi-uniform Space,"Coghetto, Roland",,http://mizar.org/version/current/html/uniform2.html,,False
+Uniform Space,"Coghetto, Roland",,http://mizar.org/version/current/html/uniform3.html,,False
+Some Algebraic Properties of Polynomial Rings,"Schwarzweller, Christoph and Korniłowicz, Artur and Rowińska-Schwarzweller, Agnieszka",,http://mizar.org/version/current/html/ring_4.html,,False
+Homography in ℝℙ^2,"Coghetto, Roland",,http://mizar.org/version/current/html/anproj_8.html,,False
+The Basic Existence Theorem of Riemann-Stieltjes Integral,"Nakasho, Kazuhisa and Narita, Keiko and Shidama, Yasunari",,http://mizar.org/version/current/html/integr23.html,,False
+On Subnomials,"Ziobro, Rafał",,http://mizar.org/version/current/html/newton04.html,,False
+Leibniz Series for π,"Pąk, Karol",,http://mizar.org/version/current/html/leibniz1.html,,False
+The Axiomatization of Propositional Logic,"Giero, Mariusz",,http://mizar.org/version/current/html/pl_axiom.html,,False
+Algebraic Numbers,"Watase, Yasushige",,http://mizar.org/version/current/html/algnum_1.html,,False
+Niven's Theorem,"Korniłowicz, Artur and Naumowicz, Adam",,http://mizar.org/version/current/html/niven.html,,False
+Fubini's Theorem on Measure,"Endou, Noboru",,http://mizar.org/version/current/html/measur11.html,,False
+Differentiability of Polynomials over Reals,"Korniłowicz, Artur",,http://mizar.org/version/current/html/polydiff.html,,False
+Introduction to Liouville Numbers,"Grabowski, Adam and Korniłowicz, Artur",,http://mizar.org/version/current/html/liouvil1.html,,False
+All Liouville Numbers are Transcendental,"Korniłowicz, Artur and Naumowicz, Adam and Grabowski, Adam",,http://mizar.org/version/current/html/liouvil2.html,,False
+Group of Homography in Real Projective Plane,"Coghetto, Roland",,http://mizar.org/version/current/html/anproj_9.html,,False
+Ordered Rings and Fields,"Schwarzweller, Christoph",,http://mizar.org/version/current/html/realalg1.html,,False
+Embedded Lattice and Properties of Gram Matrix,"Futa, Yuichi and Shidama, Yasunari",,http://mizar.org/version/current/html/zmodlat2.html,,False
+Vieta's Formula about the Sum of Roots of Polynomials,"Korniłowicz, Artur and Pąk, Karol",,http://mizar.org/version/current/html/polyvie1.html,,False
+Basic Formal Properties of Triangular Norms and Conorms,"Grabowski, Adam",,http://mizar.org/version/current/html/fuznorm1.html,,False
+Introduction to Stopping Time in Stochastic Finance Theory,"Jaeger, Peter",,http://mizar.org/version/current/html/finance4.html,,False
+Pascal's Theorem in Real Projective Plane,"Coghetto, Roland",,http://mizar.org/version/current/html/pascal.html,,False
+About Quotient Orders and Ordering Sequences,"Koch, Sebastian",,http://mizar.org/version/current/html/orders_5.html,,False
+Basel Problem – Preliminaries,"Korniłowicz, Artur and Pąk, Karol",,http://mizar.org/version/current/html/basel_1.html,,False
+Basel Problem,"Pąk, Karol and Korniłowicz, Artur",,http://mizar.org/version/current/html/basel_2.html,,False
+Dual Lattice of ℤ-module Lattice,"Futa, Yuichi and Shidama, Yasunari",,http://mizar.org/version/current/html/zmodlat3.html,,False
+Isomorphism Theorem on Vector Spaces over a Ring,"Futa, Yuichi and Shidama, Yasunari",,http://mizar.org/version/current/html/vectsp12.html,,False
+F. Riesz Theorem,"Narita, Keiko and Nakasho, Kazuhisa and Shidama, Yasunari",,http://mizar.org/version/current/html/dualsp05.html,,False
+On Roots of Polynomials and Algebraically Closed Fields,"Schwarzweller, Christoph",,http://mizar.org/version/current/html/ring_5.html,,False
+Pell's Equation,"Acewicz, Marcin and Pąk, Karol",,http://mizar.org/version/current/html/pells_eq.html,,False
+Simple-Named Complex-Valued Nominative Data – Definition and Basic Operations,"Ivanov, Ievgen and Nikitchenko, Mykola and Kryvolap, Andrii and Korniłowicz, Artur",,http://mizar.org/version/current/html/nomin_1.html,,False
+Gauge Integral,"Coghetto, Roland",,http://mizar.org/version/current/html/cousin2.html,,False
+Integral of Non Positive Functions,"Endou, Noboru",,http://mizar.org/version/current/html/mesfun11.html,,False
+Formal Introduction to Fuzzy Implications,"Grabowski, Adam",,http://mizar.org/version/current/html/fuzimpl1.html,,False
+Formally Real Fields,"Schwarzweller, Christoph",,http://mizar.org/version/current/html/realalg2.html,,False
+Introduction to Stopping Time in Stochastic Finance Theory. Part II,"Jaeger, Peter",,http://mizar.org/version/current/html/finance5.html,,False
+Implicit Function Theorem. Part I,"Nakasho, Kazuhisa and Futa, Yuichi and Shidama, Yasunari",,http://mizar.org/version/current/html/ndiff_8.html,,False
+Introduction to Diophantine Approximation. Part II,"Watase, Yasushige",,http://mizar.org/version/current/html/diophan2.html,,False
+Tarski Geometry Axioms. Part III,"Coghetto, Roland and Grabowski, Adam",,http://mizar.org/version/current/html/gtarski3.html,,False
+The Matiyasevich Theorem. Preliminaries,"Pąk, Karol",,http://mizar.org/version/current/html/hilb10_1.html,,False
+Introduction to Stochastic Finance: Random Variables and Arbitrage Theory,"Jaeger, Peter",,http://mizar.org/version/current/html/finance6.html,,False
+Kleene Algebra of Partial Predicates,"Korniłowicz, Artur and Ivanov, Ievgen and Nikitchenko, Mykola",,http://mizar.org/version/current/html/partpr_1.html,,False
+Klein-Beltrami Model. Part I,"Coghetto, Roland",,http://mizar.org/version/current/html/bkmodel1.html,,False
+Klein-Beltrami Model. Part II,"Coghetto, Roland",,http://mizar.org/version/current/html/bkmodel2.html,,False
+Fubini's Theorem for Non-Negative or Non-Positive Functions,"Endou, Noboru",,http://mizar.org/version/current/html/mesfun12.html,,False
+Sequences of Prime Reciprocals. Preliminaries,"Grabowski, Adam",,http://mizar.org/version/current/html/moebius3.html,,False
+Diophantine sets. Preliminaries,"Pąk, Karol",,http://mizar.org/version/current/html/hilb10_2.html,,False
+Parity as a Property of Integers,"Ziobro, Rafał",,http://mizar.org/version/current/html/newton05.html,,False
+About Supergraphs. Part I,"Koch, Sebastian",,http://mizar.org/version/current/html/glib_006.html,,False
+About Supergraphs. Part II,"Koch, Sebastian",,http://mizar.org/version/current/html/glib_007.html,,False
+On Algebras of Algorithms and Specifications over Uninterpreted Data,"Ivanov, Ievgen and Korniłowicz, Artur and Nikitchenko, Mykola",,http://mizar.org/version/current/html/partpr_2.html,,False
+On an Algorithmic Algebra over Simple-Named Complex-Valued Nominative Data,"Ivanov, Ievgen and Korniłowicz, Artur and Nikitchenko, Mykola",,http://mizar.org/version/current/html/nomin_2.html,,False
+An Inference System of an Extension of Floyd-Hoare Logic for Partial Predicates,"Ivanov, Ievgen and Korniłowicz, Artur and Nikitchenko, Mykola",,http://mizar.org/version/current/html/nomin_3.html,,False
+Partial Correctness of GCD Algorithm,"Ivanov, Ievgen and Korniłowicz, Artur and Nikitchenko, Mykola",,http://mizar.org/version/current/html/nomin_4.html,,False
+Basic Diophantine Relations,"Acewicz, Marcin and Pąk, Karol",,http://mizar.org/version/current/html/hilb10_3.html,,False
+Formalizing Two Generalized Approximation Operators,"Grabowski, Adam and Sielwiesiuk, Michał",,http://mizar.org/version/current/html/roughs_5.html,,False
+On Two Alternative Axiomatizations of Lattices by McKenzie and Sholander,"Grabowski, Adam and Sawicki, Damian",,http://mizar.org/version/current/html/robbins5.html,,False
+Arithmetic Operations on Short Finite Sequences,"Ziobro, Rafał",,http://mizar.org/version/current/html/finseq_9.html,,False
+Some Remarks about Product Spaces,"Koch, Sebastian",,http://mizar.org/version/current/html/tops_5.html,,False
+Binary Representation of Natural Numbers,"Okazaki, Hiroyuki",,http://mizar.org/version/current/html/binari_6.html,,False
+Continuity of Bounded Linear Operators on Normed Linear Spaces,"Nakasho, Kazuhisa and Futa, Yuichi and Shidama, Yasunari",,http://mizar.org/version/current/html/lopban_8.html,,False
+Pythagorean Tuning: Pentatonic and Heptatonic Scale,"Coghetto, Roland",,http://mizar.org/version/current/html/music_s1.html,,False
+Fundamental Properties of Fuzzy Implications,"Grabowski, Adam",,http://mizar.org/version/current/html/fuzimpl2.html,,False
+Zariski Topology,"Watase, Yasushige",,http://mizar.org/version/current/html/topzari1.html,,False
+Concatenation of Finite Sequences,"Ziobro, Rafał",,http://mizar.org/version/current/html/rvsum_4.html,,False
+Bilinear Operators on Normed Linear Spaces,"Nakasho, Kazuhisa",,http://mizar.org/version/current/html/lopban_9.html,,False
+A Simple Example for Linear Partial Differential Equations and Its Solution Using the Method of Separation of Variables,"Otsuki, Sora and Kawamoto, Pauline N. and Yamazaki, Hiroshi",,http://mizar.org/version/current/html/pdiffeq1.html,,False
+Multilinear Operator and Its Basic Properties,"Nakasho, Kazuhisa",,http://mizar.org/version/current/html/lopban10.html,,False
+Cross-Ratio in Real Vector Space,"Coghetto, Roland",,http://mizar.org/version/current/html/anproj10.html,,False
+Continuity of Multilinear Operator on Normed Linear Spaces,"Nakasho, Kazuhisa and Shidama, Yasunari",,http://mizar.org/version/current/html/lopban11.html,,False
+Fubini's Theorem,"Endou, Noboru",,http://mizar.org/version/current/html/mesfun13.html,,False
+Tarski Geometry Axioms. Part IV – Right Angle,"Coghetto, Roland and Grabowski, Adam",,http://mizar.org/version/current/html/gtarski4.html,,False
+Maximum Number of Steps Taken by Modular Exponentiation and Euclidean Algorithm,"Okazaki, Hiroyuki and Nagao, Koh-ichi and Futa, Yuichi",,http://mizar.org/version/current/html/ntalgo_2.html,,False
+On Roots of Polynomials over,"Schwarzweller, Christoph",,http://mizar.org/version/current/html/field_1.html,,False
+Isomorphisms from the Space of Multilinear Operators,"Nakasho, Kazuhisa",,http://mizar.org/version/current/html/lopban12.html,,False
+Invertible Operators on Banach Spaces,"Nakasho, Kazuhisa",,http://mizar.org/version/current/html/lopban13.html,,False
+Implicit Function Theorem. Part II,"Nakasho, Kazuhisa and Shidama, Yasunari",,http://mizar.org/version/current/html/ndiff_9.html,,False
+On Monomorphisms and Subfields,"Schwarzweller, Christoph",,http://mizar.org/version/current/html/field_2.html,,False
+Natural Addition of Ordinals,"Koch, Sebastian",,http://mizar.org/version/current/html/ordinal7.html,,False
+About Supergraphs. Part III,"Koch, Sebastian",,http://mizar.org/version/current/html/glib_008.html,,False
+Partial Correctness of a Factorial Algorithm,"Jaszczak, Adrian and Korniłowicz, Artur",,http://mizar.org/version/current/html/nomin_5.html,,False
+Partial Correctness of a Power Algorithm,"Jaszczak, Adrian",,http://mizar.org/version/current/html/nomin_6.html,,False
+Diophantine Sets. Part II,"Pąk, Karol",,http://mizar.org/version/current/html/hilb10_4.html,,False
+Formalization of the MRDP Theorem in the Mizar System,"Pąk, Karol",,http://mizar.org/version/current/html/hilb10_5.html,,False
+On the Intersection of Fields  with,"Schwarzweller, Christoph",,http://mizar.org/version/current/html/field_3.html,,False
+Field Extensions and Kronecker's Construction,"Schwarzweller, Christoph",,http://mizar.org/version/current/html/field_4.html,,False
+Underlying Simple Graphs,"Koch, Sebastian",,http://mizar.org/version/current/html/glib_009.html,,False
+About Graph Mappings,"Koch, Sebastian",,http://mizar.org/version/current/html/glib_010.html,,False
+About Vertex Mappings,"Koch, Sebastian",,http://mizar.org/version/current/html/glib_011.html,,False
+Operations of Points on Elliptic Curve in Affine Coordinates,"Futa, Yuichi and Okazaki, Hiroyuki and Shidama, Yasunari",,http://mizar.org/version/current/html/ec_pf_3.html,,False
+AIM Loops and the AIM Conjecture,"Brown, Chad E. and Pąk, Karol",,http://mizar.org/version/current/html/aimloop.html,,False
+Formal Development of Rough Inclusion Functions,"Grabowski, Adam",,http://mizar.org/version/current/html/roughif1.html,,False
+Klein-Beltrami model. Part III,"Coghetto, Roland",,http://mizar.org/version/current/html/bkmodel3.html,,False
+Klein-Beltrami model. Part IV,"Coghetto, Roland",,http://mizar.org/version/current/html/bkmodel4.html,,False
+Miscellaneous Graph Preliminaries,"Koch, Sebastian",,http://mizar.org/version/current/html/glibpre0.html,,False
+About Graph Complements,"Koch, Sebastian",,http://mizar.org/version/current/html/glib_012.html,,False
+Stability of the 7-3 Compressor Circuit for Wallace Tree. Part I,"Wasaki, Katsumi",,http://mizar.org/version/current/html/wallace.html,,False
+Rings of Fractions and Localization,"Watase, Yasushige",,http://mizar.org/version/current/html/ringfrac.html,,False
+Dynamic Programming for the Subset Sum Problem,"Fujiwara, Hiroshi and Watari, Hokuto and Yamamoto, Hiroaki",,http://mizar.org/version/current/html/prsubset.html,,False
+Reconstruction of the One-Dimensional Lebesgue Measure,"Endou, Noboru",,http://mizar.org/version/current/html/measur12.html,,False
+Developing Complementary Rough Inclusion Functions,"Grabowski, Adam",,http://mizar.org/version/current/html/roughif2.html,,False
+Elementary Number Theory Problems. Part I,"Naumowicz, Adam",,http://mizar.org/version/current/html/number01.html,,False
+On Fuzzy Negations Generated by Fuzzy Implications,"Grabowski, Adam",,http://mizar.org/version/current/html/fuzimpl3.html,,False
+Renamings and a Condition-free Formalization of Kronecker's Construction,"Schwarzweller, Christoph",,http://mizar.org/version/current/html/field_5.html,,False
+Refined Finiteness and Degree Properties in Graphs,"Koch, Sebastian",,http://mizar.org/version/current/html/glib_013.html,,False
+About Graph Unions and Intersections,"Koch, Sebastian",,http://mizar.org/version/current/html/glib_014.html,,False
+Unification of Graphs and Relations in Mizar,"Koch, Sebastian",,http://mizar.org/version/current/html/glunir00.html,,False
+Partial Correctness of a Fibonacci Algorithm,"Korniłowicz, Artur",,http://mizar.org/version/current/html/nomin_7.html,,False
+Multiplication-Related Classes of Complex Numbers,"Ziobro, Rafał",,http://mizar.org/version/current/html/complex3.html,,False
+Grothendieck Universes,"Pąk, Karol",,http://mizar.org/version/current/html/classes3.html,,False
+Formalization of Quasilattices,"Kulesza, Dominik and Grabowski, Adam",,http://mizar.org/version/current/html/latquasi.html,,False

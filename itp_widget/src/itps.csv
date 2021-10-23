@@ -1,0 +1,18 @@
+Name,System Type,Theorem Prover Category,System Based on,Logic Used,System's Truth Value,Calculus,Set Theoretic Support,Programming Paradigm,System Architecture,Programming Language,User Interface,Platform Support,Scalability,IDE,Library Support,Counterexamples,UTF8 Library,Math Notation Descriptions,Logo,Homepage,Contributors,1stRelease
+ACL2,TP,ITP,Syllogism,FOL,Binary,Inductive,No,Func,Modular,Common Lisp,CLI,Cross,Yes,Yes,Yes,Yes,No,,ACL2.png,https://www.cs.utexas.edu/users/moore/acl2/,Matt Kaufman,1994
+Isabelle,TP,ATP+ITP,Syllogism,HOL,Binary,Ded+Indu,Yes,Func,Modular,ML+Scala,GUI,Cross,Yes,Yes,Yes,Yes,Yes,Isabelle uses LaTeX math commands to represent math notation. This is strong supported within the IDE,Isabelle.svg,https://isabelle.in.tum.de/,Makarius Wenzel,1986
+Atelier B,TP,ITP,Syllogism,FOL,Binary,Deductive,Yes,Impe,Monolithic,Prolog,GUI,Cross,Yes,Yes,No,External,No,,Alterier B.png,https://www.atelierb.eu/en/atelier-b-tools/,Thierry Lecomte,1994
+Metamath,TP,ITP,Syllogism,FOL+HOL,Binary,Deductive,Yes,Func,Mod+Mono,MM,CLI+GUI,Cross,Yes,Yes,Yes,No,No,,Metamath.png,http://us.metamath.org/,Norman Megill,1993
+Twelf,TP,ITP,LF,TT,Intuition,Deductive,Yes,LP,Monolithic,SML,CLI,Cross,Yes,Yes,Yes,No,No,,Twelf.png,http://twelf.org/wiki/Main_Page,Frank Pfenning,1999
+Agda,TP,ITP,FP,HOL,Binary,Inductive,Yes,Func,Modular,Haskell,GUI,Cross,Yes,Yes,Yes,Yes,Yes,Agda has support for unicode characters. And uses unicode characters in its math library. This often requires special editor integrations to input the unicode characters.,Agda.png,https://wiki.portal.chalmers.se/agda/Main/HomePage,Ulf Norell,2009
+Mizar,TP,ITP,Syllogism,FOL,Binary,Deductive,Yes,Decl,Modular,Pascal,CLI,Cross,Yes,Yes,Yes,No,No,,Mizar.gif,http://www.mizar.org/,Adam Naumowicz,1973
+HOL4,TP,ITP,Syllogism,HOL,Binary,Deductive,No,Func,Modular,SML,CLI,Cross,Yes,No,Yes,No,No,,HOL.gif,https://hol-theorem-prover.org/,Michael Norrish,1985
+HOL Light,TP,ITP,Syllogism,HOL,Binary,Deductive,No,Func,Modular,Ocaml,CLI,Cross,Yes,No,Yes,No,No,,,https://www.cl.cam.ac.uk/~jrh13/hol-light/,John Harrison,
+RedPRL,TP,ITP,Syllogism,TT,Intuition,Deductive,No,Func,Modular,SML,GUI,Cross,No,Yes,Yes,No,No,,RedPRL.png,https://redprl.org/,Jonathan Sterling,
+Coq,TP,ITP,DP,HOTT,Binary,Ded+Indu,Yes,Func,Modular,OCaml,CLI+GUI,Cross,Yes,Yes,Yes,External,No,,Coq.png,https://coq.inria.fr/,Hugo Herbelin,1989
+PVS,TP,ITP,Syllogism,HOL,Binary,Deductive,Yes,Func+OO,Modular,C Lisp,GUI,Mac+Linux,Yes,Yes,Yes,Yes,No,,PVS.gif,http://pvs.csl.sri.com/,M. Saqib Nawaz,
+Lean,TP,ITP,Syllogism,HOL,Binary,Ded+Indu,Yes,Func,Modular,C++,CLI,Cross,Yes,No,Yes,External,Yes,Lean has allows representing math notation on LaTeX.,Lean.svg,https://leanprover.github.io/,"Leo de Moura, Sebastian Ullrich, Dany Fabian",
+JAPE,TP,ITP,Syllogism,FOL,Binary,Deductive,Yes,OO,Monolithic,Java,GUI,Mac+Linux,Yes,Yes,No,Yes,No,,japelogo.gif,http://japeforall.org.uk/,Rachard Bornat,1996
+LEO-II,TP,ATP+ITP,Syllogism,HOL,Binary,RUE,No,Func+Impe+OO,Modular,OCaml,CLI,Cross,Yes,Yes,Yes,No,No,,,http://page.mi.fu-berlin.de/cbenzmueller/leo/,"C. Benzmuller, F. Theiss, N. Sultana",2012
+Getfol,TP,ITP,Syllogism,FOL,Binary,Deductive,No,Meta+OO+Func,Modular,Common Lisp,GUI,Mac+Linux,Yes,Yes,Yes,No,No,,,https://github.com/getfol/GETFOL,Fausto Giunchiglia ,1994
+Z/EVES,TP,ATP+ITP,Syllogism,FOL,Binary,Lambda,Yes,Meta+OO+Func,Modular,Common Lisp,CLI+GUI,Cross,Yes,Yes,Yes,No,Yes,Z/EVES uses LaTeX commands to prove propositions,czt-logo.png,http://czt.sourceforge.net/eclipse/zeves/,Mark Saaltinkz,1997

@@ -12,13 +12,19 @@ listings: true
 date: {{date}}
 strip-comments: true
 abstract: |
-  Interactive Theorem Provers are tools that allow you to prove that software
-  is correct. However, ITPs are known to be quite difficult to use and the
-  adoption of ITPs is far from widespread. This thesis investigates usability
-  issues that exist in literature, and then creates a living review that that
-  covers progress on different theorem provers, in order to encourage newcomers
-  to the field and document progress on the development. This review doubles as
-  a decision tool for deciding whether an ITP should be used for a project.
+  Interactive Theorem Provers are tools that allow you to both prove
+  mathematical theorems, and also certify software. That is, prove that
+  software meets it's specification. These tools are known to increase
+  productive in software development. However, it's been recognised that
+  ITPs are are quite difficult to use and has been suggested as a reason
+  for why the adoption of ITPs in both mathematics and software
+  development is far from widespread. This thesis investigates usability
+  issues that exist in literature, and then creates a living review that
+  that covers progress on these issues for different theorem provers. This
+  living review semi-automatically updates to reflect the newest findings
+  in the field, and attempts to track progress on these issues. This
+  living review also doubles in helping ITP users make decisions about
+  what ITP technology to use. 
 declaration: "I certify that except where due acknowledgment has been made, the work is that of the author alone; the work has not been submitted previously, in whole or in part, to qualify for any other academic award; the content of the thesis is the result of work which has been carried out since the official commencement date of the approved research program; any editorial work, paid or unpaid, carried out by a third party is acknowledged; and, ethics procedures and guidelines have been followed."
 acknowledgment: |
   I would like to acknowledge my supervisor Maria Spichkova for her guidance and high expectations for this project. I would also like to thank Flora Salim for inspiring me to further invest myself into research and never stopping in opening doors for me.
@@ -31,75 +37,78 @@ codeBlockCaptions: true
 ---
 
 # Introduction
-This is a thesis about **Interactive Theorem Provers**, what they are, how
-they've been used in the past and whether you should explore using them in your
-next project.
+This is a thesis about **Interactive Theorem Provers**, what they are, why
+they might be difficult to use, and whether you should explore using them
+in your next project.
 
-An **Interactive Theorem Prover** (ITP) or **Proof Assistant** is a piece of software
-that helps prove mathematical theorems, or equivalently, prove correctness
-properties about software. Some of the more well known examples of provers 
-include [Coq](https://coq.inria.fr/) and [Isabelle](https://isabelle.in.tum.de/).
+An **Interactive Theorem Prover** (ITP) or **Proof Assistant** is a piece
+of software that helps a user prove mathematical theorems, or
+equivalently, prove correctness properties about software. Some of the
+more well known examples of provers include [Coq](https://coq.inria.fr/)
+and [Isabelle](https://isabelle.in.tum.de/).
 
-An ITP is often used by either a mathematician or an engineer. From
-the side of a mathematician, it is possible to prove theorems that the ITP
-can prove is correct. This ensures that no errors find themselves into any
-proof that's made. ITPs have been used for the QED Manifesto, POPLMark and 
-proving theorems such as the four colour theorem, and Mizar's Mathematical Library.
+An ITP is often used by either a mathematician or an engineer. From the
+side of a mathematician, ITPS allow users to outline a proof for a
+mathematical proposition. The ITP can then check whether the given proof
+is valid. This means that you only need to trust the ITP to guarantee
+there are no errors made in the proof. This ensures that little to no
+errors find themselves into any proof that's made with an ITP. The QED
+Manifesto [@QED_Manifesto] has proposed using ITPs to generate computer
+checkable proofs for mathematics. Further, they have been used to prove
+theorems such as the four colour theorem in Coq [@Four_Color] and the Kepler
+Conjecture in a mixture of HOL Light and Isabelle [@Flyspeck].
 
-<!-- Needs citations -->
-
-An ITP can however also be used by a software engineer to create certified software.
-Certified software is software that's been proven to operate correctly. This
-is a very high level of assurance in terms of quality, and in industry and research
-today, is often used to ensure correctness of cryptographic libraries, microcode,
-kernels and compilers.
-
-<!-- Also needs citations -->
+An ITP can however also be used by a software engineer to create certified
+software. Certified software is software that's been proven to operate
+correctly. This is a very high level of assurance in terms of quality, and has
+been used to ensure correctness of cryptographic libraries [@HACL],
+microkernels [@Sel4] and compilers [@CompCert].
 
 In computer science, often correctness proofs of algorithms (For example,
-Dijkstra's algorithm in an undergraduate context) are described and proved to
-be correct on pen and paper. The use of an ITP in analogous to this type of
-activity. 
+Dijkstra's algorithm in an undergraduate context) are described and proved
+to be correct on pen and paper. The use of an ITP in analogous to this
+type of activity. 
 
-The task of creating verified software is split into two steps: first specification
-and then verification.
+The task of creating verified software is split into two steps: first
+specification and then verification.
 
-During specification, You specify what it is that you would like to prove, for
-example, that Dijkstra's algorithm always finds the shortest path between two
-nodes in a weighted graph, assuming positive weights. In this step, you would
-create a specification for what is Dijkstra's algorithm, graphs, and shortest
-paths. Then state that Dijkstra's algorithm finds the shortest path. This
-step is far from trivial, and there exist dedicated specification languages for
-this such as Z of VDL.
+During specification, You specify what it is that you would like to prove,
+for example, that Dijkstra's algorithm always finds the shortest path
+between two nodes in a weighted graph, assuming positive weights. In this
+step, you would create a specification for what is Dijkstra's algorithm,
+graphs, and shortest paths. Then state that Dijkstra's algorithm finds the
+shortest path. This step is far from trivial.
 
-This specification leaves you with a **proof obligation**. A proof obligation is a onus
-on the user to prove that the specification of the software is correct. Then,
-during verification, it is then up to the user to provide
-to the ITP the reasoning as to why this proposition is correct. This can be done
-in several ways, sometimes through the use of automated software, or manipulating
-with the proof by pointing and clicking, or writing down a **proof script** that
-describes the steps made to prove the theorem. Often this involves breaking down one proof obligation into many other simpler
-proof obligations that can be solved individually.
+This specification leaves you with a **proof obligation**. A proof
+obligation is a onus on the user to prove that the specification of the
+software is correct. Then, during verification, it is then up to the user
+to provide to the ITP the reasoning as to why this proposition is correct.
+This can be done in several ways, sometimes through the use of automated
+software, or manipulating with the proof by pointing and clicking, or
+writing down a **proof script** that describes the steps made to prove the
+theorem. Often this involves breaking down one proof obligation into many
+other simpler proof obligations that can be solved individually.
 
-The ITP then checks whether the proof of the proposition is valid, assisting
-you along the way in any errors that you make. The user and the ITP work
-together until you have specified a proof of the statement you wish to claim.
-Once that proof is made, you can be assured that the system works correctly.
+The ITP then checks whether the proof of the proposition is valid,
+assisting you along the way in any errors that you make. The user and the
+ITP work together until you have specified a proof of the statement you
+wish to claim. Once that proof is made, you can be assured that the system
+works correctly.
 
-Another way of approaching ITPs is through programming languages. Often a goal
-in programming language design is to create languages where you cannot make a
-certain class of errors. For instance, Rust is designed to allow systems level
-programming that's protected from memory errors, and Elm is designed to create
-web programs that do not have runtime errors. Languages often accomplish this
-through Type Systems and Functional Programming. ITPs are languages that have
-design features that allow you to go as far as proving the correctness of your
-software. Almost all ITPs use Type Systems and Functional Programming to assist
-in proving software.
+Another way of approaching ITPs is through programming languages. Often a
+goal in programming language design is to create languages where you
+cannot make a certain class of errors. For instance, Rust is designed to
+allow systems level programming that's protected from memory errors, and
+Elm is designed to create web programs that do not have runtime errors.
+Languages often accomplish this through Type Systems and Functional
+Programming. ITPs are languages that have design features that allow you
+to go as far as proving the correctness of your software. Almost all ITPs
+use Type Systems and Functional Programming to assist in proving software.
 
 <!-- Needs citation -->
 
-More widespread use of ITPs is valuable as it allows for errors to be caught
-much earlier in the development process.
+More widespread use of ITPs is valuable as it allows for errors to be
+caught much earlier in the development process.
 
 <!-- Needs citation -->
 
@@ -324,11 +333,12 @@ f(x) + (x + 1) = (x + 1) * (x + 2) / 2
 
 : State after running the reflexivity tactic {#lst:unfold_state}
 
-The top and the bottom statements are now identical, they just need re-arranging
-for it to be seen. This might involve several commands to manipulate
-the state of the equation. We will for the sake of brevity written these commands
-in English like code in [@lst:rearangement_tactics]. The intermediate goals are
-shown in [@lst:intermediate_states] to show the progress towards the desired goal,
+The top and the bottom statements are now identical, they just need
+re-arranging for it to be seen. This might involve several commands to
+manipulate the state of the equation. We will for the sake of brevity
+written these commands in English like code in
+[@lst:rearangement_tactics]. The intermediate goals are shown in
+[@lst:intermediate_states] to show the progress towards the desired goal,
 and the final state is shown in [@lst:rearangement_state].
 
 ```
@@ -362,10 +372,11 @@ f(x) = x * (x + 1) / 2
 
 : Final state after running each command {#lst:rearangement_state}
 
-Because we know the inductive hypothesis is true, and the goal is exactly the same
-as the inductive hypothesis, we can simply indicate that we have proven the goal.
-We do this be the `assumption` command, and then close off the proof with the `QED`
-command [@lst:assumption_tactic]. This then accepts the proof as true [@lst:assumption_state].
+Because we know the inductive hypothesis is true, and the goal is exactly
+the same as the inductive hypothesis, we can simply indicate that we have
+proven the goal. We do this be the `assumption` command, and then close
+off the proof with the `QED` command [@lst:assumption_tactic]. This then
+accepts the proof as true [@lst:assumption_state].
 
 ```
 assumption
@@ -380,9 +391,10 @@ Proof accepted
 
 : State after running the assumption tactic {#lst:assumption_state}
 
-It should be noted that the commands we wrote out are akin to deduction rules,
-however, there is a problem with this approach, and the problem should become
-clear once we write down all the commands that you put into the prover.
+It should be noted that the commands we wrote out are akin to deduction
+rules, however, there is a problem with this approach, and the problem
+should become clear once we write down all the commands that you put into
+the prover.
 
 ```
 Prove: f(x) = x * (x - 1) / 2
@@ -403,25 +415,180 @@ QED
 
 : Final Proof script {#lst:final_proof_script}
 
-These proof scripts are very difficult to understand statically. Our understanding
-of the commands were aided due to our knowledge of the current state. However,
-when looking at the script without the context of the state, they are often
-very difficult to follow. Especially if the scripts are more complicated than
-this one.
+These proof scripts are very difficult to understand statically. Our
+understanding of the commands were aided due to our knowledge of the
+current state. However, when looking at the script without the context of
+the state, they are often very difficult to follow. Especially if the
+scripts are more complicated than this one.
 
-This thesis was inspired by the difficulty in reading static proof scripts. Some
-provers have already moved to attempt to fix this problem. For instance, Isabelle's
-Isar language offers a different way of proving propositions that embeds more
-state, and helps the user understand the proof. It would be therefore valuable
-to determine what usability issues have been reported, what has been done to fix
-them, and whether solutions from some ITPs could be used to help other provers.
+## Past ITP usability research and cognitive dimensions
+Cognitive Dimensions of Notation is a framework used to evaluate the
+effectiveness of notations [@green_usability_1996,Green2], that is, ways
+of writing down information. The notation was originally proposed by Green
+as a way of discussing the design trade-offs of visual programming
+languages, but has been applied elsewhere for a variety of notations.
+These dimensions are not an evaluation framework for notations, as often
+increasing one dimension will also change other dimensions, and different
+tasks may require different dimensions. For instance, in textual ITPs,
+dependencies are not shown between theorems, and doing so would increase
+the Diffuseness of the notation, allowing less to be shown and understood
+on a single screen. However, debugging why some theorem might fail given a
+change in other theorems would aid from a more diffuse representation
+showing the hidden dependencies.
 
-And finally, the secondary motivation of this thesis is to encourage further use
-and development of ITPs. So it would be valuable to create a decision tool
-that helps a user determine which ITP, if any, should be used for a particular
+Cognitive Dimensions focus mainly on the way that users understand and
+work with the meaning of the program. Cognitive Dimensions make an
+important distinction between difficulties of understanding and working
+with the notation vs difficulties with the actual problem itself. Because
+proving theorems is a very cognitively demanding task, that no matter how
+perfect the notation will always have an inherit difficulties. We can only
+try and improve the notations rather than making the actual problems
+easier.
+
+The notation has been adopted as a way of evaluating the usability of ITPs
+in Kadoda PhD Thesis [@kadoda_desirable_1999]. The interpretation of
+Cognitive Dimensions in regards to ITPs has been inspired by their work,
+but has some notable differences.
+
+The Cognitive Dimensions of Notation are:
+
+**Abstraction Gradient**: Does the ITP offer ways of abstracting
+components? Abstraction here refers to methods, classes and encapsulation.
+Green classifies notations as either being abstraction-hating,
+abstraction-tolerant or abstraction-hungry. An abstraction-hating ITP
+would be one that forces you to work with low level constructs often. An
+abstraction-tolerant ITP would be one that gives some methods for
+abstraction, but still nevertheless requires constant low level
+interaction. An abstraction-hungry ITP would offer many methods of
+abstraction, that could even in the end obscure what is actually happening
+behind the scenes.
+
+**Closeness of Mapping**: Closeness of Mapping is how similar the notation
+is to the problem domain. At some point, a representation of the problem
+has to be put into notation suitable for the ITP. The easier this is to do
+the better the closeness of mapping, or how close the proof state is
+represented vs what the user would expect.
+
+**Consistency**: Once you know the basics of an ITP, how much of the rest
+can be inferred? A notation that is not consistent would require constant
+lookup of features in the theorem prover. Consistency is particularly
+important for learning ITPs. Consistency can become an issue when there
+are a large amount of abstractions.
+
+**Error-Proneness**: Is it easy to make careless mistakes? A common
+\"careless mistake\" in theorem provers is trying to apply a tactic in a
+textual theorem prover that is not valid for the current proof state.
+
+**Diffuseness**: How much does it represent a proof relative to the
+complexity of the proposition proven? This is an easier cognitive
+dimension to measure, and represents the verbosity of the notation. ITPs
+with high diffuseness often have lower abstractions and are easier to
+understand, but more difficult to change.
+
+**Hard Mental Operations**: Are there parts of the notation that require
+getting out a pencil and paper to understand what it means? The domain of
+ITPs by it's very nature requires Hard Mental Operations, so it's
+important to separate the inherit difficulty vs difficulty created by the
+notation. Hard Mental Operations may arise out of particularly complicated
+tactics, especially since tactics can be composed together. An ITP with a
+consistent set of tactics would reduce Hard Mental Operations.
+
+**Hidden Dependencies**: Are there dependencies in the notation that are
+not presented? In ITPs and programming languages, it's usually possible to
+find what a function/lemma references, but is difficult to find what
+lemmas/functions reference the one we are working in. Furthermore,
+automation often uses lemmas in the context without indicating at all that
+it is using them. This makes the issue of hidden dependencies even more
+difficult. An ITP with low hidden dependencies makes these dependencies
+between parts of the program explicit
+
+**Perceptual cues**: Does the notation force the user to make decisions
+before they have the information they need to make it? Especially for
+novice users, ITPs need to allow the user to explore different paths for
+proving a statement. This often represents a premature commitment as the
+user has to commit to a strategy before evaluating whether that strategy
+would work. ITPs that offer undo features and allow postponing making
+decisions require less premature commitment.
+
+**Premature commitment**: Does the notation force the user to make
+decisions before they have the information they need to make it?
+Especially for novice users, ITPs need to allow the user to explore
+different paths for proving a statement. This often represents a premature
+commitment as the user has to commit to a strategy before evaluating
+whether that strategy would work. ITPs that offer undo features and allow
+postponing making decisions require less premature commitment.
+
+**Progressive Evaluation**: Does the system give adequate feedback? Error
+messages, display of current proof state and ability to work with
+incomplete proofs are all features of progressive evaluation. Getting
+feedback from the system is absolutely essential for learning the ITPs.
+
+**Role Expressiveness**: Is it easy to identify what the purpose of a
+component is? Lack of role expressiveness, particularly within the proofs
+of textual ITPs, was one of the main motivations of this study. It is
+often very difficult on retrospect to identify how the components of a
+proof relate to each other. An ITP with high Role Expressiveness would
+make it clear how a lemma or component of a proof contributes to the
+proof.
+
+**Secondary Notation**: Are there avenues for comments, colours and
+representation of the code that helps with comprehension? A Secondary
+Notation is a way of representing understanding by not changing the actual
+meaning of the notation. ITPs that offer comments, colours and whitespace
+grouping help with representing secondary notation.
+
+**Viscosity**: Is it easy to make a change in the system? ITPs with low
+abstraction make it difficult to make changes. Sometimes a small
+difference to what you are wanting to prove requires a disproportionate
+change of the proof. ITPs with high viscosity make it difficult to change.
+
+**Visibility and Juxtaposability**: How easy is to get a particular piece
+of desired information? How easy is it to compare part of your proof with
+proofs elsewhere? Sometimes critical information is difficult to obtain
+when creating or understanding a proof state. A common example is being
+able to inspect intermediate proof steps. When a proof relies heavily on
+automation, it is sometimes difficult to understand how the automated
+tactic managed to get in a particular proof state. Having this information
+helps understand the proof and how to move forward. ITPs with low
+visibility make it difficult to find such information. Juxtaposability is
+showing two parts of the system side by side. This is important as often a
+proof might only be a refinement of a previous proof, and might need to be
+understood in context.
+
+## Research Questions
+
+This thesis was inspired by the difficulty in reading static proof
+scripts. Some provers have already moved to attempt to fix this problem.
+For instance, Isabelle's Isar language offers a different way of proving
+propositions that embeds more state, and helps the user understand the
+proof. It would be therefore valuable to determine what usability issues
+have been reported, what has been done to fix them, and whether solutions
+from some ITPs could be used to help other provers.
+
+And finally, the secondary motivation of this thesis is to encourage
+further use and development of ITPs. So it would be valuable to create a
+decision tool that helps a user determine which ITP, if any, should be
+used for a particular
 project.
 
 Hence, the research questions for this thesis are:
+
+RQ1 *{{RQ1}}* 
+
+This research question was chosen to better understand the context of the
+study. This was answered by a systematic literature review in [@sec:literature_review]
+
+RQ2 *{{RQ2}}*
+
+This research question was chosen due to the continual development of ITPs. It is answered by a living review in [@sec:results].
+
+RQ3 *{{RQ3}}*
+
+Finally, this research question was chosen as being important for the aim of encouraging more development in the field of ITPs and the creation of more verified software. It is answered by a living review in [@sec:results].
+
+# Methodology 
+
+To recall our research questions:
 
 RQ1 *{{RQ1}}* 
 
@@ -429,213 +596,43 @@ RQ2 *{{RQ2}}*
 
 RQ3 *{{RQ3}}*
 
-# Background
+The natural method for answering RQ1 is to perform a systematic literature
+review. This literature review intends to identify and categorize
+usability issues related to different theorem provers.
 
-## Cognitive Dimensions of Notation
-Cognitive Dimensions of Notation is a framework used to evaluate the
-effectiveness of notations [@green_usability_1996], that is, ways of
-writing down information. The notation was originally proposed by Green
-as a way of discussing the design trade-offs of visual programming
-languages, but has been applied elsewhere for a variety of notations.
-These dimensions are not an evaluation framework for notations, as often
-increasing one dimension will also change other dimensions, and
-different tasks may require different dimensions. For instance, in
-textual ITPs, dependencies are not shown between theorems, and doing so
-would increase the Diffuseness of the notation, allowing less to be
-shown and understood on a single screen. However, debugging why some
-theorem might fail given a change in other theorems would aid from a
-more diffuse representation showing the hidden dependencies.
+Answering RQ2 requires going through the theorem provers and identifying
+the issues.  However, ITPs are continually in development, and any issue
+that arises could be solved at a future date. As of such, we created a
+**living review** to answer this question.
 
-Cognitive Dimensions focus mainly on the way that users understand and
-work with the meaning of the program. Cognitive Dimensions make an
-important distinction between difficulties of understanding and working
-with the notation vs difficulties with the actual problem itself.
-Because proving theorems is a very cognitively demanding task, that no
-matter how perfect the notation will always have an inherit
-difficulties. We can only try and improve the notations rather than
-making the actual problems easier.
+A living review is a literature review of a field that updates
+periodically to reflect the current state of the research. These reviews
+are often published electronically, such as to a website. The goal of a
+living review is to ensure that the review never goes stale, and can be
+used as a reference years to come.
 
-The notation has been adopted as a way of evaluating the usability of
-ITPs in Kadoda PhD Thesis [@kadoda_desirable_1999]. The interpretation
-of Cognitive Dimensions in regards to ITPs has been inspired by their
-work, but has some notable differences.
+This living review is the primary output of this thesis, and although it
+has the word "review" in it, should not be mistaken for just another
+literature review.
 
-The Cognitive Dimensions of Notation are:
-
-#### Abstraction Gradient
-
-Does the ITP offer ways of abstracting components? Abstraction here
-refers to methods, classes and encapsulation. Green classifies notations
-as either being abstraction-hating, abstraction-tolerant or
-abstraction-hungry. An abstraction-hating ITP would be one that forces
-you to work with low level constructs often. An abstraction-tolerant ITP
-would be one that gives some methods for abstraction, but still
-nevertheless requires constant low level interaction. An
-abstraction-hungry ITP would offer many methods of abstraction, that
-could even in the end obscure what is actually happening behind the
-scenes.
-
-#### Closeness of Mapping
-
-Closeness of Mapping is how similar the notation is to the problem
-domain. At some point, a representation of the problem has to be put
-into notation suitable for the ITP. The easier this is to do the better
-the closeness of mapping, or how close the proof state is represented vs
-what the user would expect.
-
-#### Consistency
-
-Once you know the basics of an ITP, how much of the rest can be
-inferred? A notation that is not consistent would require constant
-lookup of features in the theorem prover. Consistency is particularly
-important for learning ITPs. Consistency can become an issue when there
-are a large amount of abstractions.
-
-#### Error-Proneness
-
-Is it easy to make careless mistakes? A common \"careless mistake\" in
-theorem provers is trying to apply a tactic in a textual theorem prover
-that is not valid for the current proof state.
-
-#### Diffuseness
-
-How much does it represent a proof relative to the complexity of the
-proposition proven? This is an easier cognitive dimension to measure,
-and represents the verbosity of the notation. ITPs with high diffuseness
-often have lower abstractions and are easier to understand, but more
-difficult to change.
-
-#### Hard Mental Operations
-
-Are there parts of the notation that require getting out a pencil and
-paper to understand what it means? The domain of ITPs by it's very
-nature requires Hard Mental Operations, so it's important to separate
-the inherit difficulty vs difficulty created by the notation. Hard
-Mental Operations may arise out of particularly complicated tactics,
-especially since tactics can be composed together. An ITP with a
-consistent set of tactics would reduce Hard Mental Operations.
-
-#### Hidden Dependencies
-
-Are there dependencies in the notation that are not presented? In ITPs
-and programming languages, it's usually possible to find what a
-function/lemma references, but is difficult to find what
-lemmas/functions reference the one we are working in. Furthermore,
-automation often uses lemmas in the context without indicating at all
-that it is using them. This makes the issue of hidden dependencies even
-more difficult. An ITP with low hidden dependencies makes these
-dependencies between parts of the program explicit
-
-#### Perceptual cues
-
-Does the notation force the user to make decisions before they have the
-information they need to make it? Especially for novice users, ITPs need
-to allow the user to explore different paths for proving a statement.
-This often represents a premature commitment as the user has to commit
-to a strategy before evaluating whether that strategy would work. ITPs
-that offer undo features and allow postponing making decisions require
-less premature commitment.
-
-#### Premature commitment
-
-Does the notation force the user to make decisions before they have the
-information they need to make it? Especially for novice users, ITPs need
-to allow the user to explore different paths for proving a statement.
-This often represents a premature commitment as the user has to commit
-to a strategy before evaluating whether that strategy would work. ITPs
-that offer undo features and allow postponing making decisions require
-less premature commitment.
-
-#### Progressive Evaluation
-
-Does the system give adequate feedback? Error messages, display of
-current proof state and ability to work with incomplete proofs are all
-features of progressive evaluation. Getting feedback from the system is
-absolutely essential for learning the ITPs.
-
-#### Role Expressiveness
-
-Is it easy to identify what the purpose of a component is? Lack of role
-expressiveness, particularly within the proofs of textual ITPs, was one
-of the main motivations of this study. It is often very difficult on
-retrospect to identify how the components of a proof relate to each
-other. An ITP with high Role Expressiveness would make it clear how a
-lemma or component of a proof contributes to the proof.
-
-#### Secondary Notation
-
-Are there avenues for comments, colours and representation of the code
-that helps with comprehension? A Secondary Notation is a way of
-representing understanding by not changing the actual meaning of the
-notation. ITPs that offer comments, colours and whitespace grouping help
-with representing secondary notation.
-
-#### Viscosity
-
-Is it easy to make a change in the system? ITPs with low abstraction
-make it difficult to make changes. Sometimes a small difference to what
-you are wanting to prove requires a disproportionate change of the
-proof. ITPs with high viscosity make it difficult to change.
-
-#### Visibility and Juxtaposability
-
-How easy is to get a particular piece of desired information? How easy
-is it to compare part of your proof with proofs elsewhere? Sometimes
-critical information is difficult to obtain when creating or
-understanding a proof state. A common example is being able to inspect
-intermediate proof steps. When a proof relies heavily on automation, it
-is sometimes difficult to understand how the automated tactic managed to
-get in a particular proof state. Having this information helps
-understand the proof and how to move forward. ITPs with low visibility
-make it difficult to find such information.
-
-Juxtaposability is showing two parts of the system side by side. This is
-important as often a proof might only be a refinement of a previous
-proof, and might need to be understood in context.
-
-# Methodology
-To recall our research questions:
-
-RQ1 *What usability issues and solutions have been mentioned in literature regarding ITPs?* 
-
-RQ2 *To what extent to these usability issues exist at the latest versions of ITPs?*
-
-RQ3 *What, if any, ITP should be used for a specific project?*
-RQ1 *What usability issues and solutions have been mentioned in literature regarding ITPs?* 
-
-The natural method for answering RQ1 is to perform a systematic literature review.
-This literature review intends to identify and categorize usability issues related
-to different theorem provers.
-
-Answering RQ2 requires going through the theorem provers and identifying the
-issues.  However, ITPs are continually in development, and any issue that
-arises could be solved at a future date. As of such, we created a **living
-review** to answer this question.
-
-A living review is a literature review of a field that updates periodically to reflect the
-current state of the research. These reviews are often published
-electronically, such as to a website. The goal of a living review is to ensure
-that the review never goes stale, and can be used as a reference years to come.
-
-This living review is the primary output of this thesis, and although it has the
-word "review" in it, should not be mistaken for just another literature review.
-
-It differentiates itself from a normal review by updating automatically over time,
-being an interactive software product, and existing as a decision tool for users.
+It differentiates itself from a normal review by updating automatically
+over time, being an interactive software product, and existing as a
+decision tool for users.
 
 The creation of this living review will answer RQ3 and RQ2, and provide
 descriptions of the current state of the field for ITPs.
 
 ## Systematic Literature Review Methodology {#sec:review_methodology}
-A preliminary literature review was done in order to survey what
-usability problems occurred about theorem provers. This preliminary
-review came from a search for "usability interactive theorem provers\"
-on the ACM digital library and Google Scholar. The review found several
-papers on the topic. We then attempted to construct a query that would
-match these papers and also other papers in the field.
+A preliminary literature review was done in order to survey what usability
+problems occurred about theorem provers. This preliminary review came from
+a search for "usability interactive theorem provers\" on the ACM digital
+library and Google Scholar. The review found several papers on the topic.
+We then attempted to construct a query that would match these papers and
+also other papers in the field.
 
 Papers were searched for having the title matching the following query:
-`("Interactive" OR "Deductive") AND ("prover" OR "provers" OR "proving" OR "verifier") AND ("usability" OR "user" OR "users")`
+`("Interactive" OR "Deductive") AND ("prover" OR "provers" OR "proving" OR
+"verifier") AND ("usability" OR "user" OR "users")`
 
 The justification for using quotes around prover, provers and proving is
 that some search engines will return papers with the text \"prove\" when
@@ -646,32 +643,31 @@ are unrelated.
 
 We searched the following databases using this query string:
 
--   Scopus
--   DBLP
--   Springer Link
--   Science Direct
--   ACM
--   IEEE Xplore
+-   Scopus 
+-   DBLP 
+-   Springer Link 
+-   Science Direct 
+-   ACM 
+-   IEEE
+- Xplore
 
-From the papers discovered in this way, we went through the abstracts
-and discerned whether the paper was relevant to the research question.
+From the papers discovered in this way, we went through the abstracts and
+discerned whether the paper was relevant to the research question.
 
-Our inclusion criteria for the papers included in the systematic
-literature review was the following:
+Our inclusion criteria for the papers included in the systematic literature
+review was the following:
 
--   A peer review published paper AND
--   Notes particular usability issues with theorem provers OR
--   Offers direct recommendations to the improvement of the usability of
-    interactive theorem provers
+-   A peer review published paper AND 
+-   Notes particular usability issues with theorem provers OR 
+-   Offers direct recommendations to the improvement of the usability of interactive theorem provers
 
 We particularly excluded papers written in languages other than English,
 workshops, tutorials, extended abstracts, unpublished and non peer
 reviewed papers.
 
 From the papers that were deemed relevant to the research question, we
-found papers that cited the papers discovered. That is, we applied
-forward snowballing. Semantic scholar was used to perform the forward
-snowballing.
+found papers that cited the papers discovered. That is, we applied forward
+snowballing. Semantic scholar was used to perform the forward snowballing.
 
 We then tried to discover whether these papers were relevant to the
 research question, and repeated the process of forward snowballing until
@@ -679,61 +675,55 @@ there were no more papers discovered.
 
 We then read the paper to discover:
 
--   A problem and/or solution to usability of interactive theorem
-    provers
--   Which theorem prover the issue is relevant to
--   Evidence behind issues and proposed solutions
+- A problem and/or solution to usability of interactive theorem provers
+- Which theorem prover the issue is relevant to 
+- Evidence behind issues and proposed solutions
 
 The issues were then categorized by Green's cognitive dimensions of
 notations [@green_usability_1996].
 
-## Living Review Methodology
-The living review has the end goal of determining whether usability issues still
-exist, and then further offering a tool to help decision about ITPs (RQ3).
+## Living Review Methodology 
+The living review has the end goal of determining whether usability issues
+still exist, and then further offering a tool to help decision about ITPs
+(RQ3).
 
 To do this, the living review is scoped as follows:
 
-- Comparing general properties about ITPs (RQ3)
-- Comparing past projects that have been completed by ITPs (RQ3)
-- Comparing progress on usability issues about ITPs (RQ2)
+- Comparing general properties about ITPs (RQ3) - Comparing past projects
+  that have been completed by ITPs (RQ3) - Comparing progress on usability
+  issues about ITPs (RQ2)
 
-The living review will be implemented using the Elm framework[@elm_lang_book].
-Elm is a functional programming language for web applications, and acts like
-other web frameworks such as React, Vue and Angular. Elm was chosen due to it
-being suitability for data representation, being very fast and small, and having
-a strong enough type system to prevent all runtime errors.
+The living review will be implemented using the Elm
+framework[@elm_lang_book]. Elm is a functional programming language for
+web applications, and acts like other web frameworks such as React, Vue
+and Angular. Elm was chosen due to it being suitability for data
+representation, being very fast and small, and having a strong enough type
+system to prevent all runtime errors.
 
-### General features of about ITPs
-To compare between different ITPs, general features about them need to be collected.
+### General features of about ITPs To compare between different ITPs, general
+features about them need to be collected.
 
-We decided to use a 2019 Systematic Literature Reviews on Theorem Provers as our starting dataset [@nawaz_survey_2019]. 
-This review went through 27 theorem provers and described the features that each
-prover had. This was converted into a dataset and used to compare general features.
+We decided to use a 2019 Systematic Literature Reviews on Theorem Provers as
+our starting dataset [@nawaz_survey_2019]. This review went through 27 theorem
+provers and described the features that each prover had. This was converted
+into a dataset and used to compare general features.
 
-This dataset contained several properties about ITPs, and properties to compare between them.
+This dataset contained several properties about ITPs, and properties to compare
+between them.
 
 The full set of properties are:
 
-- What the ITP is based on
-- The logic of the ITP
-- The Truth value of the ITP
-- Whether it supports Set theory
-- Whether it has a library
-- What its calculus is
-- What's its architecture
-- The programming language it's based on
-- The User interface
-- The Platforms its supported on
-- Whether it's scalable
-- Multithreaded support
-- Whether it has an IDE
-- When it was first released.
-- Its latest release
+- What the ITP is based on - The logic of the ITP - The Truth value of the ITP
+- Whether it supports Set theory - Whether it has a library - What its calculus
+is - What's its architecture - The programming language it's based on - The
+User interface - The Platforms its supported on - Whether it's scalable -
+Multithreaded support - Whether it has an IDE - When it was first released. -
+Its latest release
 
-A lot of these features (such as the logic, truth value etc) require explanations
-as to what they refer to. These explanations will be included within the tool.
-This allows people unfamiliar to the field to learn what the components of ITPs
-are and why they are important.
+A lot of these features (such as the logic, truth value etc) require
+explanations as to what they refer to. These explanations will be included
+within the tool. This allows people unfamiliar to the field to learn what the
+components of ITPs are and why they are important.
 
 Some newer ITPs were not included in the dataset, such as Lean, F* and Idris.
 These were added manually to the dataset.
@@ -746,14 +736,14 @@ and adds that as the latest release on the living review, ensuring that the
 review doesn't go out of date by having newer releases.
 
 
-### Comparing progress on usability issues for ITPs
-Finally, depending on the results of the literature review, progress on different
-usability issues will be reported in this living review.
+### Comparing progress on usability issues for ITPs Finally, depending on the
+results of the literature review, progress on different usability issues will
+be reported in this living review.
 
 How these will be included into the living review will be detailed later, once
 those features have been identified.
 
-# Literature Review
+# Literature Review {#sec:literature_review}
 The amount of papers found in each section of the review are shown in
 [@tbl:litresults]. This totals to 45 papers found on the
 topic. However, 1 paper had to be remove due to not being able to access
@@ -1456,17 +1446,22 @@ This leaves the following options:
  - Counterexamples
  - Performance
 
-We considered all these issues beside performance to be within the scope
-of our living review. 
-The following sections describes the methodology in detail. First, we discuss
-the choice of Interactive Theorem Provers included within the review in [@sec:chosing_itps]. Then, we
-discuss the methodology used in evaluating the scope of the library in
-[@sec:scope_of_library_meth]. Then, we discuss the methodology for evaluating
-support for counterexample generators in [@sec:counterexample_meth]. Finally,
-we discuss the methodology for evaluating support for math notation in
-[@sec:math_notation_meth].
+All these issues beside performance are within the scope of our living
+review. Although creating a living review for ITP performance that
+automatically updates is technically feasible, we determined that this was
+not a usability problem of interest in comparison to the large amount of
+effort and money (setting up a list of standard activities, setting up of standardised hardware, running programs in test harnesses) required to include performance the review's scope. 
 
-## Choosing Interactive Theorem Provers to cover {#sec:chosing_itps}
+The following sections describes the methodology in
+detail. First, we discuss the choice of Interactive Theorem Provers
+included within the review in [@sec:chosing_itps]. Then, we discuss the
+methodology used in evaluating the scope of the library in
+[@sec:scope_of_library_meth]. Then, we discuss the methodology for
+evaluating support for counterexample generators in
+[@sec:counterexample_meth]. Finally, we discuss the methodology for
+evaluating support for math notation in [@sec:math_notation_meth].
+
+### Choosing Interactive Theorem Provers to Cover {#sec:chosing_itps}
 In this section, we discuss the choice of which ITPs to cover as part of the
 living review.
 
@@ -1478,7 +1473,7 @@ However, we noted a couple of issues with this consideration of ITPs. In particu
 it seemed to favour reviews of older ITPs, and didn't include successful ITPs
 that have come out more recently. 
 
-One clearly missing consideration was that of Lean [@leanprover], a highly popular
+One clearly missing consideration was that of Lean [@Lean], a highly popular
 ITP that's more often used by mathematicians. Lean is mentioned within the review
 as a 'newer ITP' but is not considered as part of the review. We chose to add Lean, particularly
 because of its large community based mathematical library. It would be difficult
@@ -1491,146 +1486,177 @@ These two provers had their last releases in 1999 and 2001. Considering the rate
 of development of ITPs, these were removed due to meeting a very conservative
 definition of being abandoned.
 
-Finally, the last modification that was made was that the survey referenced "HOL"
-as a theorem prover. HOL has many implementations, including HOL4 [@HOL4], HOL Light [@HOL_Light],
-ProofPower [@ProofPower] and HOL Zero [@HOL_Zero]. For the sake of this review, keeping these seperate
-was appropriate as only properties of different theorem provers were discussed,
-and these properties remained largely the same for each implementation. However,
-because this living review covers mathematical libraries, it will require comparing
-between implementations. As of such, "HOL" was split into its two most popular
-interventions, HOL4 and HOL Light.
+Finally, the last modification that was made was that the survey
+referenced "HOL" as a theorem prover. HOL has many implementations,
+including HOL4 [@HOL4], HOL Light [@HOL_Light], ProofPower [@ProofPower]
+and HOL Zero [@HOL_Zero]. For the sake of this review, keeping these
+separate was appropriate as only properties of different theorem provers
+were discussed, and these properties remained largely the same for each
+implementation. However, because this living review covers mathematical
+libraries, it will require comparing between implementations. As of such,
+"HOL" was split into its two most popular interventions, HOL4 and HOL
+Light. These two were chosen as they have decently sized mathematical libraries, whereas HOL Zero and ProofPower do not. Including HOL Zero or ProofPower would therefore not add much value to the living review.
 
 ### Scope of Library {#sec:scope_of_library_meth}
-This section reviews the methodology for investigating the scope of libraries
-within the living review.
+This section reviews the methodology for investigating the scope of
+libraries within the living review.
 
-In a focus group~\cite{beckert_usability_2015}, it was found that Isabelle/HOL
-was missing important mathematical foundations in their library.
+In a focus group~\cite{beckert_usability_2015}, it was found that
+Isabelle/HOL was missing important mathematical foundations in their
+library.
 
-We decided to evaluate whether these problems still exist by evaluating the scope
-of library support of ITPs. We have the goal of determining whether mathematical
-foundations were covered, and by which provers they are covered by.
+We decided to evaluate whether these problems still exist by evaluating
+the scope of library support of ITPs. We have the goal of determining
+whether mathematical foundations were covered, and by which provers they
+are covered by.
 
-On a high level, the mathematical libraries for different ITPs will be decomposed 
-into modules, and each of these modules are classified according to which section
-of mathematics they cover. This way we can identify which ITPs cover which mathematical
-topics, and make meaningful comparisons between them.
+On a high level, the mathematical libraries for different ITPs will be
+decomposed into modules, and each of these modules are classified
+according to which section of mathematics they cover. This way we can
+identify which ITPs cover which mathematical topics, and make meaningful
+comparisons between them.
 
 ![Flow chart for classifying mathematical libraries](Images/summary.png){#fig:classification_summary}
 
-The flowchart shown in [@fig:classification_summary] has an overview of the 
-methodology used to evaluate the scope of the mathematical libraries.
+The flowchart shown in [@fig:classification_summary] has an overview of
+the methodology to be used used to evaluate the scope of the mathematical
+libraries.
 
- start by identifying mathematical libraries. For the sake
-of this analysis, we also included community contributions, such as package
-management systems, as part of the scope. As of such, a "library" will refer
-to both a library that comes along with an ITP (often titled a "standard library")
-as well as community contributions, such as packages. A "module" from a library
-may refer to different things, including a "package" in some systems or a collection
-of code files in a library that one might normally call a "module".
+We start by identifying mathematical libraries. For the sake of this
+analysis, we also include community contributions, such as package
+management systems, as part of the scope. As of such, a "library" will
+refer to both a library that comes along with an ITP (often titled a
+"standard library") as well as a collection of community contributions,
+such as package management system.
 
-For each ITP, it was determined whether they first had a body of code similar
-to a "standard library". If it did, then it was determined whether the library
-met the following inclusion criteria:
+A "module" from a library may refer to different things, including a
+"package" in some systems or a collection of code files.
 
-**IC1:** The library large enough that it would be of interest to a mathematician. 
-We define this as including more than just basic data types. This however,
-is a somewhat subjective measure.
+For each ITP, it will be determined whether they first had a body of code
+similar to a library. If it did, then it was determined whether the
+library simply meets the following inclusion criteria:
+
+**IC1:** The library is large enough that it would be of interest to a
+mathematician. We define this as including more than just basic data
+types. This however, is a somewhat subjective measure.
   
-**IC2:** The library has documentation describing the purpose of its modules. The 
-documentation of the libraries and its modules were used to determine which area
-of mathematics they covered. If simply code was provided, this was excluded.
+For each ITP, it is determined whether they had a collection of
+community maintained contributions. These community contributions are
+included if they were collected and listed in some freely available place
+on the internet. This is done to ensure that when the list of
+contributions changes or expands, this living review could be updated.
 
-For each ITP, it was determined whether they had a collection of community maintained
-contributions. These community contributions were included if they were collected
-and listed in some freely available place on the internet. This was done to
-ensure that when the list of contributions changes or expands, this living review
-could be updated.
+The next step is to determine what constituted a module for each of the
+libraries. We define a **module** as a single unit of work contributed to
+an ITP. This is used to reason about contributions and the scope of the
+ITP. We define this concept as in our analysis we cover both components of
+standard libraries, and packages in package management systems.
 
-The next step was to determine what constituted a module for each of the libraries.
+If the module came from a community contribution, for instance, Isabelle's
+archive of formal proofs or Coq's package management system then it is
+considered a "package" type. Meaning a module is considered to be whatever
+a unit of contribution is. For instance, a package is considered a module
+in Coq's package management system, or a submission in the Archive of
+Formal Proofs.
 
-If the modules came from a "standard library". The library is determined to be either
-"large" or "small". Standard libraries are often organised in an hierarchy. A
-large library considered a module to be 2 levels down from the root of the hierarchy,
-whereas a small library was one where a module was considered to be one level
-down the hierarchy. This is done with the purpose of ensuring that the modules
-that end up being compared are of similar size regardless of the size of the original
-library. This classification however, is also somewhat subjective.
+If the modules came from a "standard library", we attempted to divide the standard library into "package sized" sections, in order to make a fair comparison between contributions. To do this, we exploited that most libraries are structured in a hierarchy, so we split the library as determined by how far down the hierarchy we need to go until we get "package sized" sections. If only one level of the hierarchy is needed, it is classified as "small", if two levels are needed, it is classified as "large". The definition of a "package sized" section is somewhat subjective, but approximately 1500 lines of proof code is considered a contribution. 
 
-If the module came from a community contribution, then it is considered a "package" type. 
-Meaning a module is considered to be whatever a unit of contribution is. For instance,
-a package is considered a module in Coq's package management system, or a submission
-in the Archive of Formal Proofs is considered a module.
+There are a number of exclusion criteria for this classification. These
+exclusion criteria exist for modules that would be difficult or
+impossible to classify as a part of a mathematical topic. Those possible
+exclusion criteria include:
 
-There are a number of exclusion criteria for this classification. These exclusion
-criteria exist for packages that would be difficult or impossible to classify as
-a part of a mathematical topic. Those possible exclusion criteria include:
-
-**EC1:** Utility, The module only offers a utility that is only relevant to
-this ITP. For instance, many ITPs double as programming languages, so any
-modules that allow for programming that works with the system such as file
-operations are excluded. This also includes modules that are integrations with
-other tools, or simply initialization libraries that only reference other
-modules.
+**EC1:** Utility, The module only offers a utility that is only relevant
+to this ITP. For instance, many ITPs double as programming languages, so
+any modules that allow for programming that works with the system such as
+file operations are excluded. This also includes modules that are
+integrations with other tools, or simply initialization libraries that
+only reference other modules.
 
 **EC2:** No Documentation, If the module doesn't have any documentation or
-description of purpose, it is excluded from the classification. It should be
-noted that the definition of documentation is very minimal in this case. The
-module doesn't need to have much documentation, one sentence of its purpose is
-enough. However, if it is missing, the module is difficult to classify and is
-excluded.
+description of purpose, it is excluded from the classification. It should
+be noted that the definition of documentation is very minimal in this
+case. The module doesn't need to have much documentation, one sentence of
+its purpose is enough. However, if it is missing, the module is difficult
+to classify and is excluded.
 
-**EC3:** Only Documentation: If the module is simply documentation and doesn't
-provide any new resources, it is also excluded.
+**EC3:** Only Documentation: If the module is simply documentation and
+doesn't provide any new resources, it is also excluded.
 
-**EC4:** Deprecated: If the module has been marked or considered deprecated, then
-it is excluded from 
+**EC4:** Deprecated: If the module has been marked or considered
+deprecated, then it is excluded from 
 
-Excluded modules will be marked as excluded, and the reason for exclusion placed
-in the living review.
+Excluded modules will be marked as excluded, and the reason for exclusion
+placed in the living review.
 
-If a module doesn't fall under any exclusion criteria, then the package is ready
-to be classified. Each module was then assigned a mathematical subject that its
-relevant to.
+If a module doesn't fall under any exclusion criteria, then the modules is
+ready to be classified. Each module is then assigned a mathematical
+subject that its relevant to.
 
-The topics these modules were classified under come from the Mathematical Subject Classification 2020 (MSC2020) [@msc2021]. MSC2020
-is a classification of mathematical subjects that is often used for mathematics
-papers. Each topic is given a code representing its classification, One such
-example of a code is 68P05, the code for work about data structures. The code
-is split up into three sections, the top level is represented by a top level mathematical
-field, For instance, the 68 in 68P05 means that it's in the field of Computer
-Science. If you wish to refer to a vague field of Computer Science, it is referred
-to is 68-XX, with the -XX meaning that it could be anything under this field.
-The next level of classification is represented by a letter. In this case, the P
-in 68P05 refers to subclassification of "Theory of Data" under "Computer Science".
-If one wishes to refer to the mid level classification, then one can do so like
-68Pxx, by replacing the final two numbers with "x"s. Finally, the last two numbers
-represents the final level of classification. In this case, the 05 refers to 
-"Data Structures" under "Theory of Data" under "Computer Science".
+The topics these modules were classified under come from the Mathematical
+Subject Classification 2020 (MSC2020) [@msc2021]. MSC2020 is a
+classification of mathematical subjects that is often used for mathematics
+papers. Each topic is given a code representing its classification, One
+such example of a code is 68P05, the code for work about data structures.
+The code is split up into three sections, the top level is represented by
+a top level mathematical field, For instance, the 68 in 68P05 means that
+it's in the field of Computer Science. If you wish to refer to a vague
+field of Computer Science, it is referred to is 68-XX, with the -XX
+meaning that it could be anything under this field. The next level of
+classification is represented by a letter. In this case, the P in 68P05
+refers to subclassification of "Theory of Data" under "Computer Science".
+If one wishes to refer to the mid level classification, then one can do so
+like 68Pxx, by replacing the final two numbers with "x"s. Finally, the
+last two numbers represents the final level of classification. In this
+case, the 05 refers to "Data Structures" under "Theory of Data" under
+"Computer Science".
 
-This classification was chosen in order to be familiar to mathematicians, and ensure
-that modules can be classified with enough specificity.
+Some further examples of MSC Classifications are:
 
-If the module also comes with some form of category (for instance, Coq's package
-management system allows you to add categories to a package, indicating the subject
-it covers, or large library modules use the top level module as a category), then
-the classification of the package is "guessed". This is done by mapping the
-category to a classification. The module can be browsed and seen in the tree,
-but however is marked as "unverified". If the module doesn't come with a category,
-then the module is marked as "unclassified".
+**68Nxx**: Theory of Software
 
-Finally, a module's description (for instance, abstracts, package descriptions,
-names) is inspected manually and a classification is given to it. The package
-is then considered to be "verified".
+**68N15**: Theory of Programming Languages
+
+**13-XX**: Commutative Algebra
+
+**13Axx**: General commutative ring theory
+
+**13A50**: Actions of groups on commutative rings; invariant theory
+
+This classification is chosen in order to be familiar to mathematicians,
+and ensure that modules can be classified with enough specificity.
+
+If the module also comes with some form of category (for instance, Coq's
+package management system allows you to add categories to a package,
+indicating the subject it covers, or large library modules use the top
+level module as a category), then the classification of the package is
+"guessed". This is done by mapping the category to a classification. The
+module can be browsed and seen in the tree, but however is marked as
+"unverified". If the module doesn't come with a category, then the module
+is marked as "unclassified".
+
+Finally, a module's description (for instance, abstracts, package
+descriptions, names) is inspected manually and a classification is given
+to it. The package is then considered to be "verified".
+
+As a quick summary of the terminology used in this living review
 
 ### Counterexample Generator Methodology {#sec:counterexample_meth}
 It was suggested that counterexample generators could help users understand proof state [@beckert_usability_2015]. When proving a theorem,
-a counterexample generator attempts to find an example for which the theorem does not hold. This helps you better understand when the theorem you want to prove might be wrong
+a counterexample generator attempts to find an example for which the theorem does not hold. This helps you better understand when the theorem and the statement that you wish to prove.
 
-<!-- Bad discussion of counterexamples -->
+A literature review was performed in order to identify counter example generators, and the systems that they have support for were also recorded.
+
+This is a very minor contribution, but simply attempts to give a very brief overview of support for counterexample generators for theorem proving.
 
 ### Math Notation Methodology {#sec:math_notation_meth}
-Fin
+
+Finally, as another minor contribution, we include details about which theorem provers use mathematical notation in proving theorems.
+
+Determining whether an ITP uses mathematical notation in proofs can easily
+be done by examining example proofs, and determining whether they use math
+notation. Which ITPs support mathematical notation was further included
+as a minor contribution to the living review.
 
 # Results
 In this section, we discuss in detail the living review that we have contributed.
@@ -1645,11 +1671,13 @@ As you are viewing this via the web, the widget is embedded below for you to exp
 {{/html}}
 
 {{#latex}}
-The widget can be explored from this link:
-[https://samnolan.me/thesis](https://samnolan.me/thesis)
+The widget can be explored from the following:
+[https://samnolan.me/thesis](https://samnolan.me/thesis/review.html)
 {{/latex}}
 
-The following {{itpCount}} ITPs were included in the review: {{itpNames}}.
+The source code for this thesis is als
+
+The following {{itpCount}} ITPs were included in the review: {{citedItpNames}}.
 
 The results are split into three sections. In [@sec:math_libraries], results about
 the state and scope of mathematical libraries of ITPS are discussed. In
@@ -1657,23 +1685,29 @@ the state and scope of mathematical libraries of ITPS are discussed. In
 covered. Finally, in [@sec:math_notation] and results about mathematical notation
 support are covered.
 
-
 ## Mathematical Libraries {#sec:math_libraries}
 This section details results about the distribution of mathematical topics
-currently covered by interactive theorem provers, as of {{date}}.
+currently covered by ITPs, as of {{date}}. All
+findings, including the dataset of classified modules, can be viewed and
+downloaded in the up to date form by viewing the review online.
 
-{{libraryCount}} mathematical libraries were covered in this analysis. They
-are detailed in [@tbl:libraries]
+The methodology for this section has been laid out in [@scope_of_library_meth].
 
-It should be noted that four libraries failed to meet the inclusion criteria.
+{{libraryCount}} mathematical libraries were covered in this analysis.
+They are detailed in [@tbl:libraries].
 
-- Idris' standard library, due to being too small to be of interest to a mathematician (IC1)
-- RedPRL's standard library, due to being too small to be of interest to a mathematician (IC1)
-- HOL Light's library, due to missing documentation. (IC2)
-- F*'s standard library, due to missing documentation. (IC2)
+{{excludedLibraries}} were excluded due to not having a large enough
+library to be of interest to a mathematician.
 
-We must now chose what we mean by a module for comparison. What we chose as a
-module is listed below for each theorem prover.
+As per our methodology, we must now chose what we mean by a module for
+comparison. What we chose as a module is listed in [@tbl:libraries] for each ITP.
+
+Justifications for each module size are given below:
+
+{{#libraries}}
+**{{name}} - {{section}}:** {{module_justification}}
+
+{{/libraries}}
 
 | Name | Library | Type | Module Definition |
 |------|----------------|-------------------|---------------------|
@@ -1683,16 +1717,11 @@ module is listed below for each theorem prover.
 
   : Libraries covered in the living review {#tbl:libraries}
 
-It should be noted that Mizar ended up with a largest package count of
-{{mizarPackageCount}}. However, Mizar was an unusual library in that it was
-large but has no form of structure. This meant that each module in the entire
-library was included in the review. Mizar's module size is quite small in
-comparison to other theorem provers, and the largest single mathematical
-library could be is Lean's mathlib at {{leanPackageCount}}.
 
-From these libraries, {{totalPackages}} math modules were classified. From these
-modules, {{totalVerifiedPackages}} were manually verified and classified into
-an appropriate category. The sizes of these libraries are detailed in [@tbl:package_results].
+From these libraries, {{totalPackages}} math modules were classified. From
+these modules, {{totalVerifiedPackages}} were manually verified and
+classified into an appropriate category. The sizes of these libraries are
+detailed in [@tbl:package_results], and further displayed graphically in [@fig:total_itp_modules].
 
 | Name | Library |Total Packages | Verified Packages | Classified Packages | Excluded Packages |
 |------|-----|---------------|-------------------|---------------------|-------------------|
@@ -1702,17 +1731,31 @@ an appropriate category. The sizes of these libraries are detailed in [@tbl:pack
 
   : Modules considered per prover {#tbl:package_results}
 
+![Amount of modules found in each ITP](./Images/ITPTotal.png) {#fig:total_itp_modules}
 
-It was found that some libraries were clear outliers in mathematical scope covered.
-Those libraries were Isabelle, Mizar, Coq and Lean. It would be difficult to
-justify use of other theorem provers as a mathematician getting into the field.
+
+It was found that some libraries were clear outliers in mathematical scope
+covered. Those libraries were Isabelle, Mizar, Coq and Lean. It would be
+difficult to justify use of other theorem provers as a mathematician
+getting into the field.
 
 ![Math Package classifications, as of {{date}}](./Images/MathClassification.png){#fig:math_classifications}
 
 The chart in [@fig:math_classifications] shows which verified top level
-MSC Classifications these modules were sorted into as of {{date}}, sorted
-by the amount of total modules in each classification. Again, a fully up
-to date version of this chart is available on the widget.
+MSC Classifications these modules were sorted into as of {{date}}. Each
+column represents a top level classification of a mathematical topic from
+MSC2020 (as described in [@sec:scope_of_library_meth], sorted by by the
+amount of total modules in each classification.
+
+This chart was created using Vega-Lite [@Vega-Lite] a graph visualisation
+framework. It is reproduced in the living review where it is fully up to
+date and is further interactive, showing the exact modules counts when
+hovering with a mouse.
+
+The chart represents the mathematical scope of each of the libraries. If a
+particular field has more modules, it represents a larger availability of
+prior work to build upon when developing new proofs, therefore less
+working from the ground up.
 
 Computer Science modules dominated the topics, making up
 {{totalCompSciModules}} modules. These modules were often related to
@@ -1750,7 +1793,8 @@ This leaves {{noCounterExampleITPS}} not having counter example generators.
 
 
 ## Math Notation in libraries {#sec:math_notation}
-Support of mathematical notation was suggested [@berman_development_2014,@asperti_considerations_2010,@zacchiroli_user_2007].
+Support of mathematical notation was suggested
+[@berman_development_2014,@asperti_considerations_2010,@zacchiroli_user_2007].
 
 The ITPs that use math notation include:
 
@@ -1759,23 +1803,26 @@ The ITPs that use math notation include:
 
 {{/mathNotationITPs}}
 
-The ITPs in this study without math notation are {{noMathNotationITPs}}. These theorem provers may also be improved with math notation support.
+The ITPs in this study without math notation are {{noMathNotationITPs}}.
+These theorem provers may also be improved with math notation support.
 
 # Discussion
 
-We can evaluate this review by comparing it to other literature reviews, and other
-living reviews.
+We evaluate this review by comparing it to other literature reviews, and
+other living reviews.
 
-There are not a large amount of literature reviews in the space of ITPs, but
-we shall first compare it to the literature review the data was based on.
+There are not a large amount of literature reviews in the space of ITPs,
+but we shall first compare it to the literature review the data was based
+on.
 
-It should first stand to say that this is the first living review on ITPs. As
-of such, this review already has many benefits over the current literature.
+It should first stand to say that this is the first living review on ITPs.
+As of such, this review already has many benefits over the current
+literature.
 
-The clear improvement is this is the only review on ITPs that automatically 
-updates to reflect the current state of the art. This means it can be referred
-back to at any time, and even used to track progress on efforts, such as formalizing
-mathematics.
+The clear improvement is this is the only review on ITPs that
+automatically updates to reflect the current state of the art. This means
+it can be referred back to at any time, and even used to track progress on
+efforts, such as formalizing mathematics.
 
 Due to the availability of web technologies and interactivity, the living
 review is also much more accessible than a paper one. It allows readers to
@@ -1787,32 +1834,34 @@ knowledge that they are interested in without difficulty.
 These benefits of the fact that it is living are great, but even without
 considering them, this review does build on past reviews.
 
-A good place to start in comparison is the literature review we base some of
-our data on [@nawaz_survey_2019]. This review covers Theorem Provers in Formal
-Methods and what features they have. This literature review covers both
-Automatic Theorem Provers and Interactive Theorem Provers. For the sake of
-ITPs, the review has the scope of discovering what features each ITP has. This
-living review includes all of the features and compares them, but also explains
-what these features mean for a particular provers, allowing newcomers to better
-understand the field. The living review also offers the benefits of being able
-to check the differences between mathematical libraries. This, in the domain of
-ITPs, therefore contains a superset of the knowledge in this one. This is
-however expected, as we used this review as a basis for our one.
+A good place to start in comparison is the literature review we base some
+of our data on [@nawaz_survey_2019]. This review covers Theorem Provers in
+Formal Methods and what features they have. This literature review covers
+both Automatic Theorem Provers and Interactive Theorem Provers. For the
+sake of ITPs, the review has the scope of discovering what features each
+ITP has. This living review includes all of the features and compares
+them, but also explains what these features mean for a particular provers,
+allowing newcomers to better understand the field. The living review also
+offers the benefits of being able to check the differences between
+mathematical libraries. This, in the domain of ITPs, therefore contains a
+superset of the knowledge in this one. This is however expected, as we
+used this review as a basis for our one.
 
-Other literature reviews include a survey on the field of Interactive Theorem
-Proving [@a_survey_of_itp]. This review covers a brief history of ITPs, and a
-discussion of different calculi present in ITPs. This survey has a larger scope
-in terms of history, and detailed discussions of types of calculus and
-achievements. It however, is not systematic, and more represents an introduction
-to the field of ITPs, and may not be suitable for those currently in the field
-to understand the current state of the art. Furthermore, this review is difficult
-to understand without a strong knowledge of logic.
+Other literature reviews include a survey on the field of Interactive
+Theorem Proving [@a_survey_of_itp]. This review covers a brief history of
+ITPs, and a discussion of different calculi present in ITPs. This survey
+has a larger scope in terms of history, and detailed discussions of types
+of calculus and achievements. It however, is not systematic, and more
+represents an introduction to the field of ITPs, and may not be suitable
+for those currently in the field to understand the current state of the
+art. Furthermore, this review is difficult to understand without a strong
+knowledge of logic.
 
 Finally, John Harrison completed a review of the history of ITPs
-[@history_of_itps]. As the title suggests, this review covers the history of
-ITPs, which is again outside the scope of this living review. This review is
-comprehensive in covering the development of ITPs up until 2014. However, at 7
-years, it is currently out of date.
+[@history_of_itps]. As the title suggests, this review covers the history
+of ITPs, which is again outside the scope of this living review. This
+review is comprehensive in covering the development of ITPs up until 2014.
+However, at 7 years, it is currently out of date.
 
 ## Limitations with current work
 As much as this work does make progress on the current state of the field,
@@ -1828,7 +1877,7 @@ may be more suitable to people within it.
 
 A second limitation is that this review may contain errors in it, one
 particularly prominent likely source of error was that this review was
-performed by a non-mathematician. This means that although the packages
+performed by a non-mathematician. This means that although the modules
 were attempted to be classified correctly, there may be errors made in the
 classification. This could be remedied through allowing viewers or
 visitors to suggest edits and corrections to the state of the review. This
@@ -1846,12 +1895,20 @@ date. However, we are convinced that such a review would be worth the
 effort in creating.
 
 ## Summary
-This thesis was motivated by ITP systems having low usability, and their potential in creating verified software.
+This thesis was motivated by ITP systems having low usability, and their
+potential in creating verified software.
 
-This thesis opens with a literature review of the usability of ITPs to uncover possible usability problems. From these usability problems, we selected a subset to determine whether they still existed in ITPs, and determined how to track progress on them.
+This thesis opens with a literature review of the usability of ITPs to
+uncover possible usability problems. From these usability problems, we
+selected a subset to determine whether they still existed in ITPs, and
+determined how to track progress on them.
 
-Finally, we contributed a living review that tracks the these issues in ITPs. This living review mainly tracks the scope of mathematical libraries of ITPs, but further includes details about math notation and counterexample generators.
+Finally, we contributed a living review that tracks the these issues in
+ITPs. This living review mainly tracks the scope of mathematical libraries
+of ITPs, but further includes details about math notation and
+counterexample generators.
 
-This contribution will continue to shed light on ITPs and their capabilities from now until into the future.
+This contribution will continue to shed light on ITPs and their
+capabilities from now until into the future.
 
 # Bibliography

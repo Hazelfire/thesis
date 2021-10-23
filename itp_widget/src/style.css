@@ -1,0 +1,81 @@
+.emptycategory {
+  color: #aaaaaa;
+}
+
+.unverified { 
+  color: darkred;
+}
+
+.verified { 
+  color: darkgreen;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.itp {
+  display: inline-block;
+  margin: 4rem;
+}
+
+.itp-detail-header {
+  font-weight: bold;  
+}
+
+.itp-prover-logo {
+  vertical-align: middle;
+}
+
+.itps {
+  display: grid;
+}
+
+.option-selector .option {
+  cursor: pointer;
+  padding-left: 0.5rem; 
+  padding-right: 0.5rem; 
+}
+
+#itps table {
+  border-collapse: collapse;
+}
+
+#itps table, #itps th, #itps td {
+  border: 1px solid black;
+}
+
+#itps th, #itps td {
+  padding: 0.5em;
+
+}
+
+#itps th {
+  background-color: lightgrey;
+}
+
+.prover-title img {
+  vertical-align: middle;
+  margin-right: 1em;
+}
+
+.prover-details p {
+  margin-bottom: 0px;
+  margin-top: 0.1em;
+
+}
+
+.package {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.package-itp-name {
+  margin-right: 2rem;
+  font-weight: bold;
+}
+
+.package-itp-library {
+  margin-right: 2rem;
+  font-style: italic;
+}

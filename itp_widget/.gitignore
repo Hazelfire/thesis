@@ -1,0 +1,10 @@
+.direnv
+.venv
+.direnv/
+.venv/
+backup.csv
+docs/
+elm-stuff/
+itp_github_stats.csv
+node_modules/
+yarn-error.log

@@ -1,0 +1,54 @@
+[{
+  "key": "basedOn",
+  "values": [{
+    "value": "Syllogism",
+    "name": "Syllogism",
+    "description": "A prover based on syllogism uses two or more propositions to prove different properties. In a sense, it has an \"If this and this then that\" type of feel to it."
+  }, {
+    "value": "DP",
+    "name": "Decision Procedures",
+    "description": ""
+  }, {
+    "value": "LF",
+    "name": "Logical Framework",
+    "description": ""
+  }, {
+    "value": "FP",
+    "name": "Functional Programming",
+    "description": ""
+  }]
+}, {
+  "key": "logic",
+  "values": [{
+    "value": "FOL",
+    "name": "First Order Logic",
+    "description": ""
+  }, {
+    "value": "HOL",
+    "name": "Higher Order Logic",
+    "description": ""
+  }, {
+    "value": "TT",
+    "name": "TT",
+    "description": ""
+  }, {
+    "value": "HOTT",
+    "name": "Higher Order Type Theory",
+    "description": ""
+  }, {
+    "value": "FOL+HOL",
+    "name": "First Order Logic and Higher Order Logic",
+    "description": ""
+  }]
+}, {
+  "key": "truthValue",
+  "values": [{
+    "value": "Binary",
+    "name": "Binary",
+    "description": ""
+  }, {
+    "value": "Intuition",
+    "name": "Intuition",
+    "description": ""
+  }]
+}]

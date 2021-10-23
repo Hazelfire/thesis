@@ -1,0 +1,4 @@
+name,description
+QuickCheck,QuickCheck is a random tesing tool. It attempts to find for what values a test or theorem prover will fail.
+Nitpick,Nitpick is a counterexample generator for Isabelle/HOL
+Nunchaku,Nunchaku is a counterexample generator intended to be the successor of Nitpick. It can be run with different theorem provers

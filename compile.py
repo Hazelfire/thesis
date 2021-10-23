@@ -8,6 +8,10 @@ now = datetime.datetime.now().strftime("%d %B %Y")
 nawazITPs = ['Isabelle', 'Coq', 'HOL', 'Agda', 'PVS', 'LEO-II', 'Watson', 'Yarrow', 'Atelier B', 'Metamath', 'Twelf', 'Mizar', 'RedPRL', 'JAPE', 'LEO-II', 'Getfol', 'Z/EVES']
 
 addedITPs = ['Lean', 'F*', 'Idris']
+excludedITPS = ['Getfol', 'LEO-II', 'Twelf', 'RedPRL', 'JAPE', 'Z/EVES']
+
+def cited_list(items):
+    return list_text(['{} [@{}]'.format(item, item.replace(" ","_")) for item in items])
 
 def list_text(items):
     if len(items) == 1:
@@ -27,6 +31,7 @@ data = {
     'RQ3': 'What, if any, ITP should be used for a specific project?',
     'nawazITPs': list_text(nawazITPs),
     'addedITPs': list_text(addedITPs),
+    'excludedLibraries': list_text(excludedITPS),
     'date': now
 }
 
@@ -36,6 +41,7 @@ with ZipFile('results/all_data.zip', 'r') as all_data:
         itps.sort(key=lambda x: x['Name'])
         data['itps'] = itps
         data['itpNames'] = list_text([itp['Name'] for itp in itps])
+        data['citedItpNames'] = cited_list([itp['Name'] for itp in itps])
         data['itpCount'] = len(data['itps'])
         data['counterexampleITPs'] = [itp for itp in itps if itp['Counterexamples'] != 'No']
         data['noCounterexampleITPs'] = [itp for itp in itps if itp['Counterexamples'] == 'No']
