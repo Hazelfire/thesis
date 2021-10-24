@@ -21,6 +21,7 @@ module Classification exposing
     , libraryToLibraryDetails
     , new
     , packageIsExcluded
+    , packageIsUnclassified
     , packages
     , underPrefix
     )

@@ -12,7 +12,7 @@ listings: true
 date: {{date}}
 strip-comments: true
 abstract: |
-  Interactive Theorem Provers are tools that allow you to both prove
+  Interactive Theorem Provers are tools that allows a user to both prove
   mathematical theorems, and also certify software. That is, prove that
   software meets it's specification. These tools are known to increase
   productive in software development. However, it's been recognised that
@@ -20,11 +20,11 @@ abstract: |
   for why the adoption of ITPs in both mathematics and software
   development is far from widespread. This thesis investigates usability
   issues that exist in literature, and then creates a living review that
-  that covers progress on these issues for different theorem provers. This
-  living review semi-automatically updates to reflect the newest findings
-  in the field, and attempts to track progress on these issues. This
-  living review also doubles in helping ITP users make decisions about
-  what ITP technology to use. 
+  that covers progress on these issues for different theorem provers.
+  This living review semi-automatically updates to reflect the newest
+  findings in the field, and attempts to track progress on these issues.
+  This living review also doubles in helping ITP users make decisions
+  about what ITP technology to use. 
 declaration: "I certify that except where due acknowledgment has been made, the work is that of the author alone; the work has not been submitted previously, in whole or in part, to qualify for any other academic award; the content of the thesis is the result of work which has been carried out since the official commencement date of the approved research program; any editorial work, paid or unpaid, carried out by a third party is acknowledged; and, ethics procedures and guidelines have been followed."
 acknowledgment: |
   I would like to acknowledge my supervisor Maria Spichkova for her guidance and high expectations for this project. I would also like to thank Flora Salim for inspiring me to further invest myself into research and never stopping in opening doors for me.
@@ -37,20 +37,20 @@ codeBlockCaptions: true
 ---
 
 # Introduction
-This is a thesis about **Interactive Theorem Provers**, what they are, why
-they might be difficult to use, and whether you should explore using them
-in your next project.
+This is a thesis about **Interactive Theorem Provers**, what they are,
+why they might be difficult to use, and whether you should explore using
+them in your next project.
 
 An **Interactive Theorem Prover** (ITP) or **Proof Assistant** is a piece
 of software that helps a user prove mathematical theorems, or
 equivalently, prove correctness properties about software. Some of the
-more well known examples of provers include [Coq](https://coq.inria.fr/)
+more well known examples of ITPs include [Coq](https://coq.inria.fr/)
 and [Isabelle](https://isabelle.in.tum.de/).
 
 An ITP is often used by either a mathematician or an engineer. From the
-side of a mathematician, ITPS allow users to outline a proof for a
+side of a mathematician, ITPs allow users to outline a proof for a
 mathematical proposition. The ITP can then check whether the given proof
-is valid. This means that you only need to trust the ITP to guarantee
+is valid. This means that the user only need to trust the ITP to guarantee
 there are no errors made in the proof. This ensures that little to no
 errors find themselves into any proof that's made with an ITP. The QED
 Manifesto [@QED_Manifesto] has proposed using ITPs to generate computer
@@ -66,46 +66,46 @@ microkernels [@Sel4] and compilers [@CompCert].
 
 In computer science, often correctness proofs of algorithms (For example,
 Dijkstra's algorithm in an undergraduate context) are described and proved
-to be correct on pen and paper. The use of an ITP in analogous to this
+to be correct on pen and paper. The use of an ITP is analogous to this
 type of activity. 
 
 The task of creating verified software is split into two steps: first
 specification and then verification.
 
-During specification, You specify what it is that you would like to prove,
+During specification, the user specifies what it is that they would like to prove,
 for example, that Dijkstra's algorithm always finds the shortest path
 between two nodes in a weighted graph, assuming positive weights. In this
-step, you would create a specification for what is Dijkstra's algorithm,
+step, the user would create a specification for what is Dijkstra's algorithm,
 graphs, and shortest paths. Then state that Dijkstra's algorithm finds the
 shortest path. This step is far from trivial.
 
-This specification leaves you with a **proof obligation**. A proof
+This specification leaves the user with a **proof obligation**. A proof
 obligation is a onus on the user to prove that the specification of the
 software is correct. Then, during verification, it is then up to the user
 to provide to the ITP the reasoning as to why this proposition is correct.
 This can be done in several ways, sometimes through the use of automated
-software, or manipulating with the proof by pointing and clicking, or
+software, or manipulating the proof by pointing and clicking, or
 writing down a **proof script** that describes the steps made to prove the
 theorem. Often this involves breaking down one proof obligation into many
 other simpler proof obligations that can be solved individually.
 
 The ITP then checks whether the proof of the proposition is valid,
-assisting you along the way in any errors that you make. The user and the
-ITP work together until you have specified a proof of the statement you
-wish to claim. Once that proof is made, you can be assured that the system
-works correctly.
+assisting the user along the way in any errors that they make. The user
+and the ITP work together until they have specified a proof of the
+statement they wish to claim. Once that proof is made, assuming the ITP
+is functioning correctly and the specification is correct, the user can
+be assured that the system works correctly.
 
-Another way of approaching ITPs is through programming languages. Often a
-goal in programming language design is to create languages where you
-cannot make a certain class of errors. For instance, Rust is designed to
-allow systems level programming that's protected from memory errors, and
-Elm is designed to create web programs that do not have runtime errors.
-Languages often accomplish this through Type Systems and Functional
-Programming. ITPs are languages that have design features that allow you
-to go as far as proving the correctness of your software. Almost all ITPs
-use Type Systems and Functional Programming to assist in proving software.
-
-<!-- Needs citation -->
+Another way of discovering ITPs is through programming languages. Often a
+goal in programming language design is to create languages where its
+difficult or impossible to make a certain class of errors. For instance,
+Rust [@Rust] is designed to allow systems level programming that's protected from
+memory errors, and Elm [@Elm] is designed to create web programs that do not
+have runtime errors. Languages often accomplish this through Type Systems
+and Functional Programming. ITPs are languages that have design features
+that allow the user to go as far as proving the correctness of
+software. Almost all ITPs use Type Systems and Functional Programming to
+assist in proving software.
 
 More widespread use of ITPs is valuable as it allows for errors to be
 caught much earlier in the development process.
@@ -131,6 +131,8 @@ but not all three.
 
 ![Three categories of Formal Methods](./Images/formalmethods.png){#fig:formal_methods}
 
+**Features of Formal Methods Tools:**
+
 **Automation**: Whether finding a proof is fully automated. That is, the user
 does not need to specify a proof manually for the proposition, the system simply
 attempts to find one automatically.
@@ -140,42 +142,48 @@ when attempting to find a proof.
 
 **Scope**: Whether the system can prove arbitrarily theorems.
 
+**Formal Methods Tools:**
+
 **Model Checkers** are fully automated and terminate in reasonable time. However,
 Model checkers can do this by restricting the scope of the systems that they can
 prove. They allow for a specification for a system in a (usually finite) state
 machine, and can prove properties about this state machine.
 
-**Automated Theorem Provers** (ATPs) are fully automated and can prove arbitrary theorems,
-however may not terminate in reasonable time. For larger systems or more complicated
-theorems, they may run forever and never identify a proof or disproof for the
-proposition.
+**Automated Theorem Provers** (ATPs) are fully automated and can prove
+arbitrary theorems, however may not terminate in reasonable time. For larger
+systems or more complicated theorems, they may run forever and never identify a
+proof or disproof for the proposition.
 
 **Interactive Theorem Provers** terminate in reasonable time and can prove
-arbitrary theorems. However, they are not fully automated, and require the user's
-input to guide the proof of the theorem.
+arbitrary theorems. However, they are not fully automated, and require the
+user's input to guide the proof of the theorem.
 
-The distinction between ATPs and ITPs is however not clear cut. ATPs can
-often include minor user interaction in order to correct it's path and
-find a proof. And ITPs often have automatic features and can even call
-external ATPs to discharge proof obligations.
+The distinction between ATPs and ITPs is however not clear cut. ATPs can often
+include minor user interaction in order to correct it's path and find a proof.
+And ITPs often have automatic features and can even call external ATPs to help
+automatically prove goals.
 
-ITPs were chose for this investigation due to their usage in creating fully verified
-software such as Coq and SeL4. Although large scale formalization fully certified
-software efforts are possible through the usage of ATPs and Model Checkers, as 
-far as the authors are aware, they have not been done. Furthermore, ATPs are
-often used alongside ITPs to resolve proof obligations automatically, getting
-the best of both worlds.
+ITPs were chose for this investigation due to their usage in creating fully
+verified software such as Coq and SeL4. Although large scale formalization
+fully certified software efforts are possible through the usage of ATPs and
+Model Checkers, as far as the authors are aware, they have not been done.
+Furthermore, ATPs are often used alongside ITPs to resolve proof obligations
+automatically, getting the best of both worlds.
 
-## Using an ITP
-Proving properties with an ITP has the flavour of starting with a goal, and then
-manipulating that goal into subgoals until you have proven the proposition.
+## Using an ITP {#sec:using_an_itp}
+This section goes over an small toy example of using an ITP using
+pseudocode syntax. This section therefore explains some of the vocabulary
+and issues around using ITPs.
 
-To demonstrate the usage of an ITP, we will take a look at proving a theorem
-in a pseudocode ITP syntax.
+To prove a property with an ITP, the user must start by having a goal
+that they wish to prove. You then manipulate and decompose that goal into
+simpler subgoals, until they've proven the proposition they wish to prove.
 
-Our pseudocode syntax is based on textual theorem provers such as Isabelle, Coq
-and HOL. The syntax is simplified to get the basic concepts of theorem provers
-across without too many of the confusing details.
+To demonstrate the usage of an ITP, we will take a look at proving a
+theorem in a pseudocode ITP syntax. Our pseudocode syntax is based on
+textual ITPs such as Isabelle, Coq and HOL. The syntax is simplified to
+get the basic concepts of ITPs across without too many of the technical
+details.
 
 We start with a function:
 
@@ -187,43 +195,52 @@ f(x) =
   \end{cases}
 $$
 
-This is the triangle number function. It adds a number to every number below
-that number up until 0. For instance, $f(5) = 5 + 4 + 3 + 2 + 1 + 0 = 15$.
+This is the triangle number function. It adds a number to every number
+below that number up until 0. For instance, $f(5) = 5 + 4 + 3 + 2 + 1 + 0
+= 15$.
 
-However, there is a quicker way to calculate the triangle number, and that is that
-is that $f(x) = x(x + 1) / 2$.
+However, there is a quicker way to calculate the triangle number, and
+that is that is that $f(x) = \frac{x(x + 1)}{2}$.
 
-This proof is an elementary induction proof. But we shall demonstrate that this
-statement is true.
+This proof is an elementary induction proof. But we shall demonstrate
+that this statement is true.
 
 We would like to prove that:
 
-$$ f(x) = x(x + 1)/2 $$
+$$ f(x) = \frac{x(x + 1)}{2} $$
 
-Textual ITPs are in a sense like an interactive programming language. You write
-a line of code and then you get an output from this code.
+Textual ITPs are similar to interactive programming languages, such as R
+and Bash, where the main interaction is through a Read Evaluate Print
+Loop or REPL. You start by writing a line of code, and the ITP will
+return the state. These lines of code manipulate the state until the
+statement has been prover. After the proof, the user is left with a proof
+script, which is a listing of all the code used to prove the proposition. 
 
-To start with our proof, we write [@lst:proposition] into our ITP. This statement
-says that you would like to `Prove` the statement `forall x, f(x) = x * (x + 1) / 2`.
-Prove here is a keyword that starts the proof. Everything between the `:` and the `.`
-represent the statement you wish to prove.
+To start with our proof, we write [@lst:proposition] into our ITP. This
+statement says that the user would like to `Prove` the statement `forall
+x, f(x) = x * (x + 1) / 2`. Prove here is a keyword that starts the
+proof. Everything between the `:` and the `.` represent the statement
+they wish to prove.
 
 ```
 Prove: forall x, f(x) = x * (x + 1) / 2.
 ```
 
-: Statement of the proposition you wish to prove {#lst:proposition}
+: User Input: Statement of the proposition to prove {#lst:proposition}
 
-After writing this statement, the prover will return to you (often in a window
-in the ITP interface, or if it is a command line prover, it will print it to console)
-the state [@lst:starting_state].
+After writing this statement, the ITP will return the state
+[@lst:starting_state]. This will often appear in a window in the ITP
+interface, or if it is a command line prover, it will print it to
+console.
 
-The state is separated into two sections, everything above the `---` is an assumption,
-that is, what we already know. We can have multiple assumptions, but in this case,
-there is none. Then the statement below the `---` is the **goal**. This is the
-statement that you want to prove. When starting a proof, whatever statement you
-want to prove becomes your first goal, but both the assumptions and the goal
-will change as you progress in the proof.
+The state is separated into two sections, everything above the `---` is
+an assumption, that is, what we already know. We can have multiple
+assumptions, but in this case, there are none. Then the statement below
+the `---` is the **goal**. This is the statement  to prove. When starting
+a proof, whatever statement the user wishes to prove becomes the first
+goal, but both the assumptions and the goal will change as the user
+progress in the proof. It's also possible to split the goal into multiple
+subgoals as the proof is being developed. 
 
 ```
 
@@ -231,22 +248,31 @@ will change as you progress in the proof.
 forall x, f(x) = x * (x + 1) / 2
 ```
 
-: Starting state of the prover {#lst:starting_state}
+: ITP Output: Starting state {#lst:starting_state}
 
-It should be noted that during any time during the process, the user may wish
-to attempt to prove a goal automatically. Most ITPs have the ability to
-automatically prove simple propositions, often by giving the `auto` command to
-the prover. If this succeeds, then the user is done and the proposition is
-proven. Otherwise, the user must continue to explore proof options. We will assume
-that the statement cannot be proven automatically.
+It should be noted that during any time during the process, the user may
+wish to attempt to prove a goal automatically. Most ITPs have the ability
+to automatically prove simple propositions, often by giving the `auto`
+command to the prover. If this succeeds, then the user is done and the
+proposition is proven. Otherwise, the user must continue to explore proof
+options. We will assume that the statement cannot be proven
+automatically.
 
-This particular proof is a very common beginners induction proof, so induction
-would be a good start to solving this. Entering the pseudocode in [@lst:induction_tactic] performs induction
-on the variable x. To perform induction, we must prove the base case, and then
-prove the inductive case. The ITP will get you to prove them one at a time, starting
-with the base case. After the command is executed, it will show the state in [@lst:induction_state].
-This means that the theorem prover is asking you to prove the base case, that
-is, that the statement is true when $x = 0$.
+This particular proof is a very common beginners induction proof, so
+induction would be a good start to solving this. Entering the pseudocode
+in [@lst:induction_tactic] performs induction on the variable x. To
+perform induction, we must prove the base case, and then prove the
+inductive case. The ITP will ask to prove them one at a time,
+starting with the base case. After the command is executed, it will show
+the state in [@lst:induction_state]. 
+
+The state has now been split up into two subgoals. One for the base case
+and one for the induction case. All the tactics that we write will
+manipulate the first goal, but the ITP is indicating that there still is
+a second goal that needs to be proven after this first one.
+.
+This means that the theorem prover is asking for a proof of the base
+case, that is, that the statement is true when $x = 0$.
 
 ```
 induction x
@@ -258,22 +284,27 @@ induction x
 
 ---
 f(0) = 0 * (0 + 1) / 2
+(1/2)
+---
+f(x) = x * (x + 1) / 2 -> f(x + 1) = (x + 1) * (x + 2) / 2
+(2/2)
 ```
 
 : State after the induction tactic {#lst:induction_state}
 
-Notice that the command modifies the state of the ITP. Only commands that are
-valid at the time are allowed to be used, ensuring that all proof steps are valid
-and construct a correct proof.
+Notice that the command modifies the state of the ITP. Only commands that
+are valid at the time are allowed to be used, ensuring that all proof
+steps are valid and construct a correct proof.
 
-The base case is very easy to solve, as simply evaluating the function on both
-sides ($f(0) = 0$ and $\frac {0 \cdot (0 + 1)}{2} = 0$) gives 0.
+The base case is very easy to solve, as simply evaluating the function on
+both sides ($f(0) = 0$ and $\frac {0 \cdot (0 + 1)}{2} = 0$) gives 0.
 
-To evaluate this, we use the `simplify` tactic in [@lst:simplify_tactic]. This
-tactic attempts to try a list of rules that the prover guesses will simplify
-the current statement. In our pseudocode ITP, this includes evaluating
-statements between constants. The result is as we expect and shown in [@lst:simplify_state].
-Indicating that after the simplification, both sides are equal to each other.
+To evaluate this, we use the `simplify` tactic in [@lst:simplify_tactic].
+This tactic attempts to try a list of rules that the prover guesses will
+simplify the current statement. In our pseudocode ITP, this includes
+evaluating statements with constants. The result is as we expect and
+shown in [@lst:simplify_state]. Indicating that after the simplification,
+both sides are equal to each other.
 
 ```
 simplify
@@ -285,13 +316,18 @@ simplify
 
 ---
 0=0
+(1/2)
+f(x) = x * (x + 1) / 2 -> f(x + 1) = (x + 1) * (x + 2) / 2
+(2/2)
+---
 ```
 
 : State after running the simplify tactic {#lst:simplify_state}
 
-Now the goal is to prove that `0=0`. This is trivially true because equality
-is reflexive. As of such, we can prove the current goal by indicating that it's
-reflexive. This uses the `reflexivity` tactic in listing [@lst:reflexivity_tactic].
+Now the goal is to prove that `0=0`. This is trivially true because
+equality is reflexive. As of such, we can prove the current goal by
+indicating that it's reflexive. This uses the `reflexivity` tactic in
+listing [@lst:reflexivity_tactic].
 
 Now that we have solved the first goal, the base case, the pseudo-ITP is now
 asking us to prove the inductive case [@lst:reflexivity_state]. It is now our goal to prove
@@ -393,7 +429,7 @@ Proof accepted
 
 It should be noted that the commands we wrote out are akin to deduction
 rules, however, there is a problem with this approach, and the problem
-should become clear once we write down all the commands that you put into
+should become clear once we write down all the commands that have been put into
 the prover.
 
 ```
@@ -453,15 +489,15 @@ but has some notable differences.
 The Cognitive Dimensions of Notation are:
 
 **Abstraction Gradient**: Does the ITP offer ways of abstracting
-components? Abstraction here refers to methods, classes and encapsulation.
-Green classifies notations as either being abstraction-hating,
-abstraction-tolerant or abstraction-hungry. An abstraction-hating ITP
-would be one that forces you to work with low level constructs often. An
-abstraction-tolerant ITP would be one that gives some methods for
-abstraction, but still nevertheless requires constant low level
-interaction. An abstraction-hungry ITP would offer many methods of
-abstraction, that could even in the end obscure what is actually happening
-behind the scenes.
+components? Abstraction here refers to methods, classes and
+encapsulation. Green classifies notations as either being
+abstraction-hating, abstraction-tolerant or abstraction-hungry. An
+abstraction-hating ITP would be one that forces the user to work with low
+level constructs often. An abstraction-tolerant ITP would be one that
+gives some methods for abstraction, but still nevertheless requires
+constant low level interaction. An abstraction-hungry ITP would offer
+many methods of abstraction, that could even in the end obscure what is
+actually happening behind the scenes.
 
 **Closeness of Mapping**: Closeness of Mapping is how similar the notation
 is to the problem domain. At some point, a representation of the problem
@@ -469,7 +505,7 @@ has to be put into notation suitable for the ITP. The easier this is to do
 the better the closeness of mapping, or how close the proof state is
 represented vs what the user would expect.
 
-**Consistency**: Once you know the basics of an ITP, how much of the rest
+**Consistency**: Once the user know the basics of an ITP, how much of the rest
 can be inferred? A notation that is not consistent would require constant
 lookup of features in the theorem prover. Consistency is particularly
 important for learning ITPs. Consistency can become an issue when there
@@ -539,11 +575,11 @@ grouping help with representing secondary notation.
 
 **Viscosity**: Is it easy to make a change in the system? ITPs with low
 abstraction make it difficult to make changes. Sometimes a small
-difference to what you are wanting to prove requires a disproportionate
+difference to what the user is wanting to prove requires a disproportionate
 change of the proof. ITPs with high viscosity make it difficult to change.
 
 **Visibility and Juxtaposability**: How easy is to get a particular piece
-of desired information? How easy is it to compare part of your proof with
+of desired information? How easy is it to compare part of the proof with
 proofs elsewhere? Sometimes critical information is difficult to obtain
 when creating or understanding a proof state. A common example is being
 able to inspect intermediate proof steps. When a proof relies heavily on
@@ -694,7 +730,7 @@ To do this, the living review is scoped as follows:
   issues about ITPs (RQ2)
 
 The living review will be implemented using the Elm
-framework[@elm_lang_book]. Elm is a functional programming language for
+framework[@Elm]. Elm is a functional programming language for
 web applications, and acts like other web frameworks such as React, Vue
 and Angular. Elm was chosen due to it being suitability for data
 representation, being very fast and small, and having a strong enough type
@@ -873,25 +909,26 @@ Direct Manipulation provers often differs from textual ones.
 
 Textual ITPs such as HOL, Isabelle, Coq and Matita work by writing a
 proof script that attempts to prove a proposition. Interacting with
-textual ITPs often involves a very simple read-evaluate-print-loop
-(REPL) for their interfaces. One very stark example of this is
-HOL-Light, which you interact with by opening up the OCaml REPL (a
-general purpose ML based functional programming language) and loading
-the HOL library. All OCaml is available to you alongside the HOL
-library. Although this is rather primitive, modern ITP interfaces such
-as Isabelle/jEdit and CoqIDE usually offer only a small layer of
-abstraction over a REPL for their own languages.
+textual ITPs often involves a very simple read-evaluate-print-loop (REPL)
+for their interfaces. This is very similar to the example we went through
+in section [@sec:using_an_itp]. One very stark example of this is
+HOL-Light, which the user interacts with by opening up the OCaml REPL (a
+general purpose ML based functional programming language) and loading the
+HOL library. All OCaml is available alongside the HOL library. Although
+this is rather primitive, modern ITP interfaces such as Isabelle/jEdit
+and CoqIDE usually offer only a small layer of abstraction over a REPL
+for their own languages.
 
 These interfaces have two main windows, the first has code and the
 second has proof state. The code can be evaluated up to a certain point,
 and the output from the REPL in terms of proof state are printed in the
 second window. The only major difference between this and a standard
-REPL is that you can rewind to evaluate up to a previous line. This
+REPL is that the user can rewind to evaluate up to a previous line. This
 simple style of interface has consequences for usability. In particular,
 if any error is found either in proof or in syntax, execution stops
 until that error is resolved. Further, for larger projects, it can take
-a very long time for systems to recompile. It also means that you can
-only identify things that have already been identified (it has to be a
+a very long time for systems to recompile. It also means that the user can
+only reference things that have already been declared (it has to be a
 single pass). This is particularly an issue when automated tactics
 attempt to use lemmas above them to find solutions to theorems (such as
 Isabelle). This means that simply changing the order of lemmas in an
@@ -965,7 +1002,7 @@ issue is not mentioned in any other source and not tested empirically.
 No solutions have been suggested for this.
 
 CardiZ, an ITP that can be used to prove properties of Z specifications,
-found that you could not sketch out proofs before an attempt. This is
+found that the user could not sketch out proofs before an attempt. This is
 the only paper on CardiZ, as CardiZ is not a popular prover. No
 solutions have been suggested for this.
 
@@ -997,7 +1034,7 @@ in three different sources.
   : Consistency Problems {#tbl:consistency}
 
 Consistency is the cognitive dimension of whether, once learning part of
-the notation, you are able to infer the rest of the notation.
+the notation, the user is able to infer the rest of the notation.
 
 In textual theorem provers, it is often difficult to remember the name
 of the next tactic, theorems or lemmas should be applied in any
@@ -1062,7 +1099,7 @@ syntax. It was found to be slightly quicker than using dropdown menus.
 Sometimes when applying a tactic, an unexpected result would occur,
 causing the user to back up and try to understand the current state.
 This issue could be solved by Proof Previews [@berman_development_2014],
-which allow you to see a proof state when selecting tactics from a menu
+which allow the user to see a proof state when selecting tactics from a menu
 without actually applying the tactic. That way the user can cheaply
 explore tactics to continue in the proof.
 
@@ -1172,7 +1209,7 @@ such, solutions are found in the visibility section.
   : Premature Commitment Problems {#tbl:premature_commitment}
 
 When an attempt to prove a theorem fails, either one of two things has
-happened. First, the proof you are attempting to perform is incorrect,
+happened. First, the proof the user are attempting to perform is incorrect,
 or the model itself is in error. The model is often in error, and as of
 such there is a premature commitment to a model before having a full
 understanding. Counterexample generators such as Quick Check and
@@ -1324,7 +1361,7 @@ improvement [@bourke_challenges_2012], including making better use of
 the library [@tassi_interactive_2008; @asperti_considerations_2010].
 
 A second source is the need to make trivial interactions when making
-small changes. For instance, the renaming of a lemma might mean you need
+small changes. For instance, the renaming of a lemma require needing
 to go through several files to find where to change the identifier.
 Messy downwards compatibility, changing definitions, and lack of
 refactoring are all examples of this. These are usually addressed by
@@ -1339,8 +1376,8 @@ solutions have been suggested for this problem.
 
 Finally, the fourth source of viscosity is clunky syntax, such as the
 need to explain selections to the theorem prover. Selections are a
-common issue where you need to describe the part of the goal that you
-want to rewrite. This part might be complicated, but has to be
+common issue when describing the part of the goal that the user
+wants to rewrite. This part might be complicated, but has to be
 represented textually. This has served as a challenge for ITP designers.
 Selections using patterns has been implemented in
 Matita [@zacchiroli_user_2007; @asperti_user_2007] to address this pain
@@ -1600,7 +1637,7 @@ papers. Each topic is given a code representing its classification, One
 such example of a code is 68P05, the code for work about data structures.
 The code is split up into three sections, the top level is represented by
 a top level mathematical field, For instance, the 68 in 68P05 means that
-it's in the field of Computer Science. If you wish to refer to a vague
+it's in the field of Computer Science. To refer to the general
 field of Computer Science, it is referred to is 68-XX, with the -XX
 meaning that it could be anything under this field. The next level of
 classification is represented by a letter. In this case, the P in 68P05
@@ -1627,7 +1664,7 @@ This classification is chosen in order to be familiar to mathematicians,
 and ensure that modules can be classified with enough specificity.
 
 If the module also comes with some form of category (for instance, Coq's
-package management system allows you to add categories to a package,
+package management system allows adding categories to a package,
 indicating the subject it covers, or large library modules use the top
 level module as a category), then the classification of the package is
 "guessed". This is done by mapping the category to a classification. The
@@ -1642,12 +1679,19 @@ to it. The package is then considered to be "verified".
 As a quick summary of the terminology used in this living review
 
 ### Counterexample Generator Methodology {#sec:counterexample_meth}
-It was suggested that counterexample generators could help users understand proof state [@beckert_usability_2015]. When proving a theorem,
-a counterexample generator attempts to find an example for which the theorem does not hold. This helps you better understand when the theorem and the statement that you wish to prove.
+It was suggested that counterexample generators could help users
+understand proof state [@beckert_usability_2015]. When proving a theorem,
+a counterexample generator attempts to find an example for which the
+theorem does not hold. This helps the user better understand when the
+theorem and the statement that they wish to prove.
 
-A literature review was performed in order to identify counter example generators, and the systems that they have support for were also recorded.
+A literature review was performed in order to identify counter example
+generators, and the systems that they have support for were also
+recorded.
 
-This is a very minor contribution, but simply attempts to give a very brief overview of support for counterexample generators for theorem proving.
+This is a very minor contribution, but simply attempts to give a very
+brief overview of support for counterexample generators for theorem
+proving.
 
 ### Math Notation Methodology {#sec:math_notation_meth}
 
@@ -1659,11 +1703,12 @@ notation. Which ITPs support mathematical notation was further included
 as a minor contribution to the living review.
 
 # Results
-In this section, we discuss in detail the living review that we have contributed.
-It should be noted that the living review itself contains all the information found
-in this section and more. The static version of the results is only up to date
-as of {{date}}. If you wish to view the results as it is up to date, then
-looking we invite the reader to look through the online widget.
+In this section, we discuss in detail the living review that we have
+contributed. It should be noted that the living review itself contains
+all the information found in this section and more. The static version of
+the results is only up to date as of {{date}}. If you wish to view the
+results as it is up to date, then we invite you to look through the
+online widget.
 
 {{#html}}
 As you are viewing this via the web, the widget is embedded below for you to explore:
@@ -1675,12 +1720,12 @@ The widget can be explored from the following:
 [https://samnolan.me/thesis](https://samnolan.me/thesis/review.html)
 {{/latex}}
 
-The source code for this thesis is als
+The source code for this thesis, the widget, and all the code behind it are also available on GitHub at [https://github.com/Hazelfire/thesis](https://github.com/Hazelfire/thesis).
 
 The following {{itpCount}} ITPs were included in the review: {{citedItpNames}}.
 
 The results are split into three sections. In [@sec:math_libraries], results about
-the state and scope of mathematical libraries of ITPS are discussed. In
+the state and scope of mathematical libraries of ITPs are discussed. In
 [@sec:counterexamples] results about the support of Counterexample generators are
 covered. Finally, in [@sec:math_notation] and results about mathematical notation
 support are covered.
@@ -1731,7 +1776,7 @@ detailed in [@tbl:package_results], and further displayed graphically in [@fig:t
 
   : Modules considered per prover {#tbl:package_results}
 
-![Amount of modules found in each ITP](./Images/ITPTotal.png) {#fig:total_itp_modules}
+![Amount of modules found in each ITP](./Images/ITPTotal.png){#fig:total_itp_modules}
 
 
 It was found that some libraries were clear outliers in mathematical scope

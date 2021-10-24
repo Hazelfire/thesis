@@ -425,8 +425,11 @@ createITPOverviewChart model =
                             ( excluded, notExcluded ) =
                                 List.partition Classification.packageIsExcluded (example :: packages)
 
+                            ( unclassified, classified ) =
+                                List.partition Classification.packageIsUnclassified notExcluded
+
                             ( verified, unverified ) =
-                                List.partition .verified notExcluded
+                                List.partition .verified classified
                         in
                         VegaLite.dataRow
                             [ ( "prover", VegaLite.str example.library.prover )
@@ -435,6 +438,12 @@ createITPOverviewChart model =
                             ]
                             (List.concat
                                 [ VegaLite.dataRow
+                                    [ ( "prover", VegaLite.str example.library.prover )
+                                    , ( "class", VegaLite.str "unclassified" )
+                                    , ( "count", VegaLite.num (toFloat <| List.length unclassified) )
+                                    ]
+                                    []
+                                , VegaLite.dataRow
                                     [ ( "prover", VegaLite.str example.library.prover )
                                     , ( "class", VegaLite.str "unverified" )
                                     , ( "count", VegaLite.num (toFloat <| List.length unverified) )
@@ -938,7 +947,7 @@ formatFloat x =
 viewLibraryDetails : List ProverLibraryViewModelData -> Html.Html Msg
 viewLibraryDetails libraryList =
     Html.table []
-        [ Html.thead [] [ Html.th [] [ Html.text "Prover" ], Html.th [] [ Html.text "Library" ], Html.th [] [ Html.text "Total Packages" ], Html.th [] [ Html.text "Verified Packages" ], Html.th [] [ Html.text "Classified Packages" ], Html.th [] [ Html.text "Excluded Packages" ] ]
+        [ Html.thead [] [ Html.th [] [ Html.text "Prover" ], Html.th [] [ Html.text "Library" ], Html.th [] [ Html.text "Total" ], Html.th [] [ Html.text "Verified" ], Html.th [] [ Html.text "Classified" ], Html.th [] [ Html.text "Excluded" ] ]
         , Html.tbody []
             (List.map
                 (\model ->
