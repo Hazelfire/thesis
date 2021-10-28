@@ -35,10 +35,10 @@ Simple equational reasoning examples,,,http://web.student.chalmers.se/~stevan/ty
 Slides about how we used Agda for logic related coursework,,"Natural deduction, Enumerable sets and Primitive Recursive Functions, by Stevan Andjelkovic and Ola Holmström.",http://web.student.chalmers.se/~stevan/userexp/,Exclude-Doc,True
 Decision procedures,,,http://cs.swansea.ac.uk/~cskarim/agda/,68V15,True
 Running a classical proof with choice in Agda,,,http://math.andrej.com/2011/05/10/running-a-classical-proof-with-choice-in-agda/,Exclude-Doc,True
-Category.agda,,,https://wiki.portal.chalmers.se/agda/Main/Libraries?action=download&upname=20110915Category.agda,Exclude-NoDoc,False
+Category.agda,,,https://wiki.portal.chalmers.se/agda/Main/Libraries?action=download&upname=20110915Category.agda,Exclude-NoDoc,True
 Theories (also a darcs repo),,,http://darcs.nomeata.de/agda-free-groups/,Exclude-NoDoc,True
-Constructive proofs of Higmans lemma implemented in Agda,,,https://github.com/sergei-romanenko/agda-Higman-lemma,,False
+Constructive proofs of Higmans lemma implemented in Agda,,,https://github.com/sergei-romanenko/agda-Higman-lemma,06-XX,True
 A simple supercompiler formally verified in Agda,,,https://github.com/sergei-romanenko/agda-simple-scp,68N20,True
 Staged multi-result supercompilation (a model in Agda),,,https://github.com/sergei-romanenko/staged-mrsc-agda,68N20,True
-"DoCon-A, a library for a certain initial part of computer algebra and list processing,with full proofs in Agda",,,http://www.botik.ru/pub/local/Mechveliani/docon-A,,False
+"DoCon-A, a library for a certain initial part of computer algebra and list processing,with full proofs in Agda",,,http://www.botik.ru/pub/local/Mechveliani/docon-A,68-XX,True
 Sqrt 2 is not rational,,,https://github.com/sergei-romanenko/agda-Pythagoras,11A99,True

@@ -1,0 +1,9 @@
+name,prover
+Nitpick,Isabelle
+QuickCheck,Agda
+QuickCheck,Isabelle
+QuickCheck,PVS
+QuickCheck,Coq
+QuickCheck,ACL2
+Nunchaku,Isabelle
+Nunchaku,Coq

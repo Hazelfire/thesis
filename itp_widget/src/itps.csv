@@ -9,7 +9,7 @@ Mizar,TP,ITP,Syllogism,FOL,Binary,Deductive,Yes,Decl,Modular,Pascal,CLI,Cross,Ye
 HOL4,TP,ITP,Syllogism,HOL,Binary,Deductive,No,Func,Modular,SML,CLI,Cross,Yes,No,Yes,No,No,,HOL.gif,https://hol-theorem-prover.org/,Michael Norrish,1985
 HOL Light,TP,ITP,Syllogism,HOL,Binary,Deductive,No,Func,Modular,Ocaml,CLI,Cross,Yes,No,Yes,No,No,,,https://www.cl.cam.ac.uk/~jrh13/hol-light/,John Harrison,
 RedPRL,TP,ITP,Syllogism,TT,Intuition,Deductive,No,Func,Modular,SML,GUI,Cross,No,Yes,Yes,No,No,,RedPRL.png,https://redprl.org/,Jonathan Sterling,
-Coq,TP,ITP,DP,HOTT,Binary,Ded+Indu,Yes,Func,Modular,OCaml,CLI+GUI,Cross,Yes,Yes,Yes,External,No,,Coq.png,https://coq.inria.fr/,Hugo Herbelin,1989
+Coq,TP,ITP,DP,HOTT,Binary,Ded+Indu,Yes,Func,Modular,OCaml,CLI+GUI,Cross,Yes,Yes,Yes,Yes,No,,Coq.png,https://coq.inria.fr/,Hugo Herbelin,1989
 PVS,TP,ITP,Syllogism,HOL,Binary,Deductive,Yes,Func+OO,Modular,C Lisp,GUI,Mac+Linux,Yes,Yes,Yes,Yes,No,,PVS.gif,http://pvs.csl.sri.com/,M. Saqib Nawaz,
 Lean,TP,ITP,Syllogism,HOL,Binary,Ded+Indu,Yes,Func,Modular,C++,CLI,Cross,Yes,No,Yes,External,Yes,Lean has allows representing math notation on LaTeX.,Lean.svg,https://leanprover.github.io/,"Leo de Moura, Sebastian Ullrich, Dany Fabian",
 JAPE,TP,ITP,Syllogism,FOL,Binary,Deductive,Yes,OO,Monolithic,Java,GUI,Mac+Linux,Yes,Yes,No,Yes,No,,japelogo.gif,http://japeforall.org.uk/,Rachard Bornat,1996

@@ -14,7 +14,7 @@ co_structures,,Sequences of countable length defined as co-algebraic datatypes.,
 digraphs,,"Directed graphs: circuits, maximal subtrees, paths, DAGs.",https://github.com/nasa/pvslib/blob/master/digraphs/README.md,05C20,True
 exact_real_arith,,Exact real arithmetic including trig functions.,https://github.com/nasa/pvslib/blob/master/exact_real_arith/README.md,Exclude-Util,True
 examples,,Examples of application of the functionality provided by NASALib.,https://github.com/nasa/pvslib/blob/master/examples/README.md,Exclude-Doc,True
-extended_nnreal,,Extended non-negative reals.,https://github.com/nasa/pvslib/blob/master/extended_nnreal/README.md,,False
+extended_nnreal,,Extended non-negative reals.,https://github.com/nasa/pvslib/blob/master/extended_nnreal/README.md,26-XX,True
 fast_approx,,Approximations of standard numerical functions.,https://github.com/nasa/pvslib/blob/master/fast_approx/README.md,65D15,True
 fault_tolerance,,Fault tolerance protocols.,https://github.com/nasa/pvslib/blob/master/fault_tolerance/README.md,68M15,True
 float,,Floating point numbers and arithmetic.,https://github.com/nasa/pvslib/blob/master/float/README.md,68P05,True

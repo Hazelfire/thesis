@@ -6,7 +6,6 @@ afp_source = requests.get('https://isabelle.in.tum.de/dist/library/')
 
 soup = BeautifulSoup(afp_source.text, 'html.parser')
 
-
 all_lists = soup.find('body').find_all('ul', recursive=False)
 rows = []
 modules = []

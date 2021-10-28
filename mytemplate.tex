@@ -36,6 +36,8 @@ $for(classoption)$
   $classoption$$sep$,
 $endfor$
 ]{$documentclass$}
+\usepackage[nobottomtitles]{titlesec}
+\usepackage[figuresleft]{rotating}
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
@@ -457,6 +459,8 @@ $endif$
 \definecolor{verb_bg}{rgb}{.95,.96,.97}
 \begin{document}
 \lstset{  
+showlines=true,
+basicstyle=\ttfamily,
 backgroundcolor=\color{verb_bg},  
 frame=single
 }
@@ -467,6 +471,7 @@ $if(header-logo)$
 \includegraphics[width=5cm]{$header-logo$}
 \end{figure}
 $endif$
+
 
 \vspace*{2cm}
 
@@ -480,13 +485,15 @@ $endif$
 	[0.5cm]
 	Computer Science Undergraduate.\\
 	[3cm]
+  School of Computing Technologies\\
+	[0.5cm]
+	STEM College\\
+	Royal Melbourne Institute of Technology
+	Melbourne, Victoria, Australia\\
 	School of Science.\\
-	[0.5cm]
 	College of Science, Engineering and Health.\\
-	[0.5cm]
-	RMIT University.\\
 	[2cm]
-  November 2021\\
+  October 2021\\
 }
 \end{center}
 	

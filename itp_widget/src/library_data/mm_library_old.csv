@@ -1,0 +1,30 @@
+package,authors,description,url,msc,verified
+FIRST ORDER LOGIC WITH  EQUALITY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1,,False
+SET THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:2,,False
+REAL AND COMPLEX NUMBERS,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5,26A09,True
+ELEMENTARY NUMBER THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:6,11-XX,True
+GUIDES AND MISCELLANEA,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:17,Exclude-Mix,True
+SUPPLEMENTARY MATERIAL (USER'S  MATHBOXES),,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:20,Exclude-Mix,True
+CLASSICAL FIRST-ORDER LOGIC WITH  EQUALITY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1,03B10,True
+ZF (ZERMELO-FRAENKEL) SET  THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:2,03E30,True
+ZFC (ZERMELO-FRAENKEL WITH CHOICE) SET  THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:3,03E25,True
+TG (TARSKI-GROTHENDIECK) SET  THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:4,03E65,True
+BASIC STRUCTURES,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:7,54E30,True
+BASIC CATEGORY THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:8,18A05,True
+BASIC ORDER THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:9,06-XX,True
+BASIC ALGEBRAIC STRUCTURES,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10,13-XX,True
+BASIC LINEAR ALGEBRA,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:11,15-XX,True
+BASIC TOPOLOGY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:12,54-XX,True
+BASIC REAL AND COMPLEX  ANALYSIS,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:13,26-XX,True
+BASIC REAL AND COMPLEX  FUNCTIONS,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:14,26-XX,True
+ELEMENTARY GEOMETRY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:15,14A25,True
+GRAPH THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:16,05Cxx,True
+COMPLEX TOPOLOGICAL VECTOR SPACES  (DEPRECATED),,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:18,Exclude-Depr,True
+COMPLEX HILBERT SPACE EXPLORER  (DEPRECATED),,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:19,Exclude-Depr,True
+CLASSICAL FIRST ORDER LOGIC WITH  EQUALITY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1,,False
+NEW FOUNDATIONS (NF) SET  THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:2,,False
+Higher Order Logic,,,http://us.metamath.org/holuni/mmhol.html,,False
+Hilbert Logic,,,http://us.metamath.org/mpeuni/mmhil.html,,False
+Quantum Logic,,,http://us.metamath.org/qleuni/mmql.html,,False
+Solitaire,,,http://us.metamath.org/mmsolitaire/mms.html,,False
+Music,,,http://us.metamath.org/mpeuni/mmmusic.html,,False

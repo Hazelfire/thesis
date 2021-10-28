@@ -13,3 +13,4 @@ build.*
 node_modules
 .direnv
 results
+module_size

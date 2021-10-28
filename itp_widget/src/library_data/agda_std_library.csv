@@ -6,7 +6,7 @@ Codata,,"""Finite"" sets indexed on coinductive ""natural"" numbers",https://agd
 Data,,Booleans,https://agda.github.io/agda-stdlib/Everything.html#15588,68P05,True
 Debug,,Printing Strings During Evaluation,https://agda.github.io/agda-stdlib/Everything.html#51921,Exclude-Util,True
 Foreign,,Type(s) used (only) when calling out to Haskell via the FFI,https://agda.github.io/agda-stdlib/Everything.html#52004,Exclude-Util,True
-Function,,Functions,https://agda.github.io/agda-stdlib/Everything.html#52392,,False
+Function,,Functions,https://agda.github.io/agda-stdlib/Everything.html#52392,18-XX,True
 IO,,IO,https://agda.github.io/agda-stdlib/Everything.html#56317,Exclude-Util,True
 Induction,,An abstraction of various forms of recursion/induction,https://agda.github.io/agda-stdlib/Everything.html#56901,03F03,True
 Level,,Universe levels,https://agda.github.io/agda-stdlib/Everything.html#57053,03B38,True

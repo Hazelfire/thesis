@@ -430,23 +430,20 @@ createITPOverviewChart model =
 
                             ( verified, unverified ) =
                                 List.partition .verified classified
+
+                            ( unsure, sure ) =
+                                List.partition (\p -> String.endsWith "xx" (String.toLower p.msc)) verified
                         in
                         VegaLite.dataRow
                             [ ( "prover", VegaLite.str example.library.prover )
                             , ( "class", VegaLite.str "verified" )
-                            , ( "count", VegaLite.num (toFloat (List.length verified)) )
+                            , ( "count", VegaLite.num (toFloat (List.length sure)) )
                             ]
                             (List.concat
                                 [ VegaLite.dataRow
                                     [ ( "prover", VegaLite.str example.library.prover )
-                                    , ( "class", VegaLite.str "unclassified" )
-                                    , ( "count", VegaLite.num (toFloat <| List.length unclassified) )
-                                    ]
-                                    []
-                                , VegaLite.dataRow
-                                    [ ( "prover", VegaLite.str example.library.prover )
-                                    , ( "class", VegaLite.str "unverified" )
-                                    , ( "count", VegaLite.num (toFloat <| List.length unverified) )
+                                    , ( "class", VegaLite.str "needs professional" )
+                                    , ( "count", VegaLite.num (toFloat <| List.length unsure) )
                                     ]
                                     []
                                 , VegaLite.dataRow
@@ -803,7 +800,11 @@ viewFeatureCell prover feature =
                     verifiedPackageCount =
                         List.length (List.filter .verified allPackages)
                 in
-                Html.span [ Attr.class "clickable", Event.onClick (FocusView (FeatureView (LibraryFeatureValue True))) ] [ Html.text <| String.concat [ "Total Modules: ", String.fromInt allPackageCount, ". Verified Modules: ", String.fromInt verifiedPackageCount, "." ] ]
+                if allPackageCount > 0 then
+                    Html.span [ Attr.class "clickable", Event.onClick (FocusView (FeatureView (LibraryFeatureValue True))) ] [ Html.text <| String.concat [ "Total Modules: ", String.fromInt allPackageCount, ". Verified Modules: ", String.fromInt verifiedPackageCount, "." ] ]
+
+                else
+                    Html.span [ Attr.class "clickable", Event.onClick (FocusView (FeatureView (LibraryFeatureValue True))) ] [ Html.text "Library Excluded" ]
 
             else
                 Html.span [ Attr.class "clickable", Event.onClick (FocusView (FeatureView (LibraryFeatureValue False))) ] [ Html.text "Does not have library support" ]
@@ -895,7 +896,6 @@ viewLibrary similarProvers { openClassificationCodeView, mscChildren, showEmptyC
                 , Html.div [] [ checkbox "Show unverified packages" showUnverifiedPackages SetShowUnverified ]
                 , viewClassification openClassificationCodeView mscChildren
                 , Html.div [ Attr.id "library-graph" ] []
-                , Html.div [] [ viewLibraryDetails libraries ]
                 , Html.details []
                     [ Html.summary [] [ Html.text "Downloads" ]
                     , Html.button [ Event.onClick (DownloadFile "library_graph.json" (Json.Encode.encode 0 vegaSpec)) ] [ Html.text "Download vega lite spec" ]

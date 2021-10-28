@@ -1,30 +1,172 @@
 package,authors,description,url,msc,verified
-FIRST ORDER LOGIC WITH  EQUALITY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1,,False
-SET THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:2,,False
-REAL AND COMPLEX NUMBERS,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5,26A09,True
-ELEMENTARY NUMBER THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:6,11-XX,True
-GUIDES AND MISCELLANEA,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:17,Exclude-Mix,True
-SUPPLEMENTARY MATERIAL (USER'S  MATHBOXES),,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:20,Exclude-Mix,True
-CLASSICAL FIRST-ORDER LOGIC WITH  EQUALITY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1,03B10,True
-ZF (ZERMELO-FRAENKEL) SET  THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:2,03E30,True
-ZFC (ZERMELO-FRAENKEL WITH CHOICE) SET  THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:3,03E25,True
-TG (TARSKI-GROTHENDIECK) SET  THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:4,03E65,True
-BASIC STRUCTURES,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:7,54E30,True
-BASIC CATEGORY THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:8,18A05,True
-BASIC ORDER THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:9,06-XX,True
-BASIC ALGEBRAIC STRUCTURES,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10,13-XX,True
-BASIC LINEAR ALGEBRA,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:11,15-XX,True
-BASIC TOPOLOGY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:12,54-XX,True
-BASIC REAL AND COMPLEX  ANALYSIS,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:13,26-XX,True
-BASIC REAL AND COMPLEX  FUNCTIONS,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:14,26-XX,True
-ELEMENTARY GEOMETRY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:15,14A25,True
-GRAPH THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:16,05Cxx,True
-COMPLEX TOPOLOGICAL VECTOR SPACES  (DEPRECATED),,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:18,Exclude-Depr,True
-COMPLEX HILBERT SPACE EXPLORER  (DEPRECATED),,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:19,Exclude-Depr,True
-CLASSICAL FIRST ORDER LOGIC WITH  EQUALITY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1,,False
-NEW FOUNDATIONS (NF) SET  THEORY,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:2,,False
-Higher Order Logic,,,http://us.metamath.org/holuni/mmhol.html,,False
-Hilbert Logic,,,http://us.metamath.org/mpeuni/mmhil.html,,False
-Quantum Logic,,,http://us.metamath.org/qleuni/mmql.html,,False
-Solitaire,,,http://us.metamath.org/mmsolitaire/mms.html,,False
-Music,,,http://us.metamath.org/mpeuni/mmmusic.html,,False
+Pre-logic,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:1.1,03B05,True
+Propositional calculus,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:1.2,03B05,True
+Predicate calculus mostly without distinct variables,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:1.3,03B10,True
+Predicate calculus with distinct variables,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:1.4,03B10,True
+IZF Set Theory - start with the Axiom of Extensionality,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:2.1,03F55,True
+IZF Set Theory - add the Axioms of Collection and Separation,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:2.2,03F55,True
+IZF Set Theory - add the Axioms of Power Sets and Pairing,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:2.3,03F55,True
+IZF Set Theory - add the Axiom of Union,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:2.4,03F55,True
+IZF Set Theory - add the Axiom of Set Induction,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:2.5,03F55,True
+IZF Set Theory - add the Axiom of Infinity,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:2.6,03F55,True
+Construction and axiomatization of real and complex numbers,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:3.1,26A09,True
+Derive the basic properties from the field axioms,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:3.2,26A09,True
+Real and complex numbers - basic operations,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:3.3,26A09,True
+Integer sets,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:3.4,26A09,True
+Order sets,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:3.5,06-XX,True
+Elementary integer functions,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:3.6,26A09,True
+Elementary real and complex functions,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:3.7,33-XX,True
+Elementary limits and convergence,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:3.8,26A03,True
+Elementary properties of divisibility,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:4.1,11A51,True
+"Guides (conventions, explanations, and examples)",,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:5.1,Exclude-Doc,True
+Mathboxes for user contributions,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:6.1,Exclude-Util,True
+Mathbox for Mykola Mostovenko,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:6.2,Exclude-Util,True
+Mathbox for BJ,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:6.3,Exclude-Util,True
+Mathbox for David A. Wheeler,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:6.4,Exclude-Util,True
+Mathbox for Jim Kingdon,,,http://us.metamath.org/ileuni/mmtheorems.html#dtl:6.5,Exclude-Util,True
+Pre-logic,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1.1,03B05,True
+Propositional calculus,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1.2,03B05,True
+Other axiomatizations related to classical propositional calculus,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1.3,03B06,True
+"Predicate calculus with equality: Tarski's system S2 (1 rule, 6 schemes)",,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1.4,03B10,True
+Predicate calculus with equality: Auxiliary axiom schemes (4 schemes),,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1.5,03B10,True
+Existential uniqueness,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1.6,03B10,True
+Other axiomatizations related to classical predicate calculus,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:1.7,03B10,True
+ZF Set Theory - start with the Axiom of Extensionality,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:2.1,03E30,True
+ZF Set Theory - add the Axiom of Replacement,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:2.2,03E30,True
+ZF Set Theory - add the Axiom of Power Sets,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:2.3,03E30,True
+ZF Set Theory - add the Axiom of Union,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:2.4,03E30,True
+ZF Set Theory - add the Axiom of Regularity,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:2.5,03E30,True
+ZF Set Theory - add the Axiom of Infinity,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:2.6,03E30,True
+ZFC Set Theory - add Countable Choice and Dependent Choice,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:3.1,03E25,True
+ZFC Set Theory - add the Axiom of Choice,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:3.2,03E25,True
+ZFC Axioms with no distinct variable requirements,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:3.3,03E30,True
+The Generalized Continuum Hypothesis,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:3.4,03E17,True
+Inaccessibles,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:4.1,03E10,True
+ZFC Set Theory plus the Tarski-Grothendieck Axiom,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:4.2,03E30,True
+Construction and axiomatization of real and complex numbers,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5.1,26A09,True
+Derive the basic properties from the field axioms,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5.2,26A09,True
+Real and complex numbers - basic operations,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5.3,26A09,True
+Integer sets,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5.4,26A09,True
+Order sets,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5.5,06-XX,True
+Elementary integer functions,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5.6,26A09,True
+Words over a set,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5.7,05A05,True
+Reflexive and transitive closures of relations,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5.8,03Exx,True
+Elementary real and complex functions,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5.9,26A03,True
+Elementary limits and convergence,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5.10,26A09,True
+Elementary trigonometry,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5.11,33B10,True
+Cardinality of real and complex number subsets,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:5.12,26A09,True
+Elementary properties of divisibility,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:6.1,11A51,True
+Elementary prime number theory,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:6.2,11A51,True
+Extensible structures,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:7.1,08Axx,True
+Moore spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:7.2,54E30,True
+Categories,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:8.1,18Axx,True
+Arrows (disjointified hom-sets),,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:8.2,18Axx,True
+Examples of categories,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:8.3,18Axx,True
+Categorical constructions,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:8.4,18Axx,True
+Presets and directed sets using extensible structures,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:9.1,06A11,True
+Posets and lattices using extensible structures,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:9.2,06A11,True
+Monoids,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10.1,13-XX,True
+Groups,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10.2,20Exx,True
+Abelian groups,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10.3,20Kxx,True
+Rings,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10.4,13Axx,True
+Division rings and fields,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10.5,12E15,True
+Left modules,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10.6,13Cxx,True
+Vector spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10.7,15Axx,True
+Ideals,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10.8,13A15,True
+Associative algebras,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10.9,16-XX,True
+Abstract multivariate polynomials,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10.10,26Bxx,True
+The complex numbers as an algebraic extensible structure,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10.11,30-XX,True
+Generalized pre-Hilbert and Hilbert spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:10.12,46C05,True
+Vectors and free modules,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:11.1,16D40,True
+Matrices,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:11.2,15Axx,True
+The determinant,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:11.3,15A15,True
+Polynomial matrices,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:11.4,11C99,True
+The characteristic polynomial,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:11.5,15-XX,True
+Topology,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:12.1,54-XX,True
+Filters and filter bases,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:12.2,54-XX,True
+Uniform Structures and Spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:12.3,54-XX,True
+Metric spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:12.4,54E35,True
+Complex metric vector spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:12.5,54-XX,True
+Continuity,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:13.1,26-XX,True
+Integrals,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:13.2,26-XX,True
+Derivatives,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:13.3,26-XX,True
+Polynomials,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:14.1,26-XX,True
+Sequences and series,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:14.2,26-XX,True
+Basic trigonometry,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:14.3,26-XX,True
+Basic number theory,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:14.4,11AXX,True
+Definition and Tarski's Axioms of Geometry,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:15.1,51M04,True
+Tarskian Geometry,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:15.2,51M04,True
+Properties of geometries,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:15.3,51M04,True
+Geometry in Hilbert spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:15.4,51M04,True
+Undirected graphs - preliminaries,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:16.1,05Cxx,True
+Undirected graphs - basics,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:17.1,05Cxx,True
+Eulerian paths and the Konigsberg Bridge problem,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:17.2,05C38,True
+The Friendship Theorem,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:17.3,05Cxx,True
+"Guides (conventions, explanations, and examples)",,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:18.1,Exclude-Doc,True
+Humor,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:18.2,00A08,True
+(Future - to be reviewed and classified),,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:18.3,Exclude-Depr,True
+Additional material on group theory (deprecated),,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:19.1,Exclude-Depr,True
+Complex vector spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:19.2,Exclude-Depr,True
+Normed complex vector spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:19.3,Exclude-Depr,True
+Operators on complex vector spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:19.4,Exclude-Depr,True
+Inner product (pre-Hilbert) spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:19.5,Exclude-Depr,True
+Complex Banach spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:19.6,Exclude-Depr,True
+Complex Hilbert spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:19.7,Exclude-Depr,True
+Axiomatization of complex pre-Hilbert spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:20.1,Exclude-Depr,True
+Inner product and norms,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:20.2,Exclude-Depr,True
+Cauchy sequences and completeness axiom,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:20.3,Exclude-Depr,True
+Subspaces and projections,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:20.4,Exclude-Depr,True
+Properties of Hilbert subspaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:20.5,Exclude-Depr,True
+Operators on Hilbert spaces,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:20.6,Exclude-Depr,True
+States on a Hilbert lattice and Godowski's equation,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:20.7,Exclude-Depr,True
+"Cover relation, atoms, exchange axiom, and modular symmetry",,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:20.8,Exclude-Depr,True
+Mathboxes for user contributions,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.1,Exclude-Util,True
+Mathbox for Stefan Allan,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.2,Exclude-Util,True
+Mathbox for Thierry Arnoux,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.3,Exclude-Util,True
+Mathbox for Jonathan Ben-Naim,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.4,Exclude-Util,True
+Mathbox for Mario Carneiro,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.5,Exclude-Util,True
+Mathbox for Filip Cernatescu,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.6,Exclude-Util,True
+Mathbox for Paul Chapman,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.7,Exclude-Util,True
+Mathbox for Scott Fenton,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.8,Exclude-Util,True
+Mathbox for Jeff Hankins,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.9,Exclude-Util,True
+Mathbox for Anthony Hart,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.10,Exclude-Util,True
+Mathbox for Chen-Pang He,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.11,Exclude-Util,True
+Mathbox for Jeff Hoffman,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.12,Exclude-Util,True
+Mathbox for Asger C. Ipsen,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.13,Exclude-Util,True
+Mathbox for BJ,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.14,Exclude-Util,True
+Mathbox for Jim Kingdon,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.15,Exclude-Util,True
+Mathbox for ML,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.16,Exclude-Util,True
+Mathbox for Wolf Lammen,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.17,Exclude-Util,True
+Mathbox for Brendan Leahy,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.18,Exclude-Util,True
+Mathbox for Jeff Madsen,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.19,Exclude-Util,True
+Mathbox for Giovanni Mascellani,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.20,Exclude-Util,True
+Mathbox for Rodolfo Medina,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.21,Exclude-Util,True
+Mathbox for Norm Megill,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.22,Exclude-Util,True
+Mathbox for OpenAI,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.23,Exclude-Util,True
+Mathbox for Stefan O'Rear,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.24,Exclude-Util,True
+Mathbox for Jon Pennant,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.25,Exclude-Util,True
+Mathbox for Richard Penner,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.26,Exclude-Util,True
+Mathbox for Stanislas Polu,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.27,Exclude-Util,True
+Mathbox for Steve Rodriguez,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.28,Exclude-Util,True
+Mathbox for Andrew Salmon,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.29,Exclude-Util,True
+Mathbox for Alan Sare,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.30,Exclude-Util,True
+Mathbox for Glauco Siliprandi,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.31,Exclude-Util,True
+Mathbox for Saveliy Skresanov,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.32,Exclude-Util,True
+Mathbox for Jarvin Udandy,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.33,Exclude-Util,True
+Mathbox for Alexander van der Vekens,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.34,Exclude-Util,True
+Mathbox for Emmett Weisz,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.35,Exclude-Util,True
+Mathbox for David A. Wheeler,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.36,Exclude-Util,True
+Mathbox for Kunhao Zheng,,,http://us.metamath.org/mpeuni/mmtheorems.html#dtl:21.37,Exclude-Util,True
+Pre-logic,,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:1.1,03B05,True
+Propositional calculus,,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:1.2,03B05,True
+Other axiomatizations of classical propositional calculus,,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:1.3,03B06,True
+"Predicate calculus with equality: Tarski's system S2 (1 rule, 6 schemes)",,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:1.4,03B10,True
+Predicate calculus with equality: Auxiliary axiom schemes (4 schemes),,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:1.5,03B10,True
+"Predicate calculus with equality: Older axiomatization (1 rule, 14 schemes)",,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:1.6,03B10,True
+Existential uniqueness,,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:1.7,03B10,True
+Other axiomatizations related to classical predicate calculus,,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:1.8,03B10,True
+NF Set Theory - start with the Axiom of Extensionality,,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:2.1,03Exx,True
+NF Set Theory - add the Set Construction Axioms,,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:2.2,03Exx,True
+"Ordered Pairs, Relationships, and Functions",,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:2.3,06-XX,True
+Orderings,,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:2.4,06-XX,True
+Cantorian and Strongly Cantorian Sets,,,http://us.metamath.org/nfeuni/mmtheorems.html#dtl:2.5,06-XX,True

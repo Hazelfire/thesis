@@ -10,7 +10,7 @@ digraph G {
   ];
   
   libraryHasDocumentation [
-    label = "Does the ITP have\n documentation?";
+    label = "Does the library\n prove theorems?";
     shape = diamond;    
   ];
   
@@ -18,6 +18,7 @@ digraph G {
     label = "Is the library\n large enough?";
     shape = diamond;    
   ];
+
   excludeLibrary [
     label = "Exclude Library";
     shape = oval;    

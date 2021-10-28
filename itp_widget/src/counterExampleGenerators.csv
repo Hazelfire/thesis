@@ -1,4 +1,4 @@
-name,description
-QuickCheck,QuickCheck is a random tesing tool. It attempts to find for what values a test or theorem prover will fail.
-Nitpick,Nitpick is a counterexample generator for Isabelle/HOL
-Nunchaku,Nunchaku is a counterexample generator intended to be the successor of Nitpick. It can be run with different theorem provers
+name,description,citation
+QuickCheck,"QuickCheck is a type of property based random testing tool. It's not a particular piece of software but has many implementations in many languages. It works by specifying a property that you want to test about a system, and QuickCheck attempts to falsify that the property holds by giving attempting checking to see if there are counterexamples. Often QuickCheck is simply used for software testing, as it is in Haskell [@QuickCheckHaskell]. However, in the context of theorem provers, it can be used to find counterexamples to statement you might wish to prove",QuickCheckIsabelle
+Nitpick,"Nitpick is a counterexample generator for Isabelle/HOL. It is fundementally a model finder and works by using the relational model finder KodKod [@KodKod] as a backend. Model finders are akin to SAT solvers, in that they work by attempting to find a collection of values that satisfy a given statement. Nitpick uses model finders in order to find possible counterexamples. Nitpick also outperforms QuickCheck",Nitpick
+Nunchaku,"Nunchaku is a counterexample generator intended to be the successor of Nitpick. One of its main advantages over Nitpick is that it's designed to work with multiple different frontends (ITPs), as well as different backends, such as CVC4 [@CVC4]",NanchakuCoq

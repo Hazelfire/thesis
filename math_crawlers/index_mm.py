@@ -4,6 +4,11 @@ import requests
 import csv
 import re
 
+category_to_modules = {}
+with open("./mm_categories.csv", "r") as f:
+    reader = csv.DictReader(f)
+    category_to_modules = {package['package']: package['msc'] for package in reader}
+
 rows = []
 def index_site(site):
     source = requests.get(site)
@@ -13,24 +18,26 @@ def index_site(site):
     categories = set()
     # There is an unclosed p tag I need to consider
     all_modules = soup.find('p')
-    large_category = ""
-    small_category = ""
-    sub_category = ""
+    category = ""
     for module in all_modules.children:
         if module.name == 'a':
             print("found Link")
             print(module.get_text())
             matches = re.match(r"PART \d+\s+([\w\s\)\(\-']+)", module.get_text())
             if matches:
-                print("no match")
-                name = " ".join(re.split(r"\s", matches.group(1).strip()))
-                url = "http://us.metamath.org/mpeuni/mmtheorems.html" + module['href']
+                category = re.sub(r"\s+", " ", matches.group(1).strip())
+
+            matches = re.match(r"\d+\.\d+\s+([\s\S]+)", module.get_text())
+
+            if matches:
+                name = re.sub(r"\s+", " ", matches.group(1).strip())
+                url = site + module['href']
                 rows.append({
                     'package': name,
                     'authors': '',
                     'description': '',
                     'url': url,
-                    'msc': '',
+                    'msc': category_to_modules.get(category, ''),
                     'verified': False
                 })
         if module.name == 'hr':
@@ -41,51 +48,6 @@ sites = ['http://us.metamath.org/ileuni/mmtheorems.html','http://us.metamath.org
 
 for site in sites:
     index_site(site)
-
-rows.append({
-    'package': 'Higher Order Logic',
-    'authors': '',
-    'description': '',
-    'url': 'http://us.metamath.org/holuni/mmhol.html',
-    'msc': '',
-    'verified': False
-})
-
-rows.append({
-    'package': 'Hilbert Logic',
-    'authors': '',
-    'description': '',
-    'url': 'http://us.metamath.org/mpeuni/mmhil.html',
-    'msc': '',
-    'verified': False
-})
-
-rows.append({
-    'package': 'Quantum Logic',
-    'authors': '',
-    'description': '',
-    'url': 'http://us.metamath.org/qleuni/mmql.html',
-    'msc': '',
-    'verified': False
-})
-
-rows.append({
-    'package': 'Solitaire',
-    'authors': '',
-    'description': '',
-    'url': 'http://us.metamath.org/mmsolitaire/mms.html',
-    'msc': '',
-    'verified': False
-})
-
-rows.append({
-    'package': 'Music',
-    'authors': '',
-    'description': '',
-    'url': 'http://us.metamath.org/mpeuni/mmmusic.html',
-    'msc': '',
-    'verified': False
-})
 
 with open("mm_library.csv", "w") as f:
     writer = csv.DictWriter(f, fieldnames=['package', 'authors', 'description', 'url', 'msc', 'verified'])

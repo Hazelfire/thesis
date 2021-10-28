@@ -34,13 +34,13 @@ HOL/HOL-Metis_Examples,68V15,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL
 HOL/HOL-MicroJava,68N15,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-MicroJava/index.html,,,True
 HOL/HOL-Mirabelle,Exclude-NoDoc,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Mirabelle/index.html,,,True
 HOL/HOL-Mirabelle-ex,Exclude-NoDoc,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Mirabelle-ex/index.html,,,True
-HOL/HOL-Mutabelle,Exclude-NoDoc,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Mutabelle/index.html,,,False
+HOL/HOL-Mutabelle,Exclude-NoDoc,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Mutabelle/index.html,,,True
 HOL/HOL-NanoJava,68N15,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-NanoJava/index.html,,,True
 HOL/HOL-Nitpick_Examples,68Q60,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Nitpick_Examples/index.html,,,True
 HOL/HOL-Nominal,68Q42,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Nominal/index.html,,,True
 HOL/HOL-Nominal-Examples,68Q42,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Nominal-Examples/index.html,,,True
-HOL/HOL-Nonstandard_Analysis,26E35,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Nonstandard_Analysis/index.html,,,True
-HOL/HOL-Nonstandard_Analysis-Examples,26E35,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Nonstandard_Analysis-Examples/index.html,,,True
+HOL/HOL-Nonstandard_Analysis,26E36,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Nonstandard_Analysis/index.html,,,True
+HOL/HOL-Nonstandard_Analysis-Examples,26E36,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Nonstandard_Analysis-Examples/index.html,,,True
 HOL/HOL-Number_Theory,11-xx,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Number_Theory/index.html,,,True
 HOL/HOL-Predicate_Compile_Examples,68N20,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Predicate_Compile_Examples/index.html,,,True
 HOL/HOL-Probability,62-xx,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Probability/index.html,,,True
@@ -52,8 +52,8 @@ HOL/HOL-Proofs-ex,03B40,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Proo
 HOL/HOL-Quickcheck_Benchmark,68Q60,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Quickcheck_Benchmark/index.html,,,True
 HOL/HOL-Quickcheck_Examples,68Q60,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Quickcheck_Examples/index.html,,,True
 HOL/HOL-Quotient_Examples,18A32,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Quotient_Examples/index.html,,,True
-HOL/HOL-Real_Asymp,NA,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Real_Asymp/index.html,,,False
-HOL/HOL-Real_Asymp-Manual,NA,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Real_Asymp-Manual/index.html,,,False
+HOL/HOL-Real_Asymp,26A03,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Real_Asymp/index.html,,,True
+HOL/HOL-Real_Asymp-Manual,26A03,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Real_Asymp-Manual/index.html,,,True
 HOL/HOL-Record_Benchmark,68-04,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-Record_Benchmark/index.html,,,True
 HOL/HOL-SET_Protocol,68M12,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-SET_Protocol/index.html,,,True
 HOL/HOL-SMT_Examples,68R07,HOL,https://isabelle.in.tum.de/dist/library/HOL/HOL-SMT_Examples/index.html,,,True
@@ -86,7 +86,7 @@ FOL/FOL,03B10,FOL,https://isabelle.in.tum.de/dist/library/FOL/FOL/index.html,,,T
 FOL/FOL,03B10,FOL,https://isabelle.in.tum.de/dist/library/FOL/FOL/index.html,,,True
 FOL/FOL-ex,03B10,FOL,https://isabelle.in.tum.de/dist/library/FOL/FOL-ex/index.html,,,True
 FOL/FOL-ex,03B10,FOL,https://isabelle.in.tum.de/dist/library/FOL/FOL-ex/index.html,,,True
-ZF/ZF,03Exx	,ZF,https://isabelle.in.tum.de/dist/library/ZF/ZF/index.html,,,True
+ZF/ZF,03Exx,ZF,https://isabelle.in.tum.de/dist/library/ZF/ZF/index.html,,,True
 ZF/ZF-AC,03Exx,ZF,https://isabelle.in.tum.de/dist/library/ZF/ZF-AC/index.html,,,True
 ZF/ZF-Coind,03Exx,ZF,https://isabelle.in.tum.de/dist/library/ZF/ZF-Coind/index.html,,,True
 ZF/ZF-Constructible,03Exx,ZF,https://isabelle.in.tum.de/dist/library/ZF/ZF-Constructible/index.html,,,True
