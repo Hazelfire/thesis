@@ -1,0 +1,19 @@
+package,authors,description,url,msc,verified
+Algebra,,"Definitions of algebraic structures like monoids and rings (packed in records together with sets, operations, etc.)",https://agda.github.io/agda-stdlib/Everything.html#490,13A99,True
+Axiom,,Results concerning double negation elimination.,https://agda.github.io/agda-stdlib/Everything.html#10548,03B70,True
+Category,,Applicative functors,https://agda.github.io/agda-stdlib/Everything.html#11128,18A05,True
+Codata,,"""Finite"" sets indexed on coinductive ""natural"" numbers",https://agda.github.io/agda-stdlib/Everything.html#12063,68P05,True
+Data,,Booleans,https://agda.github.io/agda-stdlib/Everything.html#15588,68P05,True
+Debug,,Printing Strings During Evaluation,https://agda.github.io/agda-stdlib/Everything.html#51921,Exclude-Util,True
+Foreign,,Type(s) used (only) when calling out to Haskell via the FFI,https://agda.github.io/agda-stdlib/Everything.html#52004,Exclude-Util,True
+Function,,Functions,https://agda.github.io/agda-stdlib/Everything.html#52392,18-XX,True
+IO,,IO,https://agda.github.io/agda-stdlib/Everything.html#56317,Exclude-Util,True
+Induction,,An abstraction of various forms of recursion/induction,https://agda.github.io/agda-stdlib/Everything.html#56901,03F03,True
+Level,,Universe levels,https://agda.github.io/agda-stdlib/Everything.html#57053,03B38,True
+Reflection,,Support for reflection,https://agda.github.io/agda-stdlib/Everything.html#57163,Exclude-Util,True
+Relation,,Properties of homogeneous binary relations,https://agda.github.io/agda-stdlib/Everything.html#59312,08A02,True
+Size,,Sizes for Agda's sized types,https://agda.github.io/agda-stdlib/Everything.html#72294,68P05,True
+System,,Measuring time,https://agda.github.io/agda-stdlib/Everything.html#72325,Exclude-Util,True
+Tactic,,Reflection-based solver for monoid equalities,https://agda.github.io/agda-stdlib/Everything.html#73330,Exclude-Util,True
+Test,,Golden testing framework,https://agda.github.io/agda-stdlib/Everything.html#75358,Exclude-Util,True
+Text,,Format strings for Printf and Scanf,https://agda.github.io/agda-stdlib/Everything.html#75417,Exclude-Util,True

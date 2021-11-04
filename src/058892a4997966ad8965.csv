@@ -1,0 +1,44 @@
+package,authors,description,url,msc,verified
+"The ""standard"" library",,,https://wiki.portal.chalmers.se/agda/Libraries/StandardLibrary,Exclude-Included,True
+Ulf Norell's Agda Prelude,,"an alternative to the Agda standard library (and incompatible with the same) that focuses more on programming and type checking time performance, and which is closer to Haskell's standard libraries.",https://github.com/UlfNorell/agda-prelude,Exclude-Util,True
+Agda Prelude,,a version of the standard library with type classes and prelude.,http://www2.tcs.ifi.lmu.de/~abel/repos/AgdaPrelude/,Exclude-Util,True
+AoPA,,Algebra of Programming in Agda.,https://wiki.portal.chalmers.se/agda/Libraries/AOPA,68N20,True
+SYSTEM.agda,,,https://wiki.portal.chalmers.se/agda/Main/Libraries?action=download&upname=SYSTEM.agda,Exclude-Util,True
+Total Parser Combinators,,,http://www.cse.chalmers.se/~nad/listings/parser-combinators/TotalParserCombinators.html,68Q42,True
+Correct-by-Construction Pretty-Printing,,,http://www.cse.chalmers.se/~nad/listings/pretty/README.html,Exclude-Util,True
+Some data structures,,"Sorted lists, 2-3 trees, Arne Andersson trees and Left-leaning Red-Black trees, by Stevan Andjelkovic, Linus Ek, and Ola Holmström. Left-leaning Red-Black trees with deletion by Julien Oster.",http://web.student.chalmers.se/groups/datx02-dtp/,68P05,True
+Interactive programs in Agda,,,http://www.cs.swan.ac.uk/~csetzer/software/agda2/IOLib/,Exclude-Util,True
+Towards a reflective solver for the theory of dense linear orders,,,http://web.student.chalmers.se/~stevan/csallp/html/README.html,06F20,True
+agda-tactics,,"Library for reflective tactics, with the semiring solver as an example.",https://github.com/xplat/agda-tactics,Exclude-Util,True
+A library to play with free theorems,,,https://wiki.portal.chalmers.se/agda/Libraries/LightweightFreeTheorems,Exclude-Util,True
+Lemmachine,,REST'ful web framework,http://github.com/larrytheliquid/Lemmachine,Exclude-Util,True
+finite-prover,,"a library for proving propositions on sets with finitely-many elements, like Bool.",http://github.com/agda/agda-finite-prover,68V15,True
+DTGP,,Dependently Typed Genetic Programming.,http://github.com/larrytheliquid/dtgp,68W50,True
+agda-system-io,,a library for streaming I/O with semantics as a lax braided monoidal category.,http://github.com/agda/agda-system-io,Exclude-Util,True
+agda-web-semantic,,a library for processing data from the semantic web.,http://github.com/agda/agda-web-semantic,Exclude-Util,True
+agda-frp-ltl,,"a library for functional reactive programming, typed using linear-time temporal logic.",http://github.com/agda/agda-frp-ltl,68N18,True
+agda-frp-js,,a library for functional reactive programming with a back end to JavaScript.,http://github.com/agda/agda-frp-js,68N18,True
+The Iowa Agda Library,,"a concrete library focused on verified functional programming; username ""guest"" and password ""guest"" if requested.",https://svn.divms.uiowa.edu/repos/clc/projects/agda/ial,68N18,True
+ooAgda,,Interactive and object-oriented programming in Agda including GUIs using coinductive types.,https://github.com/agda/ooAgda,68N19,True
+agdARGS,,"a library for hierarchical command line interfaces, by Guillaume Allais.",https://github.com/gallais/agdargs,Exclude-Util,True
+agdarsec,,"a library of total parser combinators, by Guillaume Allais.",https://github.com/gallais/agdarsec,68N15,True
+Binary,,"a certified library for operations with binary natural numbers, suggested as an optimization-extension-replacement for the Bin part in Standard library, by Sergei Meshveliani.",http://www.botik.ru/pub/local/Mechveliani/binNat,Exclude-Util,True
+agda-real,,"a formalisation of the real numbers, including certified approximation by rationals and a formal topology, by Peter Bruin.",https://gitlab.com/pbruin/agda-real,54C30,True
+agda-ring-solver,,"a fast and easy-to-use solver for ring equalities with a reflection-based interface, by Donnacha Oisín Kidney.",https://oisdk.github.io/agda-ring-solver/README.html,13Axx,True
+cubical-algebra,,"a formalisation of some algebraic constructions in Cubical Agda, by Peter Bruin.",https://gitlab.com/pbruin/cubical-algebra,03B38,True
+Agda Github community,,,http://github.com/agda,Exclude-Util,True
+Martin-Löf type theory,,,https://wiki.portal.chalmers.se/agda/Libraries/MLTT,03B38,True
+Sequent calculi,,,https://wiki.portal.chalmers.se/agda/Libraries/Sequent,03F03,True
+Types and Programming Languages by Benjamin Pierce,,,http://www.cs.chalmers.se/~peterd/studentpapers/Norberg.pdf,03B38,True
+Various developments related to codata and coinduction,,,http://www.cse.chalmers.se/~nad/listings/codata/README.html,68P05,True
+Simple equational reasoning examples,,,http://web.student.chalmers.se/~stevan/types/,Exclude-NoDoc,True
+Slides about how we used Agda for logic related coursework,,"Natural deduction, Enumerable sets and Primitive Recursive Functions, by Stevan Andjelkovic and Ola Holmström.",http://web.student.chalmers.se/~stevan/userexp/,Exclude-Doc,True
+Decision procedures,,,http://cs.swansea.ac.uk/~cskarim/agda/,68V15,True
+Running a classical proof with choice in Agda,,,http://math.andrej.com/2011/05/10/running-a-classical-proof-with-choice-in-agda/,Exclude-Doc,True
+Category.agda,,,https://wiki.portal.chalmers.se/agda/Main/Libraries?action=download&upname=20110915Category.agda,Exclude-NoDoc,True
+Theories (also a darcs repo),,,http://darcs.nomeata.de/agda-free-groups/,Exclude-NoDoc,True
+Constructive proofs of Higmans lemma implemented in Agda,,,https://github.com/sergei-romanenko/agda-Higman-lemma,06-XX,True
+A simple supercompiler formally verified in Agda,,,https://github.com/sergei-romanenko/agda-simple-scp,68N20,True
+Staged multi-result supercompilation (a model in Agda),,,https://github.com/sergei-romanenko/staged-mrsc-agda,68N20,True
+"DoCon-A, a library for a certain initial part of computer algebra and list processing,with full proofs in Agda",,,http://www.botik.ru/pub/local/Mechveliani/docon-A,68-XX,True
+Sqrt 2 is not rational,,,https://github.com/sergei-romanenko/agda-Pythagoras,11A99,True
